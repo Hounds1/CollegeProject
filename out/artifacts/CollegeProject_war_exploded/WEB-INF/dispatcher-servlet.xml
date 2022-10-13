@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xmlns:tx="http://www.springframework.org/schema/tx"
+             xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- 스캔한 패지키 내부의 클래스 중 Controller 어노테이션을 가지고 있는 클래스들을 Controller로 로딩하도록 한다 -->
+    <annotation-driven/>
+
+    <!-- 스캔할 bean들이 모여있는 패키지를 지정한다. -->
+    <context:component-scan base-package="kr.ac.kopo"/>
+
+    <tx:annotation-driven/>
+
+    <!-- Controller의 메서드에서 반환하는 문자열 앞 뒤에 붙힐 경로 정보를 셋팅한다. -->
+    <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <beans:property name="prefix" value="/WEB-INF/views/"/>
+        <beans:property name="suffix" value=".jsp"/>
+    </beans:bean>
+
+    <!-- 정적파일(이미지, 사운드, 동영상, JS, CSS 등등) 경로 셋팅 -->
+    <resources mapping="/resources/**" location="/resources/"/>
+    <resources mapping="/assets/js/**" location="/resources/assets/js/"/>
+    <resources mapping="/assets/css/**" location="/resources/assets/css/"/>
+    <resources mapping="/images/**" location="/resources/images/"/>
+    <resources mapping="/assets/img/**" location="/resources/assets/img/"/>
+    <resources mapping="/assets/img/portfolio/**" location="/resources/assets/img/portfolio/"/>
+    <resources mapping="/assets/img/team/**" location="/resources/assets/img/team/"/>
+    <resources mapping="/assets/img/testimonials/**" location="/resources/assets/img/testimonials/"/>
+    <resources mapping="/assets/vendor/aos/**" location="/resources/assets/vendor/aos/"/>
+    <resources mapping="/assets/vendor/bootstrap/css/**" location="/resources/assets/vendor/bootstrap/css/"/>
+    <resources mapping="/assets/vendor/bootstrap/js/**" location="/resources/assets/vendor/bootstrap/js/"/>
+    <resources mapping="/assets/vendor/bootstrap-icons/fonts/**" location="/resources/assets/vendor/bootstrap-icons/fonts/"/>
+    <resources mapping="/assets/vendor/bootstrap-icons/**" location="/resources/assets/vendor/bootstrap-icons/"/>
+    <resources mapping="/assets/vendor/boxicons/css/**" location="/resources/assets/vendor/boxicons/css/"/>
+    <resources mapping="/assets/vendor/boxicons/fonts/**" location="/resources/assets/vendor/boxicons/fonts/"/>
+    <resources mapping="/assets/vendor/glightbox/css/**" location="/resources/assets/vendor/glightbox/css/"/>
+    <resources mapping="/assets/vendor/glightbox/js/**" location="/resources/assets/vendor/glightbox/js/"/>
+    <resources mapping="/assets/vendor/isotope-layout/**" location="/resources/assets/vendor/isotope-layout/"/>
+    <resources mapping="/assets/vendor/php-email-form/**" location="/resources/assets/vendor/php-email-form/"/>
+    <resources mapping="/assets/vendor/purecounter/**" location="/resources/assets/vendor/purecounter/"/>
+    <resources mapping="/assets/vendor/swiper/**" location="/resources/assets/vendor/swiper/"/>
+
+
+
+
+
+    <!-- MultipartResolver   -->
+    <!--    <beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
+
+    <!--        <beans:property name="maxUploadSize" value="10485760" />-->
+    <!--        <beans:property name="defaultEncoding" value="utf-8" />-->
+
+    <!--    </beans:bean>-->
+    <!--    필요하면 부활 시키셈. -->
+
+
+</beans:beans>
