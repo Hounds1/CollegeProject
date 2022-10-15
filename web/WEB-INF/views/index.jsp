@@ -26,8 +26,9 @@
           rel="stylesheet">
 
     <!-- Vendor CSS Files -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
@@ -42,6 +43,27 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
+
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="memberAssets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="memberAssets/fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="memberAssets/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="memberAssets/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="memberAssets/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="memberAssets/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="memberAssets/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="memberAssets/css/util.css">
+    <link rel="stylesheet" type="text/css" href="memberAssets/css/main.css">
+    <!--===============================================================================================-->
+
+
 </head>
 
 <body>
@@ -51,7 +73,8 @@
     <div class="container d-flex align-items-center justify-content-between">
 
         <div class="logo">
-            <h1 class="text-light"><a href="index.html"><span>Archivist</span></a></h1>
+            <h1 class="text-light"><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                                      aria-controls="offcanvasWithBothOptions"><span class="fs-2">Archivist</span></a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
@@ -62,7 +85,7 @@
                 <li><a class="nav-link scrollto" href="#about">Forum</a></li>
                 <li><a class="nav-link scrollto" href="#services">Services</a></li>
                 <li><a class="nav-link scrollto" href="#portfolio">Languages</a></li>
-                <li><a class="nav-link scrollto" href="#team">Team</a></li>
+                <%--                <li><a class="nav-link scrollto" href="#team">Team</a></li>--%>
                 <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li><a href="#">Drop Down 1</a></li>
@@ -81,6 +104,10 @@
                     </ul>
                 </li>
                 <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                <li><a class="nav-link" href="#" data-bs-toggle="modal"
+                       data-bs-target="#exampleModalToggle">Sign In</a></li>
+                <li><a class="nav-link" href="/member/signup" data-bs-target="#exampleModalToggle2"
+                       data-bs-toggle="modal">Sign Up</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -221,7 +248,7 @@
 
                 <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
                     <div class="count-box">
-                        <i class="bi bi-headset"></i>
+                        <i class="bi bi-code"></i>
                         <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1"
                               class="purecounter"></span>
                         <p><strong>번의 도움이</strong> <br>이루어졌습니다.</p>
@@ -249,7 +276,7 @@
             <div class="text-center">
                 <h3>아직 계정이 없으신가요?</h3>
                 <p>회원가입을 하고 더 많은 정보들을 읽어보세요! 아마 당신이 찾는 해답이 있을 수 있습니다.</p>
-                <a class="cta-btn" href="#">Call To Action</a>
+                <a class="cta-btn" href="#">Get a new account.</a>
             </div>
 
         </div>
@@ -444,16 +471,14 @@
                         <div class="testimonial-item">
                             <p>
                                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                어떤 바보라도 컴퓨터를 사용할 수 있다. <br>
-                                그래서 많은 사람들이 컴퓨터를 사용한다. <br>
-                                <br>
-                                <br>
-                                Theodor Holm Nelson - HTML의 창시자
+                                소프트웨어에는 사실 의미있는 것들이 거의 없다.
+                                만일 그런 게 있다고 할지라도, 유일한 성공척도는 고객들이 뭐가 문제인지 몰라 갈팡질팡하는 걸 도와주었냐 하는 것이다. <br>
+                                Jeff Atwood - StackOverflow의 창시자
                                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
-                            <img src="images/Ted_Nelson.jpg" class="testimonial-img" alt="">
-                            <h3>Theodor Holm Nelson</h3>
-                            <h4>philosopher & sociologist</h4>
+                            <img src="images/Jeff_Atwood.png" class="testimonial-img" alt="">
+                            <h3>Jeff Atwood</h3>
+                            <h4>Developer</h4>
                         </div>
                     </div><!-- End testimonial item -->
 
@@ -480,74 +505,74 @@
         </div>
     </section><!-- End Testimonials Section -->
 
-    <!-- ======= Team Section ======= -->
-    <section id="team" class="team">
-        <div class="container">
+    <%--    <!-- ======= Team Section ======= -->--%>
+    <%--    <section id="team" class="team">--%>
+    <%--        <div class="container">--%>
 
-            <div class="section-title" data-aos="fade-in" data-aos-delay="100">
-                <h2>Team</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                    fugiat sit in iste officiis commodi quidem hic quas.</p>
-            </div>
+    <%--            <div class="section-title" data-aos="fade-in" data-aos-delay="100">--%>
+    <%--                <h2>Team</h2>--%>
+    <%--                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint--%>
+    <%--                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia--%>
+    <%--                    fugiat sit in iste officiis commodi quidem hic quas.</p>--%>
+    <%--            </div>--%>
 
-            <div class="row">
+    <%--            <div class="row">--%>
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="member" data-aos="fade-up">
-                        <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
-                        <div class="member-info">
-                            <h4>Walter White</h4>
-                            <span>Chief Executive Officer</span>
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <%--                <div class="col-lg-4 col-md-6">--%>
+    <%--                    <div class="member" data-aos="fade-up">--%>
+    <%--                        <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>--%>
+    <%--                        <div class="member-info">--%>
+    <%--                            <h4>Walter White</h4>--%>
+    <%--                            <span>Chief Executive Officer</span>--%>
+    <%--                            <div class="social">--%>
+    <%--                                <a href=""><i class="bi bi-twitter"></i></a>--%>
+    <%--                                <a href=""><i class="bi bi-facebook"></i></a>--%>
+    <%--                                <a href=""><i class="bi bi-instagram"></i></a>--%>
+    <%--                                <a href=""><i class="bi bi-linkedin"></i></a>--%>
+    <%--                            </div>--%>
+    <%--                        </div>--%>
+    <%--                    </div>--%>
+    <%--                </div>--%>
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="member" data-aos="fade-up" data-aos-delay="150">
-                        <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>
-                        <div class="member-info">
-                            <h4>Sarah Jhonson</h4>
-                            <span>Product Manager</span>
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <%--                <div class="col-lg-4 col-md-6">--%>
+    <%--                    <div class="member" data-aos="fade-up" data-aos-delay="150">--%>
+    <%--                        <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>--%>
+    <%--                        <div class="member-info">--%>
+    <%--                            <h4>Sarah Jhonson</h4>--%>
+    <%--                            <span>Product Manager</span>--%>
+    <%--                            <div class="social">--%>
+    <%--                                <a href=""><i class="bi bi-twitter"></i></a>--%>
+    <%--                                <a href=""><i class="bi bi-facebook"></i></a>--%>
+    <%--                                <a href=""><i class="bi bi-instagram"></i></a>--%>
+    <%--                                <a href=""><i class="bi bi-linkedin"></i></a>--%>
+    <%--                            </div>--%>
+    <%--                        </div>--%>
+    <%--                    </div>--%>
+    <%--                </div>--%>
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="member" data-aos="fade-up" data-aos-delay="300">
-                        <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>
-                        <div class="member-info">
-                            <h4>William Anderson</h4>
-                            <span>CTO</span>
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <%--                <div class="col-lg-4 col-md-6">--%>
+    <%--                    <div class="member" data-aos="fade-up" data-aos-delay="300">--%>
+    <%--                        <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>--%>
+    <%--                        <div class="member-info">--%>
+    <%--                            <h4>William Anderson</h4>--%>
+    <%--                            <span>CTO</span>--%>
+    <%--                            <div class="social">--%>
+    <%--                                <a href=""><i class="bi bi-twitter"></i></a>--%>
+    <%--                                <a href=""><i class="bi bi-facebook"></i></a>--%>
+    <%--                                <a href=""><i class="bi bi-instagram"></i></a>--%>
+    <%--                                <a href=""><i class="bi bi-linkedin"></i></a>--%>
+    <%--                            </div>--%>
+    <%--                        </div>--%>
+    <%--                    </div>--%>
+    <%--                </div>--%>
 
-            </div>
+    <%--            </div>--%>
 
-        </div>
-    </section><!-- End Team Section -->
+    <%--        </div>--%>
+    <%--    </section><!-- End Team Section -->--%>
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact section-bg">
+    <section id="contact" class="contact">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
@@ -678,7 +703,7 @@
 
                 <div class="col-lg-4 col-md-6 footer-newsletter">
                     <h4>Our Newsletter</h4>
-                    <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                    <p class="text-white">새로운 언어의 출시나 정보들에 대해 전해드립니다.</p>
                     <form action="" method="post">
                         <input type="email" name="email"><input type="submit" value="Subscribe">
                     </form>
@@ -707,16 +732,155 @@
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
         class="bi bi-arrow-up-short"></i></a>
 
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+     aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <p>Try scrolling the rest of the page to see this option in action.</p>
+    </div>
+</div>
 
-<script
-        src="https://code.jquery.com/jquery-3.6.1.js"
+<!-- login modal start -->
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+     tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="!important; width:390px;">
+            <div class="wrap-login100">
+                <form class="login100-form validate-form" method="post" action="/member/signIn"
+                      id="signInSubmitHandler">
+					<span class="login100-form-title p-b-26">
+						Welcome
+					</span>
+                    <span class="login100-form-title p-b-48">
+						<i class="zmdi zmdi-font"></i>
+					</span>
+
+                    <div class="wrap-input100 validate-input " data-validate="Valid email is: a@b.c">
+                        <input class="input100" type="email" name="userId">
+                        <span class="focus-input100" data-placeholder="Email"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+                        <input class="input100" type="password" name="userPass">
+                        <span class="focus-input100" data-placeholder="Password"></span>
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button class="login100-form-btn"
+                                    onclick="document.getElementById('signInSubmitHandler').submit();">
+                                Sign IN
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="text-center p-t-115">
+						<span class="txt1">
+							Don’t have an account?
+						</span>
+                        <a class="txt2" href="#" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                            Sign Up
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- login modal end -->
+<!-- account modal start -->
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+     tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="!important; width:390px;">
+            <div class="wrap-login100">
+                <form class="login100-form validate-form" method="post" action="/member/signUp"
+                      id="signUpSubmitHandler">
+					<span class="login100-form-title p-b-26">
+						Welcome
+					</span>
+                    <span class="login100-form-title p-b-48">
+						<i class="zmdi zmdi-font"></i>
+					</span>
+
+                    <div class="wrap-input100 validate-input " data-validate="Valid email is: a@b.c">
+                        <input class="input100" type="text" name="userId" id="userId">
+                        <span class="focus-input100" data-placeholder="Email"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter password">
+                        <input class="input100" type="text" name="userNick" id="userNick">
+                        <span class="focus-input100" data-placeholder="Nickname"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+                        <input class="input100" type="password" name="userPass" id="userPass">
+                        <span class="focus-input100" data-placeholder="Password"></span>
+                    </div>
+
+                    <input type="hidden" name="authority" value="common" id="authority">
+
+
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button type="button" class="login100-form-btn"
+                                    onclick="document.getElementById('signUpSubmitHandler').submit();">
+                                Sign Up
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <div class="text-center p-t-115">
+						<span class="txt1">
+							If you already our member
+						</span>
+                    <a class="txt2" href="#" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+                        Sign In
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- account modal end -->
+
+
+<script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
         crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+        crossorigin="anonymous"></script>
+<!--===============================================================================================-->
+<script src="memberAssets/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="memberAssets/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="memberAssets/vendor/daterangepicker/moment.min.js"></script>
+<script src="memberAssets/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="memberAssets/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="memberAssets/js/main.js"></script>
+
 
 <!-- Vendor JS Files -->
 <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
 <script src="assets/vendor/aos/aos.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>

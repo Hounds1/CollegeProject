@@ -23,6 +23,7 @@
     </beans:bean>
 
     <!-- 정적파일(이미지, 사운드, 동영상, JS, CSS 등등) 경로 셋팅 -->
+    <!-- index assets   -->
     <resources mapping="/resources/**" location="/resources/"/>
     <resources mapping="/assets/js/**" location="/resources/assets/js/"/>
     <resources mapping="/assets/css/**" location="/resources/assets/css/"/>
@@ -44,6 +45,37 @@
     <resources mapping="/assets/vendor/php-email-form/**" location="/resources/assets/vendor/php-email-form/"/>
     <resources mapping="/assets/vendor/purecounter/**" location="/resources/assets/vendor/purecounter/"/>
     <resources mapping="/assets/vendor/swiper/**" location="/resources/assets/vendor/swiper/"/>
+    <!-- index assets   -->
+
+    <!-- member form assets   -->
+    <resources mapping="/memberAssets/css/**" location="/resources/memberAssets/css/"/>
+    <resources mapping="/memberAssets/fonts/font-awesome-4.7.0/**" location="/resources/memberAssets/fonts/font-awesome-4.7.0/"/>
+    <resources mapping="/memberAssets/fonts/font-awesome-4.7.0/css/**" location="/resources/memberAssets/fonts/font-awesome-4.7.0/css/"/>
+    <resources mapping="/memberAssets/fonts/font-awesome-4.7.0/fonts/**" location="/resources/memberAssets/fonts/font-awesome-4.7.0/fonts/"/>
+    <resources mapping="/memberAssets/fonts/font-awesome-4.7.0/less/**" location="/resources/memberAssets/fonts/font-awesome-4.7.0/less/"/>
+    <resources mapping="/memberAssets/fonts/font-awesome-4.7.0/scss/**" location="/resources/memberAssets/fonts/font-awesome-4.7.0/scss/"/>
+    <resources mapping="/memberAssets/fonts/iconic/**" location="/resources/memberAssets/fonts/iconic/"/>
+    <resources mapping="/memberAssets/fonts/iconic/css/**" location="/resources/memberAssets/fonts/iconic/css/"/>
+    <resources mapping="/memberAssets/fonts/iconic/fonts/**" location="/resources/memberAssets/fonts/iconic/fonts/"/>
+    <resources mapping="/memberAssets/fonts/poppins/**" location="/resources/memberAssets/fonts/poppins/"/>
+    <resources mapping="/memberAssets/images/**" location="/resources/memberAssets/images/"/>
+    <resources mapping="/memberAssets/images/icons/**" location="/resources/memberAssets/images/icons/"/>
+    <resources mapping="/memberAssets/js/**" location="/resources/memberAssets/js/"/>
+    <resources mapping="/memberAssets/vendor/**" location="/resources/memberAssets/vendor/"/>
+    <resources mapping="/memberAssets/vendor/animate/**" location="/resources/memberAssets/vendor/animate/"/>
+    <resources mapping="/memberAssets/vendor/animsition/**" location="/resources/memberAssets/vendor/animsition/"/>
+    <resources mapping="/memberAssets/vendor/animsition/css/**" location="/resources/memberAssets/vendor/animsition/css/"/>
+    <resources mapping="/memberAssets/vendor/animsition/js/**" location="/resources/memberAssets/vendor/animsition/js/"/>
+    <resources mapping="/memberAssets/vendor/bootstrap/**" location="/resources/memberAssets/vendor/bootstrap/"/>
+    <resources mapping="/memberAssets/vendor/bootstrap/css/**" location="/resources/memberAssets/vendor/bootstrap/css/"/>
+    <resources mapping="/memberAssets/vendor/bootstrap/js/**" location="/resources/memberAssets/vendor/bootstrap/js/"/>
+    <resources mapping="/memberAssets/vendor/countdowntime/**" location="/resources/memberAssets/vendor/countdowntime/"/>
+    <resources mapping="/memberAssets/vendor/css-hamburgers/**" location="/resources/memberAssets/vendor/css-hamburgers/"/>
+    <resources mapping="/memberAssets/vendor/daterangepicker/**" location="/resources/memberAssets/vendor/daterangepicker/"/>
+    <resources mapping="/memberAssets/vendor/jquery/**" location="/resources/memberAssets/vendor/jquery/"/>
+    <resources mapping="/memberAssets/vendor/perfect-scrollbar/**" location="/resources/memberAssets/vendor/perfect-scrollbar/"/>
+    <resources mapping="/memberAssets/vendor/select2/**" location="/resources/memberAssets/vendor/select2/"/>
+    <!-- member form assets   -->
 
 
 
