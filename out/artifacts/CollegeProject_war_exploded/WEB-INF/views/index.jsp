@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,6 +37,7 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/sidebars.css" rel="stylesheet">
 
     <!-- =======================================================
     * Template Name: Squadfree - v4.9.1
@@ -73,8 +75,8 @@
     <div class="container d-flex align-items-center justify-content-between">
 
         <div class="logo">
-            <h1 class="text-light"><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-                                      aria-controls="offcanvasWithBothOptions"><span class="fs-2">Archivist</span></a></h1>
+            <h1 class="text-light"><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+                                      aria-controls="offcanvasScrolling"><span class="fs-2">Archivist</span></a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
@@ -86,28 +88,42 @@
                 <li><a class="nav-link scrollto" href="#services">Services</a></li>
                 <li><a class="nav-link scrollto" href="#portfolio">Languages</a></li>
                 <%--                <li><a class="nav-link scrollto" href="#team">Team</a></li>--%>
-                <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+                <li class="dropdown"><a href="#"><span>Boards</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="#">Drop Down 1</a></li>
-                        <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                        <li class="dropdown"><a href="#"><span>FrontEnd</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
-                                <li><a href="#">Deep Drop Down 1</a></li>
-                                <li><a href="#">Deep Drop Down 2</a></li>
-                                <li><a href="#">Deep Drop Down 3</a></li>
-                                <li><a href="#">Deep Drop Down 4</a></li>
-                                <li><a href="#">Deep Drop Down 5</a></li>
+                                <li><a href="#">JavaScript</a></li>
+                                <li><a href="#">TypeScript</a></li>
+                                <li><a href="#">React</a></li>
+                                <li><a href="#">Vue.js</a></li>
+                                <li><a href="#">Angular</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Drop Down 2</a></li>
-                        <li><a href="#">Drop Down 3</a></li>
-                        <li><a href="#">Drop Down 4</a></li>
+                        <li class="dropdown"><a href="#"><span>BackEnd</span> <i class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                <li><a href="#">Java</a></li>
+                                <li><a href="#">Python</a></li>
+                                <li><a href="#">Node.js</a></li>
+                                <li><a href="#">Umm Lang</a></li>
+                                <li><a href="#">Ruby</a></li>
+                                <li><a href="#">Swift</a></li>
+                                <li><a href="#">Kotlin</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
                 <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                <c:choose>
+                    <c:when test="${sessionScope.member eq null}">
                 <li><a class="nav-link" href="#" data-bs-toggle="modal"
                        data-bs-target="#exampleModalToggle">Sign In</a></li>
                 <li><a class="nav-link" href="/member/signup" data-bs-target="#exampleModalToggle2"
                        data-bs-toggle="modal">Sign Up</a></li>
+                    </c:when>
+                    <c:otherwise>
+                        <li><a class="nav-link" href="/member/escape">Sign Out</a></li>
+                    </c:otherwise>
+                </c:choose>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -135,8 +151,8 @@
                     <div class="content">
                         <h3>함께 생각한다면 더 쉽게 코드를 구현하고, 수정할 수 있습니다.</h3>
                         <p>
-                            모든 개발자들이 가끔 논리적인 모순에 막혀 앞으로 전진하지 못합니다. Archivist의 포럼에서 도움을 받고, 다른 이에게 도움을 주세요. 당신의 개발에 오류가
-                            없길 바라며 좋은 하루 보내십시오 :)
+                            모든 개발자들이 가끔 논리적인 모순에 막혀 앞으로 전진하지 못합니다. Archivist의 포럼에서 도움을 받고, 다른 이에게 도움을 주세요. 언제나 당신의 개발에 오류가
+                            없길 바랍니다. :)
                         </p>
                         <a href="#" class="about-btn">Visit the forum.<i class="bx bx-chevron-right"></i></a>
                     </div>
@@ -146,23 +162,23 @@
                         <div class="row">
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                                 <i class="bx bx-receipt"></i>
-                                <h4>당신의 코드를 다른 이들에게 보여주세요.</h4>
+                                <h4>당신의 코드를 다른 이들에게 보여주십시오.</h4>
                                 <p>당신이 다른 이에게 도움을 주듯, 당신을 도울 준비된 사람들이 있습니다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                                 <i class="bx bx-cube-alt"></i>
                                 <h4>우리는 CodeBlock을 지원합니다.</h4>
-                                <p>CodeBlock을 통해 게시글에 코드를 삽입해 보세요. 다른 이들이 조금 더 쉽게 읽을 수 있을 겁니다.</p>
+                                <p>CodeBlock을 통해 게시글에 코드를 삽입해 보십시오. 다른 이들이 조금 더 쉽게 읽을 수 있을 겁니다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                                 <i class="bx bx-images"></i>
-                                <h4>멋진 결과물이 탄생했나요?</h4>
-                                <p>그렇다면 사진을 통해 자랑해 보는 것은 어떨까요? 개발자들의 경쟁의식을 자극해 보세요.</p>
+                                <h4>멋진 결과물이 탄생했습니까?</h4>
+                                <p>그렇다면 사진을 통해 자랑해 보십시오. 그리고 다른 개발자들의 생각을 들어보십시오.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                                 <i class="bx bx-shield"></i>
-                                <h4>보안에 신경 써주세요.</h4>
-                                <p>유출되어서는 안되는 코드를 게시하지 않도록 주의해 주세요. Archivist는 해당 피해에 대한 책임을 지지 않습니다.</p>
+                                <h4>보안에 신경 써주십시오.</h4>
+                                <p>유출되어서는 안되는 코드를 게시하지 않도록 주의해 주십시오. Archivist는 해당 피해에 대한 책임을 지지 않습니다.</p>
                             </div>
                         </div>
                     </div><!-- End .content-->
@@ -188,7 +204,7 @@
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up">
                         <div class="icon"><i class="bx bxl-discord"></i></div>
-                        <h4 class="title"><a href="">Discord</a></h4>
+                        <h4 class="title"><a href="https://discord.com/">Discord</a></h4>
                         <p class="description">Archivist의 Discord 채널에서 음성으로 대화하세요!</p>
                     </div>
                 </div>
@@ -276,7 +292,8 @@
             <div class="text-center">
                 <h3>아직 계정이 없으신가요?</h3>
                 <p>회원가입을 하고 더 많은 정보들을 읽어보세요! 아마 당신이 찾는 해답이 있을 수 있습니다.</p>
-                <a class="cta-btn" href="#">Get a new account.</a>
+                <a class="cta-btn" href="#" data-bs-target="#exampleModalToggle2"
+                   data-bs-toggle="modal">Get a new account.</a>
             </div>
 
         </div>
@@ -488,6 +505,7 @@
                                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                                 코드 수를 기준으로 프로그램의 진도를 측정하는 것은 <br>
                                 비행기 제작 진도를 무게로 측정하는 것과 같다. <br>
+                                <br>
                                 <br>
                                 Bill Gates - 가장 성공한 개발자
                                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
@@ -716,14 +734,14 @@
 
     <div class="container">
         <div class="copyright">
-            &copy; Copyright <strong><span>Squadfree</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>Umm-Jun-Sik</span></strong>. still alive.
         </div>
         <div class="credits">
             <!-- All the links in the footer should remain intact. -->
             <!-- You can delete the links only if you purchased the pro version. -->
             <!-- Licensing information: https://bootstrapmade.com/license/ -->
             <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            Create, Save, Reminiscence and Archivist.
         </div>
     </div>
 </footer>
@@ -732,24 +750,105 @@
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
         class="bi bi-arrow-up-short"></i></a>
 
-<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
-     aria-labelledby="offcanvasWithBothOptionsLabel">
+<!-- Off-canvas sidebar-->
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+     id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">
+            <c:choose>
+                <c:when test="${not empty sessionScope.member}">
+                    Now account is ${sessionScope.member.memberNick}
+                </c:when>
+                <c:otherwise>
+                    Archivist
+                </c:otherwise>
+            </c:choose>
+        </h5>
+        <button type="button" class="btn-close btn-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
+    <hr>
     <div class="offcanvas-body">
-        <p>Try scrolling the rest of the page to see this option in action.</p>
+        <ul class="list-unstyled ps-0">
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                    Home
+                </button>
+                <div class="collapse show" id="home-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Index</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Updates</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Reports</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                Boards
+                </button>
+                <div class="collapse" id="dashboard-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Weekly</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Monthly</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                    Orders
+                </button>
+                <div class="collapse" id="orders-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Processed</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Shipped</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Returned</a></li>
+                    </ul>
+                </div>
+            </li>
+            <c:if test="${sessionScope.member.memberAuthority eq 'Archivist'}">
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#admin-collapse" aria-expanded="false">
+                    Archivist Controls
+                </button>
+                <div class="collapse" id="admin-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Notice</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Board</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Lang Append</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Members</a></li>
+                    </ul>
+                </div>
+            </li>
+            </c:if>
+            <c:if test="${not empty sessionScope.member}">
+            <li class="border-top my-3"></li>
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                    ${sessionScope.member.memberNick}
+                </button>
+                <div class="collapse" id="account-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
+                        <li><a href="/member/escape" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
+                    </ul>
+                </div>
+            </li>
+            </c:if>
+        </ul>
     </div>
 </div>
+<!-- Off-canvas sidebar-->
 
-<!-- login modal start -->
+<!-- Login modal -->
 <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
      tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content" style="!important; width:390px;">
             <div class="wrap-login100">
-                <form class="login100-form validate-form" method="post" action="/member/signIn"
+                <form class="login100-form validate-form" method="post" action="/member/login"
                       id="signInSubmitHandler">
 					<span class="login100-form-title p-b-26">
 						Welcome
@@ -759,7 +858,7 @@
 					</span>
 
                     <div class="wrap-input100 validate-input " data-validate="Valid email is: a@b.c">
-                        <input class="input100" type="email" name="userId">
+                        <input class="input100" type="email" name="memberId">
                         <span class="focus-input100" data-placeholder="Email"></span>
                     </div>
 
@@ -767,7 +866,7 @@
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-                        <input class="input100" type="password" name="userPass">
+                        <input class="input100" type="password" name="memberPass">
                         <span class="focus-input100" data-placeholder="Password"></span>
                     </div>
 
@@ -794,14 +893,16 @@
         </div>
     </div>
 </div>
-<!-- login modal end -->
-<!-- account modal start -->
+<!-- Login modal-->
+
+
+<!-- Account modal-->
 <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
      tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content" style="!important; width:390px;">
             <div class="wrap-login100">
-                <form class="login100-form validate-form" method="post" action="/member/signUp"
+                <form class="login100-form validate-form" method="post" action="/member/new_account"
                       id="signUpSubmitHandler">
 					<span class="login100-form-title p-b-26">
 						Welcome
@@ -811,12 +912,12 @@
 					</span>
 
                     <div class="wrap-input100 validate-input " data-validate="Valid email is: a@b.c">
-                        <input class="input100" type="text" name="userId" id="userId">
+                        <input class="input100" type="text" name="memberId" id="memberId">
                         <span class="focus-input100" data-placeholder="Email"></span>
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Enter password">
-                        <input class="input100" type="text" name="userNick" id="userNick">
+                        <input class="input100" type="text" name="memberNick" id="memberNick">
                         <span class="focus-input100" data-placeholder="Nickname"></span>
                     </div>
 
@@ -824,11 +925,11 @@
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-                        <input class="input100" type="password" name="userPass" id="userPass">
+                        <input class="input100" type="password" name="memberPass" id="memberPass">
                         <span class="focus-input100" data-placeholder="Password"></span>
                     </div>
 
-                    <input type="hidden" name="authority" value="common" id="authority">
+                    <input type="hidden" name="memberAuthority" value="common" id="memberAuthority">
 
 
                     <div class="container-login100-form-btn">
@@ -853,7 +954,7 @@
         </div>
     </div>
 </div>
-<!-- account modal end -->
+<!-- Account modal -->
 
 
 <script src="https://code.jquery.com/jquery-3.6.1.js"
@@ -888,6 +989,7 @@
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
+<script src="assets/js/sidebars.js"></script>
 
 </body>
 

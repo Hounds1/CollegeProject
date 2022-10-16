@@ -9,11 +9,11 @@
     </settings>
 
     <typeAliases>
-
+        <typeAlias type="kr.ac.kopo.vo.MemberVO" alias="Member"/>
     </typeAliases>
 
     <mappers>
-
+        <mapper resource="mappers/MemberMapper.xml"/>
     </mappers>
 
 
