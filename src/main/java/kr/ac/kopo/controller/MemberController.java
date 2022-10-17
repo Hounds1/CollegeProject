@@ -2,12 +2,11 @@ package kr.ac.kopo.controller;
 
 
 import kr.ac.kopo.service.MemberService;
+import kr.ac.kopo.util.PassMaker;
 import kr.ac.kopo.vo.MemberVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
@@ -20,12 +19,8 @@ public class MemberController {
 
     @PostMapping("/new_account")
     public String memberNewAccount(MemberVO memberVO) {
-        String memberId = memberVO.getMemberId();
-        int duplicateChk = memberService.memberDuplicateChk(memberId);
 
-        if(duplicateChk == 0) {
-            memberService.memberNewAccount(memberVO);
-        }
+        memberService.memberNewAccount(memberVO);
         return "redirect:/";
     }
 
@@ -34,13 +29,31 @@ public class MemberController {
 
         if(memberService.memberLogin(memberVO)) {
             httpSession.setAttribute("member", memberVO);
-        }
-        return "redirect:/";
+            return "redirect:/";
+        } else
+        return "/member/login_fail";
     }
 
     @GetMapping("/escape")
     public String memberEscape(HttpSession httpSession) {
         httpSession.invalidate();
         return "redirect:/";
+    }
+
+    @PostMapping("/idDupChk")
+    public @ResponseBody String idDupChk (@RequestParam(value = "targetId", required = true) String targetId) {
+        if(memberService.memberDuplicateChk(targetId) == 0) {
+            return "OK";
+        } else
+            return "Fail";
+
+    }
+
+    @PostMapping("/nickDupChk")
+    public @ResponseBody String nickDupChk (@RequestParam(value = "targetNick", required = true) String targetNick){
+        if(memberService.nickDuplicateChk(targetNick) == 0) {
+            return "OK";
+        } else
+            return "Fail";
     }
 }

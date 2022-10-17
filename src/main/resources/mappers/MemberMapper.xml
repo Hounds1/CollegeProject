@@ -7,7 +7,7 @@
     <select id="memberDuplicateChk" resultType="Integer">
         select count(*)
         from member
-        where member_id = #{memberId}
+        where member_id = #{targetId}
     </select>
 
     <insert id="memberNewAccount">
@@ -19,5 +19,11 @@
         select *
         from member
         where member_id = #{memberId} and member_pass = #{memberPass}
+    </select>
+
+    <select id="nickDuplicateChk" resultType="Integer">
+        select count(*)
+        from member
+        where member_nick = #{targetNick}
     </select>
 </mapper>

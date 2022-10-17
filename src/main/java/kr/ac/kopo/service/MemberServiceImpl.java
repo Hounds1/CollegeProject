@@ -21,8 +21,8 @@ public class MemberServiceImpl implements MemberService{
     }
 
     @Override
-    public int memberDuplicateChk(String memberId) {
-        return memberDao.memberDuplicateChk(memberId);
+    public int memberDuplicateChk(String targetId) {
+        return memberDao.memberDuplicateChk(targetId);
     }
 
     @Override
@@ -42,5 +42,10 @@ public class MemberServiceImpl implements MemberService{
             return true;
         } else
             return false;
+    }
+
+    @Override
+    public int nickDuplicateChk(String targetNick) {
+        return memberDao.nickDuplicateChk(targetNick);
     }
 }

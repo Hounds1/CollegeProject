@@ -12,8 +12,8 @@ public class MemberDaoImpl implements MemberDao{
 
     private final SqlSession sqlSession;
     @Override
-    public int memberDuplicateChk(String memberId) {
-        return sqlSession.selectOne("member.memberDuplicateChk", memberId);
+    public int memberDuplicateChk(String targetId) {
+        return sqlSession.selectOne("member.memberDuplicateChk", targetId);
     }
 
     @Override
@@ -24,5 +24,10 @@ public class MemberDaoImpl implements MemberDao{
     @Override
     public MemberVO memberLogin(MemberVO memberVO) {
         return sqlSession.selectOne("member.memberLogin", memberVO);
+    }
+
+    @Override
+    public int nickDuplicateChk(String targetNick) {
+        return sqlSession.selectOne("member.nickDuplicateChk", targetNick);
     }
 }

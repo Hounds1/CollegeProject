@@ -19,7 +19,7 @@
   
     /*==================================================================
     [ Validate ]*/
-    var input = $('.validate-input .input100');
+    let input = $('.validate-input .input100');
 
     $('.validate-form').on('submit',function(){
         var check = true;
@@ -68,7 +68,7 @@
     
     /*==================================================================
     [ Show pass ]*/
-    var showPass = 0;
+    let showPass = 0;
     $('.btn-show-pass').on('click', function(){
         if(showPass == 0) {
             $(this).next('input').attr('type','text');
@@ -84,6 +84,68 @@
         }
         
     });
+
+    /*==================================================================
+    [ Id Duplicate Check ]*/
+    let idDupChk = 0;
+
+    $('.id-dup-chk').on('click', function () {
+        console.log("click");
+        $.ajax({
+            url:"/member/idDupChk",
+            method: "POST",
+            data: {
+                "targetId" : $('#memberId').val(),
+            },
+            cache : false,
+            success(result) {
+                if(result === "OK") {
+                  alert("사용 가능한 아이디입니다.");
+                  $('.id-dup-chk').find('i').removeClass('zmdi-check');
+                  $('.id-dup-chk').find('i').addClass('zmdi-check-circle');
+                  idDupChk = 1;
+                    if(idDupChk === 1 && nickDupChk === 1) {
+                        $('.btn-control').removeAttr('disabled');
+                    }
+                } else {
+                    alert("껒이세요.");
+                    idDupChk = 0;
+                }
+            }
+        })
+    });
+
+    /*==================================================================
+    [ Nick Duplicate Check ]*/
+    let nickDupChk = 0;
+    $('.nick-dup-chk').on('click' , function () {
+        console.log("click");
+        $.ajax({
+            url : "/member/nickDupChk",
+            method: "POST",
+            data : {
+                "targetNick" : $('#memberNick').val(),
+            },
+            cache: false,
+            success(result) {
+                if(result === "OK") {
+                    alert("사용 가능한 닉네임입니다.");
+                    $('.nick-dup-chk').find('i').removeClass('zmdi-check');
+                    $('.nick-dup-chk').find('i').addClass('zmdi-check-circle');
+                    nickDupChk = 1;
+                    if(idDupChk === 1 && nickDupChk === 1) {
+                        $('.btn-control').removeAttr('disabled');
+                    }
+                } else {
+                    alert("껒이세요.")
+                    nickDupChk = 0;
+                }
+            }
+        })
+    });
+
+    /*==================================================================
+    [ submit btn control ]*/
 
 
 })(jQuery);

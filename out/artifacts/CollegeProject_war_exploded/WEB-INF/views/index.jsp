@@ -775,9 +775,9 @@
                 </button>
                 <div class="collapse show" id="home-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Index</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Updates</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Reports</a></li>
+                        <li><a href="/" class="link-dark d-inline-flex text-decoration-none rounded">Index</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Update soon</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Update soon</a></li>
                     </ul>
                 </div>
             </li>
@@ -787,9 +787,15 @@
                 </button>
                 <div class="collapse" id="dashboard-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Weekly</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Monthly</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Java</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Node.js</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded"></a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
                         <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
                     </ul>
                 </div>
@@ -912,11 +918,17 @@
 					</span>
 
                     <div class="wrap-input100 validate-input " data-validate="Valid email is: a@b.c">
+                        <span class="btn-duplicate-check id-dup-chk">
+                            <i class="zmdi zmdi-check"></i>
+                        </span>
                         <input class="input100" type="text" name="memberId" id="memberId">
                         <span class="focus-input100" data-placeholder="Email"></span>
                     </div>
 
-                    <div class="wrap-input100 validate-input" data-validate="Enter password">
+                    <div class="wrap-input100 validate-input" data-validate="Enter memberNick">
+                        <span class="btn-duplicate-check nick-dup-chk">
+                            <i class="zmdi zmdi-check"></i>
+                        </span>
                         <input class="input100" type="text" name="memberNick" id="memberNick">
                         <span class="focus-input100" data-placeholder="Nickname"></span>
                     </div>
@@ -935,8 +947,8 @@
                     <div class="container-login100-form-btn">
                         <div class="wrap-login100-form-btn">
                             <div class="login100-form-bgbtn"></div>
-                            <button type="button" class="login100-form-btn"
-                                    onclick="document.getElementById('signUpSubmitHandler').submit();">
+                            <button type="button" class="login100-form-btn btn-control"
+                                    onclick="document.getElementById('signUpSubmitHandler').submit();" disabled>
                                 Sign Up
                             </button>
                         </div>
