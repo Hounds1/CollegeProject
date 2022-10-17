@@ -145,7 +145,26 @@
     });
 
     /*==================================================================
-    [ submit btn control ]*/
+    [login ajax]*/
+    $('#login-submit-btn').on('click', function () {
+        console.log("click");
+        $.ajax({
+          url : "member/login",
+          method : "POST",
+          cache : false,
+          data : {
+              "memberId" : $('.login-id-val').val(),
+              "memberPass" : $('.login-pass-val').val(),
+          },
+          success(result) {
+              if(result === "OK") {
+                  location.href = "/";
+              } else {
+                  alert("유효하지 않은 ID 또는 Password 입니다. 다시 시도해주십시오.");
+              }
+          }
+        })
+    })
 
 
 })(jQuery);

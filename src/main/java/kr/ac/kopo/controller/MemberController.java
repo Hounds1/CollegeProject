@@ -19,19 +19,21 @@ public class MemberController {
 
     @PostMapping("/new_account")
     public String memberNewAccount(MemberVO memberVO) {
-
         memberService.memberNewAccount(memberVO);
         return "redirect:/";
     }
 
     @PostMapping("/login")
-    public String memberLogin(MemberVO memberVO, HttpSession httpSession) {
+    public @ResponseBody String memberLogin(MemberVO memberVO, HttpSession httpSession ,@RequestParam(value = "memberId", required = true) String memberId,
+                              @RequestParam(value = "memberPass", required = true) String memberPass) {
+        memberVO.setMemberId(memberId);
+        memberVO.setMemberPass(memberPass);
 
         if(memberService.memberLogin(memberVO)) {
             httpSession.setAttribute("member", memberVO);
-            return "redirect:/";
+            return "OK";
         } else
-        return "/member/login_fail";
+            return "Fail";
     }
 
     @GetMapping("/escape")
@@ -55,5 +57,15 @@ public class MemberController {
             return "OK";
         } else
             return "Fail";
+    }
+
+    @GetMapping("/mypage")
+    public String myPage() {
+        return "member/my_page";
+    }
+
+    @GetMapping("/login_not_found")
+    public String loginNotFound() {
+        return "account_control/login_fail";
     }
 }

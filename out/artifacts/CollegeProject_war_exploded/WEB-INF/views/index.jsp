@@ -18,9 +18,9 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-    <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<%--    <!-- Favicons -->--%>
+<%--    <link href="assets/img/favicon.png" rel="icon">--%>
+<%--    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">--%>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -97,6 +97,7 @@
                                 <li><a href="#">React</a></li>
                                 <li><a href="#">Vue.js</a></li>
                                 <li><a href="#">Angular</a></li>
+                                <li><a href="#">Swift</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="#"><span>BackEnd</span> <i class="bi bi-chevron-right"></i></a>
@@ -106,7 +107,6 @@
                                 <li><a href="#">Node.js</a></li>
                                 <li><a href="#">Umm Lang</a></li>
                                 <li><a href="#">Ruby</a></li>
-                                <li><a href="#">Swift</a></li>
                                 <li><a href="#">Kotlin</a></li>
                             </ul>
                         </li>
@@ -121,6 +121,7 @@
                        data-bs-toggle="modal">Sign Up</a></li>
                     </c:when>
                     <c:otherwise>
+                        <li><a class="nav-link" href="/member/mypage">My Page</a></li>
                         <li><a class="nav-link" href="/member/escape">Sign Out</a></li>
                     </c:otherwise>
                 </c:choose>
@@ -595,7 +596,7 @@
 
             <div class="section-title">
                 <h2>Contact</h2>
-                <p>사이트 이용에 문의점이 있다면 언제든지 연락 주세요.</p>
+                <p>사이트 이용에 관련된 사항을 언제든지 문의 주십시오.</p>
             </div>
 
             <div class="row">
@@ -790,13 +791,15 @@
                         <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Java</a></li>
                         <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
                         <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Node.js</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded"></a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Ruby</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Umm Lang</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Kotlin</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Swift</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">JavaScript</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">TypeScript</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">React</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Vue.js</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Angular</a></li>
                     </ul>
                 </div>
             </li>
@@ -864,7 +867,7 @@
 					</span>
 
                     <div class="wrap-input100 validate-input " data-validate="Valid email is: a@b.c">
-                        <input class="input100" type="email" name="memberId">
+                        <input class="input100 login-id-val" type="email" name="memberId">
                         <span class="focus-input100" data-placeholder="Email"></span>
                     </div>
 
@@ -872,15 +875,14 @@
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-                        <input class="input100" type="password" name="memberPass">
+                        <input class="input100 login-pass-val" type="password" name="memberPass">
                         <span class="focus-input100" data-placeholder="Password"></span>
                     </div>
 
-                    <div class="container-login100-form-btn">
+                    <div class="container-login100-form-btn" id="login-submit-btn">
                         <div class="wrap-login100-form-btn">
                             <div class="login100-form-bgbtn"></div>
-                            <button class="login100-form-btn"
-                                    onclick="document.getElementById('signInSubmitHandler').submit();">
+                            <button class="login100-form-btn">
                                 Sign IN
                             </button>
                         </div>
