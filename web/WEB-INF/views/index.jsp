@@ -791,12 +791,14 @@
                         <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
                         <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Node.js</a></li>
                         <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Ruby</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Umm Lang</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Kotlin</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Swift</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">JavaScript</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">TypeScript</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">React</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Vue.js</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Angular</a></li>
                     </ul>
                 </div>
             </li>
