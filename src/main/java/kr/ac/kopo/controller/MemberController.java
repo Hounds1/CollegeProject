@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 
 @Controller
 @RequestMapping("/member")
@@ -68,4 +69,27 @@ public class MemberController {
     public String loginNotFound() {
         return "account_control/login_fail";
     }
+
+    @PostMapping("/info_update")
+    public @ResponseBody String infoUpdate(@RequestParam(value = "memberId", required = false) String memberId ,
+                                           @RequestParam(value = "memberPass",required = false) String memberPass,
+                                           @RequestParam(value = "memberNick", required = false) String memberNick,
+                                           @RequestParam(value = "memberName", required = false) String memberName,
+                                           @RequestParam(value = "memberBirth", required = false) Date memberBirth,
+                                           @RequestParam(value = "memberPhoneNumber", required = false) String memberPhoneNumber,
+                                           @RequestParam(value = "memberAddress", required = false) String memberAddress) {
+        MemberVO newMemberInfo = new MemberVO();
+        newMemberInfo.setMemberId(memberId);
+        newMemberInfo.setMemberPass(memberPass);
+        newMemberInfo.setMemberNick(memberNick);
+        newMemberInfo.setMemberName(memberName);
+        newMemberInfo.setMemberBirth(memberBirth);
+        newMemberInfo.setMemberPhoneNumber(memberPhoneNumber);
+        newMemberInfo.setMemberAddress(memberAddress);
+
+        memberService.memberInfoUpdate(newMemberInfo);
+
+        return "OK";
+    }
+
 }

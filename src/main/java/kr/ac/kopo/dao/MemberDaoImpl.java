@@ -30,4 +30,15 @@ public class MemberDaoImpl implements MemberDao{
     public int nickDuplicateChk(String targetNick) {
         return sqlSession.selectOne("member.nickDuplicateChk", targetNick);
     }
+
+    @Override
+    public String duplicateMemberPass(String dupMemberId) {
+        return sqlSession.selectOne("member.duplicateMemberPass", dupMemberId);
+    }
+
+    @Override
+    public void memberInfoUpdate(MemberVO newMemberInfo) {
+        sqlSession.update("member.memberInfoUpdate", newMemberInfo);
+    }
+
 }

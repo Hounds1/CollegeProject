@@ -10,4 +10,8 @@ public interface MemberDao {
     MemberVO memberLogin(MemberVO memberVO);
 
     int nickDuplicateChk(String targetNick);
+
+    String duplicateMemberPass(String dupMemberId);
+
+    void memberInfoUpdate(MemberVO newMemberInfo);
 }

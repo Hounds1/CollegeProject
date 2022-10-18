@@ -27,7 +27,7 @@
     </header>
 
     <main class="px-3">
-        <h1>Bed Request</h1>
+        <h1>Bad Request</h1>
         <p class="lead">로그인 후 이용해 주십시오.</p>
         <p class="lead">
             <a href="/" class="btn btn-lg btn-secondary fw-bold border-white bg-white text-black">Back to home</a>

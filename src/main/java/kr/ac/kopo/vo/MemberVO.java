@@ -15,4 +15,8 @@ public class MemberVO {
     private String memberSalt;
     private Date memberRegDate;
     private String memberAuthority;
+    private String memberPhoneNumber;
+    private String memberAddress;
+    private Date memberBirth;
+    private String memberName;
 }

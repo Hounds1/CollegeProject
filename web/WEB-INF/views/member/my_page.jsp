@@ -139,11 +139,11 @@
             <div class="row no-gutters">
                 <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="content">
-                        <h3>잠시 읽어주시기 바랍니다.</h3>
+                        <h3>Notice</h3>
                         <p>
-                            다음은 Archivist에서 권장드리는 보안 또는 사용 가이드라인과 관련된 내용들 입니다.
-                            부디 읽어주시고 피해가 발생하지 않도록 함께 노력해주시기 바랍니다.
-                            Archivist는 언제나 유저의 편에 서서 가동하겠습니다.
+                            다음은 Archivist에서 권장 드리는 보안 또는 사용 가이드라인과 관련된 내용들입니다.
+                            부디 읽어주시고 피해가 발생하지 않도록 함께 노력해 주시기 바랍니다.
+                            Archivist는 언제나 유저의 편에서 가동하겠습니다.
                         </p>
                     </div>
                 </div>
@@ -157,18 +157,18 @@
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                                 <i class="bx bx-shield"></i>
-                                <h4>Archivist 현재 보안상 문제없이 가동중 입니다.</h4>
-                                <p>더욱 더 유저님의 개인정보를 다루는데 신중해지겠습니다.</p>
+                                <h4>Archivist 현재 보안상 문제없이 가동 중입니다.</h4>
+                                <p>더욱더 유저님의 개인정보를 다루는데 신중해지겠습니다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                                 <i class="bx bx-notification"></i>
                                 <h4>변경하신 정보를 기억해 주십시오.</h4>
-                                <p>비밀번호 등과 같은 중요한 정보는 기록하기 보다 기억하시길 권장드립니다.</p>
+                                <p>비밀번호 등과 같은 중요한 정보는 기록하기 보다 기억하시길 권장 드립니다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                                 <i class="bx bx-info-square"></i>
                                 <h4>추가적인 정보를 입력해 보십시오.</h4>
-                                <p>추가적인 정보를 입력하고 다양한 혜택을 누려보십시오. Archivist의 개인정보 사용은 내부에서만 진행됩니다.</p>
+                                <p>추가적인 정보를 입력하고 다양한 이벤트를 누려보십시오. Archivist의 개인정보 사용은 내부에서만 진행됩니다.</p>
                             </div>
                         </div>
                     </div><!-- End .content-->
@@ -184,8 +184,8 @@
             <div class="section-title" data-aos="fade-in" data-aos-delay="100">
                 <h2>My page</h2>
                 <p>
-                    이 곳은 당신의 기록을 확인거나 정보를 수정 할 수 있는 공간입니다.<br>
-                    당신의 기록을 확인 해보세요.
+                    이곳은 당신의 기록을 확인거나 정보를 수정할 수 있는 공간입니다.<br>
+                    당신의 기록을 확인해 보세요.
                 </p>
             </div>
 
@@ -193,8 +193,8 @@
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up">
                         <div class="icon"><i class="bi bi-person"></i></div>
-                        <h4 class="title"><a href="#">Profile</a></h4>
-                        <p class="description">변경된 정보를 반영 할 수 있습니다.</p>
+                        <h4 class="title"><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" id="get-member-profile">Profile</a></h4>
+                        <p class="description">변경된 정보를 반영할 수 있습니다.</p>
                     </div>
                 </div>
 
@@ -529,6 +529,58 @@
 </div>
 <!-- Account modal -->
 
+<!-- member information data modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Your Information</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="recipient-id" class="col-form-label">ID:</label>
+                        <input type="text" class="form-control" id="recipient-id" name="memberId" value="${sessionScope.member.memberId}" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-pass" class="col-form-label">Password:</label>
+                        <input type="text" class="form-control" id="recipient-pass" name="memberPass"
+                        placeholder="새 비밀번호를 입력해주세요.">
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-nick" class="col-form-label">Nickname:</label>
+                        <input type="text" class="form-control" id="recipient-nick" name="memberNick" value="${sessionScope.member.memberNick}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="recipient-name" name="memberName" value="${sessionScope.member.memberName}"
+                        placeholder="이름을 입력해 주세요.">
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-birth" class="col-form-label">Birth Day:</label>
+                        <input type="date" class="form-control" id="recipient-birth" name="memberBirth" value="${sessionScope.member.memberBirth}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-phone" class="col-form-label">Call:</label>
+                        <input type="text" class="form-control" id="recipient-phone" name="memberPhoneNum" value="${sessionScope.member.memberPhoneNumber}"
+                        placeholder="전화번호를 입력해 주세요.">
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-address" class="col-form-label">Address:</label>
+                        <input type="text" class="form-control" id="recipient-address" name="memberAddress" value="${sessionScope.member.memberAddress}"
+                        placeholder="주소를 입력해 주세요.">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a class="btn btn-secondary text-white" id="member-info-submit">send</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- member information data modal -->
 
 <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
@@ -563,6 +615,7 @@
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
 <script src="assets/js/sidebars.js"></script>
+<script src="mypage/main.js"></script>
 
 </body>
 

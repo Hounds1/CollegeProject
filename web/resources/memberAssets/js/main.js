@@ -147,7 +147,6 @@
     /*==================================================================
     [login ajax]*/
     $('#login-submit-btn').on('click', function () {
-        console.log("click");
         $.ajax({
           url : "member/login",
           method : "POST",
@@ -164,7 +163,7 @@
               }
           }
         })
-    })
+    });
 
 
 })(jQuery);

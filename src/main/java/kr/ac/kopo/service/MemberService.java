@@ -10,4 +10,6 @@ public interface MemberService {
     boolean memberLogin(MemberVO memberVO);
 
     int nickDuplicateChk(String targetNick);
+
+    void memberInfoUpdate(MemberVO newMemberInfo);
 }

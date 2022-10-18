@@ -12,7 +12,7 @@
 
     <insert id="memberNewAccount">
         insert into member
-            values (NULL, #{memberId}, #{memberNick}, #{memberPass}, #{memberSalt}, now(), #{memberAuthority} )
+            values (NULL, #{memberId}, #{memberNick}, #{memberPass}, #{memberSalt}, now(), #{memberAuthority} , NULL, NULL, NULL, NULL)
     </insert>
 
     <select id="memberLogin" resultType="Member">
@@ -26,4 +26,17 @@
         from member
         where member_nick = #{targetNick}
     </select>
+
+    <select id="duplicateMemberPass">
+        select member_pass
+        from member
+        where member_id = #{dupMemberId}
+    </select>
+
+    <update id="memberInfoUpdate">
+        update member
+            set member_pass = #{memberPass}, member_nick = #{memberNick}, member_name = #{memberName}, member_birth = #{member},
+                member_phone_number = #{memberPhoneNumber}, member_address = #{memberAddress}
+        where member_id = #{memberId}
+    </update>
 </mapper>

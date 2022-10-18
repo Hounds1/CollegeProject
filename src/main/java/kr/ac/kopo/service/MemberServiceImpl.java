@@ -39,6 +39,10 @@ public class MemberServiceImpl implements MemberService{
             memberVO.setMemberRegDate(memberLogin.getMemberRegDate());
             memberVO.setMemberSalt(null);
             memberVO.setMemberAuthority(memberLogin.getMemberAuthority());
+            memberVO.setMemberPhoneNumber(memberLogin.getMemberPhoneNumber());
+            memberVO.setMemberAddress(memberLogin.getMemberAddress());
+            memberVO.setMemberBirth(memberLogin.getMemberBirth());
+            memberVO.setMemberName(memberLogin.getMemberName());
             return true;
         } else
             return false;
@@ -47,5 +51,17 @@ public class MemberServiceImpl implements MemberService{
     @Override
     public int nickDuplicateChk(String targetNick) {
         return memberDao.nickDuplicateChk(targetNick);
+    }
+
+    @Override
+    public void memberInfoUpdate(MemberVO newMemberInfo) {
+        if(newMemberInfo.getMemberPass() == null) {
+            String dupMemberId = newMemberInfo.getMemberId();
+            String dupMemberPass = memberDao.duplicateMemberPass(dupMemberId);
+            newMemberInfo.setMemberPass(dupMemberPass);
+
+            memberDao.memberInfoUpdate(newMemberInfo);
+        } else
+            memberDao.memberInfoUpdate(newMemberInfo);
     }
 }

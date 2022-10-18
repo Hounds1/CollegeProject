@@ -131,10 +131,11 @@
     <resources mapping="/member/memberAssets/vendor/jquery/**" location="/resources/memberAssets/vendor/jquery/"/>
     <resources mapping="/member/memberAssets/vendor/perfect-scrollbar/**" location="/resources/memberAssets/vendor/perfect-scrollbar/"/>
     <resources mapping="/member/memberAssets/vendor/select2/**" location="/resources/memberAssets/vendor/select2/"/>
+    <resources mapping="/member/mypage/**" location="/resources/mypage/"/>
     <!-- account form assets   -->
 
     <!-- member page assets   -->
-
+    
 
     <interceptors>
         <interceptor>
