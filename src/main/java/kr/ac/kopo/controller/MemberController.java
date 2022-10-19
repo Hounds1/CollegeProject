@@ -70,26 +70,30 @@ public class MemberController {
         return "account_control/login_fail";
     }
 
-    @PostMapping("/info_update")
-    public @ResponseBody String infoUpdate(@RequestParam(value = "memberId", required = false) String memberId ,
-                                           @RequestParam(value = "memberPass",required = false) String memberPass,
-                                           @RequestParam(value = "memberNick", required = false) String memberNick,
-                                           @RequestParam(value = "memberName", required = false) String memberName,
-                                           @RequestParam(value = "memberBirth", required = false) Date memberBirth,
-                                           @RequestParam(value = "memberPhoneNumber", required = false) String memberPhoneNumber,
-                                           @RequestParam(value = "memberAddress", required = false) String memberAddress) {
-        MemberVO newMemberInfo = new MemberVO();
-        newMemberInfo.setMemberId(memberId);
-        newMemberInfo.setMemberPass(memberPass);
-        newMemberInfo.setMemberNick(memberNick);
-        newMemberInfo.setMemberName(memberName);
-        newMemberInfo.setMemberBirth(memberBirth);
-        newMemberInfo.setMemberPhoneNumber(memberPhoneNumber);
-        newMemberInfo.setMemberAddress(memberAddress);
+    @PostMapping("/changePassValChk")
+    public @ResponseBody String changePassValChk(@RequestParam(value = "passChangeId") String passChangeId,
+                                                 @RequestParam(value = "passValChk") String passValChk, MemberVO memberVO) {
+        memberVO.setMemberId(passChangeId);
+        memberVO.setMemberPass(passValChk);
 
-        memberService.memberInfoUpdate(newMemberInfo);
+        if(memberService.changePassValChk(memberVO) == 1) {
+            return "OK";
+        } else
+            return "Fail";
+    }
 
-        return "OK";
+    @PostMapping("/changeNewPassVal")
+    public @ResponseBody String changeNewPassVal(@RequestParam(value = "passChangeId") String passChangeId,
+                                                 @RequestParam(value = "newPassVal") String newPassVal, MemberVO memberVO, HttpSession httpSession) {
+        memberVO.setMemberId(passChangeId);
+        memberVO.setMemberPass(newPassVal);
+
+        if(memberService.changeNewPassVal(memberVO) == 1) {
+            httpSession.invalidate();
+            return "OK";
+        } else
+            return "Fail";
+
     }
 
 }

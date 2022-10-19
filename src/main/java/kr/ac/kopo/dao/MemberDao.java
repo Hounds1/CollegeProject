@@ -11,7 +11,8 @@ public interface MemberDao {
 
     int nickDuplicateChk(String targetNick);
 
-    String duplicateMemberPass(String dupMemberId);
 
-    void memberInfoUpdate(MemberVO newMemberInfo);
+    int changePassValChk(MemberVO memberVO);
+
+    int changeNewPassVal(MemberVO memberVO);
 }

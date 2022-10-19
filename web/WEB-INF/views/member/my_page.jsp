@@ -129,7 +129,6 @@
 </header><!-- End Header -->
 
 
-
 <main id="main">
 
     <!-- ======= About Section ======= -->
@@ -192,9 +191,10 @@
             <div class="row">
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up">
-                        <div class="icon"><i class="bi bi-person"></i></div>
-                        <h4 class="title"><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" id="get-member-profile">Profile</a></h4>
-                        <p class="description">변경된 정보를 반영할 수 있습니다.</p>
+                        <div class="icon"><i class="bi bi-pass"></i></div>
+                        <h4 class="title"><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                             id="get-member-profile">Password</a></h4>
+                        <p class="description">비밀번호를 변경하고 보안을 강화하세요.</p>
                     </div>
                 </div>
 
@@ -210,7 +210,7 @@
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
                         <div class="icon"><i class="bi bi-code-square"></i></div>
                         <h4 class="title"><a href="">Update soon</a></h4>
-                        <p class="description">현재 개발 중인 기능입니다.</p>
+                        <p class="description">현재 개발 중인 기능입니다. 곧 출시 될 예정입니다.</p>
                     </div>
                 </div>
 
@@ -218,7 +218,7 @@
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
                         <div class="icon"><i class="bi bi-code-square"></i></div>
                         <h4 class="title"><a href="">Update soon</a></h4>
-                        <p class="description">현재 개발 중인 기능입니다.</p>
+                        <p class="description">현재 개발 중인 기능입니다. 곧 출시 될 예정입니다.</p>
                     </div>
                 </div>
 
@@ -226,7 +226,6 @@
 
         </div>
     </section><!-- End Services Section -->
-
 
 
 </main><!-- End #main -->
@@ -330,19 +329,23 @@
     <div class="offcanvas-body">
         <ul class="list-unstyled ps-0">
             <li class="mb-1">
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
                     Home
                 </button>
                 <div class="collapse show" id="home-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                         <li><a href="/" class="link-dark d-inline-flex text-decoration-none rounded">Index</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Update soon</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Update soon</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Update soon</a>
+                        </li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Update soon</a>
+                        </li>
                     </ul>
                 </div>
             </li>
             <li class="mb-1">
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
                     Boards
                 </button>
                 <div class="collapse" id="dashboard-collapse">
@@ -363,7 +366,8 @@
                 </div>
             </li>
             <li class="mb-1">
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
                     Orders
                 </button>
                 <div class="collapse" id="orders-collapse">
@@ -377,15 +381,18 @@
             </li>
             <c:if test="${sessionScope.member.memberAuthority eq 'Archivist'}">
                 <li class="mb-1">
-                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#admin-collapse" aria-expanded="false">
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                            data-bs-toggle="collapse" data-bs-target="#admin-collapse" aria-expanded="false">
                         Archivist Controls
                     </button>
                     <div class="collapse" id="admin-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                             <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Notice</a></li>
                             <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Board</a></li>
-                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Lang Append</a></li>
-                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Members</a></li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Lang Append</a>
+                            </li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Members</a>
+                            </li>
                         </ul>
                     </div>
                 </li>
@@ -393,14 +400,18 @@
             <c:if test="${not empty sessionScope.member}">
                 <li class="border-top my-3"></li>
                 <li class="mb-1">
-                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                            data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
                             ${sessionScope.member.memberNick}
                     </button>
                     <div class="collapse" id="account-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
-                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
-                            <li><a href="/member/escape" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a>
+                            </li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a>
+                            </li>
+                            <li><a href="/member/escape" class="link-dark d-inline-flex text-decoration-none rounded">Sign
+                                out</a></li>
                         </ul>
                     </div>
                 </li>
@@ -529,58 +540,77 @@
 </div>
 <!-- Account modal -->
 
-<!-- member information data modal -->
+<!-- member password change modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Your Information</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                        <label for="recipient-id" class="col-form-label">ID:</label>
-                        <input type="text" class="form-control" id="recipient-id" name="memberId" value="${sessionScope.member.memberId}" readonly>
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content" style="!important; width:390px;">
+            <div class="wrap-login100">
+                <form class="login100-form validate-form" method="post" action="/member/login"
+                      id="pass-change-form">
+					<span class="login100-form-title p-b-26">
+						Password Change
+					</span>
+                    <span class="login100-form-title p-b-48">
+						<i class="zmdi zmdi-font"></i>
+					</span>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-duplicate-check btn-old-pass-val-chk me-4">
+                            <i class="zmdi zmdi-check"></i>
+                        </span>
+                        <span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+                        <input class="input100 old-pass-val" type="password" name="memberPass">
+                        <span class="focus-input100" data-placeholder="Old Password"></span>
                     </div>
-                    <div class="mb-3">
-                        <label for="recipient-pass" class="col-form-label">Password:</label>
-                        <input type="text" class="form-control" id="recipient-pass" name="memberPass"
-                        placeholder="새 비밀번호를 입력해주세요.">
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+                        <input class="input100 new-pass-val" type="password" name="newMemberPass">
+                        <span class="focus-input100" data-placeholder="New Password"></span>
                     </div>
-                    <div class="mb-3">
-                        <label for="recipient-nick" class="col-form-label">Nickname:</label>
-                        <input type="text" class="form-control" id="recipient-nick" name="memberNick" value="${sessionScope.member.memberNick}">
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-duplicate-check btn-new-pass-val-chk me-4">
+                            <i class="zmdi zmdi-check"></i>
+                        </span>
+                        <span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+                        <input class="input100 new-pass-chk" type="password" name="newMemberPassChk">
+                        <span class="focus-input100" data-placeholder="New Password"></span>
                     </div>
-                    <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label">Name:</label>
-                        <input type="text" class="form-control" id="recipient-name" name="memberName" value="${sessionScope.member.memberName}"
-                        placeholder="이름을 입력해 주세요.">
+
+                    <input type="hidden" class="pass-change-id" value="${sessionScope.member.memberId}">
+
+                    <div class="container-login100-form-btn" id="pass-change-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button class="login100-form-btn change-btn-control" disabled>
+                                Change
+                            </button>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="recipient-birth" class="col-form-label">Birth Day:</label>
-                        <input type="date" class="form-control" id="recipient-birth" name="memberBirth" value="${sessionScope.member.memberBirth}">
-                    </div>
-                    <div class="mb-3">
-                        <label for="recipient-phone" class="col-form-label">Call:</label>
-                        <input type="text" class="form-control" id="recipient-phone" name="memberPhoneNum" value="${sessionScope.member.memberPhoneNumber}"
-                        placeholder="전화번호를 입력해 주세요.">
-                    </div>
-                    <div class="mb-3">
-                        <label for="recipient-address" class="col-form-label">Address:</label>
-                        <input type="text" class="form-control" id="recipient-address" name="memberAddress" value="${sessionScope.member.memberAddress}"
-                        placeholder="주소를 입력해 주세요.">
+
+                    <div class="text-center p-t-115">
+						<span class="txt1">
+							Forgot your password?
+						</span>
+                        <a class="txt2" href="/member/find_pass">
+                            click here
+                        </a>
                     </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <a class="btn btn-secondary text-white" id="member-info-submit">send</a>
-            </div>
         </div>
+
     </div>
 </div>
-<!-- member information data modal -->
+<!-- member password change modal -->
 
 <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="

@@ -32,13 +32,14 @@ public class MemberDaoImpl implements MemberDao{
     }
 
     @Override
-    public String duplicateMemberPass(String dupMemberId) {
-        return sqlSession.selectOne("member.duplicateMemberPass", dupMemberId);
+    public int changePassValChk(MemberVO memberVO) {
+        return sqlSession.selectOne("member.changePassValChk", memberVO);
     }
 
     @Override
-    public void memberInfoUpdate(MemberVO newMemberInfo) {
-        sqlSession.update("member.memberInfoUpdate", newMemberInfo);
+    public int changeNewPassVal(MemberVO memberVO) {
+        return sqlSession.update("member.changeNewPassVal", memberVO);
     }
+
 
 }

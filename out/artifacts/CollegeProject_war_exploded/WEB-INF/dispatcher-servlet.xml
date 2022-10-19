@@ -141,6 +141,7 @@
         <interceptor>
             <mapping path="/board/**"/>
             <mapping path="/member/mypage"/>
+            <mapping path="/member/info_update"/>
 
 
             <beans:bean class="kr.ac.kopo.util.MemberInterceptor"/>

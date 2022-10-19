@@ -11,5 +11,7 @@ public interface MemberService {
 
     int nickDuplicateChk(String targetNick);
 
-    void memberInfoUpdate(MemberVO newMemberInfo);
+    int changePassValChk(MemberVO memberVO);
+
+    int changeNewPassVal(MemberVO memberVO);
 }

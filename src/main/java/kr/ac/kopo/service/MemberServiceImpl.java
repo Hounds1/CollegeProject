@@ -6,6 +6,9 @@ import kr.ac.kopo.vo.MemberVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @Service
 @RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService{
@@ -33,11 +36,12 @@ public class MemberServiceImpl implements MemberService{
         MemberVO memberLogin = memberDao.memberLogin(memberVO);
 
         if(memberLogin != null) {
+            memberVO.setMemberNum(memberLogin.getMemberNum());
             memberVO.setMemberId(memberLogin.getMemberId());
             memberVO.setMemberNick(memberLogin.getMemberNick());
             memberVO.setMemberPass(null);
             memberVO.setMemberRegDate(memberLogin.getMemberRegDate());
-            memberVO.setMemberSalt(null);
+            memberVO.setMemberSalt("dummy");
             memberVO.setMemberAuthority(memberLogin.getMemberAuthority());
             memberVO.setMemberPhoneNumber(memberLogin.getMemberPhoneNumber());
             memberVO.setMemberAddress(memberLogin.getMemberAddress());
@@ -54,14 +58,18 @@ public class MemberServiceImpl implements MemberService{
     }
 
     @Override
-    public void memberInfoUpdate(MemberVO newMemberInfo) {
-        if(newMemberInfo.getMemberPass() == null) {
-            String dupMemberId = newMemberInfo.getMemberId();
-            String dupMemberPass = memberDao.duplicateMemberPass(dupMemberId);
-            newMemberInfo.setMemberPass(dupMemberPass);
-
-            memberDao.memberInfoUpdate(newMemberInfo);
-        } else
-            memberDao.memberInfoUpdate(newMemberInfo);
+    public int changePassValChk(MemberVO memberVO) {
+        PassMaker passMaker = new PassMaker();
+        passMaker.operate(memberVO);
+        return memberDao.changePassValChk(memberVO);
     }
+
+    @Override
+    public int changeNewPassVal(MemberVO memberVO) {
+        PassMaker passMaker = new PassMaker();
+        passMaker.operate(memberVO);
+        return memberDao.changeNewPassVal(memberVO);
+    }
+
+
 }

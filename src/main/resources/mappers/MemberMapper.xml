@@ -27,16 +27,15 @@
         where member_nick = #{targetNick}
     </select>
 
-    <select id="duplicateMemberPass">
-        select member_pass
+    <select id="changePassValChk" resultType="Integer">
+        select count(*)
         from member
-        where member_id = #{dupMemberId}
+        where member_id = #{memberId} and member_pass = #{memberPass}
     </select>
 
-    <update id="memberInfoUpdate">
-        update member
-            set member_pass = #{memberPass}, member_nick = #{memberNick}, member_name = #{memberName}, member_birth = #{member},
-                member_phone_number = #{memberPhoneNumber}, member_address = #{memberAddress}
+    <update id="changeNewPassVal">
+        update member set member_pass = #{memberPass}
         where member_id = #{memberId}
     </update>
+
 </mapper>
