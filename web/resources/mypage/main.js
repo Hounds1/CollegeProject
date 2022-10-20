@@ -63,6 +63,33 @@
                 console.log("error")
             }
         })
-    })
+    });
+
+    /*==================================================================
+    [Member personal information change ajax]*/
+    $('.pi-changer-btn').on('click', function () {
+       $.ajax({
+           url : "/member/personalInfoChange",
+           method : "POST",
+           cache : false,
+           data : {
+               "memberName" : $('#memberName').val(),
+               "memberBirth" : $('#memberBirth').val(),
+               "memberPhoneNumber" : $('#memberPhoneNumber').val(),
+               "memberAddress" : $('#memberAddress').val(),
+               "PIChangeId" : $('#PIChangeId').val(),
+           },
+           success(result) {
+               if(result === "OK") {
+                   alert("변경된 정보를 확인해 주십시오.");
+                   location.href = "/member/mypage";
+               }
+           },
+           error(e) {
+               console.log(e);
+           }
+       })
+    });
+
 
 })(jQuery);

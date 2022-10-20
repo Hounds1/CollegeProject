@@ -15,4 +15,6 @@ public interface MemberDao {
     int changePassValChk(MemberVO memberVO);
 
     int changeNewPassVal(MemberVO memberVO);
+
+    int personalInfoChange(MemberVO memberVO);
 }

@@ -193,8 +193,16 @@
                     <div class="icon-box" data-aos="fade-up">
                         <div class="icon"><i class="bi bi-pass"></i></div>
                         <h4 class="title"><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                             id="get-member-profile">Password</a></h4>
+                                             id="password-changer">Password</a></h4>
                         <p class="description">비밀번호를 변경하고 보안을 강화하세요.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="bi bi-info"></i></div>
+                        <h4 class="title"><a href="#" data-bs-toggle="modal" data-bs-target="#personalModal" id="pi-changer">Personal</a></h4>
+                        <p class="description">추가적인 개인정보를 입력하고 혜택을 누리세요. 의무는 아닙니다.</p>
                     </div>
                 </div>
 
@@ -203,14 +211,6 @@
                         <div class="icon"><i class="bi bi-alarm"></i></div>
                         <h4 class="title"><a href="#">Record</a></h4>
                         <p class="description">당신이 쓴 글을 다시 볼 수 있습니다.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon"><i class="bi bi-code-square"></i></div>
-                        <h4 class="title"><a href="">Update soon</a></h4>
-                        <p class="description">현재 개발 중인 기능입니다. 곧 출시 될 예정입니다.</p>
                     </div>
                 </div>
 
@@ -607,10 +607,47 @@
                 </form>
             </div>
         </div>
-
     </div>
 </div>
 <!-- member password change modal -->
+
+<!-- member personal change modal -->
+<div class="modal fade" id="personalModal" tabindex="-1" aria-labelledby="personalModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Personal Information</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="memberName" class="col-form-label">Name:</label>
+                        <input type="text" class="form-control" id="memberName" placeholder="이름을 입력해 주세요." value="${sessionScope.member.memberName}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="memberBirth" class="col-form-label">Birth Day:</label>
+                        <input type="date" class="form-control" id="memberBirth" placeholder="생일을 선택해 주세요." value="${sessionScope.member.memberBirth}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="memberPhoneNumber" class="col-form-label">Phone Number:</label>
+                        <input type="text" class="form-control" id="memberPhoneNumber" placeholder="전화번호를 입력해 주세요." value="${sessionScope.member.memberPhoneNumber}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="memberAddress" class="col-form-label">Address:</label>
+                        <input type="text" class="form-control" id="memberAddress" placeholder="주소를 입력해 주세요." value="${sessionScope.member.memberAddress}">
+                    </div>
+                    <input type="hidden" id="PIChangeId" name="PIChangeId" value="${sessionScope.member.memberId}">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary pi-changer-btn">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- member personal change modal -->
 
 <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="

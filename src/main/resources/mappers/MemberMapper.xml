@@ -38,4 +38,10 @@
         where member_id = #{memberId}
     </update>
 
+    <update id="personalInfoChange">
+        update member set member_name = #{memberName}, member_birth = #{memberBirth}, member_phone_number = #{memberPhoneNumber},
+            member_address = #{memberAddress}
+        where member_id = #{memberId}
+    </update>
+
 </mapper>
