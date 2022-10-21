@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="backendBoard">
+
+    <select id="getJavaTotal" resultType="Integer">
+        select count(*)
+        from backend_board
+        where content_lang_name = 'Java'
+    </select>
+
+    <select id="getJavaBoard" resultType="BackendBoard">
+        select *
+        from backend_board
+        where content_lang_name = 'Java'
+        order by content_num desc
+        limit ${offset}, ${perPage}
+    </select>
+
+    <insert id="contentUpload">
+        insert into backend_board
+            values (NULL, #{contentTitle}, #{contentDetail}, #{contentUploader}, NOW(), #{contentLangName}, #{contentHit}, #{contentCommentHit})
+    </insert>
+
+    <delete id="contentDelete">
+        delete
+            from backend_board
+            where content_num = #{contentNum}
+    </delete>
+
+</mapper>

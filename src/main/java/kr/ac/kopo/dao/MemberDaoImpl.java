@@ -46,5 +46,15 @@ public class MemberDaoImpl implements MemberDao{
         return sqlSession.update("member.personalInfoChange", memberVO);
     }
 
+    @Override
+    public int getMemberSize() {
+        return sqlSession.selectOne("member.getMemberSize");
+    }
+
+    @Override
+    public int getAdminSize() {
+        return sqlSession.selectOne("member.getAdminSize");
+    }
+
 
 }

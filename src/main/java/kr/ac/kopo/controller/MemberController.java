@@ -20,9 +20,16 @@ public class MemberController {
     private final MemberService memberService;
 
     @PostMapping("/new_account")
-    public String memberNewAccount(MemberVO memberVO) {
+    public @ResponseBody String memberNewAccount(@RequestParam(value = "memberId") String memberId,
+                                                 @RequestParam(value = "memberNick") String memberNick,
+                                                 @RequestParam(value = "memberPass") String memberPass,
+                                                 MemberVO memberVO) {
+        memberVO.setMemberId(memberId);
+        memberVO.setMemberNick(memberNick);
+        memberVO.setMemberPass(memberPass);
+
         memberService.memberNewAccount(memberVO);
-        return "redirect:/";
+        return "OK";
     }
 
     @PostMapping("/login")

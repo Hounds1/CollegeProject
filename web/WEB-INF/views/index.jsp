@@ -102,7 +102,7 @@
                         </li>
                         <li class="dropdown"><a href="#"><span>BackEnd</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
-                                <li><a href="#">Java</a></li>
+                                <li><a href="/board/java">Java</a></li>
                                 <li><a href="#">Python</a></li>
                                 <li><a href="#">Node.js</a></li>
                                 <li><a href="#">Umm Lang</a></li>
@@ -248,7 +248,7 @@
                 <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
                     <div class="count-box">
                         <i class="bi bi-emoji-smile"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="${memberSize}" data-purecounter-duration="1"
                               class="purecounter"></span>
                         <p><strong>명의 이용자가</strong> <br>사이트를 이용하고 있습니다.</p>
                     </div>
@@ -275,7 +275,7 @@
                 <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
                     <div class="count-box">
                         <i class="bi bi-people"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="${adminSize}" data-purecounter-duration="1"
                               class="purecounter"></span>
                         <p><strong>명의 관리자가</strong> <br>활동하고 있습니다.</p>
                     </div>
@@ -788,7 +788,7 @@
                 </button>
                 <div class="collapse" id="dashboard-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Java</a></li>
+                        <li><a href="/board/java" class="link-dark d-inline-flex text-decoration-none rounded">Java</a></li>
                         <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
                         <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Node.js</a></li>
                         <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Ruby</a></li>
@@ -949,8 +949,7 @@
                     <div class="container-login100-form-btn">
                         <div class="wrap-login100-form-btn">
                             <div class="login100-form-bgbtn"></div>
-                            <button type="button" class="login100-form-btn btn-control"
-                                    onclick="document.getElementById('signUpSubmitHandler').submit();" disabled>
+                            <button type="button" class="login100-form-btn btn-control" disabled>
                                 Sign Up
                             </button>
                         </div>
@@ -1004,6 +1003,7 @@
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
 <script src="assets/js/sidebars.js"></script>
+<script src="index/member_form_control.js"></script>
 
 </body>
 

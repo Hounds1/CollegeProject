@@ -76,11 +76,11 @@
     <resources mapping="/memberAssets/vendor/jquery/**" location="/resources/memberAssets/vendor/jquery/"/>
     <resources mapping="/memberAssets/vendor/perfect-scrollbar/**" location="/resources/memberAssets/vendor/perfect-scrollbar/"/>
     <resources mapping="/memberAssets/vendor/select2/**" location="/resources/memberAssets/vendor/select2/"/>
+    <resources mapping="/index/**" location="/resources/index/"/>
     <!-- account form assets   -->
     <!-- index page assets   -->
 
     <!-- member page assets   -->
-
     <resources mapping="/member/assets/js/**" location="/resources/assets/js/"/>
     <resources mapping="/member/assets/css/**" location="/resources/assets/css/"/>
     <resources mapping="/member/images/**" location="/resources/images/"/>
@@ -133,16 +133,68 @@
     <resources mapping="/member/memberAssets/vendor/select2/**" location="/resources/memberAssets/vendor/select2/"/>
     <resources mapping="/member/mypage/**" location="/resources/mypage/"/>
     <!-- account form assets   -->
-
     <!-- member page assets   -->
-    
+
+    <!-- board page assets   -->
+    <resources mapping="/board/assets/js/**" location="/resources/assets/js/"/>
+    <resources mapping="/board/assets/css/**" location="/resources/assets/css/"/>
+    <resources mapping="/board/images/**" location="/resources/images/"/>
+    <resources mapping="/board/assets/img/**" location="/resources/assets/img/"/>
+    <resources mapping="/board/assets/img/portfolio/**" location="/resources/assets/img/portfolio/"/>
+    <resources mapping="/board/assets/img/team/**" location="/resources/assets/img/team/"/>
+    <resources mapping="/board/assets/img/testimonials/**" location="/resources/assets/img/testimonials/"/>
+    <resources mapping="/board/assets/vendor/aos/**" location="/resources/assets/vendor/aos/"/>
+    <resources mapping="/board/assets/vendor/bootstrap/css/**" location="/resources/assets/vendor/bootstrap/css/"/>
+    <resources mapping="/board/assets/vendor/bootstrap/js/**" location="/resources/assets/vendor/bootstrap/js/"/>
+    <resources mapping="/board/assets/vendor/bootstrap-icons/fonts/**" location="/resources/assets/vendor/bootstrap-icons/fonts/"/>
+    <resources mapping="/board/assets/vendor/bootstrap-icons/**" location="/resources/assets/vendor/bootstrap-icons/"/>
+    <resources mapping="/board/assets/vendor/boxicons/css/**" location="/resources/assets/vendor/boxicons/css/"/>
+    <resources mapping="/board/assets/vendor/boxicons/fonts/**" location="/resources/assets/vendor/boxicons/fonts/"/>
+    <resources mapping="/board/assets/vendor/glightbox/css/**" location="/resources/assets/vendor/glightbox/css/"/>
+    <resources mapping="/board/assets/vendor/glightbox/js/**" location="/resources/assets/vendor/glightbox/js/"/>
+    <resources mapping="/board/assets/vendor/isotope-layout/**" location="/resources/assets/vendor/isotope-layout/"/>
+    <resources mapping="/board/assets/vendor/php-email-form/**" location="/resources/assets/vendor/php-email-form/"/>
+    <resources mapping="/board/assets/vendor/purecounter/**" location="/resources/assets/vendor/purecounter/"/>
+    <resources mapping="/board/assets/vendor/swiper/**" location="/resources/assets/vendor/swiper/"/>
+    <!-- index assets   -->
+
+    <!-- account form assets   -->
+    <resources mapping="/board/memberAssets/css/**" location="/resources/memberAssets/css/"/>
+    <resources mapping="/board/memberAssets/fonts/font-awesome-4.7.0/**" location="/resources/memberAssets/fonts/font-awesome-4.7.0/"/>
+    <resources mapping="/board/memberAssets/fonts/font-awesome-4.7.0/css/**" location="/resources/memberAssets/fonts/font-awesome-4.7.0/css/"/>
+    <resources mapping="/board/memberAssets/fonts/font-awesome-4.7.0/fonts/**" location="/resources/memberAssets/fonts/font-awesome-4.7.0/fonts/"/>
+    <resources mapping="/board/memberAssets/fonts/font-awesome-4.7.0/less/**" location="/resources/memberAssets/fonts/font-awesome-4.7.0/less/"/>
+    <resources mapping="/board/memberAssets/fonts/font-awesome-4.7.0/scss/**" location="/resources/memberAssets/fonts/font-awesome-4.7.0/scss/"/>
+    <resources mapping="/board/memberAssets/fonts/iconic/**" location="/resources/memberAssets/fonts/iconic/"/>
+    <resources mapping="/board/memberAssets/fonts/iconic/css/**" location="/resources/memberAssets/fonts/iconic/css/"/>
+    <resources mapping="/board/memberAssets/fonts/iconic/fonts/**" location="/resources/memberAssets/fonts/iconic/fonts/"/>
+    <resources mapping="/board/memberAssets/fonts/poppins/**" location="/resources/memberAssets/fonts/poppins/"/>
+    <resources mapping="/board/memberAssets/images/**" location="/resources/memberAssets/images/"/>
+    <resources mapping="/board/memberAssets/images/icons/**" location="/resources/memberAssets/images/icons/"/>
+    <resources mapping="/board/memberAssets/js/**" location="/resources/memberAssets/js/"/>
+    <resources mapping="/board/memberAssets/vendor/**" location="/resources/memberAssets/vendor/"/>
+    <resources mapping="/board/memberAssets/vendor/animate/**" location="/resources/memberAssets/vendor/animate/"/>
+    <resources mapping="/board/memberAssets/vendor/animsition/**" location="/resources/memberAssets/vendor/animsition/"/>
+    <resources mapping="/board/memberAssets/vendor/animsition/css/**" location="/resources/memberAssets/vendor/animsition/css/"/>
+    <resources mapping="/board/memberAssets/vendor/animsition/js/**" location="/resources/memberAssets/vendor/animsition/js/"/>
+    <resources mapping="/board/memberAssets/vendor/bootstrap/**" location="/resources/memberAssets/vendor/bootstrap/"/>
+    <resources mapping="/board/memberAssets/vendor/bootstrap/css/**" location="/resources/memberAssets/vendor/bootstrap/css/"/>
+    <resources mapping="/board/memberAssets/vendor/bootstrap/js/**" location="/resources/memberAssets/vendor/bootstrap/js/"/>
+    <resources mapping="/board/memberAssets/vendor/countdowntime/**" location="/resources/memberAssets/vendor/countdowntime/"/>
+    <resources mapping="/board/memberAssets/vendor/css-hamburgers/**" location="/resources/memberAssets/vendor/css-hamburgers/"/>
+    <resources mapping="/board/memberAssets/vendor/daterangepicker/**" location="/resources/memberAssets/vendor/daterangepicker/"/>
+    <resources mapping="/board/memberAssets/vendor/jquery/**" location="/resources/memberAssets/vendor/jquery/"/>
+    <resources mapping="/board/memberAssets/vendor/perfect-scrollbar/**" location="/resources/memberAssets/vendor/perfect-scrollbar/"/>
+    <resources mapping="/board/memberAssets/vendor/select2/**" location="/resources/memberAssets/vendor/select2/"/>
+    <resources mapping="/board/summernote/font/**" location="/resources/summernote/font/"/>
+    <resources mapping="/board/summernote/**" location="/resources/summernote/"/>
+    <resources mapping="/board/backendboard/**" location="/resources/backendboard/"/>
+    <!-- board page assets   -->
 
     <interceptors>
         <interceptor>
-            <mapping path="/board/**"/>
             <mapping path="/member/mypage"/>
             <mapping path="/member/info_update"/>
-
 
             <beans:bean class="kr.ac.kopo.util.MemberInterceptor"/>
         </interceptor>
