@@ -214,7 +214,7 @@
                                 <fmt:formatDate value="${list.contentRegDate}" pattern="yyyy-MM-dd"/></p>
                             <p class="description">
                                 <c:if test="${list.contentUploader eq sessionScope.member.memberNick}">
-                                    <a href="/board/edit/${list.contentNum}">수정</a>
+                                    <a class="content-editor-call" id="${list.contentNum}" href="#" data-bs-toggle="modal" data-bs-target="#content-edit-modal">수정</a>
                                     <a href="/board/delete/${list.contentNum}">삭제</a>
                                 </c:if>
                             </p>
@@ -572,13 +572,13 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="/board/upload" method="post" id="content-upload-form" accept-charset="UTF-8">
+                <form action="/board/upload" method="post" id="content-upload-form">
                     <div class="mb-3">
                         <label for="recipient-title" class="col-form-label">Title:</label>
                         <input type="text" class="form-control" id="recipient-title" name="contentTitle">
                     </div>
 
-                    <textarea id="summernote" name="contentDetail"></textarea>
+                    <textarea class="summernote" name="contentDetail"></textarea>
 
                     <input type="hidden" value="${sessionScope.member.memberNick}" name="contentUploader">
                     <input type="hidden" value="Java" name="contentLangName">
@@ -593,6 +593,34 @@
 </div>
 
 <!-- Contents send modal -->
+
+<!-- Contents edit modal -->
+<!-- Modal -->
+<div class="modal modal-xl fade" id="content-edit-modal" tabindex="-1" aria-labelledby="content-edit-modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="contentEditModalLabel">Upload Content</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/board/upload" method="post" id="content-edit-form">
+                    <div class="mb-3">
+                        <label for="editor-title" class="col-form-label">Title:</label>
+                        <input type="text" class="form-control" id="editor-title" name="contentTitle">
+                    </div>
+                    <textarea class="summernote" id="editor-summernote" name="contentDetail"></textarea>
+                    <input type="hidden" id="editor-targetNum">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" id="editor-submit-btn">Edit Content</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contents edit modal -->
 
 <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
@@ -631,6 +659,7 @@
 <script src="assets/js/sidebars.js"></script>
 <script src="backendboard/summernote.js"></script>
 <script src="backendboard/member_form_control.js"></script>
+<script src="backendboard/backendboard_content_control.js"></script>
 </body>
 
 </html>

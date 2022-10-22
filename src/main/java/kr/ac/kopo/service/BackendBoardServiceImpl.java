@@ -3,9 +3,11 @@ package kr.ac.kopo.service;
 import kr.ac.kopo.dao.BackendBoardDao;
 import kr.ac.kopo.util.Pager;
 import kr.ac.kopo.vo.BackendBoardVO;
+import kr.ac.kopo.vo.MemberVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -34,4 +36,16 @@ public class BackendBoardServiceImpl implements BackendBoardService {
     public void contentDelete(int contentNum) {
         backendBoardDao.contentDelete(contentNum);
     }
+
+    @Override
+    public BackendBoardVO contentEditor(int targetNum) {
+        return backendBoardDao.contentEditor(targetNum);
+    }
+
+    @Override
+    public int contentUpdate(BackendBoardVO backendBoardVO) {
+        return backendBoardDao.contentUpdate(backendBoardVO);
+    }
+
+
 }

@@ -13,4 +13,9 @@ public interface BackendBoardDao {
     void contentDelete(int contentNum);
 
     int getJavaTotal(Pager pager);
+
+
+    BackendBoardVO contentEditor(int targetNum);
+
+    int contentUpdate(BackendBoardVO backendBoardVO);
 }

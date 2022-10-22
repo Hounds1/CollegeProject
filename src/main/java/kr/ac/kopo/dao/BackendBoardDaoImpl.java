@@ -34,4 +34,15 @@ public class BackendBoardDaoImpl implements BackendBoardDao{
     public int getJavaTotal(Pager pager) {
         return sqlSession.selectOne("backendBoard.getJavaTotal", pager);
     }
+
+    @Override
+    public BackendBoardVO contentEditor(int targetNum) {
+        return sqlSession.selectOne("backendBoard.contentEditor", targetNum);
+    }
+
+    @Override
+    public int contentUpdate(BackendBoardVO backendBoardVO) {
+        return sqlSession.update("backendBoard.contentUpdate", backendBoardVO);
+    }
+
 }

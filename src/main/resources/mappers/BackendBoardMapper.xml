@@ -29,4 +29,16 @@
             where content_num = #{contentNum}
     </delete>
 
+    <select id="contentEditor" resultType="BackendBoard">
+        select content_num ,content_title, content_detail
+        from backend_board
+        where content_num = #{targetId}
+    </select>
+
+    <update id="contentUpdate" parameterType="BackendBoard">
+        update backend_board
+            set content_title = #{contentTitle}, content_detail = #{contentDetail}
+        where content_num = #{contentNum}
+    </update>
+
 </mapper>
