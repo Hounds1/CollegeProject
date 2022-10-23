@@ -191,6 +191,9 @@
     <resources mapping="/board/backendboard/**" location="/resources/backendboard/"/>
     <!-- board page assets   -->
 
+    <resources mapping="/board/javaDetail/**" location="/resources/"/>
+    <resources mapping="/loadImg/**" location="file:///D://test/upload/"/>
+
     <interceptors>
         <interceptor>
             <mapping path="/member/mypage"/>
@@ -202,12 +205,12 @@
 
 
     <!-- MultipartResolver   -->
-    <!--    <beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
+        <beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 
-    <!--        <beans:property name="maxUploadSize" value="10485760" />-->
-    <!--        <beans:property name="defaultEncoding" value="utf-8" />-->
+            <beans:property name="maxUploadSize" value="10485760" />
+            <beans:property name="defaultEncoding" value="utf-8" />
 
-    <!--    </beans:bean>-->
+        </beans:bean>
     <!--    필요하면 부활 시키셈. -->
 
 

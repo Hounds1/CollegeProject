@@ -1,13 +1,18 @@
 package kr.ac.kopo.service;
 
 import kr.ac.kopo.dao.BackendBoardDao;
+import kr.ac.kopo.dao.BackendBoardFileDao;
+import kr.ac.kopo.util.MultipartBinder;
 import kr.ac.kopo.util.Pager;
+import kr.ac.kopo.vo.BackendBoardFileVO;
 import kr.ac.kopo.vo.BackendBoardVO;
-import kr.ac.kopo.vo.MemberVO;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -15,6 +20,8 @@ import java.util.List;
 public class BackendBoardServiceImpl implements BackendBoardService {
 
     private final BackendBoardDao backendBoardDao;
+
+    private final BackendBoardFileDao backendBoardFileDao;
 
     @Override
     public List<BackendBoardVO> getJavaBoard(Pager pager) {
@@ -26,10 +33,18 @@ public class BackendBoardServiceImpl implements BackendBoardService {
     }
 
     @Override
+    @Transactional
     public void contentUpload(BackendBoardVO backendBoardVO) {
         backendBoardVO.setContentHit(0);
         backendBoardVO.setContentCommentHit(0);
+
         backendBoardDao.contentUpload(backendBoardVO);
+
+        for(BackendBoardFileVO fileVO : backendBoardVO.getFiles()) {
+            fileVO.setContentNum(backendBoardVO.getContentNum());
+
+            backendBoardFileDao.filesUpload(fileVO);
+        }
     }
 
     @Override
@@ -45,6 +60,12 @@ public class BackendBoardServiceImpl implements BackendBoardService {
     @Override
     public int contentUpdate(BackendBoardVO backendBoardVO) {
         return backendBoardDao.contentUpdate(backendBoardVO);
+    }
+
+    @Override
+    public BackendBoardVO detailView(int contentNum) {
+        backendBoardDao.contentHitter(contentNum);
+        return backendBoardDao.detailView(contentNum);
     }
 
 

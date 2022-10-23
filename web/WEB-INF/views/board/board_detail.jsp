@@ -87,8 +87,8 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a class="nav-link scrollto" href="/">Home</a></li>
-                <li><a class="nav-link scrollto" href="#java">Java</a></li>
-                <li><a class="nav-link scrollto" href="#java-contents">Contents</a></li>
+                <li><a class="nav-link scrollto" href="#content-header">Head Line</a></li>
+                <li><a class="nav-link scrollto" href="#content-detail">Details</a></li>
                 <li class="dropdown"><a href="#"><span>Boards</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li class="dropdown"><a href="#"><span>FrontEnd</span> <i class="bi bi-chevron-right"></i></a>
@@ -135,18 +135,18 @@
 <main id="main">
 
     <!-- ======= About Section ======= -->
-    <section id="java" class="about">
+    <section id="content-header" class="about">
         <div class="container">
 
             <div class="row no-gutters">
                 <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="content">
-                        <h3>Java</h3>
+                        <h3>${contentDetail.contentTitle}</h3>
                         <p>
-                            이 곳은 Java와 관련된 질문이나 토론을 할 수 있는 게시판입니다.
-                            코드를 공유하거나 질문 해보세요.<br>
-                            <a class="btn btn-secondary mt-1" href="#" data-bs-toggle="modal"
-                               data-bs-target="#content-upload-modal"><i class="bi bi-pencil"></i> 작성하기</a>
+                            게시일 : <fmt:formatDate value="${contentDetail.contentRegDate}" pattern="yyyy-MM-dd"/> <br>
+                            <a class="btn btn-secondary mt-1 content-editor-call" href="#" data-bs-toggle="modal"
+                               data-bs-target="#content-edit-modal" id="${contentDetail.contentNum}"><i class="bi bi-pencil"></i> 수정하기</a>
+                            <a class="btn btn-secondary mt-1 ms-1" href="/board/delete/${contentDetail.contentNum}">삭제</a>
                         </p>
                     </div>
                 </div>
@@ -154,24 +154,26 @@
                     <div class="icon-boxes d-flex flex-column justify-content-center">
                         <div class="row">
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                                <i class="bx bxl-java"></i>
-                                <h4>OOP</h4>
-                                <p>객체 지향 방법론을 사용해야 한다.</p>
+                                <i class="bx bx-upload"></i>
+                                <h4>${contentDetail.contentUploader} <c:if test="${contentDetail.contentUploader eq sessionScope.member.memberNick}">(me)</c:if></h4>
+                                <p>by uploaded.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                                <i class="bx bx-windows"></i>
-                                <h4>Running</h4>
-                                <p>같은 프로그램(바이트코드)이 여러 운영 체제(마이크로프로세서)에서 실행될 수 있어야 한다.</p>
+                                <i class="bx bxl-java"></i>
+                                <h4>${contentDetail.contentLangName}</h4>
+                                <p>contents language name.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                                <i class="bx bx-network-chart"></i>
-                                <h4>Network</h4>
-                                <p>컴퓨터 네트워크 접근 기능이 기본으로 탑재되어 있어야 한다.</p>
+                                <i class="bi bi-person"></i>
+                                <h4><span data-purecounter-start="0" data-purecounter-end="${contentDetail.contentHit}" data-purecounter-duration="1"
+                                          class="purecounter"></span></h4>
+                                <p>contents hits</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-                                <i class="bx bx-file"></i>
-                                <h4>Positive</h4>
-                                <p>다른 객체 지향 언어들의 좋은 부분만 가지고 와서 사용하기 편해야 한다.</p>
+                                <i class="bi bi-pencil"></i>
+                                <h4><span data-purecounter-start="0" data-purecounter-end="${contentDetail.contentCommentHit}" data-purecounter-duration="1"
+                                          class="purecounter"></span></h4>
+                                <p>comments hit</p>
                             </div>
                         </div>
                     </div><!-- End .content-->
@@ -181,68 +183,19 @@
     </section><!-- End About Section -->
 
     <!-- ======= Contents Section ======= -->
-    <section id="java-contents" class="services mb-5">
+    <section id="content-detail" class="services mb-5">
         <div class="container">
             <div class="section-title" data-aos="fade-in" data-aos-delay="100">
-                <h2>Contents</h2>
-                <div class="d-flex justify-content-center">
-                    <div class="input-group mb-3 me-1" style="width: 625px;">
-                        <select class="form-select" id="inputGroupSelect04"
-                                aria-label="Example select with button addon">
-                            <option selected>선택</option>
-                            <option value="1">제목</option>
-                            <option value="2">내용</option>
-                            <option value="3">작성자</option>
-                        </select>
-                        <input type="text" class="form-control" placeholder="검색어를 입력해주세요." aria-label="검색어를 입력해주세요."
-                               aria-describedby="button-addon2">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">검색</button>
-                    </div>
+                <h2>Contents Details</h2>
+            </div>
+
+
+            <div class="row border border-secondary rounded-3 text-center" data-aos="fade-in" data-aos-delay="200">
+                <div style="padding: 30px;">
+                    ${contentDetail.contentDetail}
                 </div>
             </div>
 
-
-            <div class="row">
-                <c:forEach var="list" items="${list}">
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100"
-                             style="width: 294.8px; height: 220.8px">
-                            <div class="icon"><i class="bi bi-code-square"></i></div>
-                            <h4 class="title" style="width: 230px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">
-                                <a href="/board/javaDetail/${list.contentNum}">${list.contentTitle}</a>
-                            </h4>
-                            <p class="description">${list.contentUploader} <br>
-                                <fmt:formatDate value="${list.contentRegDate}" pattern="yyyy-MM-dd"/>
-                            </p>
-                        </div>
-                    </div>
-                </c:forEach>
-            </div>
-            <div class="pagination-wrap mt-5 d-flex justify-content-center">
-                <nav aria-label="Page navigation">
-                    <ul class="pagination">
-                        <li class="page-item"><a class="page-link" href="?page=1">처음</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="?page=${pager.prev}" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <c:forEach var="page" items="${pager.list}">
-                        <li class="page-item">
-                            <a class="page-link ${page eq pager.page ? 'active' : ''}" href="?page=${page}">${page}</a>
-                        </li>
-                        </c:forEach>
-                        <li class="page-item">
-                            <a class="page-link" href="?page=${pager.next}" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="?page=${pager.last}">마지막</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
         </div>
     </section><!-- End Contents Section -->
 </main>
@@ -558,44 +511,33 @@
 </div>
 <!-- Account modal -->
 
-<!-- Contents send modal -->
+<!-- Contents edit modal -->
 <!-- Modal -->
-<div class="modal modal-xl fade" id="content-upload-modal" tabindex="-1" aria-labelledby="content-upload-modalLabel" aria-hidden="true">
+<div class="modal modal-xl fade" id="content-edit-modal" tabindex="-1" aria-labelledby="content-edit-modalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Upload Content</h1>
+                <h1 class="modal-title fs-5" id="contentEditModalLabel">Upload Content</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="/board/upload" method="post" id="content-upload-form" enctype="multipart/form-data">
+                <form>
                     <div class="mb-3">
-                        <label for="recipient-title" class="col-form-label">Title:</label>
-                        <input type="text" class="form-control" id="recipient-title" name="contentTitle">
+                        <label for="editor-title" class="col-form-label">Title:</label>
+                        <input type="text" class="form-control" id="editor-title" name="contentTitle">
                     </div>
-
-                    <textarea class="summernote" id="content-upload-detail" name="contentDetail"></textarea>
-
-                    <div class="input-group mt-3">
-                        <input type="file" class="form-control" name="file">
-                    </div>
-
-                    <div class="input-group mt-3">
-                        <input type="file" class="form-control" name="file">
-                    </div>
-                    <input type="hidden" id="content-upload-loader" value="${sessionScope.member.memberNick}" name="contentUploader">
-                    <input type="hidden" id="content-lang" value="Java" name="contentLangName">
+                    <textarea class="summernote" id="editor-summernote" name="contentDetail"></textarea>
+                    <input type="hidden" id="editor-targetNum" value="${contentDetail.contentNum}">
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-secondary" onclick="document.getElementById('content-upload-form').submit();">Send Content</button>
+                <button type="button" class="btn btn-secondary" id="editor-submit-btn">Edit Content</button>
             </div>
         </div>
     </div>
 </div>
-
-<!-- Contents send modal -->
+<!-- Contents edit modal -->
 
 <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
@@ -632,7 +574,7 @@
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
 <script src="assets/js/sidebars.js"></script>
-<script src="backendboard/summernote.js"></script>
+<script src="backendboard/content_detail_summernote.js"></script>
 <script src="backendboard/member_form_control.js"></script>
 <script src="backendboard/backendboard_content_control.js"></script>
 </body>

@@ -2,7 +2,7 @@
     "use strict";
 
     /*==================================================================
-    [ Content upload ajax]*/
+    [ Content Editor ajax]*/
 
     $('.content-editor-call').on('click', function (e) {
         let targetNum = e.target.id;
@@ -29,6 +29,9 @@
         });
     });
 
+    /*==================================================================
+    [ Content update ajax]*/
+
    $('#editor-submit-btn').on('click', function () {
        $.ajax({
            url: "/board/update",
@@ -40,7 +43,7 @@
            },
            success(result) {
                if(result === "OK") {
-                   location.href = "/board/java";
+                   location.href = window.location.href;
                }
            },
            error() {
@@ -48,5 +51,6 @@
            }
        });
    });
+
 
 })(jQuery);

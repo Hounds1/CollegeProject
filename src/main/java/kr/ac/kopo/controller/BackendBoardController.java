@@ -1,15 +1,29 @@
 package kr.ac.kopo.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import kr.ac.kopo.service.BackendBoardService;
+import kr.ac.kopo.util.MultipartBinder;
 import kr.ac.kopo.util.Pager;
+import kr.ac.kopo.vo.BackendBoardFileVO;
 import kr.ac.kopo.vo.BackendBoardVO;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.io.FileUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.UUID;
 
 @Controller
 @RequiredArgsConstructor
@@ -17,6 +31,8 @@ import java.util.List;
 public class BackendBoardController {
 
     private final BackendBoardService boardService;
+
+    final String path = "D://test/upload/";
 
     @GetMapping("/java")
     public String getJavaBoard(Model model, Pager pager) {
@@ -26,9 +42,29 @@ public class BackendBoardController {
     }
 
     @PostMapping("/upload")
-    public String contentUpload(BackendBoardVO backendBoardVO) {
-        boardService.contentUpload(backendBoardVO);
-        return "redirect:java";
+    public  String contentUpload(BackendBoardVO backendBoardVO) {
+
+        try {
+            List<BackendBoardFileVO> list = new ArrayList<BackendBoardFileVO>();
+
+            for(MultipartFile file : backendBoardVO.getFile()) {
+                if(file != null && !file.isEmpty()) {
+                    String fileName = file.getOriginalFilename();
+
+                    file.transferTo(new File(path + fileName));
+
+                    BackendBoardFileVO fileVO = new BackendBoardFileVO();
+                    fileVO.setFileName(fileName);
+
+                    list.add(fileVO);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return "redirect:/board/java";
+//        나중에 return 값 수정할 것.
     }
 
     @RequestMapping("/delete/{contentNum}")
@@ -55,7 +91,15 @@ public class BackendBoardController {
             return "OK";
         } else
             return "Fail";
+    }
 
+    @GetMapping("/javaDetail/{contentNum}")
+    public String detailView(@PathVariable int contentNum, Model model) {
+        BackendBoardVO backendBoardVO = new BackendBoardVO();
+        backendBoardVO = boardService.detailView(contentNum);
 
+        model.addAttribute("contentDetail",backendBoardVO);
+
+        return "/board/board_detail";
     }
 }

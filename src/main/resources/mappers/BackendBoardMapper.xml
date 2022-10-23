@@ -20,7 +20,12 @@
 
     <insert id="contentUpload">
         insert into backend_board
-            values (NULL, #{contentTitle}, #{contentDetail}, #{contentUploader}, NOW(), #{contentLangName}, #{contentHit}, #{contentCommentHit})
+            (content_title, content_detail, content_uploader, content_reg_date, content_lang_name, content_hit, content_comment_hit)
+            values (#{contentTitle}, #{contentDetail}, #{contentUploader}, NOW(), #{contentLangName}, #{contentHit}, #{contentCommentHit} )
+
+        <selectKey keyProperty="contentNum" resultType="Integer" order="AFTER">
+            select LAST_INSERT_ID()
+        </selectKey>
     </insert>
 
     <delete id="contentDelete">
@@ -41,4 +46,15 @@
         where content_num = #{contentNum}
     </update>
 
+    <select id="detailView" resultType="BackendBoard">
+        select *
+        from backend_board
+        where content_num = #{contentNum}
+    </select>
+
+    <update id="contentHitter">
+        update backend_board
+            set content_hit = content_hit+1
+        where content_num = #{contentNum}
+    </update>
 </mapper>

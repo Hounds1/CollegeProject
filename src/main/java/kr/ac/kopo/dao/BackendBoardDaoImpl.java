@@ -1,6 +1,7 @@
 package kr.ac.kopo.dao;
 
 import kr.ac.kopo.util.Pager;
+import kr.ac.kopo.vo.BackendBoardFileVO;
 import kr.ac.kopo.vo.BackendBoardVO;
 import lombok.RequiredArgsConstructor;
 import org.apache.ibatis.session.SqlSession;
@@ -11,9 +12,10 @@ import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
-public class BackendBoardDaoImpl implements BackendBoardDao{
+public class BackendBoardDaoImpl implements BackendBoardDao {
 
     private final SqlSession sqlSession;
+
     @Override
     public List<BackendBoardVO> getJavaBoard(Pager pager) {
 
@@ -27,6 +29,7 @@ public class BackendBoardDaoImpl implements BackendBoardDao{
 
     @Override
     public void contentDelete(int contentNum) {
+
         sqlSession.delete("backendBoard.contentDelete", contentNum);
     }
 
@@ -44,5 +47,16 @@ public class BackendBoardDaoImpl implements BackendBoardDao{
     public int contentUpdate(BackendBoardVO backendBoardVO) {
         return sqlSession.update("backendBoard.contentUpdate", backendBoardVO);
     }
+
+    @Override
+    public BackendBoardVO detailView(int contentNum) {
+        return sqlSession.selectOne("backendBoard.detailView", contentNum);
+    }
+
+    @Override
+    public void contentHitter(int contentNum) {
+        sqlSession.update("backendBoard.contentHitter", contentNum);
+    }
+
 
 }
