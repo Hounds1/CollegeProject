@@ -51,7 +51,6 @@ public class BackendBoardController {
             if(paramFile != null && !paramFile.isEmpty()) {
                String fileName = binder.operate(paramFile);
 
-
                BackendBoardFileVO fileVO = new BackendBoardFileVO();
                fileVO.setFileName(fileName);
 

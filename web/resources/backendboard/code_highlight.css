@@ -1,0 +1,85 @@
+pre code{
+    color: #fff;word-break: break-all;
+
+    order: 3;
+
+    width: 100%;
+
+    padding: 7px;
+
+    line-height: 43px;
+
+    overflow-x: auto;
+
+    position: relative;
+}
+
+pre:before,pre:after {
+    z-index: 5;
+    top: -30px;
+    position: absolute;
+}
+
+pre:after{
+
+    left:5px;
+    content: '★';
+    color: gold;
+    transform-origin: center center;
+    display: inline-block;
+    -webkit-animation: starstar 3s linear infinite;
+}
+
+pre:before {
+    content: ' 'attr(data-ke-language);
+    background: #000;
+    height: 30px;
+    color: #fff;
+    width: 100%;
+}
+
+pre {
+    margin:50px 0 20px 0;
+    position: relative;
+
+    min-height: 56px;
+
+    color: #fff;
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+
+    width: 100%;
+    background: #272822;
+
+    -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;
+}
+
+pre code .string {
+    color:#A1E46D;
+}
+pre code .special {
+    color:#D6665D;
+}
+pre code .special-js {
+    color:#6DE4D1;
+}
+pre code .special-js-glob {
+    color:#A1E46D;
+    font-weight:bold;
+}
+pre code .special-comment{
+    color:#aaa;
+}
+pre code .special-js-meth {
+    color:#E46D8A;
+}
+pre code .special-html {
+    color:#E4D95F;
+}
+pre code .special-sql {
+    color:#1D968C;
+}
+pre code .special-php{
+    color:#597EA7;
+}

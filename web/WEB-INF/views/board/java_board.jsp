@@ -70,7 +70,7 @@
     <!-- include codemirror (codemirror.css, codemirror.js, xml.js, formatting.js) -->
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.css">
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/theme/monokai.css">
-
+    <link rel="stylesheet" type="text/css" href="backendboard/code_highlight.css">
 
 </head>
 
@@ -645,6 +645,7 @@
 <script src="backendboard/summernote.js"></script>
 <script src="backendboard/member_form_control.js"></script>
 <script src="backendboard/backendboard_content_control.js"></script>
+<script src="backendboard/code_highlight.js"></script>
 </body>
 
 </html>
