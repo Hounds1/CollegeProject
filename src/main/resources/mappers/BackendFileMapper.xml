@@ -7,8 +7,8 @@
 
     <insert id="filesUpload">
         insert into backend_board_file
-            (file_name, content_num)
-            values (#{fileName}, #{contentNum})
+            (file_name, target_content_num)
+            values (#{fileName}, #{targetContentNum})
     </insert>
 
 </mapper>

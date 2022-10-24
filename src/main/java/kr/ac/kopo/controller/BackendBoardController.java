@@ -9,6 +9,7 @@ import kr.ac.kopo.util.MultipartBinder;
 import kr.ac.kopo.util.Pager;
 import kr.ac.kopo.vo.BackendBoardFileVO;
 import kr.ac.kopo.vo.BackendBoardVO;
+import kr.ac.kopo.vo.MemberVO;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.io.FileUtils;
 import org.springframework.stereotype.Controller;
@@ -42,26 +43,25 @@ public class BackendBoardController {
     }
 
     @PostMapping("/upload")
-    public  String contentUpload(BackendBoardVO backendBoardVO) {
+    public String contentUpload(BackendBoardVO content) {
 
-        try {
-            List<BackendBoardFileVO> list = new ArrayList<BackendBoardFileVO>();
+        List<BackendBoardFileVO> list = new ArrayList<BackendBoardFileVO>();
+        MultipartBinder binder = new MultipartBinder();
+        for(MultipartFile paramFile : content.getParamFiles()) {
+            if(paramFile != null && !paramFile.isEmpty()) {
+               String fileName = binder.operate(paramFile);
 
-            for(MultipartFile file : backendBoardVO.getFile()) {
-                if(file != null && !file.isEmpty()) {
-                    String fileName = file.getOriginalFilename();
 
-                    file.transferTo(new File(path + fileName));
+               BackendBoardFileVO fileVO = new BackendBoardFileVO();
+               fileVO.setFileName(fileName);
 
-                    BackendBoardFileVO fileVO = new BackendBoardFileVO();
-                    fileVO.setFileName(fileName);
-
-                    list.add(fileVO);
-                }
+               list.add(fileVO);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
+
+        content.setParamFileList(list);
+
+        boardService.contentUpload(content);
 
         return "redirect:/board/java";
 //        나중에 return 값 수정할 것.

@@ -34,17 +34,16 @@ public class BackendBoardServiceImpl implements BackendBoardService {
 
     @Override
     @Transactional
-    public void contentUpload(BackendBoardVO backendBoardVO) {
-        backendBoardVO.setContentHit(0);
-        backendBoardVO.setContentCommentHit(0);
+    public void contentUpload(BackendBoardVO content) {
 
-        backendBoardDao.contentUpload(backendBoardVO);
+        backendBoardDao.contentUpload(content);
 
-        for(BackendBoardFileVO fileVO : backendBoardVO.getFiles()) {
-            fileVO.setContentNum(backendBoardVO.getContentNum());
+        for (BackendBoardFileVO fileVO : content.getParamFileList()) {
+            fileVO.setTargetContentNum(content.getContentNum());
 
             backendBoardFileDao.filesUpload(fileVO);
         }
+
     }
 
     @Override

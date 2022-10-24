@@ -192,7 +192,13 @@
 
             <div class="row border border-secondary rounded-3 text-center" data-aos="fade-in" data-aos-delay="200">
                 <div style="padding: 30px;">
-                    ${contentDetail.contentDetail}
+                    <c:forEach var="img" items="${contentDetail.paramFileList}">
+                        <img src="/loadImg/${img.fileName}">
+                    </c:forEach>
+
+                    <div class="mt-3">
+                        ${contentDetail.contentDetail}
+                    </div>
                 </div>
             </div>
 

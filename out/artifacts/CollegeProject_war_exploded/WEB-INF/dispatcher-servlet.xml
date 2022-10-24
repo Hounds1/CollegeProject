@@ -12,7 +12,7 @@
     <annotation-driven/>
 
     <!-- 스캔할 bean들이 모여있는 패키지를 지정한다. -->
-    <context:component-scan base-package="kr.ac.kopo"/>
+    <context:component-scan base-package="kr.ac.kopo.*"/>
 
     <tx:annotation-driven/>
 
@@ -205,12 +205,10 @@
 
 
     <!-- MultipartResolver   -->
-        <beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-
-            <beans:property name="maxUploadSize" value="10485760" />
-            <beans:property name="defaultEncoding" value="utf-8" />
-
-        </beans:bean>
+    <beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <beans:property name="maxUploadSize" value="200000000" />
+        <beans:property name="maxInMemorySize" value="200000000" />
+    </beans:bean>
     <!--    필요하면 부활 시키셈. -->
 
 

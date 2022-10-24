@@ -23,8 +23,8 @@ public class BackendBoardDaoImpl implements BackendBoardDao {
     }
 
     @Override
-    public void contentUpload(BackendBoardVO backendBoardVO) {
-        sqlSession.insert("backendBoard.contentUpload", backendBoardVO);
+    public void contentUpload(BackendBoardVO content) {
+        sqlSession.insert("backendBoard.contentUpload", content);
     }
 
     @Override

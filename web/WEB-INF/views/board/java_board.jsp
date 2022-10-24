@@ -218,7 +218,7 @@
                     </div>
                 </c:forEach>
             </div>
-            <div class="pagination-wrap mt-5 d-flex justify-content-center">
+            <div class="pagination-wrap mt-5 d-flex justify-content-center" data-aos="fade-in" data-aos-delay="100">
                 <nav aria-label="Page navigation">
                     <ul class="pagination">
                         <li class="page-item"><a class="page-link" href="?page=1">처음</a></li>
@@ -568,7 +568,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="/board/upload" method="post" id="content-upload-form" enctype="multipart/form-data">
+                <form action="/board/upload" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="recipient-title" class="col-form-label">Title:</label>
                         <input type="text" class="form-control" id="recipient-title" name="contentTitle">
@@ -577,20 +577,22 @@
                     <textarea class="summernote" id="content-upload-detail" name="contentDetail"></textarea>
 
                     <div class="input-group mt-3">
-                        <input type="file" class="form-control" name="file">
+                        <input type="file" class="form-control" name="paramFiles">
+                    </div>
+                    <div class="input-group mt-3">
+                        <input type="file" class="form-control" name="paramFiles">
                     </div>
 
-                    <div class="input-group mt-3">
-                        <input type="file" class="form-control" name="file">
-                    </div>
                     <input type="hidden" id="content-upload-loader" value="${sessionScope.member.memberNick}" name="contentUploader">
                     <input type="hidden" id="content-lang" value="Java" name="contentLangName">
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button class="btn btn-secondary">Send Content</button>
+                    </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-secondary" onclick="document.getElementById('content-upload-form').submit();">Send Content</button>
-            </div>
+
         </div>
     </div>
 </div>

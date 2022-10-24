@@ -20,8 +20,8 @@
 
     <insert id="contentUpload">
         insert into backend_board
-            (content_title, content_detail, content_uploader, content_reg_date, content_lang_name, content_hit, content_comment_hit)
-            values (#{contentTitle}, #{contentDetail}, #{contentUploader}, NOW(), #{contentLangName}, #{contentHit}, #{contentCommentHit} )
+            (content_title, content_detail, content_uploader, content_reg_date, content_lang_name)
+            values (#{contentTitle}, #{contentDetail}, #{contentUploader}, NOW(), #{contentLangName})
 
         <selectKey keyProperty="contentNum" resultType="Integer" order="AFTER">
             select LAST_INSERT_ID()
@@ -46,11 +46,23 @@
         where content_num = #{contentNum}
     </update>
 
-    <select id="detailView" resultType="BackendBoard">
-        select *
+    <resultMap id="BackendBoardMap" type="BackendBoard" autoMapping="true">
+        <id column="content_num" property="contentNum"/>
+        <collection property="paramFileList" column="target_content_num" ofType="BackendBoardFile" javaType="ArrayList">
+            <id column="file_num" property="fileNum"/>
+            <id column="file_name" property="fileName"/>
+            <id column="target_content_num" property="targetContentNum"/>
+        </collection>
+    </resultMap>
+
+    <select id="detailView" resultMap="BackendBoardMap">
+        select backend_board.*, backend_board_file.file_num file_num, file_name, target_content_num
         from backend_board
-        where content_num = #{contentNum}
+                 left join backend_board_file on (backend_board.content_num = backend_board_file.target_content_num)
+        where backend_board.content_num = #{content_num}
     </select>
+
+
 
     <update id="contentHitter">
         update backend_board

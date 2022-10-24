@@ -18,6 +18,6 @@ public class BackendBoardVO {
     private String contentLangName;
     private int contentHit;
     private int contentCommentHit;
-    private List<MultipartFile> file;
-    private List<BackendBoardFileVO> files;
+    private List<MultipartFile> paramFiles;
+    private List<BackendBoardFileVO> paramFileList;
 }

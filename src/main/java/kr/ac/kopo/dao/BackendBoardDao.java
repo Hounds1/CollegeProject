@@ -9,7 +9,7 @@ import java.util.List;
 public interface BackendBoardDao {
     List<BackendBoardVO> getJavaBoard(Pager pager);
 
-    void contentUpload(BackendBoardVO backendBoardVO);
+    void contentUpload(BackendBoardVO content);
 
     void contentDelete(int contentNum);
 
