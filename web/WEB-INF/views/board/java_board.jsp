@@ -67,6 +67,9 @@
     <link rel="stylesheet" type="text/css" href="memberAssets/css/util.css">
     <link rel="stylesheet" type="text/css" href="memberAssets/css/main.css">
     <!--===============================================================================================-->
+    <!-- include codemirror (codemirror.css, codemirror.js, xml.js, formatting.js) -->
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.css">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/theme/monokai.css">
 
 
 </head>
@@ -630,6 +633,11 @@
 <script src="assets/vendor/php-email-form/validate.js"></script>
 <script src="summernote/summernote-ko-KR.js"></script>
 <script src="summernote/summernote-lite.js"></script>
+<script src="summernote/summernote-ext-highlight.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/xml/xml.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/2.36.0/formatting.js"></script>
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
