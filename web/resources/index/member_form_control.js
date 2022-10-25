@@ -25,7 +25,7 @@
                         $('.btn-control').removeAttr('disabled');
                     }
                 } else {
-                    alert("껒이세요.");
+                    alert("이미 존재하는 아이디입니다.");
                     idDupChk = 0;
                 }
             }
@@ -46,7 +46,7 @@
             cache: false,
             success(result) {
                 if(result === "OK") {
-                    alert("사용 가능한 닉네임입니다.");
+                    alert("사용 가능한 닉네임 입니다.");
                     $('.nick-dup-chk').find('i').removeClass('zmdi-check');
                     $('.nick-dup-chk').find('i').addClass('zmdi-check-circle');
                     nickDupChk = 1;
@@ -54,7 +54,7 @@
                         $('.btn-control').removeAttr('disabled');
                     }
                 } else {
-                    alert("껒이세요.")
+                    alert("이미 존재하는 닉네임 입니다.")
                     nickDupChk = 0;
                 }
             }

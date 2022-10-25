@@ -70,7 +70,6 @@
     <!-- include codemirror (codemirror.css, codemirror.js, xml.js, formatting.js) -->
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.css">
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/theme/monokai.css">
-    <link rel="stylesheet" type="text/css" href="backendboard/code_highlight.css">
 
 </head>
 
@@ -147,9 +146,13 @@
                         <h3>Java</h3>
                         <p>
                             이 곳은 Java와 관련된 질문이나 토론을 할 수 있는 게시판입니다.
-                            코드를 공유하거나 질문 해보세요.<br>
-                            <a class="btn btn-secondary mt-1" href="#" data-bs-toggle="modal"
-                               data-bs-target="#content-upload-modal"><i class="bi bi-pencil"></i> 작성하기</a>
+                            코드를 공유하거나 질문 해보세요.
+                            <c:if test="${sessionScope.member eq null}"><br>로그인 후 작성 가능합니다.</c:if>
+                            <br>
+                            <c:if test="${not empty sessionScope.member}">
+                                <a class="btn btn-secondary mt-1" href="#" data-bs-toggle="modal"
+                                   data-bs-target="#content-upload-modal"><i class="bi bi-pencil"></i> 작성하기</a>
+                            </c:if>
                         </p>
                     </div>
                 </div>
@@ -211,7 +214,8 @@
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100"
                              style="width: 294.8px; height: 220.8px">
                             <div class="icon"><i class="bi bi-code-square"></i></div>
-                            <h4 class="title" style="width: 230px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">
+                            <h4 class="title"
+                                style="width: 230px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">
                                 <a href="/board/javaDetail/${list.contentNum}">${list.contentTitle}</a>
                             </h4>
                             <p class="description">${list.contentUploader} <br>
@@ -231,9 +235,10 @@
                             </a>
                         </li>
                         <c:forEach var="page" items="${pager.list}">
-                        <li class="page-item">
-                            <a class="page-link ${page eq pager.page ? 'active' : ''}" href="?page=${page}">${page}</a>
-                        </li>
+                            <li class="page-item">
+                                <a class="page-link ${page eq pager.page ? 'active' : ''}"
+                                   href="?page=${page}">${page}</a>
+                            </li>
                         </c:forEach>
                         <li class="page-item">
                             <a class="page-link" href="?page=${pager.next}" aria-label="Next">
@@ -471,7 +476,7 @@
                         <span class="focus-input100" data-placeholder="Password"></span>
                     </div>
 
-                    <div class="container-login100-form-btn" >
+                    <div class="container-login100-form-btn">
                         <div class="wrap-login100-form-btn" id="login-submit-btn">
                             <div class="login100-form-bgbtn"></div>
                             <button class="login100-form-btn">
@@ -563,7 +568,8 @@
 
 <!-- Contents send modal -->
 <!-- Modal -->
-<div class="modal modal-xl fade" id="content-upload-modal" tabindex="-1" aria-labelledby="content-upload-modalLabel" aria-hidden="true">
+<div class="modal modal-xl fade" id="content-upload-modal" tabindex="-1" aria-labelledby="content-upload-modalLabel"
+     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -586,7 +592,8 @@
                         <input type="file" class="form-control" name="paramFiles">
                     </div>
 
-                    <input type="hidden" id="content-upload-loader" value="${sessionScope.member.memberNick}" name="contentUploader">
+                    <input type="hidden" id="content-upload-loader" value="${sessionScope.member.memberNick}"
+                           name="contentUploader">
                     <input type="hidden" id="content-lang" value="Java" name="contentLangName">
 
                     <div class="modal-footer">
@@ -645,7 +652,6 @@
 <script src="backendboard/summernote.js"></script>
 <script src="backendboard/member_form_control.js"></script>
 <script src="backendboard/backendboard_content_control.js"></script>
-<script src="backendboard/code_highlight.js"></script>
 </body>
 
 </html>

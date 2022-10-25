@@ -157,7 +157,7 @@
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                                 <i class="bx bx-shield"></i>
                                 <h4>Archivist 현재 보안상 문제없이 가동 중입니다.</h4>
-                                <p>더욱더 유저님의 개인정보를 다루는데 신중해지겠습니다.</p>
+                                <p>더욱더 정보를 다루는데 신중해지겠습니다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                                 <i class="bx bx-notification"></i>
@@ -166,8 +166,8 @@
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                                 <i class="bx bx-info-square"></i>
-                                <h4>추가적인 정보를 입력해 보십시오.</h4>
-                                <p>추가적인 정보를 입력하고 다양한 이벤트를 누려보십시오. Archivist의 개인정보 사용은 내부에서만 진행됩니다.</p>
+                                <h4>우리는 개인정보를 요구하지 않습니다.</h4>
+                                <p>우리는 당신을 부를 수 있는 "닉네임"을 제외한 추가정보를 요구하지 않습니다.</p>
                             </div>
                         </div>
                     </div><!-- End .content-->
@@ -199,20 +199,23 @@
                 </div>
 
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon"><i class="bi bi-info"></i></div>
-                        <h4 class="title"><a href="#" data-bs-toggle="modal" data-bs-target="#personalModal" id="pi-changer">Personal</a></h4>
-                        <p class="description">추가적인 개인정보를 입력하고 혜택을 누리세요. 의무는 아닙니다.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                         <div class="icon"><i class="bi bi-alarm"></i></div>
                         <h4 class="title"><a href="#">Record</a></h4>
                         <p class="description">당신이 쓴 글을 다시 볼 수 있습니다.</p>
                     </div>
                 </div>
+
+
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                        <div class="icon"><i class="bi bi-code-square"></i></div>
+                        <h4 class="title"><a href="">Update soon</a></h4>
+                        <p class="description">현재 개발 중인 기능입니다. 곧 출시 될 예정입니다.</p>
+                    </div>
+                </div>
+
+
 
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="300">

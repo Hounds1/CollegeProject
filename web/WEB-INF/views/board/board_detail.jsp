@@ -190,7 +190,7 @@
             </div>
 
 
-            <div class="row border border-secondary rounded-3 text-center" data-aos="fade-in" data-aos-delay="200">
+            <div class="row border border-secondary rounded-3" data-aos="fade-in" data-aos-delay="200">
                 <div style="padding: 30px;">
                     <c:forEach var="img" items="${contentDetail.paramFileList}">
                         <div class="mt-3">

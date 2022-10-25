@@ -6,37 +6,23 @@ $(document).ready(function() {
         'CustomButton',
         [
             'codeblocks',
-            'codehighlight',
         ],
     ]);
 
 
     var codeblocks = function (context) {
         var ui = $.summernote.ui;
-        var boxing = '<pre><code class="target-box">Write here</code></pre></div>'
+        var boxing = '<div class="border border-secondary rounded-3">IDE의 코드를 붙혀넣어주세요.</div><br><br><p>계속</p>'
 
         var button = ui.button({
             contents: '<i class="bi bi-code"> code',
             tooltip: 'codeblock',
             click: function () {
-
                 $('.summernote').summernote('code', boxing);
+                alert("Archivist는 Intellij의 사용을 권장합니다. 다른 IDE 유저는 하이라이터 기능이 동작하지 않습니다.");
             }
         });
         return button.render();
-    }
-
-    var codehighlight = function (context) {
-        var ui = $.summernote.ui;
-
-        var button2 = ui.button({
-            contents: '<i class="bi bi-fire">',
-            tooltip: 'highlight',
-            click: function () {
-                codehigh($('.summernote').val());
-            }
-        });
-        return button2.render();
     }
 
     $('.summernote').summernote({
@@ -54,12 +40,11 @@ $(document).ready(function() {
             ['color', ['color']],
             ['para', ['ul', 'ol', 'paragraph']],
             ['table', ['table']],
-            ['mybutton', ['codeblocks' , 'codehighlight']],
+            ['mybutton', ['codeblocks']],
             ['view', ['fullscreen', 'codeview', 'help']],
         ],
         buttons: {
             codeblocks: codeblocks,
-            codehighlight: codehighlight,
         }
     });
 });

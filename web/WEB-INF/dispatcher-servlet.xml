@@ -198,6 +198,10 @@
         <interceptor>
             <mapping path="/member/mypage"/>
             <mapping path="/member/info_update"/>
+            <mapping path="/board/upload"/>
+            <mapping path="/board/editor"/>
+            <mapping path="/board/update"/>
+            <mapping path="/board/delete"/>
 
             <beans:bean class="kr.ac.kopo.util.MemberInterceptor"/>
         </interceptor>
