@@ -7,15 +7,42 @@
     <select id="getJavaTotal" resultType="Integer">
         select count(*)
         from backend_board
-        where content_lang_name = 'Java'
+        <where>
+            <if test="search == 0">
+                content_lang_name = 'Java'
+            </if>
+            <if test="search == 1">
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Java'
+            </if>
+            <if test="search == 2">
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Java'
+            </if>
+            <if test="search == 3">
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Java'
+            </if>
+        </where>
+
     </select>
 
     <select id="getJavaBoard" resultType="BackendBoard">
         select *
         from backend_board
-        where content_lang_name = 'Java'
+        <where>
+            <if test="search == 0">
+                content_lang_name = 'Java'
+            </if>
+            <if test="search == 1">
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Java'
+            </if>
+            <if test="search == 2">
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Java'
+            </if>
+            <if test="search == 3">
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Java'
+            </if>
+        </where>
         order by content_num desc
-        limit ${offset}, ${perPage}
+        LIMIT ${offset}, ${perPage}
     </select>
 
     <insert id="contentUpload">
@@ -61,8 +88,6 @@
                  left join backend_board_file on (backend_board.content_num = backend_board_file.target_content_num)
         where backend_board.content_num = #{content_num}
     </select>
-
-
 
     <update id="contentHitter">
         update backend_board

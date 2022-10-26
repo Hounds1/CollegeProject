@@ -37,6 +37,7 @@ public class MemberController {
         memberVO.setMemberNick(memberNick);
         memberVO.setMemberPass(memberPass);
 
+
         memberService.memberNewAccount(memberVO);
         return "OK";
     }

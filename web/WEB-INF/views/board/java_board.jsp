@@ -191,22 +191,22 @@
         <div class="container">
             <div class="section-title" data-aos="fade-in" data-aos-delay="100">
                 <h2>Contents</h2>
-                <div class="d-flex justify-content-center">
-                    <div class="input-group mb-3 me-1" style="width: 625px;">
-                        <form>
-                            <select class="form-select" id="inputGroupSelect04"
+                <form>
+                    <div class="d-flex justify-content-center">
+                        <div class="input-group mb-3 me-1" style="width: 625px;">
+                            <select class="form-select" name="search"
                                     aria-label="Example select with button addon">
-                                <option value="0">선택</option>
-                                <option value="1" ${pager.search == 1 ? 'selected' : ''}>제목</option>
-                                <option value="2" ${pager.search == 2 ? 'selected' : ''}>내용</option>
-                                <option value="3" ${pager.search == 3 ? 'selected' : ''}>작성자</option>
+                                <option value="0" selected>선택</option>
+                                <option value="1" ${pager.search == 1 ? "selected" : ""}>제목</option>
+                                <option value="2" ${pager.search == 2 ? "selected" : ""}>내용</option>
+                                <option value="3" ${pager.search == 3 ? "selected" : ""}>작성자</option>
                             </select>
                             <input type="text" class="form-control" placeholder="검색어를 입력해주세요." aria-label="검색어를 입력해주세요."
-                                   aria-describedby="button-addon2" value="${pager.search == 0 ? '' : pager.keyword}">
+                                   aria-describedby="button-addon2" name="keyword" value="${pager.search == 0  ? "" : pager.keyword}">
                             <button class="btn btn-outline-secondary" id="button-addon2">검색</button>
-                        </form>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
 
 

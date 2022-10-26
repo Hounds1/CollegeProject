@@ -13,6 +13,22 @@ public class Pager {
 
     private String keyword;
 
+    public int getSearch() {
+        return search;
+    }
+
+    public void setSearch(int search) {
+        this.search = search;
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+
     public String getQuery() {
         if(search < 1) {
             return "";
