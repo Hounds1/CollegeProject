@@ -7,10 +7,10 @@ import java.io.IOException;
 import java.util.UUID;
 
 public class MultipartBinder {
-    public String operate(MultipartFile attach) {
+    public String operate(MultipartFile target) {
 
 
-        String fileRealName = attach.getOriginalFilename();
+        String fileRealName = target.getOriginalFilename();
 
         String fileExtension = fileRealName.substring(fileRealName.lastIndexOf("."),fileRealName.length());
         String uploadFolder = "D:\\test\\upload";
@@ -23,7 +23,7 @@ public class MultipartBinder {
 
         File saveFile = new File(uploadFolder+"\\"+uniqueName + fileExtension);
         try {
-            attach.transferTo(saveFile);
+            target.transferTo(saveFile);
         } catch (IllegalStateException | IOException e) {
             e.printStackTrace();
         }

@@ -14,4 +14,9 @@ public class BackendBoardFileDaoImpl implements BackendBoardFileDao{
     public void filesUpload(BackendBoardFileVO fileVO) {
         sqlSession.insert("backendFile.filesUpload", fileVO);
     }
+
+    @Override
+    public void clearFiles(int contentNum) {
+        sqlSession.delete("backendFile.clearFiles", contentNum);
+    }
 }

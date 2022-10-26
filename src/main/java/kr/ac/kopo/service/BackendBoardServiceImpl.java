@@ -46,8 +46,11 @@ public class BackendBoardServiceImpl implements BackendBoardService {
 
     }
 
+    @Transactional
     @Override
     public void contentDelete(int contentNum) {
+        backendBoardFileDao.clearFiles(contentNum);
+
         backendBoardDao.contentDelete(contentNum);
     }
 

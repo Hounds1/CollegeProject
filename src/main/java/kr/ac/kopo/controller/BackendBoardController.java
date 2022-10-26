@@ -33,7 +33,12 @@ public class BackendBoardController {
 
     private final BackendBoardService boardService;
 
-    final String path = "D://test/upload/";
+    /**
+     * all languages request to each languages
+     * @param model
+     * @param pager
+     * @return target language board
+     */
 
     @GetMapping("/java")
     public String getJavaBoard(Model model, Pager pager) {
@@ -42,6 +47,13 @@ public class BackendBoardController {
         return "/board/java_board";
     }
 
+
+    /**
+     * common upload method
+     * no care about language name
+     * @param content
+     * @return
+     */
     @PostMapping("/upload")
     public String contentUpload(BackendBoardVO content) {
 
@@ -63,19 +75,40 @@ public class BackendBoardController {
         boardService.contentUpload(content);
 
         return "redirect:/board/java";
-//        나중에 return 값 수정할 것.
+
     }
 
+
+    /**
+     * common delete method
+     * no care about language name
+     * @param contentNum
+     * @return
+     */
     @RequestMapping("/delete/{contentNum}")
     public String contentDelete(@PathVariable int contentNum) {
         boardService.contentDelete(contentNum);
         return "redirect:/board/java";
     }
 
+    /**
+     * pull to request target content values on editor
+     * @param targetNum
+     * @return
+     */
     @PostMapping("/editor")
     public @ResponseBody BackendBoardVO contentEditor(@RequestParam(value = "targetNum") int targetNum) {
         return boardService.contentEditor(targetNum);
     }
+
+    /**
+     * common update method
+     * no care about language name
+     * @param targetNum
+     * @param contentTitle
+     * @param contentDetail
+     * @return
+     */
 
     @PostMapping("/update")
     public @ResponseBody String contentUpdate(@RequestParam(value = "targetNum") int targetNum,
@@ -92,6 +125,13 @@ public class BackendBoardController {
             return "Fail";
     }
 
+    /**
+     * common details method
+     * need to patch for all languages.
+     * @param contentNum
+     * @param model
+     * @return
+     */
     @GetMapping("/javaDetail/{contentNum}")
     public String detailView(@PathVariable int contentNum, Model model) {
         BackendBoardVO backendBoardVO = new BackendBoardVO();

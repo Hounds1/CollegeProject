@@ -9,6 +9,18 @@ public class Pager {
     private float total;
     final int perGroup = 5;
 
+    private int search;
+
+    private String keyword;
+
+    public String getQuery() {
+        if(search < 1) {
+            return "";
+        }
+
+        return "&search=" + search + "&keyword=" + keyword;
+    }
+
     public float getTotal() {
         return total;
     }

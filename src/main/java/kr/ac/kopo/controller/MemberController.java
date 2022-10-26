@@ -19,6 +19,15 @@ public class MemberController {
 
     private final MemberService memberService;
 
+    /**
+     * member sign up Ajax
+     * @param memberId
+     * @param memberNick
+     * @param memberPass
+     * @param memberVO
+     * @return
+     */
+
     @PostMapping("/new_account")
     public @ResponseBody String memberNewAccount(@RequestParam(value = "memberId") String memberId,
                                                  @RequestParam(value = "memberNick") String memberNick,
@@ -32,6 +41,15 @@ public class MemberController {
         return "OK";
     }
 
+    /**
+     *
+     * Member login Ajax
+     * @param memberVO
+     * @param httpSession
+     * @param memberId
+     * @param memberPass
+     * @return
+     */
     @PostMapping("/login")
     public @ResponseBody String memberLogin(MemberVO memberVO, HttpSession httpSession ,@RequestParam(value = "memberId", required = true) String memberId,
                               @RequestParam(value = "memberPass", required = true) String memberPass) {
@@ -44,6 +62,14 @@ public class MemberController {
         } else
             return "Fail";
     }
+
+
+    /**
+     * member logout
+     * session close
+     * @param httpSession
+     * @return
+     */
 
     @GetMapping("/escape")
     public String memberEscape(HttpSession httpSession) {
@@ -68,16 +94,28 @@ public class MemberController {
             return "Fail";
     }
 
+
     @GetMapping("/mypage")
     public String myPage() {
         return "member/my_page";
     }
 
+    /**
+     * if someone connect without session
+     * @return this
+     */
     @GetMapping("/login_not_found")
     public String loginNotFound() {
         return "account_control/login_fail";
     }
 
+    /**
+     * member change new password before check old one.
+     * @param passChangeId
+     * @param passValChk
+     * @param memberVO
+     * @return
+     */
     @PostMapping("/changePassValChk")
     public @ResponseBody String changePassValChk(@RequestParam(value = "passChangeId") String passChangeId,
                                                  @RequestParam(value = "passValChk") String passValChk, MemberVO memberVO) {
@@ -89,6 +127,15 @@ public class MemberController {
         } else
             return "Fail";
     }
+
+    /**
+     * member change new password duplicate check
+     * @param passChangeId
+     * @param newPassVal
+     * @param memberVO
+     * @param httpSession
+     * @return
+     */
 
     @PostMapping("/changeNewPassVal")
     public @ResponseBody String changeNewPassVal(@RequestParam(value = "passChangeId") String passChangeId,
@@ -103,25 +150,36 @@ public class MemberController {
             return "Fail";
     }
 
-    @PostMapping("/personalInfoChange")
-    public @ResponseBody String personalInfoChange(@RequestParam(value = "PIChangeId") String PIChangeId,
-                                                   @RequestParam(value = "memberName") String memberName,
-                                                   @RequestParam(value = "memberBirth") String memberBirth,
-                                                   @RequestParam(value = "memberPhoneNumber") String memberPhoneNumber,
-                                                   @RequestParam(value = "memberAddress") String memberAddress) {
-
-        StringToDateConverter converter = new StringToDateConverter();
-        MemberVO memberVO = new MemberVO();
-        memberVO.setMemberId(PIChangeId);
-        memberVO.setMemberName(memberName);
-        memberVO.setMemberBirth(converter.convert(memberBirth));
-        memberVO.setMemberPhoneNumber(memberPhoneNumber);
-        memberVO.setMemberAddress(memberAddress);
-
-       if(memberService.personalInfoChange(memberVO) == 1) {
-           return "OK";
-       } else
-           return "Fail";
-    }
+    /**
+     * doesn't need it more
+     * destroyed function
+     * but, recorded
+     * @param PIChangeId
+     * @param memberName
+     * @param memberBirth
+     * @param memberPhoneNumber
+     * @param memberAddress
+     * @return
+     */
+//    @PostMapping("/personalInfoChange")
+//    public @ResponseBody String personalInfoChange(@RequestParam(value = "PIChangeId") String PIChangeId,
+//                                                   @RequestParam(value = "memberName") String memberName,
+//                                                   @RequestParam(value = "memberBirth") String memberBirth,
+//                                                   @RequestParam(value = "memberPhoneNumber") String memberPhoneNumber,
+//                                                   @RequestParam(value = "memberAddress") String memberAddress) {
+//
+//        StringToDateConverter converter = new StringToDateConverter();
+//        MemberVO memberVO = new MemberVO();
+//        memberVO.setMemberId(PIChangeId);
+//        memberVO.setMemberName(memberName);
+//        memberVO.setMemberBirth(converter.convert(memberBirth));
+//        memberVO.setMemberPhoneNumber(memberPhoneNumber);
+//        memberVO.setMemberAddress(memberAddress);
+//
+//       if(memberService.personalInfoChange(memberVO) == 1) {
+//           return "OK";
+//       } else
+//           return "Fail";
+//    }
 
 }

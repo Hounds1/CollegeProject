@@ -143,7 +143,7 @@
             <div class="row no-gutters">
                 <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="content">
-                        <h3>Java</h3>
+                        <h3><i class="bx bxl-java"></i> Java</h3>
                         <p>
                             이 곳은 Java와 관련된 질문이나 토론을 할 수 있는 게시판입니다.
                             코드를 공유하거나 질문 해보세요.
@@ -193,16 +193,18 @@
                 <h2>Contents</h2>
                 <div class="d-flex justify-content-center">
                     <div class="input-group mb-3 me-1" style="width: 625px;">
-                        <select class="form-select" id="inputGroupSelect04"
-                                aria-label="Example select with button addon">
-                            <option selected>선택</option>
-                            <option value="1">제목</option>
-                            <option value="2">내용</option>
-                            <option value="3">작성자</option>
-                        </select>
-                        <input type="text" class="form-control" placeholder="검색어를 입력해주세요." aria-label="검색어를 입력해주세요."
-                               aria-describedby="button-addon2">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">검색</button>
+                        <form>
+                            <select class="form-select" id="inputGroupSelect04"
+                                    aria-label="Example select with button addon">
+                                <option value="0">선택</option>
+                                <option value="1" ${pager.search == 1 ? 'selected' : ''}>제목</option>
+                                <option value="2" ${pager.search == 2 ? 'selected' : ''}>내용</option>
+                                <option value="3" ${pager.search == 3 ? 'selected' : ''}>작성자</option>
+                            </select>
+                            <input type="text" class="form-control" placeholder="검색어를 입력해주세요." aria-label="검색어를 입력해주세요."
+                                   aria-describedby="button-addon2" value="${pager.search == 0 ? '' : pager.keyword}">
+                            <button class="btn btn-outline-secondary" id="button-addon2">검색</button>
+                        </form>
                     </div>
                 </div>
             </div>

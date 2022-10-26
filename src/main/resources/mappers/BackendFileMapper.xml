@@ -11,4 +11,10 @@
             values (#{fileName}, #{targetContentNum})
     </insert>
 
+    <delete id="clearFiles">
+        delete
+            from backend_board_file
+        where target_content_num = #{contentNum}
+    </delete>
+
 </mapper>
