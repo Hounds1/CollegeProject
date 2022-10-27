@@ -20,4 +20,5 @@ public class BackendBoardVO {
     private int contentCommentHit;
     private List<MultipartFile> paramFiles;
     private List<BackendBoardFileVO> paramFileList;
+    private List<BackendBoardCommentVO> commentList;
 }

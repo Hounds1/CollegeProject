@@ -80,12 +80,20 @@
             <id column="file_name" property="fileName"/>
             <id column="target_content_num" property="targetContentNum"/>
         </collection>
+        <collection property="commentList" column="comment_target_content_num" ofType="BackendBoardComment" javaType="ArrayList">
+            <id column="comment_num" property="commentNum" />
+            <id column="comment_uploader" property="commentUploader" />
+            <id column="comment_reg_date" property="commentRegDate" />
+            <id column="comment_detail" property="commentDetail" />
+            <id column="comment_target_content_num" property="commentTargetContentNum" />
+        </collection>
     </resultMap>
 
     <select id="detailView" resultMap="BackendBoardMap">
-        select backend_board.*, backend_board_file.file_num file_num, file_name, target_content_num
+        select backend_board.*, backend_board_file.file_num file_num, file_name, target_content_num, backend_board_comment.comment_num comment_num, comment_uploader, comment_reg_date, comment_detail, comment_target_content_num
         from backend_board
                  left join backend_board_file on (backend_board.content_num = backend_board_file.target_content_num)
+                left join backend_board_comment on (backend_board.content_num = backend_board_comment.comment_target_content_num)
         where backend_board.content_num = #{content_num}
     </select>
 

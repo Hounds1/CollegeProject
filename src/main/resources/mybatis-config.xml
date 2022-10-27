@@ -12,12 +12,14 @@
         <typeAlias type="kr.ac.kopo.vo.MemberVO" alias="Member"/>
         <typeAlias type="kr.ac.kopo.vo.BackendBoardVO" alias="BackendBoard"/>
         <typeAlias type="kr.ac.kopo.vo.BackendBoardFileVO" alias="BackendBoardFile"/>
+        <typeAlias type="kr.ac.kopo.vo.BackendBoardCommentVO" alias="BackendBoardComment"/>
     </typeAliases>
 
     <mappers>
         <mapper resource="mappers/MemberMapper.xml"/>
         <mapper resource="mappers/BackendBoardMapper.xml"/>
         <mapper resource="mappers/BackendFileMapper.xml"/>
+        <mapper resource="mappers/BackendCommentMapper.xml"/>
     </mappers>
 
 

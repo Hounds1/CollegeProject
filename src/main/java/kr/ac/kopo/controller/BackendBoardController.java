@@ -1,30 +1,27 @@
 package kr.ac.kopo.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.fasterxml.jackson.databind.util.JSONPObject;
+
 import kr.ac.kopo.service.BackendBoardService;
 import kr.ac.kopo.util.MultipartBinder;
 import kr.ac.kopo.util.Pager;
+import kr.ac.kopo.vo.BackendBoardCommentVO;
 import kr.ac.kopo.vo.BackendBoardFileVO;
 import kr.ac.kopo.vo.BackendBoardVO;
+
 import kr.ac.kopo.vo.MemberVO;
 import lombok.RequiredArgsConstructor;
-import org.apache.commons.io.FileUtils;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.List;
-import java.util.UUID;
+
 
 @Controller
 @RequiredArgsConstructor
@@ -141,4 +138,59 @@ public class BackendBoardController {
 
         return "/board/board_detail";
     }
+
+    /**
+     * common comment upload method
+     * @param commentVO
+     * @param MemberVO
+     * @param request
+     * @return referer page
+     */
+    @PostMapping("/comment")
+    public String commentUpload(BackendBoardCommentVO commentVO, @SessionAttribute(value = "member") MemberVO MemberVO, HttpServletRequest request) {
+        String urlNum = Integer.toString(commentVO.getCommentTargetContentNum());
+
+        commentVO.setCommentUploader(MemberVO.getMemberNick());
+
+        boardService.commentUpload(commentVO);
+
+        return "redirect:/board/javaDetail/"+urlNum;
+    }
+
+    /**
+     * remove comment from database
+     * @param commentNum
+     * @param request
+     * @return referer page
+     */
+    @RequestMapping("/removecomment/{commentNum}")
+    public String removeComment(@PathVariable int commentNum, HttpServletRequest request) {
+        String referer = request.getHeader("referer");
+        String returnNum = referer.substring(referer.lastIndexOf("/"), referer.length());
+
+        boardService.removeComment(commentNum);
+
+        return "redirect:/board/javaDetail/"+returnNum;
+    }
+
+    /**
+     * bring comment editor ajax
+     * @param targetId
+     * @return ajax
+     */
+    @PostMapping("/commenteditor")
+    public @ResponseBody BackendBoardCommentVO commentEditor(@RequestParam(value = "targetId") int targetId) {
+        return boardService.commentEditor(targetId);
+    }
+
+    @PostMapping("/commentUpdate")
+    public String commentUpdate(BackendBoardCommentVO commentVO, HttpServletRequest request) {
+        String referer = request.getHeader("referer");
+        String urlNum = referer.substring(referer.lastIndexOf("/"), referer.length());
+
+        boardService.commentUpdate(commentVO);
+
+        return "redirect:/board/javaDetail"+urlNum;
+    }
+
 }

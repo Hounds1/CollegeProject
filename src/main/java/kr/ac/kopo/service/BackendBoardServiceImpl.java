@@ -1,18 +1,17 @@
 package kr.ac.kopo.service;
 
+import kr.ac.kopo.dao.BackendBoardCommentDao;
 import kr.ac.kopo.dao.BackendBoardDao;
 import kr.ac.kopo.dao.BackendBoardFileDao;
-import kr.ac.kopo.util.MultipartBinder;
 import kr.ac.kopo.util.Pager;
+import kr.ac.kopo.vo.BackendBoardCommentVO;
 import kr.ac.kopo.vo.BackendBoardFileVO;
 import kr.ac.kopo.vo.BackendBoardVO;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -22,6 +21,8 @@ public class BackendBoardServiceImpl implements BackendBoardService {
     private final BackendBoardDao backendBoardDao;
 
     private final BackendBoardFileDao backendBoardFileDao;
+
+    private final BackendBoardCommentDao backendBoardCommentDao;
 
     @Override
     public List<BackendBoardVO> getJavaBoard(Pager pager) {
@@ -70,6 +71,26 @@ public class BackendBoardServiceImpl implements BackendBoardService {
     public BackendBoardVO detailView(int contentNum) {
         backendBoardDao.contentHitter(contentNum);
         return backendBoardDao.detailView(contentNum);
+    }
+
+    @Override
+    public void commentUpload(BackendBoardCommentVO commentVO) {
+        backendBoardCommentDao.commentUpload(commentVO);
+    }
+
+    @Override
+    public void removeComment(int commentNum) {
+        backendBoardCommentDao.removeComment(commentNum);
+    }
+
+    @Override
+    public BackendBoardCommentVO commentEditor(int targetId) {
+        return backendBoardCommentDao.commentEditor(targetId);
+    }
+
+    @Override
+    public void commentUpdate(BackendBoardCommentVO commentVO) {
+        backendBoardCommentDao.commentUpdate(commentVO);
     }
 
 

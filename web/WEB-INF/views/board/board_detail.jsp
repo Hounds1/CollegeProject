@@ -145,8 +145,10 @@
                         <p>
                             게시일 : <fmt:formatDate value="${contentDetail.contentRegDate}" pattern="yyyy-MM-dd"/> <br>
                             <a class="btn btn-secondary mt-1 content-editor-call" href="#" data-bs-toggle="modal"
-                               data-bs-target="#content-edit-modal" id="${contentDetail.contentNum}"><i class="bi bi-pencil"></i> 수정하기</a>
-                            <a class="btn btn-secondary mt-1 ms-1" href="/board/delete/${contentDetail.contentNum}">삭제</a>
+                               data-bs-target="#content-edit-modal" id="${contentDetail.contentNum}"><i
+                                    class="bi bi-pencil"></i> 수정하기</a>
+                            <a class="btn btn-secondary mt-1 ms-1"
+                               href="/board/delete/${contentDetail.contentNum}">삭제</a>
                         </p>
                     </div>
                 </div>
@@ -155,7 +157,8 @@
                         <div class="row">
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                                 <i class="bx bx-upload"></i>
-                                <h4>${contentDetail.contentUploader} <c:if test="${contentDetail.contentUploader eq sessionScope.member.memberNick}">(me)</c:if></h4>
+                                <h4>${contentDetail.contentUploader} <c:if
+                                        test="${contentDetail.contentUploader eq sessionScope.member.memberNick}">(me)</c:if></h4>
                                 <p>by uploaded.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
@@ -165,13 +168,16 @@
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                                 <i class="bi bi-person"></i>
-                                <h4><span data-purecounter-start="0" data-purecounter-end="${contentDetail.contentHit}" data-purecounter-duration="1"
+                                <h4><span data-purecounter-start="0" data-purecounter-end="${contentDetail.contentHit}"
+                                          data-purecounter-duration="1"
                                           class="purecounter"></span></h4>
                                 <p>contents hits</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                                 <i class="bi bi-pencil"></i>
-                                <h4><span data-purecounter-start="0" data-purecounter-end="${contentDetail.contentCommentHit}" data-purecounter-duration="1"
+                                <h4><span data-purecounter-start="0"
+                                          data-purecounter-end="${contentDetail.contentCommentHit}"
+                                          data-purecounter-duration="1"
                                           class="purecounter"></span></h4>
                                 <p>comments hit</p>
                             </div>
@@ -190,11 +196,13 @@
             </div>
 
 
-            <div class="row border border-secondary rounded-3" data-aos="fade-in" data-aos-delay="200">
+            <div class="row border-top border-bottom" data-aos="fade-in" data-aos-delay="200">
+                <br>
+                <br>
                 <div style="padding: 30px;">
                     <c:forEach var="img" items="${contentDetail.paramFileList}">
                         <div class="mt-3">
-                        <img src="/loadImg/${img.fileName}">
+                            <img src="/loadImg/${img.fileName}">
                         </div>
                     </c:forEach>
 
@@ -202,6 +210,42 @@
                         ${contentDetail.contentDetail}
                     </div>
                 </div>
+                <br>
+                <br>
+
+                <div>
+                    <div class="comment-form-box form-floating mb-4">
+                        <form action="/board/comment" method="post">
+                            <textarea class="form-control text-black" style="resize: none;" name="commentDetail"
+                                      placeholder="댓글을 작성해주세요."></textarea>
+                            <input type="hidden" name="commentTargetContentNum" value="${contentDetail.contentNum}">
+                            <button class="btn border-secondary mt-2 bg-secondary text-white justify-content-end"
+                                    style="margin-left: 1202px;">댓글 쓰기
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3">
+                <c:forEach var="comment" items="${contentDetail.commentList}">
+                    <div class="border-bottom mt-3">
+                        <div class="d-flex">
+                            <p class="col-1">${comment.commentUploader}</p>
+                            <p class="col-2"><fmt:formatDate value="${comment.commentRegDate}"
+                                                             pattern="yy-MM-dd hh:mm:ss"/></p>
+                            <c:if test="${comment.commentUploader eq sessionScope.member.memberNick}">
+                            <div class="d-flex" style="margin-left: 890px;">
+                                <p><a class="edit-target" href="#" data-bs-toggle="modal"
+                                      data-bs-target="#comment-edit-modal" id="${comment.commentNum}">수정</a></p>
+                                <p class="ms-2"><a href="/board/removecomment/${comment.commentNum}">삭제</a></p>
+                            </div>
+                            </c:if>
+                        </div>
+                        <div class="mt-2 text-black mb-2">
+                            <p class="ms-2 comment-detail">${comment.commentDetail}</p>
+                        </div>
+                    </div>
+                </c:forEach>
             </div>
         </div>
     </section><!-- End Contents Section -->
@@ -428,7 +472,7 @@
                         <span class="focus-input100" data-placeholder="Password"></span>
                     </div>
 
-                    <div class="container-login100-form-btn" >
+                    <div class="container-login100-form-btn">
                         <div class="wrap-login100-form-btn" id="login-submit-btn">
                             <div class="login100-form-bgbtn"></div>
                             <button class="login100-form-btn">
@@ -520,7 +564,8 @@
 
 <!-- Contents edit modal -->
 <!-- Modal -->
-<div class="modal modal-xl fade" id="content-edit-modal" tabindex="-1" aria-labelledby="content-edit-modalLabel" aria-hidden="true">
+<div class="modal modal-xl fade" id="content-edit-modal" tabindex="-1" aria-labelledby="content-edit-modalLabel"
+     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -545,6 +590,29 @@
     </div>
 </div>
 <!-- Contents edit modal -->
+<!-- Comment edit modal -->
+<div class="modal fade" tabindex="-1" id="comment-edit-modal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form class="form-floating" action="/board/commentUpdate" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <textarea class="form-control" name="commentDetail" id="comment-edit-form"></textarea>
+                    <input type="hidden" name="commentNum" id="comment-edit-num">
+                    <input type="hidden" name="commentTargetContentNum" value="${contentDetail.contentNum}">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button class="btn btn-secondary">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Comment edit modal -->
 
 <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
@@ -584,6 +652,7 @@
 <script src="backendboard/content_detail_summernote.js"></script>
 <script src="backendboard/member_form_control.js"></script>
 <script src="backendboard/backendboard_content_control.js"></script>
+<script src="backendboard/comment_control.js"></script>
 </body>
 
 </html>

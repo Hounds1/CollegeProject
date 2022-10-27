@@ -1,9 +1,9 @@
 package kr.ac.kopo.service;
 
 import kr.ac.kopo.util.Pager;
+import kr.ac.kopo.vo.BackendBoardCommentVO;
 import kr.ac.kopo.vo.BackendBoardVO;
 
-import java.util.HashMap;
 import java.util.List;
 
 public interface BackendBoardService {
@@ -20,4 +20,11 @@ public interface BackendBoardService {
 
     BackendBoardVO detailView(int contentNum);
 
+    void commentUpload(BackendBoardCommentVO commentVO);
+
+    void removeComment(int commentNum);
+
+    BackendBoardCommentVO commentEditor(int targetId);
+
+    void commentUpdate(BackendBoardCommentVO commentVO);
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="backendComment">
+
+    <insert id="commentUpload" parameterType="BackendBoardComment">
+        insert into backend_board_comment
+            values (null, #{commentUploader}, NOW(), #{commentDetail}, #{commentTargetContentNum});
+    </insert>
+
+    <delete id="removeComment">
+        delete
+            from backend_board_comment
+        where comment_num = #{commentNum}
+    </delete>
+
+    <select id="commentEditor" parameterType="Integer" resultType="BackendBoardComment">
+        select comment_num, comment_detail
+        from backend_board_comment
+        where comment_num = #{targetId}
+    </select>
+
+    <update id="commentUpdate">
+        update backend_board_comment
+            set comment_detail = #{commentDetail}
+        where comment_num = #{commentNum}
+    </update>
+
+</mapper>
