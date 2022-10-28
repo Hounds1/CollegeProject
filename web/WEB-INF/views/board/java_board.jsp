@@ -95,22 +95,22 @@
                     <ul>
                         <li class="dropdown"><a href="#"><span>FrontEnd</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
-                                <li><a href="#">JavaScript</a></li>
-                                <li><a href="#">TypeScript</a></li>
-                                <li><a href="#">React</a></li>
-                                <li><a href="#">Vue.js</a></li>
-                                <li><a href="#">Angular</a></li>
-                                <li><a href="#">Swift</a></li>
+                                <li><a href="/front/js">JavaScript</a></li>
+                                <li><a href="/front/ts">TypeScript</a></li>
+                                <li><a href="/front/react">React</a></li>
+                                <li><a href="/front/vuejs">Vue.js</a></li>
+                                <li><a href="/front/angular">Angular</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="#"><span>BackEnd</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
-                                <li><a href="/board/java">Java</a></li>
-                                <li><a href="/board/python">Python</a></li>
-                                <li><a href="/board/nodejs">Node.js</a></li>
-                                <li><a href="/board/ummlang">Umm Lang</a></li>
-                                <li><a href="/board/ruby">Ruby</a></li>
-                                <li><a href="/board/kotlin">Kotlin</a></li>
+                                <li><a href="/back/java">Java</a></li>
+                                <li><a href="/back/python">Python</a></li>
+                                <li><a href="/back/nodejs">Node.js</a></li>
+                                <li><a href="/back/ummlang">Umm Lang</a></li>
+                                <li><a href="/back/ruby">Ruby</a></li>
+                                <li><a href="/back/kotlin">Kotlin</a></li>
+                                <li><a href="/back/swift">Swift</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -218,7 +218,7 @@
                             <div class="icon"><i class="bi bi-code-square"></i></div>
                             <h4 class="title"
                                 style="width: 230px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">
-                                <a href="/board/javaDetail/${list.contentNum}">${list.contentTitle}</a>
+                                <a href="/back/detail/${list.contentNum}">${list.contentTitle}</a>
                             </h4>
                             <p class="description">${list.contentUploader} <br>
                                 <fmt:formatDate value="${list.contentRegDate}" pattern="yyyy-MM-dd"/>
@@ -378,19 +378,18 @@
                 </button>
                 <div class="collapse" id="dashboard-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="/board/java" class="link-dark d-inline-flex text-decoration-none rounded">Java</a>
-                        </li>
-                        <li><a href="/board/python" class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
-                        <li><a href="/board/nodejs" class="link-dark d-inline-flex text-decoration-none rounded">Node.js</a></li>
-                        <li><a href="/board/ruby" class="link-dark d-inline-flex text-decoration-none rounded">Ruby</a></li>
-                        <li><a href="/board/ummlang" class="link-dark d-inline-flex text-decoration-none rounded">Umm Lang</a></li>
-                        <li><a href="/board/kotlin" class="link-dark d-inline-flex text-decoration-none rounded">Kotlin</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Swift</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">JavaScript</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">TypeScript</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">React</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Vue.js</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Angular</a></li>
+                        <li><a href="/back/java" class="link-dark d-inline-flex text-decoration-none rounded">Java</a></li>
+                        <li><a href="/back/python" class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
+                        <li><a href="/back/nodejs" class="link-dark d-inline-flex text-decoration-none rounded">Node.js</a></li>
+                        <li><a href="/back/ruby" class="link-dark d-inline-flex text-decoration-none rounded">Ruby</a></li>
+                        <li><a href="/back/ummlang" class="link-dark d-inline-flex text-decoration-none rounded">Umm Lang</a></li>
+                        <li><a href="/back/kotlin" class="link-dark d-inline-flex text-decoration-none rounded">Kotlin</a></li>
+                        <li><a href="/back/swift" class="link-dark d-inline-flex text-decoration-none rounded">Swift</a></li>
+                        <li><a href="/front/js" class="link-dark d-inline-flex text-decoration-none rounded">JavaScript</a></li>
+                        <li><a href="/front/ts" class="link-dark d-inline-flex text-decoration-none rounded">TypeScript</a></li>
+                        <li><a href="/front/react" class="link-dark d-inline-flex text-decoration-none rounded">React</a></li>
+                        <li><a href="/front/vuejs" class="link-dark d-inline-flex text-decoration-none rounded">Vue.js</a></li>
+                        <li><a href="/front/angular" class="link-dark d-inline-flex text-decoration-none rounded">Angular</a></li>
                     </ul>
                 </div>
             </li>
@@ -579,7 +578,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="/board/upload" method="post" enctype="multipart/form-data">
+                <form action="/back/upload" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="recipient-title" class="col-form-label">Title:</label>
                         <input type="text" class="form-control" id="recipient-title" name="contentTitle">

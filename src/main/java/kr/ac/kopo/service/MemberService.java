@@ -15,5 +15,5 @@ public interface MemberService {
 
     int changeNewPassVal(MemberVO memberVO);
 
-    int personalInfoChange(MemberVO memberVO);
+//    int personalInfoChange(MemberVO memberVO);
 }

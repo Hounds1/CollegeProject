@@ -8,6 +8,7 @@ import kr.ac.kopo.vo.MemberVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.socket.WebSocketSession;
 
 import javax.servlet.http.HttpSession;
 import java.util.Date;
@@ -162,6 +163,7 @@ public class MemberController {
      * @param memberAddress
      * @return
      */
+
 //    @PostMapping("/personalInfoChange")
 //    public @ResponseBody String personalInfoChange(@RequestParam(value = "PIChangeId") String PIChangeId,
 //                                                   @RequestParam(value = "memberName") String memberName,

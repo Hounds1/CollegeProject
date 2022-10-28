@@ -97,6 +97,7 @@
         where backend_board.content_num = #{content_num}
     </select>
 
+
     <update id="contentHitter">
         update backend_board
             set content_hit = content_hit+1

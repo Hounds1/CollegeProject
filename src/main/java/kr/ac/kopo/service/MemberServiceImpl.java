@@ -43,10 +43,6 @@ public class MemberServiceImpl implements MemberService{
             memberVO.setMemberRegDate(memberLogin.getMemberRegDate());
             memberVO.setMemberSalt("dummy");
             memberVO.setMemberAuthority(memberLogin.getMemberAuthority());
-            memberVO.setMemberPhoneNumber(memberLogin.getMemberPhoneNumber());
-            memberVO.setMemberAddress(memberLogin.getMemberAddress());
-            memberVO.setMemberBirth(memberLogin.getMemberBirth());
-            memberVO.setMemberName(memberLogin.getMemberName());
             return true;
         } else
             return false;
@@ -71,10 +67,10 @@ public class MemberServiceImpl implements MemberService{
         return memberDao.changeNewPassVal(memberVO);
     }
 
-    @Override
-    public int personalInfoChange(MemberVO memberVO) {
-        return memberDao.personalInfoChange(memberVO);
-    }
+//    @Override
+//    public int personalInfoChange(MemberVO memberVO) {
+//        return memberDao.personalInfoChange(memberVO);
+//    }
 
 
 }

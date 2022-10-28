@@ -86,29 +86,29 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto" href="/board/${contentDetail.contentLangName}">Home</a></li>
+                <li><a class="nav-link scrollto" href="/back/${contentDetail.contentLangName}">Home</a></li>
                 <li><a class="nav-link scrollto" href="#content-header">Head Line</a></li>
                 <li><a class="nav-link scrollto" href="#content-detail">Details</a></li>
                 <li class="dropdown"><a href="#"><span>Boards</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li class="dropdown"><a href="#"><span>FrontEnd</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
-                                <li><a href="#">JavaScript</a></li>
-                                <li><a href="#">TypeScript</a></li>
-                                <li><a href="#">React</a></li>
-                                <li><a href="#">Vue.js</a></li>
-                                <li><a href="#">Angular</a></li>
-                                <li><a href="#">Swift</a></li>
+                                <li><a href="/front/js">JavaScript</a></li>
+                                <li><a href="/front/ts">TypeScript</a></li>
+                                <li><a href="/front/react">React</a></li>
+                                <li><a href="/front/vuejs">Vue.js</a></li>
+                                <li><a href="/front/angular">Angular</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="#"><span>BackEnd</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
-                                <li><a href="/board/java">Java</a></li>
-                                <li><a href="#">Python</a></li>
-                                <li><a href="#">Node.js</a></li>
-                                <li><a href="#">Umm Lang</a></li>
-                                <li><a href="#">Ruby</a></li>
-                                <li><a href="#">Kotlin</a></li>
+                                <li><a href="/back/java">Java</a></li>
+                                <li><a href="/back/python">Python</a></li>
+                                <li><a href="/back/nodejs">Node.js</a></li>
+                                <li><a href="/back/ummlang">Umm Lang</a></li>
+                                <li><a href="/back/ruby">Ruby</a></li>
+                                <li><a href="/back/kotlin">Kotlin</a></li>
+                                <li><a href="/back/swift">Swift</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -149,7 +149,7 @@
                                data-bs-target="#content-edit-modal" id="${contentDetail.contentNum}"><i
                                     class="bi bi-pencil"></i> 수정하기</a>
                             <a class="btn btn-secondary mt-1 ms-1"
-                               href="/board/delete/${contentDetail.contentNum}">삭제</a>
+                               href="/back/delete/${contentDetail.contentNum}">삭제</a>
                             </c:if>
                         </p>
                     </div>
@@ -217,7 +217,7 @@
 
                 <div>
                     <div class="comment-form-box form-floating mb-4">
-                        <form action="/board/comment" method="post">
+                        <form action="/back/comment" method="post">
                             <textarea class="form-control text-black" style="resize: none;" name="commentDetail"
                                       placeholder="댓글을 작성해주세요."></textarea>
                             <input type="hidden" name="commentTargetContentNum" value="${contentDetail.contentNum}">
@@ -239,7 +239,7 @@
                             <div class="d-flex" style="margin-left: 890px;">
                                 <p><a class="edit-target" href="#" data-bs-toggle="modal"
                                       data-bs-target="#comment-edit-modal" id="${comment.commentNum}">수정</a></p>
-                                <p class="ms-2"><a href="/board/removecomment/${comment.commentNum}">삭제</a></p>
+                                <p class="ms-2"><a href="/back/removecomment/${comment.commentNum}">삭제</a></p>
                             </div>
                             </c:if>
                         </div>
@@ -374,19 +374,18 @@
                 </button>
                 <div class="collapse" id="dashboard-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="/board/java" class="link-dark d-inline-flex text-decoration-none rounded">Java</a>
-                        </li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Node.js</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Ruby</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Umm Lang</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Kotlin</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Swift</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">JavaScript</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">TypeScript</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">React</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Vue.js</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Angular</a></li>
+                        <li><a href="/back/java" class="link-dark d-inline-flex text-decoration-none rounded">Java</a></li>
+                        <li><a href="/back/python" class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
+                        <li><a href="/back/nodejs" class="link-dark d-inline-flex text-decoration-none rounded">Node.js</a></li>
+                        <li><a href="/back/ruby" class="link-dark d-inline-flex text-decoration-none rounded">Ruby</a></li>
+                        <li><a href="/back/ummlang" class="link-dark d-inline-flex text-decoration-none rounded">Umm Lang</a></li>
+                        <li><a href="/back/kotlin" class="link-dark d-inline-flex text-decoration-none rounded">Kotlin</a></li>
+                        <li><a href="/back/swift" class="link-dark d-inline-flex text-decoration-none rounded">Swift</a></li>
+                        <li><a href="/front/js" class="link-dark d-inline-flex text-decoration-none rounded">JavaScript</a></li>
+                        <li><a href="/front/ts" class="link-dark d-inline-flex text-decoration-none rounded">TypeScript</a></li>
+                        <li><a href="/front/react" class="link-dark d-inline-flex text-decoration-none rounded">React</a></li>
+                        <li><a href="/front/vuejs" class="link-dark d-inline-flex text-decoration-none rounded">Vue.js</a></li>
+                        <li><a href="/front/angular" class="link-dark d-inline-flex text-decoration-none rounded">Angular</a></li>
                     </ul>
                 </div>
             </li>
@@ -596,7 +595,7 @@
 <div class="modal fade" tabindex="-1" id="comment-edit-modal">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <form class="form-floating" action="/board/commentUpdate" method="post">
+            <form class="form-floating" action="/back/commentUpdate" method="post">
                 <div class="modal-header">
                     <h5 class="modal-title">Comment Edit</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

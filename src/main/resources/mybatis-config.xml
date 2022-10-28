@@ -13,6 +13,7 @@
         <typeAlias type="kr.ac.kopo.vo.BackendBoardVO" alias="BackendBoard"/>
         <typeAlias type="kr.ac.kopo.vo.BackendBoardFileVO" alias="BackendBoardFile"/>
         <typeAlias type="kr.ac.kopo.vo.BackendBoardCommentVO" alias="BackendBoardComment"/>
+
     </typeAliases>
 
     <mappers>

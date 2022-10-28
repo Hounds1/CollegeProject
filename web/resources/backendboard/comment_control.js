@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     $('.edit-target').on('click', function (e) {
         $.ajax({
-            url: "/board/commenteditor",
+            url: "/back/commenteditor",
             type: "POST",
             cache: false,
             data: {

@@ -16,7 +16,7 @@ public interface MemberDao {
 
     int changeNewPassVal(MemberVO memberVO);
 
-    int personalInfoChange(MemberVO memberVO);
+//    int personalInfoChange(MemberVO memberVO);
 
     int getMemberSize();
 

@@ -41,10 +41,10 @@ public class MemberDaoImpl implements MemberDao{
         return sqlSession.update("member.changeNewPassVal", memberVO);
     }
 
-    @Override
-    public int personalInfoChange(MemberVO memberVO) {
-        return sqlSession.update("member.personalInfoChange", memberVO);
-    }
+//    @Override
+//    public int personalInfoChange(MemberVO memberVO) {
+//        return sqlSession.update("member.personalInfoChange", memberVO);
+//    }
 
     @Override
     public int getMemberSize() {

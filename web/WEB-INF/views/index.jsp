@@ -92,22 +92,22 @@
                     <ul>
                         <li class="dropdown"><a href="#"><span>FrontEnd</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
-                                <li><a href="#">JavaScript</a></li>
-                                <li><a href="#">TypeScript</a></li>
-                                <li><a href="#">React</a></li>
-                                <li><a href="#">Vue.js</a></li>
-                                <li><a href="#">Angular</a></li>
-                                <li><a href="#">Swift</a></li>
+                                <li><a href="/front/js">JavaScript</a></li>
+                                <li><a href="/front/ts">TypeScript</a></li>
+                                <li><a href="/front/react">React</a></li>
+                                <li><a href="/front/vuejs">Vue.js</a></li>
+                                <li><a href="/front/angular">Angular</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="#"><span>BackEnd</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
-                                <li><a href="/board/java">Java</a></li>
-                                <li><a href="/board/python">Python</a></li>
-                                <li><a href="#">Node.js</a></li>
-                                <li><a href="#">Umm Lang</a></li>
-                                <li><a href="#">Ruby</a></li>
-                                <li><a href="#">Kotlin</a></li>
+                                <li><a href="/back/java">Java</a></li>
+                                <li><a href="/back/python">Python</a></li>
+                                <li><a href="/back/nodejs">Node.js</a></li>
+                                <li><a href="/back/ummlang">Umm Lang</a></li>
+                                <li><a href="/back/ruby">Ruby</a></li>
+                                <li><a href="/back/kotlin">Kotlin</a></li>
+                                <li><a href="/back/swift">Swift</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -168,8 +168,8 @@
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                                 <i class="bx bx-cube-alt"></i>
-                                <h4>우리는 CodeBlock을 지원합니다.</h4>
-                                <p>CodeBlock을 통해 게시글에 코드를 삽입해 보십시오. 다른 이들이 조금 더 쉽게 읽을 수 있을 겁니다.</p>
+                                <h4>제한적으로 코드블럭을 게시할 수 있습니다.</h4>
+                                <p>다만, 자체적인 에디터를 보유 중인 것은 아니나 IntelliJ를 사용한다면 코드블럭을 삽입 할 수 있습니다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                                 <i class="bx bx-images"></i>
@@ -326,7 +326,7 @@
                         <div class="portfolio-links">
                             <a href="images/javawall.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
                                title="Java - James Arthur Gosling"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="/back/java" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
                 </div>
@@ -337,7 +337,7 @@
                         <div class="portfolio-links">
                             <a href="images/python.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
                                title="Python - Guido van Rossum"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="/back/python" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
                 </div>
@@ -349,7 +349,7 @@
                             <a href="images/javascriptwall.png" data-gallery="portfolioGallery"
                                class="portfolio-lightbox" title="JavaScript - Brendan Eich"><i
                                     class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="/front/js" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
                 </div>
@@ -360,7 +360,7 @@
                         <div class="portfolio-links">
                             <a href="images/vuejs.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
                                title="Vue.js - Evan You"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="/front/vuejs" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
                 </div>
@@ -371,7 +371,7 @@
                         <div class="portfolio-links">
                             <a href="/images/ruby.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
                                title="Ruby - Yukihiro Matsumoto"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="/back/ruby" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
                 </div>
@@ -382,7 +382,7 @@
                         <div class="portfolio-links">
                             <a href="images/nodejswall.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
                                title="Node.js - Ryan Lienhart Dahl"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="/back/nodejs" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
                 </div>
@@ -393,7 +393,7 @@
                         <div class="portfolio-links">
                             <a href="images/react.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
                                title="React - Meta"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="/front/react" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
                 </div>
@@ -404,7 +404,7 @@
                         <div class="portfolio-links">
                             <a href="images/ummlang.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
                                title="Umm Lang - Umm Jun Sik"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="/back/ummlang" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
                 </div>
@@ -415,7 +415,7 @@
                         <div class="portfolio-links">
                             <a href="images/typescriptwall.png" data-gallery="portfolioGallery"
                                class="portfolio-lightbox" title="TypeScript - Microsoft"><i class="bx bx-plus"></i></a>
-                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="/front/ts" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
                 </div>
@@ -787,18 +787,18 @@
                 </button>
                 <div class="collapse" id="dashboard-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="/board/java" class="link-dark d-inline-flex text-decoration-none rounded">Java</a></li>
-                        <li><a href="/board/python" class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Node.js</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Ruby</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Umm Lang</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Kotlin</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Swift</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">JavaScript</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">TypeScript</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">React</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Vue.js</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Angular</a></li>
+                        <li><a href="/back/java" class="link-dark d-inline-flex text-decoration-none rounded">Java</a></li>
+                        <li><a href="/back/python" class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
+                        <li><a href="/back/nodejs" class="link-dark d-inline-flex text-decoration-none rounded">Node.js</a></li>
+                        <li><a href="/back/ruby" class="link-dark d-inline-flex text-decoration-none rounded">Ruby</a></li>
+                        <li><a href="/back/ummlang" class="link-dark d-inline-flex text-decoration-none rounded">Umm Lang</a></li>
+                        <li><a href="/back/kotlin" class="link-dark d-inline-flex text-decoration-none rounded">Kotlin</a></li>
+                        <li><a href="/back/swift" class="link-dark d-inline-flex text-decoration-none rounded">Swift</a></li>
+                        <li><a href="/front/js" class="link-dark d-inline-flex text-decoration-none rounded">JavaScript</a></li>
+                        <li><a href="/front/ts" class="link-dark d-inline-flex text-decoration-none rounded">TypeScript</a></li>
+                        <li><a href="/front/react" class="link-dark d-inline-flex text-decoration-none rounded">React</a></li>
+                        <li><a href="/front/vuejs" class="link-dark d-inline-flex text-decoration-none rounded">Vue.js</a></li>
+                        <li><a href="/front/angular" class="link-dark d-inline-flex text-decoration-none rounded">Angular</a></li>
                     </ul>
                 </div>
             </li>

@@ -7,12 +7,12 @@
     $('.content-editor-call').on('click', function (e) {
         let targetNum = e.target.id;
         $.ajax({
-            url: "/board/editor",
+            url: "/back/editor",
             method: "POST",
             data: {
               "targetNum" : targetNum,
             },
-            success(result) {
+            success: result => {
                 if($('#editor-title').val() != null) {
                     $('#editor-title').removeAttr('value');
                     $('#editor-title').attr('value', result.contentTitle);

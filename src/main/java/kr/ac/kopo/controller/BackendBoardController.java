@@ -25,7 +25,7 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/board")
+@RequestMapping("/back")
 public class BackendBoardController {
 
     private final BackendBoardService boardService;
@@ -79,7 +79,7 @@ public class BackendBoardController {
 
         String targetUrl = boardService.contentUpload(content);
 
-        return "redirect:/board/javaDetail/"+targetUrl;
+        return "redirect:/back/detail/"+targetUrl;
 
     }
 
@@ -93,7 +93,7 @@ public class BackendBoardController {
     @RequestMapping("/delete/{contentNum}")
     public String contentDelete(@PathVariable int contentNum) {
         boardService.contentDelete(contentNum);
-        return "redirect:/board/java";
+        return "redirect:/back/java";
     }
 
     /**
@@ -137,7 +137,7 @@ public class BackendBoardController {
      * @param model
      * @return
      */
-    @GetMapping("/javaDetail/{contentNum}")
+    @GetMapping("/detail/{contentNum}")
     public String detailView(@PathVariable int contentNum, Model model) {
         BackendBoardVO backendBoardVO = new BackendBoardVO();
         backendBoardVO = boardService.detailView(contentNum);
@@ -162,7 +162,7 @@ public class BackendBoardController {
 
         boardService.commentUpload(commentVO);
 
-        return "redirect:/board/javaDetail/"+urlNum;
+        return "redirect:/back/detail/"+urlNum;
     }
 
     /**
@@ -179,7 +179,7 @@ public class BackendBoardController {
 
         boardService.removeComment(commentNum);
 
-        return "redirect:/board/javaDetail/"+returnNum;
+        return "redirect:/back/detail/"+returnNum;
     }
 
     /**
@@ -206,7 +206,7 @@ public class BackendBoardController {
 
         boardService.commentUpdate(commentVO);
 
-        return "redirect:/board/javaDetail"+urlNum;
+        return "redirect:/back/detail"+urlNum;
     }
 
 }
