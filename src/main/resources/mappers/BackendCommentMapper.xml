@@ -27,4 +27,9 @@
         where comment_num = #{commentNum}
     </update>
 
+    <select id="getCommentSize" resultType="Integer">
+        select count(*)
+        from backend_board_comment
+    </select>
+
 </mapper>

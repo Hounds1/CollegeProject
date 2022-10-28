@@ -35,7 +35,7 @@ public class BackendBoardServiceImpl implements BackendBoardService {
 
     @Override
     @Transactional
-    public void contentUpload(BackendBoardVO content) {
+    public String contentUpload(BackendBoardVO content) {
         int hitSet = 0;
         content.setContentHit(hitSet);
         content.setContentCommentHit(hitSet);
@@ -47,6 +47,9 @@ public class BackendBoardServiceImpl implements BackendBoardService {
             backendBoardFileDao.filesUpload(fileVO);
         }
 
+        String targetUrl = Integer.toString(content.getContentNum());
+
+        return targetUrl;
     }
 
     @Transactional
@@ -68,13 +71,17 @@ public class BackendBoardServiceImpl implements BackendBoardService {
     }
 
     @Override
+    @Transactional
     public BackendBoardVO detailView(int contentNum) {
         backendBoardDao.contentHitter(contentNum);
         return backendBoardDao.detailView(contentNum);
     }
 
     @Override
+    @Transactional
     public void commentUpload(BackendBoardCommentVO commentVO) {
+        backendBoardDao.commentHitter(commentVO.getCommentTargetContentNum());
+
         backendBoardCommentDao.commentUpload(commentVO);
     }
 
@@ -91,6 +98,15 @@ public class BackendBoardServiceImpl implements BackendBoardService {
     @Override
     public void commentUpdate(BackendBoardCommentVO commentVO) {
         backendBoardCommentDao.commentUpdate(commentVO);
+    }
+
+    @Override
+    public List<BackendBoardVO> getPythonBoard(Pager pager) {
+        int total = backendBoardDao.getPythonTotal(pager);
+
+        pager.setTotal(total);
+
+        return backendBoardDao.getPythonBoard(pager);
     }
 
 

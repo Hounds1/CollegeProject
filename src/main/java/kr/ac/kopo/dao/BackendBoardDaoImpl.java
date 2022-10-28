@@ -58,5 +58,25 @@ public class BackendBoardDaoImpl implements BackendBoardDao {
         sqlSession.update("backendBoard.contentHitter", contentNum);
     }
 
+    @Override
+    public void commentHitter(int commentTargetContentNum) {
+        sqlSession.update("backendBoard.commentHitter", commentTargetContentNum);
+    }
+
+    @Override
+    public int getPythonTotal(Pager pager) {
+        return sqlSession.selectOne("backendBoard.getPythonTotal", pager);
+    }
+
+    @Override
+    public List<BackendBoardVO> getPythonBoard(Pager pager) {
+        return sqlSession.selectList("backendBoard.getPythonBoard", pager);
+    }
+
+    @Override
+    public int getContentsSize() {
+        return sqlSession.selectOne("backendBoard.getContentsSize");
+    }
+
 
 }

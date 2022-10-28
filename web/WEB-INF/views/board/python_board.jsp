@@ -67,7 +67,9 @@
     <link rel="stylesheet" type="text/css" href="memberAssets/css/util.css">
     <link rel="stylesheet" type="text/css" href="memberAssets/css/main.css">
     <!--===============================================================================================-->
-
+    <!-- include codemirror (codemirror.css, codemirror.js, xml.js, formatting.js) -->
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.css">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/theme/monokai.css">
 
 </head>
 
@@ -86,9 +88,9 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto" href="/board/${contentDetail.contentLangName}">Home</a></li>
-                <li><a class="nav-link scrollto" href="#content-header">Head Line</a></li>
-                <li><a class="nav-link scrollto" href="#content-detail">Details</a></li>
+                <li><a class="nav-link scrollto" href="/">Home</a></li>
+                <li><a class="nav-link scrollto" href="#python">Python</a></li>
+                <li><a class="nav-link scrollto" href="#python-contents">Contents</a></li>
                 <li class="dropdown"><a href="#"><span>Boards</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li class="dropdown"><a href="#"><span>FrontEnd</span> <i class="bi bi-chevron-right"></i></a>
@@ -104,7 +106,7 @@
                         <li class="dropdown"><a href="#"><span>BackEnd</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
                                 <li><a href="/board/java">Java</a></li>
-                                <li><a href="#">Python</a></li>
+                                <li><a href="/board/python">Python</a></li>
                                 <li><a href="#">Node.js</a></li>
                                 <li><a href="#">Umm Lang</a></li>
                                 <li><a href="#">Ruby</a></li>
@@ -135,21 +137,21 @@
 <main id="main">
 
     <!-- ======= About Section ======= -->
-    <section id="content-header" class="about">
+    <section id="python" class="about">
         <div class="container">
 
             <div class="row no-gutters">
                 <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="content">
-                        <h3>${contentDetail.contentTitle}</h3>
+                        <h3><i class="bx bxl-python"></i> Python</h3>
                         <p>
-                            게시일 : <fmt:formatDate value="${contentDetail.contentRegDate}" pattern="yyyy-MM-dd"/> <br>
-                            <c:if test="${contentDetail.contentUploader eq sessionScope.member.memberNick}">
-                            <a class="btn btn-secondary mt-1 content-editor-call" href="#" data-bs-toggle="modal"
-                               data-bs-target="#content-edit-modal" id="${contentDetail.contentNum}"><i
-                                    class="bi bi-pencil"></i> 수정하기</a>
-                            <a class="btn btn-secondary mt-1 ms-1"
-                               href="/board/delete/${contentDetail.contentNum}">삭제</a>
+                            이 곳은 Java와 관련된 질문이나 토론을 할 수 있는 게시판입니다.
+                            코드를 공유하거나 질문 해보세요.
+                            <c:if test="${sessionScope.member eq null}"><br>로그인 후 작성 가능합니다.</c:if>
+                            <br>
+                            <c:if test="${not empty sessionScope.member}">
+                                <a class="btn btn-secondary mt-1" href="#" data-bs-toggle="modal"
+                                   data-bs-target="#content-upload-modal"><i class="bi bi-pencil"></i> 작성하기</a>
                             </c:if>
                         </p>
                     </div>
@@ -158,30 +160,24 @@
                     <div class="icon-boxes d-flex flex-column justify-content-center">
                         <div class="row">
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                                <i class="bx bx-upload"></i>
-                                <h4>${contentDetail.contentUploader} <c:if
-                                        test="${contentDetail.contentUploader eq sessionScope.member.memberNick}">(me)</c:if></h4>
-                                <p>by uploaded.</p>
+                                <i class="bi bi-keyboard-fill"></i>
+                                <h4>Dynamic Typing</h4>
+                                <p>실행 시간에 자료형을 검사한다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                                <i class="bx bx-network-chart"></i>
-                                <h4>${contentDetail.contentLangName}</h4>
-                                <p>contents language name.</p>
+                                <i class="bi bi-infinity"></i>
+                                <h4>No Limit</h4>
+                                <p>객체의 멤버에 무제한으로 접근할 수 있다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                                <i class="bi bi-person"></i>
-                                <h4><span data-purecounter-start="0" data-purecounter-end="${contentDetail.contentHit}"
-                                          data-purecounter-duration="1"
-                                          class="purecounter"></span></h4>
-                                <p>contents hits</p>
+                                <i class="bx bx-reflect-horizontal"></i>
+                                <h4>Reflection</h4>
+                                <p>리플렉션을 이용한 기술을 사용할 수 있다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-                                <i class="bi bi-pencil"></i>
-                                <h4><span data-purecounter-start="0"
-                                          data-purecounter-end="${contentDetail.contentCommentHit}"
-                                          data-purecounter-duration="1"
-                                          class="purecounter"></span></h4>
-                                <p>comments hit</p>
+                                <i class="bx bx-text"></i>
+                                <h4>Inline</h4>
+                                <p>들여쓰기를 사용해 블록을 구분한다.</p>
                             </div>
                         </div>
                     </div><!-- End .content-->
@@ -191,63 +187,71 @@
     </section><!-- End About Section -->
 
     <!-- ======= Contents Section ======= -->
-    <section id="content-detail" class="services mb-5">
+    <section id="python-contents" class="services mb-5">
         <div class="container">
             <div class="section-title" data-aos="fade-in" data-aos-delay="100">
-                <h2>Contents Details</h2>
+                <h2>Contents</h2>
+                <form>
+                    <div class="d-flex justify-content-center">
+                        <div class="input-group mb-3 me-1" style="width: 625px;">
+                            <select class="form-select" name="search"
+                                    aria-label="Example select with button addon">
+                                <option value="0" selected>선택</option>
+                                <option value="1" ${pager.search == 1 ? "selected" : ""}>제목</option>
+                                <option value="2" ${pager.search == 2 ? "selected" : ""}>내용</option>
+                                <option value="3" ${pager.search == 3 ? "selected" : ""}>작성자</option>
+                            </select>
+                            <input type="text" class="form-control" placeholder="검색어를 입력해주세요." aria-label="검색어를 입력해주세요."
+                                   aria-describedby="button-addon2" name="keyword" value="${pager.search == 0  ? "" : pager.keyword}">
+                            <button class="btn btn-outline-secondary" id="button-addon2">검색</button>
+                        </div>
+                    </div>
+                </form>
             </div>
 
 
-            <div class="row border-top border-bottom" data-aos="fade-in" data-aos-delay="200">
-                <br>
-                <br>
-                <div style="padding: 30px;">
-                    <c:forEach var="img" items="${contentDetail.paramFileList}">
-                        <div class="mt-3 text-center">
-                            <img src="/loadImg/${img.fileName}">
-                        </div>
-                    </c:forEach>
-
-                    <div class="mt-5">
-                        ${contentDetail.contentDetail}
-                    </div>
-                </div>
-                <br>
-                <br>
-
-                <div>
-                    <div class="comment-form-box form-floating mb-4">
-                        <form action="/board/comment" method="post">
-                            <textarea class="form-control text-black" style="resize: none;" name="commentDetail"
-                                      placeholder="댓글을 작성해주세요."></textarea>
-                            <input type="hidden" name="commentTargetContentNum" value="${contentDetail.contentNum}">
-                            <button class="btn border-secondary mt-2 bg-secondary text-white justify-content-end"
-                                    style="margin-left: 1202px;">댓글 쓰기
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-3">
-                <c:forEach var="comment" items="${contentDetail.commentList}">
-                    <div class="border-bottom mt-3">
-                        <div class="d-flex">
-                            <p class="col-1">${comment.commentUploader}</p>
-                            <p class="col-2"><fmt:formatDate value="${comment.commentRegDate}"
-                                                             pattern="yy-MM-dd hh:mm:ss"/></p>
-                            <c:if test="${comment.commentUploader eq sessionScope.member.memberNick}">
-                            <div class="d-flex" style="margin-left: 890px;">
-                                <p><a class="edit-target" href="#" data-bs-toggle="modal"
-                                      data-bs-target="#comment-edit-modal" id="${comment.commentNum}">수정</a></p>
-                                <p class="ms-2"><a href="/board/removecomment/${comment.commentNum}">삭제</a></p>
-                            </div>
-                            </c:if>
-                        </div>
-                        <div class="mt-2 text-black mb-2">
-                            <p class="ms-2 comment-detail">${comment.commentDetail}</p>
+            <div class="row">
+                <c:forEach var="list" items="${list}">
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100"
+                             style="width: 294.8px; height: 220.8px">
+                            <div class="icon"><i class="bi bi-code-square"></i></div>
+                            <h4 class="title"
+                                style="width: 230px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">
+                                <a href="/board/javaDetail/${list.contentNum}">${list.contentTitle}</a>
+                            </h4>
+                            <p class="description">${list.contentUploader} <br>
+                                <fmt:formatDate value="${list.contentRegDate}" pattern="yyyy-MM-dd"/>
+                            </p>
                         </div>
                     </div>
                 </c:forEach>
+            </div>
+            <div class="pagination-wrap mt-5 d-flex justify-content-center" data-aos="fade-in" data-aos-delay="100">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="?page=1">처음</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="?page=${pager.prev}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <c:forEach var="page" items="${pager.list}">
+                            <li class="page-item">
+                                <a class="page-link ${page eq pager.page ? 'active' : ''}"
+                                   href="?page=${page}">${page}</a>
+                            </li>
+                        </c:forEach>
+                        <li class="page-item">
+                            <a class="page-link" href="?page=${pager.next}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="?page=${pager.last}">마지막</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </section><!-- End Contents Section -->
@@ -376,7 +380,7 @@
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                         <li><a href="/board/java" class="link-dark d-inline-flex text-decoration-none rounded">Java</a>
                         </li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
+                        <li><a href="/board/python" class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
                         <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Node.js</a></li>
                         <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Ruby</a></li>
                         <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Umm Lang</a></li>
@@ -564,57 +568,47 @@
 </div>
 <!-- Account modal -->
 
-<!-- Contents edit modal -->
+<!-- Contents send modal -->
 <!-- Modal -->
-<div class="modal modal-xl fade" id="content-edit-modal" tabindex="-1" aria-labelledby="content-edit-modalLabel"
+<div class="modal modal-xl fade" id="content-upload-modal" tabindex="-1" aria-labelledby="content-upload-modalLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="contentEditModalLabel">Upload Content</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Upload Content</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="/board/upload" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
-                        <label for="editor-title" class="col-form-label">Title:</label>
-                        <input type="text" class="form-control" id="editor-title" name="contentTitle">
+                        <label for="recipient-title" class="col-form-label">Title:</label>
+                        <input type="text" class="form-control" id="recipient-title" name="contentTitle">
                     </div>
-                    <textarea class="summernote" id="editor-summernote" name="contentDetail"></textarea>
-                    <input type="hidden" id="editor-targetNum" value="${contentDetail.contentNum}">
+
+                    <textarea class="summernote" id="content-upload-detail" name="contentDetail"></textarea>
+
+                    <div class="input-group mt-3">
+                        <input type="file" class="form-control" name="paramFiles">
+                    </div>
+                    <div class="input-group mt-3">
+                        <input type="file" class="form-control" name="paramFiles">
+                    </div>
+
+                    <input type="hidden" id="content-upload-loader" value="${sessionScope.member.memberNick}"
+                           name="contentUploader">
+                    <input type="hidden" id="content-lang" value="python" name="contentLangName">
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button class="btn btn-secondary">Send Content</button>
+                    </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-secondary" id="editor-submit-btn">Edit Content</button>
-            </div>
         </div>
     </div>
 </div>
-<!-- Contents edit modal -->
-<!-- Comment edit modal -->
-<div class="modal fade" tabindex="-1" id="comment-edit-modal">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <form class="form-floating" action="/board/commentUpdate" method="post">
-                <div class="modal-header">
-                    <h5 class="modal-title">Comment Edit</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <textarea class="form-control" name="commentDetail" id="comment-edit-form"></textarea>
-                    <input type="hidden" name="commentNum" id="comment-edit-num">
-                    <input type="hidden" name="commentTargetContentNum" value="${contentDetail.contentNum}">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary comment-edit-close" data-bs-dismiss="modal">Close</button>
-                    <button class="btn btn-secondary">Save changes</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<!-- Comment edit modal -->
+
+<!-- Contents send modal -->
 
 <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
@@ -647,14 +641,18 @@
 <script src="assets/vendor/php-email-form/validate.js"></script>
 <script src="summernote/summernote-ko-KR.js"></script>
 <script src="summernote/summernote-lite.js"></script>
+<script src="summernote/summernote-ext-highlight.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/xml/xml.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/2.36.0/formatting.js"></script>
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
 <script src="assets/js/sidebars.js"></script>
-<script src="backendboard/content_detail_summernote.js"></script>
+<script src="backendboard/summernote.js"></script>
 <script src="backendboard/member_form_control.js"></script>
 <script src="backendboard/backendboard_content_control.js"></script>
-<script src="backendboard/comment_control.js"></script>
 </body>
 
 </html>

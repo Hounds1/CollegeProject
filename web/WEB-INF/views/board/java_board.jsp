@@ -106,11 +106,11 @@
                         <li class="dropdown"><a href="#"><span>BackEnd</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
                                 <li><a href="/board/java">Java</a></li>
-                                <li><a href="#">Python</a></li>
-                                <li><a href="#">Node.js</a></li>
-                                <li><a href="#">Umm Lang</a></li>
-                                <li><a href="#">Ruby</a></li>
-                                <li><a href="#">Kotlin</a></li>
+                                <li><a href="/board/python">Python</a></li>
+                                <li><a href="/board/nodejs">Node.js</a></li>
+                                <li><a href="/board/ummlang">Umm Lang</a></li>
+                                <li><a href="/board/ruby">Ruby</a></li>
+                                <li><a href="/board/kotlin">Kotlin</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -380,11 +380,11 @@
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                         <li><a href="/board/java" class="link-dark d-inline-flex text-decoration-none rounded">Java</a>
                         </li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Node.js</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Ruby</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Umm Lang</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Kotlin</a></li>
+                        <li><a href="/board/python" class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
+                        <li><a href="/board/nodejs" class="link-dark d-inline-flex text-decoration-none rounded">Node.js</a></li>
+                        <li><a href="/board/ruby" class="link-dark d-inline-flex text-decoration-none rounded">Ruby</a></li>
+                        <li><a href="/board/ummlang" class="link-dark d-inline-flex text-decoration-none rounded">Umm Lang</a></li>
+                        <li><a href="/board/kotlin" class="link-dark d-inline-flex text-decoration-none rounded">Kotlin</a></li>
                         <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Swift</a></li>
                         <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">JavaScript</a></li>
                         <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">TypeScript</a></li>
@@ -596,7 +596,7 @@
 
                     <input type="hidden" id="content-upload-loader" value="${sessionScope.member.memberNick}"
                            name="contentUploader">
-                    <input type="hidden" id="content-lang" value="Java" name="contentLangName">
+                    <input type="hidden" id="content-lang" value="java" name="contentLangName">
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

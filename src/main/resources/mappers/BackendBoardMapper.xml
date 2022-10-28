@@ -93,7 +93,7 @@
         select backend_board.*, backend_board_file.file_num file_num, file_name, target_content_num, backend_board_comment.comment_num comment_num, comment_uploader, comment_reg_date, comment_detail, comment_target_content_num
         from backend_board
                  left join backend_board_file on (backend_board.content_num = backend_board_file.target_content_num)
-                left join backend_board_comment on (backend_board.content_num = backend_board_comment.comment_target_content_num)
+                 left join backend_board_comment on (backend_board.content_num = backend_board_comment.comment_target_content_num)
         where backend_board.content_num = #{content_num}
     </select>
 
@@ -102,4 +102,55 @@
             set content_hit = content_hit+1
         where content_num = #{contentNum}
     </update>
+
+    <update id="commentHitter">
+        update backend_board
+            set content_comment_hit = content_comment_hit+1
+        where content_num = #{commentTargetContentNum}
+    </update>
+
+    <select id="getPythonTotal" resultType="Integer">
+        select count(*)
+        from backend_board
+        <where>
+            <if test="search == 0">
+                content_lang_name = 'Python'
+            </if>
+            <if test="search == 1">
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Python'
+            </if>
+            <if test="search == 2">
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Python'
+            </if>
+            <if test="search == 3">
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Python'
+            </if>
+        </where>
+    </select>
+
+    <select id="getPythonBoard" resultType="BackendBoard">
+        select *
+        from backend_board
+        <where>
+            <if test="search == 0">
+                content_lang_name = 'Python'
+            </if>
+            <if test="search == 1">
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Python'
+            </if>
+            <if test="search == 2">
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Python'
+            </if>
+            <if test="search == 3">
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Python'
+            </if>
+        </where>
+        order by content_num desc
+        LIMIT ${offset}, ${perPage}
+    </select>
+
+    <select id="getContentsSize" resultType="Integer">
+        select count(*)
+        from backend_board;
+    </select>
 </mapper>

@@ -30,4 +30,9 @@ public class BackendBoardCommentDaoImpl implements BackendBoardCommentDao{
     public void commentUpdate(BackendBoardCommentVO commentVO) {
         sqlSession.update("backendComment.commentUpdate", commentVO);
     }
+
+    @Override
+    public int getCommentSize() {
+        return sqlSession.selectOne("backendComment.getCommentSize");
+    }
 }

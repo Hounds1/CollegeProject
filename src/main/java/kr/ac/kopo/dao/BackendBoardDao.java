@@ -24,4 +24,11 @@ public interface BackendBoardDao {
 
     void contentHitter(int contentNum);
 
+    void commentHitter(int commentTargetContentNum);
+
+    int getPythonTotal(Pager pager);
+
+    List<BackendBoardVO> getPythonBoard(Pager pager);
+
+    int getContentsSize();
 }

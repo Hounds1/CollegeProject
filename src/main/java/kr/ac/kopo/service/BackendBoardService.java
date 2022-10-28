@@ -9,7 +9,7 @@ import java.util.List;
 public interface BackendBoardService {
     List<BackendBoardVO> getJavaBoard(Pager pager);
 
-    void contentUpload(BackendBoardVO content);
+    String contentUpload(BackendBoardVO content);
 
     void contentDelete(int contentNum);
 
@@ -27,4 +27,6 @@ public interface BackendBoardService {
     BackendBoardCommentVO commentEditor(int targetId);
 
     void commentUpdate(BackendBoardCommentVO commentVO);
+
+    List<BackendBoardVO> getPythonBoard(Pager pager);
 }

@@ -103,7 +103,7 @@
                         <li class="dropdown"><a href="#"><span>BackEnd</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
                                 <li><a href="/board/java">Java</a></li>
-                                <li><a href="#">Python</a></li>
+                                <li><a href="/board/python">Python</a></li>
                                 <li><a href="#">Node.js</a></li>
                                 <li><a href="#">Umm Lang</a></li>
                                 <li><a href="#">Ruby</a></li>
@@ -205,7 +205,7 @@
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up">
                         <div class="icon"><i class="bx bxl-discord"></i></div>
-                        <h4 class="title"><a href="https://discord.com/">Discord</a></h4>
+                        <h4 class="title"><a href="https://discord.com/" target="_blank">Discord</a></h4>
                         <p class="description">Archivist의 Discord 채널에서 음성으로 대화하세요!</p>
                     </div>
                 </div>
@@ -233,7 +233,6 @@
                         <p class="description">많은 초보 개발자들이 도움을 요청합니다. 어서 가서 도와주세요!</p>
                     </div>
                 </div>
-
             </div>
 
         </div>
@@ -257,7 +256,7 @@
                 <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
                     <div class="count-box">
                         <i class="bi bi-journal-richtext"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="${contentsSize}" data-purecounter-duration="1"
                               class="purecounter"></span>
                         <p><strong>개의 글이</strong> <br>게시되었습니다.</p>
                     </div>
@@ -266,7 +265,7 @@
                 <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
                     <div class="count-box">
                         <i class="bi bi-code"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="${commentSize}" data-purecounter-duration="1"
                               class="purecounter"></span>
                         <p><strong>번의 도움이</strong> <br>이루어졌습니다.</p>
                     </div>
@@ -789,7 +788,7 @@
                 <div class="collapse" id="dashboard-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                         <li><a href="/board/java" class="link-dark d-inline-flex text-decoration-none rounded">Java</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
+                        <li><a href="/board/python" class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
                         <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Node.js</a></li>
                         <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Ruby</a></li>
                         <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Umm Lang</a></li>

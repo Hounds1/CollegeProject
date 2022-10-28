@@ -44,6 +44,14 @@ public class BackendBoardController {
         return "/board/java_board";
     }
 
+    @GetMapping("/python")
+    public String getPythonBoard(Model model, Pager pager) {
+        List<BackendBoardVO> list = boardService.getPythonBoard(pager);
+        model.addAttribute("list", list);
+
+        return "/board/python_board";
+    }
+
 
     /**
      * common upload method
@@ -69,9 +77,9 @@ public class BackendBoardController {
 
         content.setParamFileList(list);
 
-        boardService.contentUpload(content);
+        String targetUrl = boardService.contentUpload(content);
 
-        return "redirect:/board/java";
+        return "redirect:/board/javaDetail/"+targetUrl;
 
     }
 
@@ -168,6 +176,7 @@ public class BackendBoardController {
         String referer = request.getHeader("referer");
         String returnNum = referer.substring(referer.lastIndexOf("/"), referer.length());
 
+
         boardService.removeComment(commentNum);
 
         return "redirect:/board/javaDetail/"+returnNum;
@@ -182,6 +191,13 @@ public class BackendBoardController {
     public @ResponseBody BackendBoardCommentVO commentEditor(@RequestParam(value = "targetId") int targetId) {
         return boardService.commentEditor(targetId);
     }
+
+    /**
+     * comment update ajax
+     * @param commentVO
+     * @param request
+     * @return referer page
+     */
 
     @PostMapping("/commentUpdate")
     public String commentUpdate(BackendBoardCommentVO commentVO, HttpServletRequest request) {

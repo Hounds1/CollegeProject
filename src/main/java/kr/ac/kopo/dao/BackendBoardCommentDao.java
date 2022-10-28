@@ -10,4 +10,6 @@ public interface BackendBoardCommentDao {
     BackendBoardCommentVO commentEditor(int targetId);
 
     void commentUpdate(BackendBoardCommentVO commentVO);
+
+    int getCommentSize();
 }

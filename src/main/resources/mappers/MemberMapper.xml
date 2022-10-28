@@ -12,7 +12,7 @@
 
     <insert id="memberNewAccount">
         insert into member
-            values (NULL, #{memberId}, #{memberNick}, #{memberPass}, #{memberSalt}, now(), #{memberAuthority} , NULL, NULL, NULL, NULL)
+            values (NULL, #{memberId}, #{memberNick}, #{memberPass}, #{memberSalt}, now(), #{memberAuthority})
     </insert>
 
     <select id="memberLogin" resultType="Member">

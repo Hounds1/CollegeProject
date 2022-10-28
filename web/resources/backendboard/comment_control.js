@@ -19,5 +19,10 @@ $(document).ready(function () {
     $('.btn-close').on('click', function () {
         $('#comment-edit-num').removeAttr('value');
         $('#comment-edit-form').text("");
+    });
+
+    $('.comment-edit-close').on('click', function () {
+        $('#comment-edit-num').removeAttr('value');
+        $('#comment-edit-form').text("");
     })
 });
