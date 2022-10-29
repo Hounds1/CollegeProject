@@ -495,43 +495,6 @@
 </div>
 <!-- member password change modal -->
 
-<!-- member personal change modal -->
-<div class="modal fade" id="personalModal" tabindex="-1" aria-labelledby="personalModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Personal Information</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                        <label for="memberName" class="col-form-label">Name:</label>
-                        <input type="text" class="form-control" id="memberName" placeholder="이름을 입력해 주세요." value="${sessionScope.member.memberName}">
-                    </div>
-                    <div class="mb-3">
-                        <label for="memberBirth" class="col-form-label">Birth Day:</label>
-                        <input type="date" class="form-control" id="memberBirth" placeholder="생일을 선택해 주세요." value="${sessionScope.member.memberBirth}">
-                    </div>
-                    <div class="mb-3">
-                        <label for="memberPhoneNumber" class="col-form-label">Phone Number:</label>
-                        <input type="text" class="form-control" id="memberPhoneNumber" placeholder="전화번호를 입력해 주세요." value="${sessionScope.member.memberPhoneNumber}">
-                    </div>
-                    <div class="mb-3">
-                        <label for="memberAddress" class="col-form-label">Address:</label>
-                        <input type="text" class="form-control" id="memberAddress" placeholder="주소를 입력해 주세요." value="${sessionScope.member.memberAddress}">
-                    </div>
-                    <input type="hidden" id="PIChangeId" name="PIChangeId" value="${sessionScope.member.memberId}">
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-secondary pi-changer-btn">Update</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- member personal change modal -->
 
 <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="

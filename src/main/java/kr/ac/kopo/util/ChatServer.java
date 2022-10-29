@@ -12,6 +12,8 @@ import java.util.List;
 @ServerEndpoint("/chatserver")
 public class ChatServer {
 
+    // 현재 채팅 서버에 접속한 클라이언트(WebSocket Session) 목록
+    // static 붙여야함!!
     private static List<Session> list = new ArrayList<Session>();
 
     private void print(String msg) {
@@ -21,7 +23,7 @@ public class ChatServer {
     @OnOpen
     public void handleOpen(Session session) {
         print("클라이언트 연결");
-        list.add(session);
+        list.add(session); // 접속자 관리(****)
     }
 
     @OnMessage
@@ -41,6 +43,9 @@ public class ChatServer {
 
                     try {
                         s.getBasicRemote().sendText("1#" + user + "#");
+                        System.out.println(msg);
+                        System.out.println(user);
+                        System.out.println(txt);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -54,7 +59,10 @@ public class ChatServer {
 
                 if (s != session) { // 현재 접속자가 아닌 나머지 사람들
                     try {
-                        s.getBasicRemote().sendText("2#" + user + ":" + txt);
+                        s.getBasicRemote().sendText("2#" + user + " : " + txt);
+                        System.out.println(msg);
+                        System.out.println(user);
+                        System.out.println(txt);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -86,7 +94,7 @@ public class ChatServer {
     }
 
     @OnError
-    public void handleError(Throwable t){
-        
+    public void handleError(Throwable t) {
+
     }
 }

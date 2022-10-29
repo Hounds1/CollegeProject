@@ -24,7 +24,7 @@
 
     <table class="table table-bordered">
         <tr>
-            <td><input type="text" name="user" id="user" class="form-control" placeholder="유저명"></td>
+            <td><input type="text" name="user" id="user" class="form-control" value="${sessionScope.member.memberNick}" readonly></td>
             <td>
                 <button type="button" class="btn btn-default" id="btnConnect">연결</button>
                 <button type="button" class="btn btn-default" id="btnDisconnect" disabled>종료</button>
