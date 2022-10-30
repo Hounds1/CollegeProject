@@ -52,6 +52,46 @@ public class BackendBoardController {
         return "/board/python_board";
     }
 
+    @GetMapping("/nodejs")
+    public String getNodeJsBoard(Model model, Pager pager){
+        List<BackendBoardVO> list = boardService.getNodeJsBoard(pager);
+        model.addAttribute("list", list);
+
+        return "/board/nodejs_board";
+    }
+
+    @GetMapping("/ummlang")
+    public String getUmmLangBoard(Model model, Pager pager) {
+        List<BackendBoardVO> list = boardService.getUmmLangBoard(pager);
+        model.addAttribute("list", list);
+
+        return "/board/ummlang_board";
+    }
+
+    @GetMapping("/ruby")
+    public String getRubyBoard(Model model, Pager pager) {
+        List<BackendBoardVO> list = boardService.getRubyBoard(pager);
+        model.addAttribute("list", list);
+
+        return "/board/ruby_board";
+    }
+
+    @GetMapping("/kotlin")
+    public String getKotlinBoard(Model model, Pager pager) {
+        List<BackendBoardVO> list = boardService.getKotlinBoard(pager);
+        model.addAttribute("list", list);
+
+        return "/board/kotlin_board";
+    }
+
+    @GetMapping("swift")
+    public String getSwiftBoard(Model model, Pager pager) {
+        List<BackendBoardVO> list = boardService.getSwiftBoard(pager);
+        model.addAttribute("list",list);
+
+        return "/board/swift_board";
+    }
+
 
     /**
      * common upload method

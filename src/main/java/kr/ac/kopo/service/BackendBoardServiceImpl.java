@@ -109,5 +109,50 @@ public class BackendBoardServiceImpl implements BackendBoardService {
         return backendBoardDao.getPythonBoard(pager);
     }
 
+    @Override
+    public List<BackendBoardVO> getNodeJsBoard(Pager pager) {
+        int total = backendBoardDao.getNodeJsTotal(pager);
+
+        pager.setTotal(total);
+
+        return backendBoardDao.getNodeJsBoard(pager);
+    }
+
+    @Override
+    public List<BackendBoardVO> getUmmLangBoard(Pager pager) {
+        int total = backendBoardDao.getUmmLangTotal(pager);
+
+        pager.setTotal(total);
+
+        return backendBoardDao.getUmmLangBoard(pager);
+    }
+
+    @Override
+    public List<BackendBoardVO> getRubyBoard(Pager pager) {
+        int total = backendBoardDao.getRubyTotal(pager);
+
+        pager.setTotal(total);
+
+        return  backendBoardDao.getRubyBoard(pager);
+    }
+
+    @Override
+    public List<BackendBoardVO> getKotlinBoard(Pager pager) {
+        int total = backendBoardDao.getKotlinTotal(pager);
+
+        pager.setTotal(total);
+
+        return backendBoardDao.getKotlinBoard(pager);
+    }
+
+    @Override
+    public List<BackendBoardVO> getSwiftBoard(Pager pager) {
+        int total = backendBoardDao.getSwiftTotal(pager);
+
+        pager.setTotal(total);
+
+        return backendBoardDao.getSwiftBoard(pager);
+    }
+
 
 }

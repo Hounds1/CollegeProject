@@ -31,4 +31,24 @@ public interface BackendBoardDao {
     List<BackendBoardVO> getPythonBoard(Pager pager);
 
     int getContentsSize();
+
+    int getNodeJsTotal(Pager pager);
+
+    List<BackendBoardVO> getNodeJsBoard(Pager pager);
+
+    int getUmmLangTotal(Pager pager);
+
+    List<BackendBoardVO> getUmmLangBoard(Pager pager);
+
+    int getRubyTotal(Pager pager);
+
+    List<BackendBoardVO> getRubyBoard(Pager pager);
+
+    int getKotlinTotal(Pager pager);
+
+    List<BackendBoardVO> getKotlinBoard(Pager pager);
+
+    int getSwiftTotal(Pager pager);
+
+    List<BackendBoardVO> getSwiftBoard(Pager pager);
 }

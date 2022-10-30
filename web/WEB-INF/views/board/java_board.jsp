@@ -41,12 +41,6 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/sidebars.css" rel="stylesheet">
 
-    <!-- =======================================================
-    * Template Name: Squadfree - v4.9.1
-    * Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
-    ======================================================== -->
 
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="memberAssets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -162,22 +156,22 @@
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                                 <i class="bx bxl-java"></i>
                                 <h4>OOP</h4>
-                                <p>객체 지향 방법론을 사용해야 한다.</p>
+                                <p>객체 지향 방법론을 사용합니다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                                 <i class="bx bx-windows"></i>
                                 <h4>Running</h4>
-                                <p>같은 프로그램(바이트코드)이 여러 운영 체제(마이크로프로세서)에서 실행될 수 있어야 한다.</p>
+                                <p>같은 프로그램(바이트코드)이 여러 운영 체제(마이크로프로세서)에서 실행될 수 있습니다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                                 <i class="bx bx-network-chart"></i>
                                 <h4>Network</h4>
-                                <p>컴퓨터 네트워크 접근 기능이 기본으로 탑재되어 있어야 한다.</p>
+                                <p>컴퓨터 네트워크 접근 기능이 기본으로 탑재되어 있습니다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                                 <i class="bx bx-file"></i>
                                 <h4>Positive</h4>
-                                <p>다른 객체 지향 언어들의 좋은 부분만 가지고 와서 사용하기 편해야 한다.</p>
+                                <p>다른 객체 지향 언어들의 좋은 부분만 가지고 와서 사용하기 편합니다.</p>
                             </div>
                         </div>
                     </div><!-- End .content-->

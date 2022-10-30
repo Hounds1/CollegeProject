@@ -9,16 +9,16 @@
         from backend_board
         <where>
             <if test="search == 0">
-                content_lang_name = 'Java'
+                content_lang_name = 'java'
             </if>
             <if test="search == 1">
-                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Java'
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'java'
             </if>
             <if test="search == 2">
-                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Java'
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'java'
             </if>
             <if test="search == 3">
-                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Java'
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'java'
             </if>
         </where>
 
@@ -29,16 +29,16 @@
         from backend_board
         <where>
             <if test="search == 0">
-                content_lang_name = 'Java'
+                content_lang_name = 'java'
             </if>
             <if test="search == 1">
-                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Java'
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'java'
             </if>
             <if test="search == 2">
-                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Java'
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'java'
             </if>
             <if test="search == 3">
-                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Java'
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'java'
             </if>
         </where>
         order by content_num desc
@@ -115,16 +115,16 @@
         from backend_board
         <where>
             <if test="search == 0">
-                content_lang_name = 'Python'
+                content_lang_name = 'python'
             </if>
             <if test="search == 1">
-                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Python'
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'python'
             </if>
             <if test="search == 2">
-                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Python'
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'python'
             </if>
             <if test="search == 3">
-                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Python'
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'python'
             </if>
         </where>
     </select>
@@ -134,16 +134,16 @@
         from backend_board
         <where>
             <if test="search == 0">
-                content_lang_name = 'Python'
+                content_lang_name = 'python'
             </if>
             <if test="search == 1">
-                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Python'
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'python'
             </if>
             <if test="search == 2">
-                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Python'
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'python'
             </if>
             <if test="search == 3">
-                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'Python'
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'python'
             </if>
         </where>
         order by content_num desc
@@ -153,5 +153,205 @@
     <select id="getContentsSize" resultType="Integer">
         select count(*)
         from backend_board;
+    </select>
+    
+    <select id="getNodeJsTotal" resultType="Integer">
+        select count(*)
+        from backend_board
+        <where>
+            <if test="search == 0">
+                content_lang_name = 'nodejs'
+            </if>
+            <if test="search == 1">
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'nodejs'
+            </if>
+            <if test="search == 2">
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'nodejs'
+            </if>
+            <if test="search == 3">
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'nodejs'
+            </if>
+        </where>
+    </select>
+    
+    <select id="getNodeJsBoard" resultType="BackendBoard">
+        select *
+        from backend_board
+        <where>
+            <if test="search == 0">
+                content_lang_name = 'nodejs'
+            </if>
+            <if test="search == 1">
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'nodejs'
+            </if>
+            <if test="search == 2">
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'nodejs'
+            </if>
+            <if test="search == 3">
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'nodejs'
+            </if>
+        </where>
+        order by content_num desc
+        LIMIT ${offset}, ${perPage}
+    </select>
+
+    <select id="getUmmLangTotal" resultType="Integer">
+        select count(*)
+        from backend_board
+        <where>
+            <if test="search == 0">
+                content_lang_name = 'ummlang'
+            </if>
+            <if test="search == 1">
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'ummlang'
+            </if>
+            <if test="search == 2">
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'ummlang'
+            </if>
+            <if test="search == 3">
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'ummlang'
+            </if>
+        </where>
+    </select>
+
+    <select id="getUmmLangBoard" resultType="BackendBoard">
+        select *
+        from backend_board
+        <where>
+            <if test="search == 0">
+                content_lang_name = 'ummlang'
+            </if>
+            <if test="search == 1">
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'ummlang'
+            </if>
+            <if test="search == 2">
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'ummlang'
+            </if>
+            <if test="search == 3">
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'ummlang'
+            </if>
+        </where>
+        order by content_num desc
+        LIMIT ${offset}, ${perPage}
+    </select>
+
+    <select id="getRubyTotal" resultType="Integer">
+        select count(*)
+        from backend_board
+        <where>
+            <if test="search == 0">
+                content_lang_name = 'ruby'
+            </if>
+            <if test="search == 1">
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'ruby'
+            </if>
+            <if test="search == 2">
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'ruby'
+            </if>
+            <if test="search == 3">
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'ruby'
+            </if>
+        </where>
+    </select>
+
+    <select id="getRubyBoard" resultType="BackendBoard">
+        select *
+        from backend_board
+        <where>
+            <if test="search == 0">
+                content_lang_name = 'ruby'
+            </if>
+            <if test="search == 1">
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'ruby'
+            </if>
+            <if test="search == 2">
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'ruby'
+            </if>
+            <if test="search == 3">
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'ruby'
+            </if>
+        </where>
+        order by content_num desc
+        LIMIT ${offset}, ${perPage}
+    </select>
+
+    <select id="getKotlinTotal" resultType="Integer">
+        select count(*)
+        from backend_board
+        <where>
+            <if test="search == 0">
+                content_lang_name = 'kotlin'
+            </if>
+            <if test="search == 1">
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'kotlin'
+            </if>
+            <if test="search == 2">
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'kotlin'
+            </if>
+            <if test="search == 3">
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'kotlin'
+            </if>
+        </where>
+    </select>
+
+    <select id="getKotlinBoard" resultType="BackendBoard">
+        select *
+        from backend_board
+        <where>
+            <if test="search == 0">
+                content_lang_name = 'kotlin'
+            </if>
+            <if test="search == 1">
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'kotlin'
+            </if>
+            <if test="search == 2">
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'kotlin'
+            </if>
+            <if test="search == 3">
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'kotlin'
+            </if>
+        </where>
+        order by content_num desc
+        LIMIT ${offset}, ${perPage}
+    </select>
+
+    <select id="getSwiftTotal" resultType="Integer">
+        select count(*)
+        from backend_board
+        <where>
+            <if test="search == 0">
+                content_lang_name = 'swift'
+            </if>
+            <if test="search == 1">
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'swift'
+            </if>
+            <if test="search == 2">
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'swift'
+            </if>
+            <if test="search == 3">
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'swift'
+            </if>
+        </where>
+    </select>
+
+    <select id="getSwiftBoard" resultType="BackendBoard">
+        select *
+        from backend_board
+        <where>
+            <if test="search == 0">
+                content_lang_name = 'swift'
+            </if>
+            <if test="search == 1">
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'swift'
+            </if>
+            <if test="search == 2">
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'swift'
+            </if>
+            <if test="search == 3">
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'swift'
+            </if>
+        </where>
+        order by content_num desc
+        LIMIT ${offset}, ${perPage}
     </select>
 </mapper>

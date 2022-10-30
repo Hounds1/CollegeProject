@@ -7,8 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="utf-8">
@@ -54,10 +56,13 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="memberAssets/vendor/daterangepicker/daterangepicker.css">
     <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="summernote/summernote-lite.css">
     <link rel="stylesheet" type="text/css" href="memberAssets/css/util.css">
     <link rel="stylesheet" type="text/css" href="memberAssets/css/main.css">
     <!--===============================================================================================-->
-
+    <!-- include codemirror (codemirror.css, codemirror.js, xml.js, formatting.js) -->
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.css">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/theme/monokai.css">
 
 </head>
 
@@ -77,8 +82,8 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a class="nav-link scrollto" href="/">Home</a></li>
-                <li><a class="nav-link scrollto" href="#about">Notice</a></li>
-                <li><a class="nav-link scrollto" href="#my-page">My page</a></li>
+                <li><a class="nav-link scrollto" href="#swift">Swift</a></li>
+                <li><a class="nav-link scrollto" href="#swift-contents">Contents</a></li>
                 <li class="dropdown"><a href="#"><span>Boards</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li class="dropdown"><a href="#"><span>FrontEnd</span> <i class="bi bi-chevron-right"></i></a>
@@ -125,17 +130,22 @@
 <main id="main">
 
     <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <section id="swift" class="about">
         <div class="container">
 
             <div class="row no-gutters">
                 <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="content">
-                        <h3>Notice</h3>
+                        <h3><i class="bi bi-apple"></i> Swift</h3>
                         <p>
-                            다음은 Archivist에서 권장 드리는 보안 또는 사용 가이드라인과 관련된 내용들입니다.
-                            부디 읽어주시고 피해가 발생하지 않도록 함께 노력해 주시기 바랍니다.
-                            Archivist는 언제나 유저의 편에서 가동하겠습니다.
+                            이 곳은 Swift와 관련된 질문이나 토론을 할 수 있는 게시판입니다.
+                            코드를 공유하거나 질문 해보세요.
+                            <c:if test="${sessionScope.member eq null}"><br>로그인 후 작성 가능합니다.</c:if>
+                            <br>
+                            <c:if test="${not empty sessionScope.member}">
+                                <a class="btn btn-secondary mt-1" href="#" data-bs-toggle="modal"
+                                   data-bs-target="#content-upload-modal"><i class="bi bi-pencil"></i> 작성하기</a>
+                            </c:if>
                         </p>
                     </div>
                 </div>
@@ -143,24 +153,24 @@
                     <div class="icon-boxes d-flex flex-column justify-content-center">
                         <div class="row">
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                                <i class="bx bx-lock"></i>
-                                <h4>절대 비밀번호를 타인에게 알려주어서는 안됩니다.</h4>
-                                <p>비밀번호의 보안을 강화하고 타인에게 알려주어서는 안됩니다.</p>
+                                <i class="bi bi-safe"></i>
+                                <h4>Safety</h4>
+                                <p>강력한 타입 통제, 오류 처리 등으로 프로그래머의 오류를 잡아줍니다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                                <i class="bx bx-shield"></i>
-                                <h4>Archivist 현재 보안상 문제없이 가동 중입니다.</h4>
-                                <p>더욱더 정보를 다루는데 신중해지겠습니다.</p>
+                                <i class="bi bi-clock"></i>
+                                <h4>Modern</h4>
+                                <p>간결하고 가독성이 좋습니다. 현대 프로그래밍 언어의 유용한 기능들이 들어있습니다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                                <i class="bx bx-notification"></i>
-                                <h4>변경하신 정보를 기억해 주십시오.</h4>
-                                <p>비밀번호 등과 같은 중요한 정보는 기록하기 보다 기억하시길 권장 드립니다.</p>
+                                <i class="bi bi-fast-forward-btn"></i>
+                                <h4>Fast</h4>
+                                <p>고성능 LLVM 컴파일러로 C언어와 비슷한 빠른 성능을 보이며, 컴파일러를 지속적으로 개량하여 실행 속도가 빠릅니다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-                                <i class="bx bx-info-square"></i>
-                                <h4>우리는 개인정보를 요구하지 않습니다.</h4>
-                                <p>우리는 당신을 부를 수 있는 "닉네임"을 제외한 추가정보를 요구하지 않습니다.</p>
+                                <i class="bi bi-cpu"></i>
+                                <h4>Protocol Orientation</h4>
+                                <p>참조 타입인 클래스의 인스턴스보다, 값 타입을 더 효율적으로 사용하며 오류 역시 줄일 수 있는 방법입니다.</p>
                             </div>
                         </div>
                     </div><!-- End .content-->
@@ -169,62 +179,77 @@
         </div>
     </section><!-- End About Section -->
 
-    <!-- ======= Services Section ======= -->
-    <section id="my-page" class="services mb-5">
+    <!-- ======= Contents Section ======= -->
+    <section id="swift-contents" class="services mb-5">
         <div class="container">
-
             <div class="section-title" data-aos="fade-in" data-aos-delay="100">
-                <h2>My page</h2>
-                <p>
-                    이곳은 당신의 기록을 확인거나 정보를 수정할 수 있는 공간입니다.<br>
-                    당신의 기록을 확인해 보세요.
-                </p>
+                <h2>Contents</h2>
+                <form>
+                    <div class="d-flex justify-content-center">
+                        <div class="input-group mb-3 me-1" style="width: 625px;">
+                            <select class="form-select" name="search"
+                                    aria-label="Example select with button addon">
+                                <option value="0" selected>선택</option>
+                                <option value="1" ${pager.search == 1 ? "selected" : ""}>제목</option>
+                                <option value="2" ${pager.search == 2 ? "selected" : ""}>내용</option>
+                                <option value="3" ${pager.search == 3 ? "selected" : ""}>작성자</option>
+                            </select>
+                            <input type="text" class="form-control" placeholder="검색어를 입력해주세요." aria-label="검색어를 입력해주세요."
+                                   aria-describedby="button-addon2" name="keyword" value="${pager.search == 0  ? "" : pager.keyword}">
+                            <button class="btn btn-outline-secondary" id="button-addon2">검색</button>
+                        </div>
+                    </div>
+                </form>
             </div>
+
 
             <div class="row">
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="icon-box" data-aos="fade-up">
-                        <div class="icon"><i class="bi bi-pass"></i></div>
-                        <h4 class="title"><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                             id="password-changer">Password</a></h4>
-                        <p class="description">비밀번호를 변경하고 보안을 강화하세요.</p>
+                <c:forEach var="list" items="${list}">
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100"
+                             style="width: 294.8px; height: 220.8px">
+                            <div class="icon"><i class="bi bi-code-square"></i></div>
+                            <h4 class="title"
+                                style="width: 230px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">
+                                <a href="/back/detail/${list.contentNum}">${list.contentTitle}</a>
+                            </h4>
+                            <p class="description">${list.contentUploader} <br>
+                                <fmt:formatDate value="${list.contentRegDate}" pattern="yyyy-MM-dd"/>
+                            </p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon"><i class="bi bi-alarm"></i></div>
-                        <h4 class="title"><a href="#">Record</a></h4>
-                        <p class="description">당신이 쓴 글을 다시 볼 수 있습니다.</p>
-                    </div>
-                </div>
-
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon"><i class="bi bi-code-square"></i></div>
-                        <h4 class="title"><a href="">Update soon</a></h4>
-                        <p class="description">현재 개발 중인 기능입니다. 곧 출시 될 예정입니다.</p>
-                    </div>
-                </div>
-
-
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                        <div class="icon"><i class="bi bi-code-square"></i></div>
-                        <h4 class="title"><a href="">Update soon</a></h4>
-                        <p class="description">현재 개발 중인 기능입니다. 곧 출시 될 예정입니다.</p>
-                    </div>
-                </div>
-
+                </c:forEach>
             </div>
-
+            <div class="pagination-wrap mt-5 d-flex justify-content-center" data-aos="fade-in" data-aos-delay="100">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="?page=1">처음</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="?page=${pager.prev}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <c:forEach var="page" items="${pager.list}">
+                            <li class="page-item">
+                                <a class="page-link ${page eq pager.page ? 'active' : ''}"
+                                   href="?page=${page}">${page}</a>
+                            </li>
+                        </c:forEach>
+                        <li class="page-item">
+                            <a class="page-link" href="?page=${pager.next}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="?page=${pager.last}">마지막</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-    </section><!-- End Services Section -->
-
-
-</main><!-- End #main -->
+    </section><!-- End Contents Section -->
+</main>
+<!-- End #main -->
 
 <!-- ======= Footer ======= -->
 <footer id="footer">
@@ -255,7 +280,7 @@
                 <div class="col-lg-2 col-md-6 footer-links">
                     <h4>Useful Links</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
@@ -417,68 +442,49 @@
 </div>
 <!-- Off-canvas sidebar-->
 
-<!-- member password change modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Login modal -->
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+     tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
-
         <div class="modal-content" style="!important; width:390px;">
             <div class="wrap-login100">
                 <form class="login100-form validate-form" method="post" action="/member/login"
-                      id="pass-change-form">
+                      id="signInSubmitHandler">
 					<span class="login100-form-title p-b-26">
-						Password Change
+						Welcome
 					</span>
                     <span class="login100-form-title p-b-48">
 						<i class="zmdi zmdi-font"></i>
 					</span>
 
-                    <div class="wrap-input100 validate-input" data-validate="Enter password">
-						<span class="btn-duplicate-check btn-old-pass-val-chk me-4">
-                            <i class="zmdi zmdi-check"></i>
-                        </span>
-                        <span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-                        <input class="input100 old-pass-val" type="password" name="memberPass">
-                        <span class="focus-input100" data-placeholder="Old Password"></span>
+                    <div class="wrap-input100 validate-input " data-validate="Valid email is: a@b.c">
+                        <input class="input100 login-id-val" type="email" name="memberId">
+                        <span class="focus-input100" data-placeholder="Email"></span>
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Enter password">
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-                        <input class="input100 new-pass-val" type="password" name="newMemberPass">
-                        <span class="focus-input100" data-placeholder="New Password"></span>
+                        <input class="input100 login-pass-val" type="password" name="memberPass">
+                        <span class="focus-input100" data-placeholder="Password"></span>
                     </div>
 
-                    <div class="wrap-input100 validate-input" data-validate="Enter password">
-						<span class="btn-duplicate-check btn-new-pass-val-chk me-4">
-                            <i class="zmdi zmdi-check"></i>
-                        </span>
-                        <span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-                        <input class="input100 new-pass-chk" type="password" name="newMemberPassChk">
-                        <span class="focus-input100" data-placeholder="New Password"></span>
-                    </div>
-
-                    <input type="hidden" class="pass-change-id" value="${sessionScope.member.memberId}">
-
-                    <div class="container-login100-form-btn" id="pass-change-btn">
-                        <div class="wrap-login100-form-btn">
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn" id="login-submit-btn">
                             <div class="login100-form-bgbtn"></div>
-                            <button class="login100-form-btn change-btn-control" disabled>
-                                Change
+                            <button class="login100-form-btn">
+                                Sign IN
                             </button>
                         </div>
                     </div>
 
                     <div class="text-center p-t-115">
 						<span class="txt1">
-							Forgot your password?
+							Don’t have an account?
 						</span>
-                        <a class="txt2" href="/member/find_pass">
-                            click here
+                        <a class="txt2" href="#" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+                            Sign Up
                         </a>
                     </div>
                 </form>
@@ -486,8 +492,115 @@
         </div>
     </div>
 </div>
-<!-- member password change modal -->
+<!-- Login modal-->
 
+
+<!-- Account modal-->
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+     tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="!important; width:390px;">
+            <div class="wrap-login100">
+                <form class="login100-form validate-form" method="post" action="/member/new_account"
+                      id="signUpSubmitHandler">
+					<span class="login100-form-title p-b-26">
+						Welcome
+					</span>
+                    <span class="login100-form-title p-b-48">
+						<i class="zmdi zmdi-font"></i>
+					</span>
+
+                    <div class="wrap-input100 validate-input " data-validate="Valid email is: a@b.c">
+                        <span class="btn-duplicate-check id-dup-chk">
+                            <i class="zmdi zmdi-check"></i>
+                        </span>
+                        <input class="input100" type="text" name="memberId" id="memberId">
+                        <span class="focus-input100" data-placeholder="Email"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter memberNick">
+                        <span class="btn-duplicate-check nick-dup-chk">
+                            <i class="zmdi zmdi-check"></i>
+                        </span>
+                        <input class="input100" type="text" name="memberNick" id="memberNick">
+                        <span class="focus-input100" data-placeholder="Nickname"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+                        <input class="input100" type="password" name="memberPass" id="memberPass">
+                        <span class="focus-input100" data-placeholder="Password"></span>
+                    </div>
+
+                    <input type="hidden" name="memberAuthority" value="common" id="memberAuthority">
+
+
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button type="button" class="login100-form-btn btn-control" disabled>
+                                Sign Up
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <div class="text-center p-t-115">
+						<span class="txt1">
+							If you already our member
+						</span>
+                    <a class="txt2" href="#" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+                        Sign In
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Account modal -->
+
+<!-- Contents send modal -->
+<!-- Modal -->
+<div class="modal modal-xl fade" id="content-upload-modal" tabindex="-1" aria-labelledby="content-upload-modalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Upload Content</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/back/upload" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="recipient-title" class="col-form-label">Title:</label>
+                        <input type="text" class="form-control" id="recipient-title" name="contentTitle">
+                    </div>
+
+                    <textarea class="summernote" id="content-upload-detail" name="contentDetail"></textarea>
+
+                    <div class="input-group mt-3">
+                        <input type="file" class="form-control" name="paramFiles">
+                    </div>
+                    <div class="input-group mt-3">
+                        <input type="file" class="form-control" name="paramFiles">
+                    </div>
+
+                    <input type="hidden" id="content-upload-loader" value="${sessionScope.member.memberNick}"
+                           name="contentUploader">
+                    <input type="hidden" id="content-lang" value="swift" name="contentLangName">
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button class="btn btn-secondary">Send Content</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contents send modal -->
 
 <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
@@ -518,12 +631,20 @@
 <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 <script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="summernote/summernote-ko-KR.js"></script>
+<script src="summernote/summernote-lite.js"></script>
+<script src="summernote/summernote-ext-highlight.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/xml/xml.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/2.36.0/formatting.js"></script>
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
 <script src="assets/js/sidebars.js"></script>
-<script src="mypage/main.js"></script>
-
+<script src="backendboard/summernote.js"></script>
+<script src="backendboard/member_form_control.js"></script>
+<script src="backendboard/backendboard_content_control.js"></script>
 </body>
 
 </html>

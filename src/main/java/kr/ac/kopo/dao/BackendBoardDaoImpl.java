@@ -78,5 +78,55 @@ public class BackendBoardDaoImpl implements BackendBoardDao {
         return sqlSession.selectOne("backendBoard.getContentsSize");
     }
 
+    @Override
+    public int getNodeJsTotal(Pager pager) {
+        return sqlSession.selectOne("backendBoard.getNodeJsTotal", pager);
+    }
+
+    @Override
+    public List<BackendBoardVO> getNodeJsBoard(Pager pager) {
+        return sqlSession.selectList("backendBoard.getNodeJsBoard",pager);
+    }
+
+    @Override
+    public int getUmmLangTotal(Pager pager) {
+        return sqlSession.selectOne("backendBoard.getUmmLangTotal", pager);
+    }
+
+    @Override
+    public List<BackendBoardVO> getUmmLangBoard(Pager pager) {
+        return sqlSession.selectList("backendBoard.getUmmLangBoard", pager);
+    }
+
+    @Override
+    public int getRubyTotal(Pager pager) {
+        return sqlSession.selectOne("backendBoard.getRubyTotal", pager);
+    }
+
+    @Override
+    public List<BackendBoardVO> getRubyBoard(Pager pager) {
+        return sqlSession.selectList("backendBoard.getRubyBoard", pager);
+    }
+
+    @Override
+    public int getKotlinTotal(Pager pager) {
+        return sqlSession.selectOne("backendBoard.getKotlinTotal", pager);
+    }
+
+    @Override
+    public List<BackendBoardVO> getKotlinBoard(Pager pager) {
+        return sqlSession.selectList("backendBoard.getKotlinBoard", pager);
+    }
+
+    @Override
+    public int getSwiftTotal(Pager pager) {
+        return sqlSession.selectOne("backendBoard.getSwiftTotal", pager);
+    }
+
+    @Override
+    public List<BackendBoardVO> getSwiftBoard(Pager pager) {
+        return sqlSession.selectList("backendBoard.getSwiftBoard", pager);
+    }
+
 
 }

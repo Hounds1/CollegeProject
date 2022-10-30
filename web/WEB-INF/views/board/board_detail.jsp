@@ -41,13 +41,6 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/sidebars.css" rel="stylesheet">
 
-    <!-- =======================================================
-    * Template Name: Squadfree - v4.9.1
-    * Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
-    ======================================================== -->
-
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="memberAssets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <!--===============================================================================================-->

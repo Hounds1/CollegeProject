@@ -41,13 +41,6 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/sidebars.css" rel="stylesheet">
 
-    <!-- =======================================================
-    * Template Name: Squadfree - v4.9.1
-    * Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
-    ======================================================== -->
-
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="memberAssets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <!--===============================================================================================-->
@@ -145,7 +138,7 @@
                     <div class="content">
                         <h3><i class="bx bxl-python"></i> Python</h3>
                         <p>
-                            이 곳은 Java와 관련된 질문이나 토론을 할 수 있는 게시판입니다.
+                            이 곳은 Python과 관련된 질문이나 토론을 할 수 있는 게시판입니다.
                             코드를 공유하거나 질문 해보세요.
                             <c:if test="${sessionScope.member eq null}"><br>로그인 후 작성 가능합니다.</c:if>
                             <br>
@@ -162,22 +155,22 @@
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                                 <i class="bi bi-keyboard-fill"></i>
                                 <h4>Dynamic Typing</h4>
-                                <p>실행 시간에 자료형을 검사한다.</p>
+                                <p>실행 시간에 자료형을 검사합니다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                                 <i class="bi bi-infinity"></i>
                                 <h4>No Limit</h4>
-                                <p>객체의 멤버에 무제한으로 접근할 수 있다.</p>
+                                <p>객체의 멤버에 무제한으로 접근할 수 있습니다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                                 <i class="bx bx-reflect-horizontal"></i>
                                 <h4>Reflection</h4>
-                                <p>리플렉션을 이용한 기술을 사용할 수 있다.</p>
+                                <p>리플렉션을 이용한 기술을 사용할 수 있습니다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                                 <i class="bx bx-text"></i>
                                 <h4>Inline</h4>
-                                <p>들여쓰기를 사용해 블록을 구분한다.</p>
+                                <p>들여쓰기를 사용해 블록을 구분합니다.</p>
                             </div>
                         </div>
                     </div><!-- End .content-->

@@ -39,12 +39,6 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/sidebars.css" rel="stylesheet">
 
-    <!-- =======================================================
-    * Template Name: Squadfree - v4.9.1
-    * Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
-    * Author: BootstrapMade.com
-    * License: https://bootstrapmade.com/license/
-    ======================================================== -->
 
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="memberAssets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -152,10 +146,10 @@
                     <div class="content">
                         <h3>함께 생각한다면 더 쉽게 코드를 구현하고, 수정할 수 있습니다.</h3>
                         <p>
-                            모든 개발자들이 가끔 논리적인 모순에 막혀 앞으로 전진하지 못합니다. Archivist의 포럼에서 도움을 받고, 다른 이에게 도움을 주세요. 언제나 당신의 개발에 오류가
-                            없길 바랍니다. :)
+                            모든 개발자들이 가끔 논리적인 모순에 막혀 앞으로 전진하지 못합니다. Archivist의 실시간 채팅에서 도움을 받고, 다른 이에게 도움을 주세요. 언제나 당신의 개발에 오류가
+                            없길 바랍니다.  :)
                         </p>
-                        <a href="#" class="about-btn">Visit the forum.<i class="bx bx-chevron-right"></i></a>
+                        <a href="/chat" class="about-btn">Visit the chat.<i class="bx bx-chevron-right"></i></a>
                     </div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-stretch">
@@ -523,71 +517,6 @@
         </div>
     </section><!-- End Testimonials Section -->
 
-    <%--    <!-- ======= Team Section ======= -->--%>
-    <%--    <section id="team" class="team">--%>
-    <%--        <div class="container">--%>
-
-    <%--            <div class="section-title" data-aos="fade-in" data-aos-delay="100">--%>
-    <%--                <h2>Team</h2>--%>
-    <%--                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint--%>
-    <%--                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia--%>
-    <%--                    fugiat sit in iste officiis commodi quidem hic quas.</p>--%>
-    <%--            </div>--%>
-
-    <%--            <div class="row">--%>
-
-    <%--                <div class="col-lg-4 col-md-6">--%>
-    <%--                    <div class="member" data-aos="fade-up">--%>
-    <%--                        <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>--%>
-    <%--                        <div class="member-info">--%>
-    <%--                            <h4>Walter White</h4>--%>
-    <%--                            <span>Chief Executive Officer</span>--%>
-    <%--                            <div class="social">--%>
-    <%--                                <a href=""><i class="bi bi-twitter"></i></a>--%>
-    <%--                                <a href=""><i class="bi bi-facebook"></i></a>--%>
-    <%--                                <a href=""><i class="bi bi-instagram"></i></a>--%>
-    <%--                                <a href=""><i class="bi bi-linkedin"></i></a>--%>
-    <%--                            </div>--%>
-    <%--                        </div>--%>
-    <%--                    </div>--%>
-    <%--                </div>--%>
-
-    <%--                <div class="col-lg-4 col-md-6">--%>
-    <%--                    <div class="member" data-aos="fade-up" data-aos-delay="150">--%>
-    <%--                        <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>--%>
-    <%--                        <div class="member-info">--%>
-    <%--                            <h4>Sarah Jhonson</h4>--%>
-    <%--                            <span>Product Manager</span>--%>
-    <%--                            <div class="social">--%>
-    <%--                                <a href=""><i class="bi bi-twitter"></i></a>--%>
-    <%--                                <a href=""><i class="bi bi-facebook"></i></a>--%>
-    <%--                                <a href=""><i class="bi bi-instagram"></i></a>--%>
-    <%--                                <a href=""><i class="bi bi-linkedin"></i></a>--%>
-    <%--                            </div>--%>
-    <%--                        </div>--%>
-    <%--                    </div>--%>
-    <%--                </div>--%>
-
-    <%--                <div class="col-lg-4 col-md-6">--%>
-    <%--                    <div class="member" data-aos="fade-up" data-aos-delay="300">--%>
-    <%--                        <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>--%>
-    <%--                        <div class="member-info">--%>
-    <%--                            <h4>William Anderson</h4>--%>
-    <%--                            <span>CTO</span>--%>
-    <%--                            <div class="social">--%>
-    <%--                                <a href=""><i class="bi bi-twitter"></i></a>--%>
-    <%--                                <a href=""><i class="bi bi-facebook"></i></a>--%>
-    <%--                                <a href=""><i class="bi bi-instagram"></i></a>--%>
-    <%--                                <a href=""><i class="bi bi-linkedin"></i></a>--%>
-    <%--                            </div>--%>
-    <%--                        </div>--%>
-    <%--                    </div>--%>
-    <%--                </div>--%>
-
-    <%--            </div>--%>
-
-    <%--        </div>--%>
-    <%--    </section><!-- End Team Section -->--%>
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -968,6 +897,10 @@
 </div>
 <!-- Account modal -->
 
+<!-- live chat modal -->
+
+
+<!-- live chat modal -->
 
 <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
