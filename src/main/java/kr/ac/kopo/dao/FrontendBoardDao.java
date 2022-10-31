@@ -29,4 +29,16 @@ public interface FrontendBoardDao {
     List<FrontendBoardVO> getTSBoard(Pager pager);
 
     int getTSTotal(Pager pager);
+
+    int getReactTotal(Pager pager);
+
+    List<FrontendBoardVO> getReactBoard(Pager pager);
+
+    int getVueTotal(Pager pager);
+
+    List<FrontendBoardVO> getVueBoard(Pager pager);
+
+    int getAngularTotal(Pager pager);
+
+    List<FrontendBoardVO> getAngularBoard(Pager pager);
 }

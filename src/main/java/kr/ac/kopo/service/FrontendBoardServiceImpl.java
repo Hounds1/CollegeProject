@@ -94,4 +94,31 @@ public class FrontendBoardServiceImpl implements FrontendBoardService{
 
         return frontendBoardDao.getTSBoard(pager);
     }
+
+    @Override
+    public List<FrontendBoardVO> getReactBoard(Pager pager) {
+        int total = frontendBoardDao.getReactTotal(pager);
+
+        pager.setTotal(total);
+
+        return frontendBoardDao.getReactBoard(pager);
+    }
+
+    @Override
+    public List<FrontendBoardVO> getVueBoard(Pager pager) {
+        int total = frontendBoardDao.getVueTotal(pager);
+
+        pager.setTotal(total);
+
+        return frontendBoardDao.getVueBoard(pager);
+    }
+
+    @Override
+    public List<FrontendBoardVO> getAngularBoard(Pager pager) {
+        int total = frontendBoardDao.getAngularTotal(pager);
+
+        pager.setTotal(total);
+
+        return frontendBoardDao.getAngularBoard(pager);
+    }
 }

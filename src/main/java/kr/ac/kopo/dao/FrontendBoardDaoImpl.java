@@ -74,4 +74,34 @@ public class FrontendBoardDaoImpl implements FrontendBoardDao{
     public int getTSTotal(Pager pager) {
         return sqlSession.selectOne("frontendBoard.getTSTotal", pager);
     }
+
+    @Override
+    public int getReactTotal(Pager pager) {
+        return sqlSession.selectOne("frontendBoard.getReactTotal", pager);
+    }
+
+    @Override
+    public List<FrontendBoardVO> getReactBoard(Pager pager) {
+        return sqlSession.selectList("frontendBoard.getReactBoard", pager);
+    }
+
+    @Override
+    public int getVueTotal(Pager pager) {
+        return sqlSession.selectOne("frontendBoard.getVueTotal", pager);
+    }
+
+    @Override
+    public List<FrontendBoardVO> getVueBoard(Pager pager) {
+        return sqlSession.selectList("frontendBoard.getVueBoard", pager);
+    }
+
+    @Override
+    public int getAngularTotal(Pager pager) {
+        return sqlSession.selectOne("frontendBoard.getAngularTotal", pager);
+    }
+
+    @Override
+    public List<FrontendBoardVO> getAngularBoard(Pager pager) {
+        return sqlSession.selectList("frontendBoard.getAngularBoard", pager);
+    }
 }

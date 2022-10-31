@@ -51,6 +51,30 @@ public class FrontendBoardController {
         return "/board/frontend/ts_board";
     }
 
+    @GetMapping("/react")
+    public String getReactBoard(Model model, Pager pager) {
+        List<FrontendBoardVO> list = boardService.getReactBoard(pager);
+        model.addAttribute("list", list);
+
+        return "/board/frontend/react_board";
+    }
+
+    @GetMapping("/vuejs")
+    public String getVueBoard(Model model, Pager pager) {
+        List<FrontendBoardVO> list = boardService.getVueBoard(pager);
+        model.addAttribute("list", list);
+
+        return "/board/frontend/vue_board";
+    }
+
+    @GetMapping("/angular")
+    public String getAngularBoard(Model model, Pager pager) {
+        List<FrontendBoardVO> list = boardService.getAngularBoard(pager);
+        model.addAttribute("list", list);
+
+        return "/board/frontend/angular_board";
+    }
+
     /**
      * upload content in frontend board table
      */

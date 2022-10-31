@@ -26,4 +26,10 @@ public interface FrontendBoardService {
     void removeComment(int commentNum, int targetNum);
 
     List<FrontendBoardVO> getTSBoard(Pager pager);
+
+    List<FrontendBoardVO> getReactBoard(Pager pager);
+
+    List<FrontendBoardVO> getVueBoard(Pager pager);
+
+    List<FrontendBoardVO> getAngularBoard(Pager pager);
 }
