@@ -1,6 +1,9 @@
 package kr.ac.kopo.util;
 
 import org.apache.ibatis.annotations.One;
+import org.springframework.context.event.EventListener;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.socket.messaging.SessionDisconnectEvent;
 
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
@@ -84,7 +87,6 @@ public class ChatServer {
 
     @OnClose
     public void handleClose() {
-
     }
 
     @OnError
