@@ -64,4 +64,14 @@ public class FrontendBoardDaoImpl implements FrontendBoardDao{
     public void reverseCommentHit(int targetNum) {
         sqlSession.update("frontendBoard.reverseCommentHit", targetNum);
     }
+
+    @Override
+    public List<FrontendBoardVO> getTSBoard(Pager pager) {
+        return sqlSession.selectList("frontendBoard.getTSBoard", pager);
+    }
+
+    @Override
+    public int getTSTotal(Pager pager) {
+        return sqlSession.selectOne("frontendBoard.getTSTotal", pager);
+    }
 }

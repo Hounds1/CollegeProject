@@ -16,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Member;
+import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,6 +41,14 @@ public class FrontendBoardController {
         model.addAttribute("list", list);
 
         return "board/frontend/js_board";
+    }
+
+    @GetMapping("/ts")
+    public String getTSBoard(Model model, Pager pager) {
+        List<FrontendBoardVO> list = boardService.getTSBoard(pager);
+        model.addAttribute("list", list);
+
+        return "/board/frontend/ts_board";
     }
 
     /**

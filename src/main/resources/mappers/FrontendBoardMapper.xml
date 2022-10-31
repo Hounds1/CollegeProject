@@ -114,4 +114,43 @@
         where content_num = #{targetNum}
     </update>
 
+    <select id="getTSTotal" resultType="Integer">
+        select count(*)
+        from frontend_board
+        <where>
+            <if test="search == 0">
+                content_lang_name = 'ts'
+            </if>
+            <if test="search == 1">
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'ts'
+            </if>
+            <if test="search == 2">
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'ts'
+            </if>
+            <if test="search == 3">
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'ts'
+            </if>
+        </where>
+    </select>
+
+    <select id="getTSBoard" resultType="FrontendBoard">
+        select *
+        from frontend_board
+        <where>
+            <if test="search == 0">
+                content_lang_name = 'ts'
+            </if>
+            <if test="search == 1">
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'ts'
+            </if>
+            <if test="search == 2">
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'ts'
+            </if>
+            <if test="search == 3">
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'ts'
+            </if>
+        </where>
+        order by content_num desc
+        LIMIT ${offset}, ${perPage}
+    </select>
 </mapper>

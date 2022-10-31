@@ -24,4 +24,6 @@ public interface FrontendBoardService {
     void commentUpdate(FrontendBoardCommentVO commentVO);
 
     void removeComment(int commentNum, int targetNum);
+
+    List<FrontendBoardVO> getTSBoard(Pager pager);
 }

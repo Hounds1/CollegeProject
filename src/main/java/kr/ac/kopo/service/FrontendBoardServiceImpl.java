@@ -85,4 +85,13 @@ public class FrontendBoardServiceImpl implements FrontendBoardService{
         frontendBoardDao.reverseCommentHit(targetNum);
         frontendCommentDao.removeComment(commentNum);
     }
+
+    @Override
+    public List<FrontendBoardVO> getTSBoard(Pager pager) {
+        int total = frontendBoardDao.getTSTotal(pager);
+
+        pager.setTotal(total);
+
+        return frontendBoardDao.getTSBoard(pager);
+    }
 }

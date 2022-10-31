@@ -180,7 +180,7 @@
   </section><!-- End About Section -->
 
   <!-- ======= Contents Section ======= -->
-  <section id="kotlin-contents" class="services mb-5">
+  <section id="js-contents" class="services mb-5">
     <div class="container">
       <div class="section-title" data-aos="fade-in" data-aos-delay="100">
         <h2>Contents</h2>
