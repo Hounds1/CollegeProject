@@ -41,7 +41,7 @@ public class BackendBoardController {
     public String getJavaBoard(Model model, Pager pager) {
         List<BackendBoardVO> list = boardService.getJavaBoard(pager);
         model.addAttribute("list", list);
-        return "/board/java_board";
+        return "board/backend/java_board";
     }
 
     @GetMapping("/python")
@@ -49,7 +49,7 @@ public class BackendBoardController {
         List<BackendBoardVO> list = boardService.getPythonBoard(pager);
         model.addAttribute("list", list);
 
-        return "/board/python_board";
+        return "board/backend/python_board";
     }
 
     @GetMapping("/nodejs")
@@ -57,7 +57,7 @@ public class BackendBoardController {
         List<BackendBoardVO> list = boardService.getNodeJsBoard(pager);
         model.addAttribute("list", list);
 
-        return "/board/nodejs_board";
+        return "board/backend/nodejs_board";
     }
 
     @GetMapping("/ummlang")
@@ -65,7 +65,7 @@ public class BackendBoardController {
         List<BackendBoardVO> list = boardService.getUmmLangBoard(pager);
         model.addAttribute("list", list);
 
-        return "/board/ummlang_board";
+        return "board/backend/ummlang_board";
     }
 
     @GetMapping("/ruby")
@@ -73,7 +73,7 @@ public class BackendBoardController {
         List<BackendBoardVO> list = boardService.getRubyBoard(pager);
         model.addAttribute("list", list);
 
-        return "/board/ruby_board";
+        return "board/backend/ruby_board";
     }
 
     @GetMapping("/kotlin")
@@ -81,7 +81,7 @@ public class BackendBoardController {
         List<BackendBoardVO> list = boardService.getKotlinBoard(pager);
         model.addAttribute("list", list);
 
-        return "/board/kotlin_board";
+        return "board/backend/kotlin_board";
     }
 
     @GetMapping("swift")
@@ -89,7 +89,7 @@ public class BackendBoardController {
         List<BackendBoardVO> list = boardService.getSwiftBoard(pager);
         model.addAttribute("list",list);
 
-        return "/board/swift_board";
+        return "board/backend/swift_board";
     }
 
 
@@ -184,7 +184,7 @@ public class BackendBoardController {
 
         model.addAttribute("contentDetail",backendBoardVO);
 
-        return "/board/board_detail";
+        return "board/backend/board_detail";
     }
 
     /**

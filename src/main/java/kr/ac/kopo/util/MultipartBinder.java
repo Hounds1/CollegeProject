@@ -24,6 +24,7 @@ public class MultipartBinder {
         File saveFile = new File(uploadFolder+"\\"+uniqueName + fileExtension);
         try {
             target.transferTo(saveFile);
+            System.out.println(fileRealName + " " + fileExtension);
         } catch (IllegalStateException | IOException e) {
             e.printStackTrace();
         }

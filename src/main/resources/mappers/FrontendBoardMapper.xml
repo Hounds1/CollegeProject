@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="frontendBoard">
+
+    <select id="getJSTotal" resultType="Integer">
+        select count(*)
+        from frontend_board
+        <where>
+            <if test="search == 0">
+                content_lang_name = 'js'
+            </if>
+            <if test="search == 1">
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'js'
+            </if>
+            <if test="search == 2">
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'js'
+            </if>
+            <if test="search == 3">
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'js'
+            </if>
+        </where>
+    </select>
+
+    <select id="getJSBoard" resultType="FrontendBoard">
+        select *
+        from frontend_board
+        <where>
+            <if test="search == 0">
+                content_lang_name = 'js'
+            </if>
+            <if test="search == 1">
+                content_title LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'js'
+            </if>
+            <if test="search == 2">
+                content_detail LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'js'
+            </if>
+            <if test="search == 3">
+                content_uploader LIKE CONCAT(CONCAT('%',#{keyword}),'%') and content_lang_name = 'js'
+            </if>
+        </where>
+        order by content_num desc
+        LIMIT ${offset}, ${perPage}
+    </select>
+
+
+    <insert id="contentUpload">
+        insert into frontend_board
+        (content_title, content_detail, content_uploader, content_reg_date, content_lang_name)
+        values (#{contentTitle}, #{contentDetail}, #{contentUploader}, NOW(), #{contentLangName})
+
+        <selectKey keyProperty="contentNum" resultType="Integer" order="AFTER">
+            select LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+    <update id="contentHitter">
+        update frontend_board
+            set content_hit = content_hit+1
+        where content_num = #{contentNum}
+    </update>
+
+    <resultMap id="FrontendBoardMap" type="FrontendBoard" autoMapping="true">
+        <id column="content_num" property="contentNum"/>
+        <collection property="paramFileList" column="target_content_num" ofType="FrontendBoardFile" javaType="ArrayList">
+            <id column="file_num" property="fileNum"/>
+            <id column="file_name" property="fileName"/>
+            <id column="target_content_num" property="targetContentNum"/>
+        </collection>
+        <collection property="commentList" column="comment_target_content_num" ofType="FrontendBoardComment" javaType="ArrayList">
+            <id column="comment_num" property="commentNum" />
+            <id column="comment_uploader" property="commentUploader" />
+            <id column="comment_reg_date" property="commentRegDate" />
+            <id column="comment_detail" property="commentDetail" />
+            <id column="comment_target_content_num" property="commentTargetContentNum" />
+        </collection>
+    </resultMap>
+
+    <select id="getContentDetail" resultMap="FrontendBoardMap">
+        select frontend_board.*, frontend_board_file.file_num file_num, file_name, target_content_num, frontend_board_comment.comment_num comment_num, comment_uploader, comment_reg_date, comment_detail, comment_target_content_num
+        from frontend_board
+                 left join frontend_board_file on (frontend_board.content_num = frontend_board_file.target_content_num)
+                 left join frontend_board_comment on (frontend_board.content_num = frontend_board_comment.comment_target_content_num)
+        where frontend_board.content_num = #{content_num}
+    </select>
+
+    <update id="commentHitter">
+        update frontend_board
+            set content_comment_hit = content_comment_hit + 1
+        where content_num = #{commentTargetContentNum}
+    </update>
+
+    <select id="contentEditor">
+        select content_num ,content_title, content_detail
+        from frontend_board
+        where content_num = #{targetId}
+    </select>
+
+    <update id="contentUpdate">
+        update frontend_board
+            set content_title = #{contentTitle}, content_detail = #{contentDetail}
+        where content_num = #{contentNum}
+    </update>
+
+    <select id="getContentSize" resultType="Integer">
+        select count(*)
+        from frontend_board
+    </select>
+
+</mapper>

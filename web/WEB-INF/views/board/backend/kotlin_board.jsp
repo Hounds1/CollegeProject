@@ -82,8 +82,8 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a class="nav-link scrollto" href="/">Home</a></li>
-                <li><a class="nav-link scrollto" href="#ummlang">UmmLang</a></li>
-                <li><a class="nav-link scrollto" href="#ummlang-contents">Contents</a></li>
+                <li><a class="nav-link scrollto" href="#kotlin">Kotlin</a></li>
+                <li><a class="nav-link scrollto" href="#kotlin-contents">Contents</a></li>
                 <li class="dropdown"><a href="#"><span>Boards</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li class="dropdown"><a href="#"><span>FrontEnd</span> <i class="bi bi-chevron-right"></i></a>
@@ -130,15 +130,15 @@
 <main id="main">
 
     <!-- ======= About Section ======= -->
-    <section id="nodejs" class="about">
+    <section id="kotlin" class="about">
         <div class="container">
 
             <div class="row no-gutters">
                 <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
                     <div class="content">
-                        <h3><i class="bx bxl-nodejs"></i> UmmLang</h3>
+                        <h3><i class="bx bxl-android"></i> Kotlin</h3>
                         <p>
-                            이 곳은 UmmLang과 관련된 질문이나 토론을 할 수 있는 게시판입니다.
+                            이 곳은 Kotlin과 관련된 질문이나 토론을 할 수 있는 게시판입니다.
                             코드를 공유하거나 질문 해보세요.
                             <c:if test="${sessionScope.member eq null}"><br>로그인 후 작성 가능합니다.</c:if>
                             <br>
@@ -153,24 +153,24 @@
                     <div class="icon-boxes d-flex flex-column justify-content-center">
                         <div class="row">
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                                <i class="bi bi-bug-fill"></i>
-                                <h4>어떻겤ㅋㅋㅋㅋ</h4>
-                                <p>언어 이름잌ㅋㅋㅋㅋㅋ</p>
+                                <i class="bi bi-file-code"></i>
+                                <h4>Static Type Language</h4>
+                                <p>변수 타입을 유추함으로 컴파일러가 프로그램의 정확성을 검증합니다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                                <i class="bi bi-bug-fill"></i>
-                                <h4>엄ㅋㅋㅋㅋㅋ</h4>
-                                <p>준식이냨ㅋㅋㅋㅋㅋㅋㅋ</p>
+                                <i class="bi bi-body-text"></i>
+                                <h4>Nullable</h4>
+                                <p>Null이 될 수 있는 타입 또한 지원합니다. NPE로 부터 자유롭습니다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                                <i class="bi bi-bug-fill"></i>
-                                <h4>엄..어어어.어...엄</h4>
-                                <p>어엄어..엄...</p>
+                                <i class="bi bi-arrow-repeat"></i>
+                                <h4>Functional Programming</h4>
+                                <p>함수형 프로그래밍을 지원합니다. 가독성이 높으며 유지/보수에 유리합니다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-                                <i class="bi bi-bug-fill"></i>
-                                <h4>어떻게 언어 이름이 엄준식이냐 ㅋㅋ</h4>
-                                <p>어떻게 언어 이름이 엄준식이냐 ㅋㅋ</p>
+                                <i class="bx bxl-java"></i>
+                                <h4>Compatibility</h4>
+                                <p>자바와 높은 호환성을 가지고 있습니다. 자바 표준 라이브러리 클래스에 의존합니다.</p>
                             </div>
                         </div>
                     </div><!-- End .content-->
@@ -180,7 +180,7 @@
     </section><!-- End About Section -->
 
     <!-- ======= Contents Section ======= -->
-    <section id="node-js-contents" class="services mb-5">
+    <section id="kotlin-contents" class="services mb-5">
         <div class="container">
             <div class="section-title" data-aos="fade-in" data-aos-delay="100">
                 <h2>Contents</h2>
@@ -588,7 +588,7 @@
 
                     <input type="hidden" id="content-upload-loader" value="${sessionScope.member.memberNick}"
                            name="contentUploader">
-                    <input type="hidden" id="content-lang" value="ummlang" name="contentLangName">
+                    <input type="hidden" id="content-lang" value="kotlin" name="contentLangName">
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

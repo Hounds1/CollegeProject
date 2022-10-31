@@ -8,6 +8,5 @@ import lombok.Setter;
 public class FrontendBoardFileVO {
     private int fileNum;
     private String fileName;
-    private int fileSize;
-    private int contentNum;
+    private int targetContentNum;
 }

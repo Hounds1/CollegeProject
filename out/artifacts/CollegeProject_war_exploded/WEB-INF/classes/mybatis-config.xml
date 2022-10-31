@@ -13,6 +13,10 @@
         <typeAlias type="kr.ac.kopo.vo.BackendBoardVO" alias="BackendBoard"/>
         <typeAlias type="kr.ac.kopo.vo.BackendBoardFileVO" alias="BackendBoardFile"/>
         <typeAlias type="kr.ac.kopo.vo.BackendBoardCommentVO" alias="BackendBoardComment"/>
+        <typeAlias type="kr.ac.kopo.vo.FrontendBoardVO" alias="FrontendBoard"/>
+        <typeAlias type="kr.ac.kopo.vo.FrontendBoardFileVO" alias="FrontendBoardFile"/>
+        <typeAlias type="kr.ac.kopo.vo.FrontendBoardCommentVO" alias="FrontendBoardComment"/>
+
 
     </typeAliases>
 
@@ -21,6 +25,10 @@
         <mapper resource="mappers/BackendBoardMapper.xml"/>
         <mapper resource="mappers/BackendFileMapper.xml"/>
         <mapper resource="mappers/BackendCommentMapper.xml"/>
+        <mapper resource="mappers/FrontendBoardMapper.xml"/>
+        <mapper resource="mappers/FrontendFileMapper.xml"/>
+        <mapper resource="mappers/FrontendCommentMapper.xml"/>
+
     </mappers>
 
 

@@ -189,10 +189,67 @@
     <resources mapping="/back/summernote/font/**" location="/resources/summernote/font/"/>
     <resources mapping="/back/summernote/**" location="/resources/summernote/"/>
     <resources mapping="/back/backendboard/**" location="/resources/backendboard/"/>
+
+    <resources mapping="/front/assets/js/**" location="/resources/assets/js/"/>
+    <resources mapping="/front/assets/css/**" location="/resources/assets/css/"/>
+    <resources mapping="/front/images/**" location="/resources/images/"/>
+    <resources mapping="/front/assets/img/**" location="/resources/assets/img/"/>
+    <resources mapping="/front/assets/img/portfolio/**" location="/resources/assets/img/portfolio/"/>
+    <resources mapping="/front/assets/img/team/**" location="/resources/assets/img/team/"/>
+    <resources mapping="/front/assets/img/testimonials/**" location="/resources/assets/img/testimonials/"/>
+    <resources mapping="/front/assets/vendor/aos/**" location="/resources/assets/vendor/aos/"/>
+    <resources mapping="/front/assets/vendor/bootstrap/css/**" location="/resources/assets/vendor/bootstrap/css/"/>
+    <resources mapping="/front/assets/vendor/bootstrap/js/**" location="/resources/assets/vendor/bootstrap/js/"/>
+    <resources mapping="/front/assets/vendor/bootstrap-icons/fonts/**" location="/resources/assets/vendor/bootstrap-icons/fonts/"/>
+    <resources mapping="/front/assets/vendor/bootstrap-icons/**" location="/resources/assets/vendor/bootstrap-icons/"/>
+    <resources mapping="/front/assets/vendor/boxicons/css/**" location="/resources/assets/vendor/boxicons/css/"/>
+    <resources mapping="/front/assets/vendor/boxicons/fonts/**" location="/resources/assets/vendor/boxicons/fonts/"/>
+    <resources mapping="/front/assets/vendor/glightbox/css/**" location="/resources/assets/vendor/glightbox/css/"/>
+    <resources mapping="/front/assets/vendor/glightbox/js/**" location="/resources/assets/vendor/glightbox/js/"/>
+    <resources mapping="/front/assets/vendor/isotope-layout/**" location="/resources/assets/vendor/isotope-layout/"/>
+    <resources mapping="/front/assets/vendor/php-email-form/**" location="/resources/assets/vendor/php-email-form/"/>
+    <resources mapping="/front/assets/vendor/purecounter/**" location="/resources/assets/vendor/purecounter/"/>
+    <resources mapping="/front/assets/vendor/swiper/**" location="/resources/assets/vendor/swiper/"/>
+    <!-- index assets   -->
+
+    <!-- account form assets   -->
+    <resources mapping="/front/memberAssets/css/**" location="/resources/memberAssets/css/"/>
+    <resources mapping="/front/memberAssets/fonts/font-awesome-4.7.0/**" location="/resources/memberAssets/fonts/font-awesome-4.7.0/"/>
+    <resources mapping="/front/memberAssets/fonts/font-awesome-4.7.0/css/**" location="/resources/memberAssets/fonts/font-awesome-4.7.0/css/"/>
+    <resources mapping="/front/memberAssets/fonts/font-awesome-4.7.0/fonts/**" location="/resources/memberAssets/fonts/font-awesome-4.7.0/fonts/"/>
+    <resources mapping="/front/memberAssets/fonts/font-awesome-4.7.0/less/**" location="/resources/memberAssets/fonts/font-awesome-4.7.0/less/"/>
+    <resources mapping="/front/memberAssets/fonts/font-awesome-4.7.0/scss/**" location="/resources/memberAssets/fonts/font-awesome-4.7.0/scss/"/>
+    <resources mapping="/front/memberAssets/fonts/iconic/**" location="/resources/memberAssets/fonts/iconic/"/>
+    <resources mapping="/front/memberAssets/fonts/iconic/css/**" location="/resources/memberAssets/fonts/iconic/css/"/>
+    <resources mapping="/front/memberAssets/fonts/iconic/fonts/**" location="/resources/memberAssets/fonts/iconic/fonts/"/>
+    <resources mapping="/front/memberAssets/fonts/poppins/**" location="/resources/memberAssets/fonts/poppins/"/>
+    <resources mapping="/front/memberAssets/images/**" location="/resources/memberAssets/images/"/>
+    <resources mapping="/front/memberAssets/images/icons/**" location="/resources/memberAssets/images/icons/"/>
+    <resources mapping="/front/memberAssets/js/**" location="/resources/memberAssets/js/"/>
+    <resources mapping="/front/memberAssets/vendor/**" location="/resources/memberAssets/vendor/"/>
+    <resources mapping="/front/memberAssets/vendor/animate/**" location="/resources/memberAssets/vendor/animate/"/>
+    <resources mapping="/front/memberAssets/vendor/animsition/**" location="/resources/memberAssets/vendor/animsition/"/>
+    <resources mapping="/front/memberAssets/vendor/animsition/css/**" location="/resources/memberAssets/vendor/animsition/css/"/>
+    <resources mapping="/front/memberAssets/vendor/animsition/js/**" location="/resources/memberAssets/vendor/animsition/js/"/>
+    <resources mapping="/front/memberAssets/vendor/bootstrap/**" location="/resources/memberAssets/vendor/bootstrap/"/>
+    <resources mapping="/front/memberAssets/vendor/bootstrap/css/**" location="/resources/memberAssets/vendor/bootstrap/css/"/>
+    <resources mapping="/front/memberAssets/vendor/bootstrap/js/**" location="/resources/memberAssets/vendor/bootstrap/js/"/>
+    <resources mapping="/front/memberAssets/vendor/countdowntime/**" location="/resources/memberAssets/vendor/countdowntime/"/>
+    <resources mapping="/front/memberAssets/vendor/css-hamburgers/**" location="/resources/memberAssets/vendor/css-hamburgers/"/>
+    <resources mapping="/front/memberAssets/vendor/daterangepicker/**" location="/resources/memberAssets/vendor/daterangepicker/"/>
+    <resources mapping="/front/memberAssets/vendor/jquery/**" location="/resources/memberAssets/vendor/jquery/"/>
+    <resources mapping="/front/memberAssets/vendor/perfect-scrollbar/**" location="/resources/memberAssets/vendor/perfect-scrollbar/"/>
+    <resources mapping="/front/memberAssets/vendor/select2/**" location="/resources/memberAssets/vendor/select2/"/>
+    <resources mapping="/front/summernote/font/**" location="/resources/summernote/font/"/>
+    <resources mapping="/front/summernote/**" location="/resources/summernote/"/>
+    <resources mapping="/front/backendboard/**" location="/resources/backendboard/"/>
     <!-- board page assets   -->
 
     <resources mapping="/back/detail/**" location="/resources/"/>
     <resources mapping="/loadImg/**" location="file:///D://test/upload/"/>
+    <resources mapping="/front/detail/**" location="/resources/"/>
+
+
 
     <interceptors>
         <interceptor>

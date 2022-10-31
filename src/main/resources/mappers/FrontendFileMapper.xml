@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="frontendFile">
+
+
+    <insert id="filesUpload">
+        insert into frontend_board_file
+            (file_name, target_content_num)
+        values (#{fileName}, #{targetContentNum})
+    </insert>
+
+    <delete id="clearFiles">
+        delete
+        from frontend_board_file
+        where target_content_num = #{contentNum}
+    </delete>
+
+</mapper>

@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // 채팅 서버 주소
-    let url = "ws://localhost:9090/chatserver";
-
+    // let url = "ws://localhost:9090/chatserver";
+    let url = "ws://172.16.143.33:9090/chatserver"
 // 웹 소켓
     let ws;
 

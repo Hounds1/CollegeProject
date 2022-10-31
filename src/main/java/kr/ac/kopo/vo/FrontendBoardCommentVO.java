@@ -12,5 +12,5 @@ public class FrontendBoardCommentVO {
     private String commentUploader;
     private Date commentRegDate;
     private String commentDetail;
-    private int contentNum;
+    private int commentTargetContentNum;
 }
