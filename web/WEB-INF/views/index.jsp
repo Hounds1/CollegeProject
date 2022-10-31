@@ -18,9 +18,9 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-<%--    <!-- Favicons -->--%>
-<%--    <link href="assets/img/favicon.png" rel="icon">--%>
-<%--    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">--%>
+    <%--    <!-- Favicons -->--%>
+    <%--    <link href="assets/img/favicon.png" rel="icon">--%>
+    <%--    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">--%>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -109,10 +109,10 @@
                 <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
                 <c:choose>
                     <c:when test="${sessionScope.member eq null}">
-                <li><a class="nav-link" href="#" data-bs-toggle="modal"
-                       data-bs-target="#exampleModalToggle">Sign In</a></li>
-                <li><a class="nav-link" href="/member/signup" data-bs-target="#exampleModalToggle2"
-                       data-bs-toggle="modal">Sign Up</a></li>
+                        <li><a class="nav-link" href="#" data-bs-toggle="modal"
+                               data-bs-target="#exampleModalToggle">Sign In</a></li>
+                        <li><a class="nav-link" href="/member/signup" data-bs-target="#exampleModalToggle2"
+                               data-bs-toggle="modal">Sign Up</a></li>
                     </c:when>
                     <c:otherwise>
                         <li><a class="nav-link" href="/member/mypage">My Page</a></li>
@@ -146,10 +146,11 @@
                     <div class="content">
                         <h3>함께 생각한다면 더 쉽게 코드를 구현하고, 수정할 수 있습니다.</h3>
                         <p>
-                            모든 개발자들이 가끔 논리적인 모순에 막혀 앞으로 전진하지 못합니다. Archivist의 실시간 채팅에서 도움을 받고, 다른 이에게 도움을 주세요. 언제나 당신의 개발에 오류가
-                            없길 바랍니다.  :)
+                            모든 개발자들이 가끔 논리적인 모순에 막혀 앞으로 전진하지 못합니다. Archivist의 실시간 채팅에서 도움을 받고, 다른 이에게 도움을 주세요. 언제나 당신의
+                            개발에 오류가
+                            없길 바랍니다. :)
                         </p>
-                        <a href="/chat" class="about-btn">Visit the chat.<i class="bx bx-chevron-right"></i></a>
+                        <a href="#" class="about-btn" data-bs-toggle="modal" data-bs-target="#listModal">Board List</a>
                     </div>
                 </div>
                 <div class="col-xl-7 d-flex align-items-stretch">
@@ -200,15 +201,15 @@
                     <div class="icon-box" data-aos="fade-up">
                         <div class="icon"><i class="bx bxl-discord"></i></div>
                         <h4 class="title"><a href="https://discord.com/" target="_blank">Discord</a></h4>
-                        <p class="description">Archivist의 Discord 채널에서 음성으로 대화하세요!</p>
+                        <p class="description">Archivist의 Discord 채널에서 음성으로 대화해보세요.</p>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                        <div class="icon"><i class="bx bx-book"></i></div>
-                        <h4 class="title"><a href="">Read codes</a></h4>
-                        <p class="description">다른 사람의 코드를 읽고 공부해 보세요!</p>
+                        <div class="icon"><i class="bi bi-chat-square-text"></i></div>
+                        <h4 class="title"><a href="/chat">Live Chat</a></h4>
+                        <p class="description">라이브 채팅에서 다른 사람들에게 질문하십시오.</p>
                     </div>
                 </div>
 
@@ -216,7 +217,7 @@
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
                         <div class="icon"><i class="bx bx-camera"></i></div>
                         <h4 class="title"><a href="">Save your codes</a></h4>
-                        <p class="description">현재의 코드를 저장하고 나중에 과거를 회상해 보세요!</p>
+                        <p class="description">현재의 코드를 저장하고 나중에 과거를 회상해 보세요.</p>
                     </div>
                 </div>
 
@@ -224,7 +225,7 @@
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
                         <div class="icon"><i class="bx bx-child"></i></div>
                         <h4 class="title"><a href="">Raise a junior developer</a></h4>
-                        <p class="description">많은 초보 개발자들이 도움을 요청합니다. 어서 가서 도와주세요!</p>
+                        <p class="description">많은 초보 개발자들이 도움을 요청합니다. 도와주시겠어요?</p>
                     </div>
                 </div>
             </div>
@@ -241,7 +242,8 @@
                 <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
                     <div class="count-box">
                         <i class="bi bi-emoji-smile"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="${memberSize}" data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="${memberSize}"
+                              data-purecounter-duration="1"
                               class="purecounter"></span>
                         <p><strong>명의 이용자가</strong> <br>사이트를 이용하고 있습니다.</p>
                     </div>
@@ -250,7 +252,8 @@
                 <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
                     <div class="count-box">
                         <i class="bi bi-journal-richtext"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="${contentsSize}" data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="${contentsSize}"
+                              data-purecounter-duration="1"
                               class="purecounter"></span>
                         <p><strong>개의 글이</strong> <br>게시되었습니다.</p>
                     </div>
@@ -259,7 +262,8 @@
                 <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
                     <div class="count-box">
                         <i class="bi bi-code"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="${commentSize}" data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="${commentSize}"
+                              data-purecounter-duration="1"
                               class="purecounter"></span>
                         <p><strong>번의 도움이</strong> <br>이루어졌습니다.</p>
                     </div>
@@ -268,7 +272,8 @@
                 <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
                     <div class="count-box">
                         <i class="bi bi-people"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="${adminSize}" data-purecounter-duration="1"
+                        <span data-purecounter-start="0" data-purecounter-end="${adminSize}"
+                              data-purecounter-duration="1"
                               class="purecounter"></span>
                         <p><strong>명의 관리자가</strong> <br>활동하고 있습니다.</p>
                     </div>
@@ -699,40 +704,57 @@
     <div class="offcanvas-body">
         <ul class="list-unstyled ps-0">
             <li class="mb-1">
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
                     Home
                 </button>
                 <div class="collapse show" id="home-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                         <li><a href="/" class="link-dark d-inline-flex text-decoration-none rounded">Index</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Update soon</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Update soon</a></li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Update soon</a>
+                        </li>
+                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Update soon</a>
+                        </li>
                     </ul>
                 </div>
             </li>
             <li class="mb-1">
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                Boards
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                    Boards
                 </button>
                 <div class="collapse" id="dashboard-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="/back/java" class="link-dark d-inline-flex text-decoration-none rounded">Java</a></li>
-                        <li><a href="/back/python" class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
-                        <li><a href="/back/nodejs" class="link-dark d-inline-flex text-decoration-none rounded">Node.js</a></li>
-                        <li><a href="/back/ruby" class="link-dark d-inline-flex text-decoration-none rounded">Ruby</a></li>
-                        <li><a href="/back/ummlang" class="link-dark d-inline-flex text-decoration-none rounded">Umm Lang</a></li>
-                        <li><a href="/back/kotlin" class="link-dark d-inline-flex text-decoration-none rounded">Kotlin</a></li>
-                        <li><a href="/back/swift" class="link-dark d-inline-flex text-decoration-none rounded">Swift</a></li>
-                        <li><a href="/front/js" class="link-dark d-inline-flex text-decoration-none rounded">JavaScript</a></li>
-                        <li><a href="/front/ts" class="link-dark d-inline-flex text-decoration-none rounded">TypeScript</a></li>
-                        <li><a href="/front/react" class="link-dark d-inline-flex text-decoration-none rounded">React</a></li>
-                        <li><a href="/front/vuejs" class="link-dark d-inline-flex text-decoration-none rounded">Vue.js</a></li>
-                        <li><a href="/front/angular" class="link-dark d-inline-flex text-decoration-none rounded">Angular</a></li>
+                        <li><a href="/back/java" class="link-dark d-inline-flex text-decoration-none rounded">Java</a>
+                        </li>
+                        <li><a href="/back/python"
+                               class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
+                        <li><a href="/back/nodejs"
+                               class="link-dark d-inline-flex text-decoration-none rounded">Node.js</a></li>
+                        <li><a href="/back/ruby" class="link-dark d-inline-flex text-decoration-none rounded">Ruby</a>
+                        </li>
+                        <li><a href="/back/ummlang" class="link-dark d-inline-flex text-decoration-none rounded">Umm
+                            Lang</a></li>
+                        <li><a href="/back/kotlin"
+                               class="link-dark d-inline-flex text-decoration-none rounded">Kotlin</a></li>
+                        <li><a href="/back/swift" class="link-dark d-inline-flex text-decoration-none rounded">Swift</a>
+                        </li>
+                        <li><a href="/front/js"
+                               class="link-dark d-inline-flex text-decoration-none rounded">JavaScript</a></li>
+                        <li><a href="/front/ts"
+                               class="link-dark d-inline-flex text-decoration-none rounded">TypeScript</a></li>
+                        <li><a href="/front/react"
+                               class="link-dark d-inline-flex text-decoration-none rounded">React</a></li>
+                        <li><a href="/front/vuejs"
+                               class="link-dark d-inline-flex text-decoration-none rounded">Vue.js</a></li>
+                        <li><a href="/front/angular" class="link-dark d-inline-flex text-decoration-none rounded">Angular</a>
+                        </li>
                     </ul>
                 </div>
             </li>
             <li class="mb-1">
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
                     Orders
                 </button>
                 <div class="collapse" id="orders-collapse">
@@ -745,34 +767,41 @@
                 </div>
             </li>
             <c:if test="${sessionScope.member.memberAuthority eq 'Archivist'}">
-            <li class="mb-1">
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#admin-collapse" aria-expanded="false">
-                    Archivist Controls
-                </button>
-                <div class="collapse" id="admin-collapse">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Notice</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Board</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Lang Append</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Members</a></li>
-                    </ul>
-                </div>
-            </li>
+                <li class="mb-1">
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                            data-bs-toggle="collapse" data-bs-target="#admin-collapse" aria-expanded="false">
+                        Archivist Controls
+                    </button>
+                    <div class="collapse" id="admin-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Notice</a></li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Board</a></li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Lang Append</a>
+                            </li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Members</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
             </c:if>
             <c:if test="${not empty sessionScope.member}">
-            <li class="border-top my-3"></li>
-            <li class="mb-1">
-                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-                    ${sessionScope.member.memberNick}
-                </button>
-                <div class="collapse" id="account-collapse">
-                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a></li>
-                        <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a></li>
-                        <li><a href="/member/escape" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</a></li>
-                    </ul>
-                </div>
-            </li>
+                <li class="border-top my-3"></li>
+                <li class="mb-1">
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                            data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                            ${sessionScope.member.memberNick}
+                    </button>
+                    <div class="collapse" id="account-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</a>
+                            </li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</a>
+                            </li>
+                            <li><a href="/member/escape" class="link-dark d-inline-flex text-decoration-none rounded">Sign
+                                out</a></li>
+                        </ul>
+                    </div>
+                </li>
             </c:if>
         </ul>
     </div>
@@ -897,10 +926,71 @@
 </div>
 <!-- Account modal -->
 
-<!-- live chat modal -->
-
-
-<!-- live chat modal -->
+<!-- list test modal start -->
+<div class="modal fade" tabindex="-1" id="listModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center">Please pick your language</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        id="listModalEscape">
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- accordion in modal start -->
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <a href="#" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                    aria-controls="flush-collapseOne">
+                                Front-End
+                            </a>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                             aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body text-center fs-3">
+                                <a href="/front/js">Java Script</a> <br>
+                                <a href="/front/ts">Type Script</a> <br>
+                                <a href="/front/vuejs">Vue.js</a> <br>
+                                <a href="/front/react">React</a> <br>
+                                <a href="/front/angular">Angular</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                            <a href="#" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                    aria-controls="flush-collapseTwo">
+                                Back-End
+                            </a>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                             aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body text-center fs-3">
+                                <a href="/back/java">Java</a> <br>
+                                <a href="/back/python">Python</a> <br>
+                                <a href="/back/nodejs">Node.js</a> <br>
+                                <a href="/back/ruby">Ruby</a> <br>
+                                <a href="/back/kotlin">Kotlin</a> <br>
+                                <a href="/back/ummlang">UmmLang</a> <br>
+                                <a href="/back/swift">Swift</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- accordion in modal end -->
+                    <div class="modal-footer">
+                        <a type="button" class="btn btn-secondary text-center" href="/chat">
+                            If you wanna chat with others click here!
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- list test modal end -->
 
 <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
