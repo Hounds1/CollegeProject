@@ -33,9 +33,6 @@ public class FrontendBoardServiceImpl implements FrontendBoardService{
     @Override
     @Transactional
     public String contentUpload(FrontendBoardVO content) {
-        int hitSet = 0;
-        content.setContentHit(hitSet);
-        content.setContentCommentHit(hitSet);
         frontendBoardDao.contentUpload(content);
 
         for(FrontendBoardFileVO fileVO : content.getParamFileList()){
