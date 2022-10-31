@@ -59,4 +59,9 @@ public class FrontendBoardDaoImpl implements FrontendBoardDao{
     public int getContentSize() {
         return sqlSession.selectOne("frontendBoard.getContentSize");
     }
+
+    @Override
+    public void reverseCommentHit(int targetNum) {
+        sqlSession.update("frontendBoard.reverseCommentHit", targetNum);
+    }
 }

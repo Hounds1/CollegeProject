@@ -86,8 +86,10 @@ public class BackendBoardServiceImpl implements BackendBoardService {
     }
 
     @Override
-    public void removeComment(int commentNum) {
+    @Transactional
+    public void removeComment(int commentNum, int targetNum) {
         backendBoardCommentDao.removeComment(commentNum);
+        backendBoardDao.reverseCommentHit(targetNum);
     }
 
     @Override

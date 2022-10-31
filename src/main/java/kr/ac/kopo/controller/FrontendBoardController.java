@@ -169,9 +169,12 @@ public class FrontendBoardController {
 
     @RequestMapping("/removecomment/{commentNum}")
     public String removeComment(@PathVariable int commentNum, HttpServletRequest request) {
-        boardService.removeComment(commentNum);
         String referer = request.getHeader("referer");
-        String targetURL = referer.substring(referer.lastIndexOf("/"), referer.length());
+        String targetURL = referer.substring(referer.lastIndexOf("/") + 1, referer.length());
+        int targetNum = Integer.parseInt(targetURL);
+
+        boardService.removeComment(commentNum, targetNum);
+
 
         return "redirect:/front/detail/"+targetURL;
     }

@@ -76,7 +76,6 @@ public class ChatServer {
                         e.printStackTrace();
                     }
                 }
-
             }
             list.remove(session);
         }

@@ -54,9 +54,9 @@ $(document).ready(function () {
                 $('#list').scrollTop($('#list').prop('scrollHeight'));
             };
 
-            ws.onclose = function (evt) {
-                console.log('소켓이 닫힙니다.');
-            };
+            // ws.onclose = function (evt) {
+            //     console.log('소켓이 닫힙니다.');
+            // };
 
             ws.onerror = function (evt) {
                 console.log(evt.data);
@@ -126,7 +126,7 @@ $(document).ready(function () {
 
     $('#btnDisconnect').click(function() {
         ws.send('3#' + $('#user').val() + '#');
-        ws.close();
+        // ws.close();
 
         $('#user').attr('readonly', false);
         $('#user').val('');

@@ -354,4 +354,10 @@
         order by content_num desc
         LIMIT ${offset}, ${perPage}
     </select>
+
+    <update id="reverseCommentHit">
+        update backend_board
+            set content_comment_hit = content_comment_hit - 1
+        where content_num = #{targetNum}
+    </update>
 </mapper>

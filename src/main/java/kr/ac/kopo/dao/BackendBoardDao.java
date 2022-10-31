@@ -51,4 +51,6 @@ public interface BackendBoardDao {
     int getSwiftTotal(Pager pager);
 
     List<BackendBoardVO> getSwiftBoard(Pager pager);
+
+    void reverseCommentHit(int targetNum);
 }

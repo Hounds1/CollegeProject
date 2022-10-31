@@ -83,7 +83,9 @@ public class FrontendBoardServiceImpl implements FrontendBoardService{
     }
 
     @Override
-    public void removeComment(int commentNum) {
+    @Transactional
+    public void removeComment(int commentNum, int targetNum) {
+        frontendBoardDao.reverseCommentHit(targetNum);
         frontendCommentDao.removeComment(commentNum);
     }
 }

@@ -108,4 +108,10 @@
         from frontend_board
     </select>
 
+    <update id="reverseCommentHit">
+        update frontend_board
+            set content_comment_hit = content_comment_hit - 1
+        where content_num = #{targetNum}
+    </update>
+
 </mapper>

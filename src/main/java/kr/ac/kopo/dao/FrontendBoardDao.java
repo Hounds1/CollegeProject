@@ -24,4 +24,5 @@ public interface FrontendBoardDao {
 
     int getContentSize();
 
+    void reverseCommentHit(int targetNum);
 }

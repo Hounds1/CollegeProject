@@ -22,7 +22,7 @@ public interface BackendBoardService {
 
     void commentUpload(BackendBoardCommentVO commentVO);
 
-    void removeComment(int commentNum);
+    void removeComment(int commentNum, int targetNum);
 
     BackendBoardCommentVO commentEditor(int targetId);
 

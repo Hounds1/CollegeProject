@@ -128,5 +128,10 @@ public class BackendBoardDaoImpl implements BackendBoardDao {
         return sqlSession.selectList("backendBoard.getSwiftBoard", pager);
     }
 
+    @Override
+    public void reverseCommentHit(int targetNum) {
+        sqlSession.update("backendBoard.reverseCommentHit", targetNum);
+    }
+
 
 }

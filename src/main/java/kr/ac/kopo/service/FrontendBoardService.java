@@ -23,5 +23,5 @@ public interface FrontendBoardService {
 
     void commentUpdate(FrontendBoardCommentVO commentVO);
 
-    void removeComment(int commentNum);
+    void removeComment(int commentNum, int targetNum);
 }
