@@ -153,24 +153,24 @@
           <div class="icon-boxes d-flex flex-column justify-content-center">
             <div class="row">
               <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <i class="bi bi-file-code"></i>
-                <h4>Static Type Language</h4>
-                <p>변수 타입을 유추함으로 컴파일러가 프로그램의 정확성을 검증합니다.</p>
+                <i class="bi bi-pip"></i>
+                <h4>Component</h4>
+                <p>각 소요를 따로 구성함으로 페이지를 새로고침 하지 않습니다.</p>
               </div>
               <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-body-text"></i>
-                <h4>Nullable</h4>
-                <p>Null이 될 수 있는 타입 또한 지원합니다. NPE로 부터 자유롭습니다.</p>
+                <i class="bx bxl-react"></i>
+                <h4>Framework</h4>
+                <p>Angular와 같이 프레임워크 급으로 여겨집니다.</p>
               </div>
               <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                <i class="bi bi-arrow-repeat"></i>
-                <h4>Functional Programming</h4>
-                <p>함수형 프로그래밍을 지원합니다. 가독성이 높으며 유지/보수에 유리합니다.</p>
+                <i class="bi bi-person-plus"></i>
+                <h4>Users</h4>
+                <p>프론트엔드 프레임워크 중 가장 많은 유저를 보유 중입니다.</p>
               </div>
               <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-                <i class="bx bxl-java"></i>
-                <h4>Compatibility</h4>
-                <p>자바와 높은 호환성을 가지고 있습니다. 자바 표준 라이브러리 클래스에 의존합니다.</p>
+                <i class="bi bi-recycle"></i>
+                <h4>Flexibility</h4>
+                <p>웹 프로젝트만이 아닌 모바일 앱, 데스크탑 앱도 유연하게 구현이 가능합니다.</p>
               </div>
             </div>
           </div><!-- End .content-->

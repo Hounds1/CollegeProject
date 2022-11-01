@@ -168,7 +168,7 @@
                                 <p>이벤트 기반 비동식 방식으로 작동합니다.</p>
                             </div>
                             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-                                <i class="bi bi-node-plus"></i>
+                                <i class="bi bi-terminal"></i>
                                 <h4>npm</h4>
                                 <p>Node Package Manager를 통해 다양한 모듈을 제공합니다</p>
                             </div>

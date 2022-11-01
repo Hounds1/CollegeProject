@@ -153,24 +153,24 @@
           <div class="icon-boxes d-flex flex-column justify-content-center">
             <div class="row">
               <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                <i class="bi bi-file-code"></i>
-                <h4>Static Type Language</h4>
-                <p>변수 타입을 유추함으로 컴파일러가 프로그램의 정확성을 검증합니다.</p>
+                <i class="bi bi-check2-all"></i>
+                <h4>Functions</h4>
+                <p>완전한 프레임워크로 프로젝트의 생성, 빌드 등 모든 것이 가능합니다.</p>
               </div>
               <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                <i class="bi bi-body-text"></i>
-                <h4>Nullable</h4>
-                <p>Null이 될 수 있는 타입 또한 지원합니다. NPE로 부터 자유롭습니다.</p>
+                <i class="bi bi-window-stack"></i>
+                <h4>Library</h4>
+                <p>왠만한 라이브러리는 자체적으로 보유하고 제공합니다.</p>
               </div>
               <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-                <i class="bi bi-arrow-repeat"></i>
-                <h4>Functional Programming</h4>
-                <p>함수형 프로그래밍을 지원합니다. 가독성이 높으며 유지/보수에 유리합니다.</p>
+                <i class="bi bi-google"></i>
+                <h4>Google</h4>
+                <p>구글이 개발에 참여 중으로 전망이 밝습니다.</p>
               </div>
               <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-                <i class="bx bxl-java"></i>
-                <h4>Compatibility</h4>
-                <p>자바와 높은 호환성을 가지고 있습니다. 자바 표준 라이브러리 클래스에 의존합니다.</p>
+                <i class="bx bxl-typescript"></i>
+                <h4>Type Script</h4>
+                <p>공식적으로 TS를 사용해 유지/보수에 안정성이 높습니다.</p>
               </div>
             </div>
           </div><!-- End .content-->

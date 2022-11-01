@@ -214,7 +214,7 @@
                             <textarea class="form-control text-black" style="resize: none;" name="commentDetail"
                                       placeholder="댓글을 작성해주세요."></textarea>
                             <input type="hidden" name="commentTargetContentNum" value="${contentDetail.contentNum}">
-                            <button class="btn border-secondary mt-2 bg-secondary text-white justify-content-end"
+                            <button class="btn btn-secondary border-secondary mt-2 text-white justify-content-end"
                                     style="margin-left: 1202px;">댓글 쓰기
                             </button>
                         </form>

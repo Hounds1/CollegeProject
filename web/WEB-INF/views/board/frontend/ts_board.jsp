@@ -82,8 +82,8 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a class="nav-link scrollto" href="/">Home</a></li>
-                <li><a class="nav-link scrollto" href="#js">Type Script</a></li>
-                <li><a class="nav-link scrollto" href="#js-contents">Contents</a></li>
+                <li><a class="nav-link scrollto" href="#ts">Type Script</a></li>
+                <li><a class="nav-link scrollto" href="#ts-contents">Contents</a></li>
                 <li class="dropdown"><a href="#"><span>Boards</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li class="dropdown"><a href="#"><span>FrontEnd</span> <i class="bi bi-chevron-right"></i></a>
@@ -138,7 +138,7 @@
                     <div class="content">
                         <h3><i class="bx bxl-typescript"></i> Type Script</h3>
                         <p>
-                            이 곳은 Java Script 관련된 질문이나 토론을 할 수 있는 게시판입니다.
+                            이 곳은 Type Script와 관련된 질문이나 토론을 할 수 있는 게시판입니다.
                             코드를 공유하거나 질문 해보세요.
                             <c:if test="${sessionScope.member eq null}"><br>로그인 후 작성 가능합니다.</c:if>
                             <br>
