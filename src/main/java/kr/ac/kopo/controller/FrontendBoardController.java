@@ -2,6 +2,7 @@ package kr.ac.kopo.controller;
 
 
 import kr.ac.kopo.service.FrontendBoardService;
+import kr.ac.kopo.util.LangNameConverter;
 import kr.ac.kopo.util.MultipartBinder;
 import kr.ac.kopo.util.Pager;
 import kr.ac.kopo.vo.FrontendBoardCommentVO;
@@ -114,6 +115,10 @@ public class FrontendBoardController {
     public String getContentDetail(@PathVariable int contentNum, Model model) {
         FrontendBoardVO frontendBoardVO = new FrontendBoardVO();
         frontendBoardVO = boardService.getContentDetail(contentNum);
+
+        LangNameConverter converter = new LangNameConverter();
+
+        frontendBoardVO.setContentLangName(converter.convert(frontendBoardVO.getContentLangName()));
 
         model.addAttribute("contentDetail", frontendBoardVO);
 

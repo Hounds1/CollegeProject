@@ -79,7 +79,7 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto" href="/front/${contentDetail.contentLangName}">Home</a></li>
+                <li><a class="nav-link scrollto detail-home-btn" href="/front/${contentDetail.contentLangName}">Home</a></li>
                 <li><a class="nav-link scrollto" href="#content-header">Head Line</a></li>
                 <li><a class="nav-link scrollto" href="#content-detail">Details</a></li>
                 <li class="dropdown"><a href="#"><span>Boards</span> <i class="bi bi-chevron-down"></i></a>
@@ -142,7 +142,7 @@
                                data-bs-target="#content-edit-modal" id="${contentDetail.contentNum}"><i
                                     class="bi bi-pencil"></i> 수정하기</a>
                             <a class="btn btn-secondary mt-1 ms-1"
-                               href="/front/delete/${contentDetail.contentNum}">삭제</a>
+                               href="/front/delete/${contentDetail.contentNum}"><i class="bi bi-trash3"></i> 삭제</a>
                             </c:if>
                         </p>
                     </div>
@@ -156,7 +156,7 @@
                                         test="${contentDetail.contentUploader eq sessionScope.member.memberNick}">(me)</c:if></h4>
                                 <p>by uploaded.</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                            <div class="col-md-6 icon-box lang-name-space" data-aos="fade-up" data-aos-delay="200">
                                 <i class="bx bx-network-chart"></i>
                                 <h4>${contentDetail.contentLangName}</h4>
                                 <p>contents language name.</p>
@@ -654,8 +654,9 @@
 <script src="assets/js/sidebars.js"></script>
 <script src="frontendboard/content_detail_summernote.js"></script>
 <script src="frontendboard/member_form_control.js"></script>
-<script src="frontendboard/backendboard_content_control.js"></script>
+<script src="frontendboard/frontendboard_content_control.js"></script>
 <script src="frontendboard/comment_control.js"></script>
+<script src="frontendboard/frontend_langname_replace.js"></script>
 </body>
 
 </html>

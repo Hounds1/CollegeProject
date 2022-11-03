@@ -72,6 +72,7 @@ public class BackendBoardServiceImpl implements BackendBoardService {
     @Transactional
     public BackendBoardVO detailView(int contentNum) {
         backendBoardDao.contentHitter(contentNum);
+
         return backendBoardDao.detailView(contentNum);
     }
 

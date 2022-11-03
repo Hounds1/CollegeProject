@@ -2,6 +2,7 @@ package kr.ac.kopo.controller;
 
 
 import kr.ac.kopo.service.BackendBoardService;
+import kr.ac.kopo.util.LangNameConverter;
 import kr.ac.kopo.util.MultipartBinder;
 import kr.ac.kopo.util.Pager;
 import kr.ac.kopo.vo.BackendBoardCommentVO;
@@ -181,6 +182,12 @@ public class BackendBoardController {
     public String detailView(@PathVariable int contentNum, Model model) {
         BackendBoardVO backendBoardVO = new BackendBoardVO();
         backendBoardVO = boardService.detailView(contentNum);
+
+        LangNameConverter converter = new LangNameConverter();
+
+        backendBoardVO.setContentLangName(converter.convert(backendBoardVO.getContentLangName()));
+
+
 
         model.addAttribute("contentDetail",backendBoardVO);
 
