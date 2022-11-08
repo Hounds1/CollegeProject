@@ -121,4 +121,13 @@ public class FrontendBoardServiceImpl implements FrontendBoardService{
 
         return frontendBoardDao.getAngularBoard(pager);
     }
+
+    @Override
+    public List<FrontendBoardVO> getTargetBoard(Pager pager) {
+        int total = frontendBoardDao.getTargetTotal(pager);
+
+        pager.setTotal(total);
+
+        return frontendBoardDao.getTargetBoard(pager);
+    }
 }

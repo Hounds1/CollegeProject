@@ -41,4 +41,8 @@ public interface FrontendBoardDao {
     int getAngularTotal(Pager pager);
 
     List<FrontendBoardVO> getAngularBoard(Pager pager);
+
+    int getTargetTotal(Pager pager);
+
+    List<FrontendBoardVO> getTargetBoard(Pager pager);
 }

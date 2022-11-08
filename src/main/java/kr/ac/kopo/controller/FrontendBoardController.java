@@ -36,6 +36,15 @@ public class FrontendBoardController {
      * @return each languages board
      */
 
+    @GetMapping("/board")
+    public String getTargetBoard(@RequestParam(value = "langname")String target, Model model, Pager pager){
+        pager.setLangName(target);
+        List<FrontendBoardVO> list = boardService.getTargetBoard(pager);
+        model.addAttribute("list", list);
+
+        return "/board/frontend/"+target+"_board";
+    }
+
     @GetMapping("/js")
     public String getJSBoard(Model model, Pager pager) {
         List<FrontendBoardVO> list = boardService.getJSBoard(pager);

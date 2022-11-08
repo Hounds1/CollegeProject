@@ -13,6 +13,16 @@ public class Pager {
 
     private String keyword;
 
+    private String langName;
+
+    public String getLangName() {
+        return langName;
+    }
+
+    public void setLangName(String langName) {
+        this.langName = langName;
+    }
+
     public int getSearch() {
         return search;
     }

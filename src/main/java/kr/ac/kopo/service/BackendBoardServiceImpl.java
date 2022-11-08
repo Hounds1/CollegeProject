@@ -12,7 +12,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.lang.reflect.Array;
 import java.util.List;
 
 @Service
@@ -25,14 +24,7 @@ public class BackendBoardServiceImpl implements BackendBoardService {
 
     private final BackendBoardCommentDao backendBoardCommentDao;
 
-    @Override
-    public List<BackendBoardVO> getJavaBoard(Pager pager) {
-        int total = backendBoardDao.getJavaTotal(pager);
 
-        pager.setTotal(total);
-
-        return backendBoardDao.getJavaBoard(pager);
-    }
 
     @Override
     @Transactional
@@ -101,58 +93,15 @@ public class BackendBoardServiceImpl implements BackendBoardService {
         backendBoardCommentDao.commentUpdate(commentVO);
     }
 
+
+
     @Override
-    public List<BackendBoardVO> getPythonBoard(Pager pager) {
-        int total = backendBoardDao.getPythonTotal(pager);
+    public List<BackendBoardVO> getTargetBoard(Pager pager) {
+        int total = backendBoardDao.getTargetTotal(pager);
 
         pager.setTotal(total);
 
-        return backendBoardDao.getPythonBoard(pager);
-    }
-
-    @Override
-    public List<BackendBoardVO> getNodeJsBoard(Pager pager) {
-        int total = backendBoardDao.getNodeJsTotal(pager);
-
-        pager.setTotal(total);
-
-        return backendBoardDao.getNodeJsBoard(pager);
-    }
-
-    @Override
-    public List<BackendBoardVO> getUmmLangBoard(Pager pager) {
-        int total = backendBoardDao.getUmmLangTotal(pager);
-
-        pager.setTotal(total);
-
-        return backendBoardDao.getUmmLangBoard(pager);
-    }
-
-    @Override
-    public List<BackendBoardVO> getRubyBoard(Pager pager) {
-        int total = backendBoardDao.getRubyTotal(pager);
-
-        pager.setTotal(total);
-
-        return  backendBoardDao.getRubyBoard(pager);
-    }
-
-    @Override
-    public List<BackendBoardVO> getKotlinBoard(Pager pager) {
-        int total = backendBoardDao.getKotlinTotal(pager);
-
-        pager.setTotal(total);
-
-        return backendBoardDao.getKotlinBoard(pager);
-    }
-
-    @Override
-    public List<BackendBoardVO> getSwiftBoard(Pager pager) {
-        int total = backendBoardDao.getSwiftTotal(pager);
-
-        pager.setTotal(total);
-
-        return backendBoardDao.getSwiftBoard(pager);
+        return backendBoardDao.getTargetBoard(pager);
     }
 
 

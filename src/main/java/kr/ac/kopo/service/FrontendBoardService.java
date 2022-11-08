@@ -32,4 +32,6 @@ public interface FrontendBoardService {
     List<FrontendBoardVO> getVueBoard(Pager pager);
 
     List<FrontendBoardVO> getAngularBoard(Pager pager);
+
+    List<FrontendBoardVO> getTargetBoard(Pager pager);
 }

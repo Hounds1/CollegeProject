@@ -7,7 +7,6 @@ import kr.ac.kopo.vo.BackendBoardVO;
 import java.util.List;
 
 public interface BackendBoardService {
-    List<BackendBoardVO> getJavaBoard(Pager pager);
 
     String contentUpload(BackendBoardVO content);
 
@@ -28,15 +27,5 @@ public interface BackendBoardService {
 
     void commentUpdate(BackendBoardCommentVO commentVO);
 
-    List<BackendBoardVO> getPythonBoard(Pager pager);
-
-    List<BackendBoardVO> getNodeJsBoard(Pager pager);
-
-    List<BackendBoardVO> getUmmLangBoard(Pager pager);
-
-    List<BackendBoardVO> getRubyBoard(Pager pager);
-
-    List<BackendBoardVO> getKotlinBoard(Pager pager);
-
-    List<BackendBoardVO> getSwiftBoard(Pager pager);
+    List<BackendBoardVO> getTargetBoard(Pager pager);
 }

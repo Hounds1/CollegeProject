@@ -79,29 +79,30 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto detail-home-btn" href="/front/${contentDetail.contentLangName}">Home</a></li>
+                <li><a class="nav-link scrollto detail-home-btn" href="/front/${contentDetail.contentLangName}">Home</a>
+                </li>
                 <li><a class="nav-link scrollto" href="#content-header">Head Line</a></li>
                 <li><a class="nav-link scrollto" href="#content-detail">Details</a></li>
                 <li class="dropdown"><a href="#"><span>Boards</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li class="dropdown"><a href="#"><span>FrontEnd</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
-                                <li><a href="/front/js">JavaScript</a></li>
-                                <li><a href="/front/ts">TypeScript</a></li>
-                                <li><a href="/front/react">React</a></li>
-                                <li><a href="/front/vuejs">Vue.js</a></li>
-                                <li><a href="/front/angular">Angular</a></li>
+                                <li><a href="/front/board?langname=js">JavaScript</a></li>
+                                <li><a href="/front/board?langname=ts">TypeScript</a></li>
+                                <li><a href="/front/board?langname=react">React</a></li>
+                                <li><a href="/front/board?langname=vuejs">Vue.js</a></li>
+                                <li><a href="/front/board?langname=angular">Angular</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="#"><span>BackEnd</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
-                                <li><a href="/back/java">Java</a></li>
-                                <li><a href="/back/python">Python</a></li>
-                                <li><a href="/back/nodejs">Node.js</a></li>
-                                <li><a href="/back/ummlang">Umm Lang</a></li>
-                                <li><a href="/back/ruby">Ruby</a></li>
-                                <li><a href="/back/kotlin">Kotlin</a></li>
-                                <li><a href="/back/swift">Swift</a></li>
+                                <li><a href="/back/board?langname=java">Java</a></li>
+                                <li><a href="/back/board?langname=python">Python</a></li>
+                                <li><a href="/back/board?langname=nodejs">Node.js</a></li>
+                                <li><a href="/back/board?langname=ummlang">Umm Lang</a></li>
+                                <li><a href="/back/board?langname=ruby">Ruby</a></li>
+                                <li><a href="/back/board?langname=kotlin">Kotlin</a></li>
+                                <li><a href="/back/board?langname=swift">Swift</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -138,11 +139,11 @@
                         <p>
                             게시일 : <fmt:formatDate value="${contentDetail.contentRegDate}" pattern="yyyy-MM-dd"/> <br>
                             <c:if test="${contentDetail.contentUploader eq sessionScope.member.memberNick}">
-                            <a class="btn btn-secondary mt-1 content-editor-call" href="#" data-bs-toggle="modal"
-                               data-bs-target="#content-edit-modal" id="${contentDetail.contentNum}"><i
-                                    class="bi bi-pencil"></i> 수정하기</a>
-                            <a class="btn btn-secondary mt-1 ms-1"
-                               href="/front/delete/${contentDetail.contentNum}"><i class="bi bi-trash3"></i> 삭제</a>
+                                <a class="btn btn-secondary mt-1 content-editor-call" href="#" data-bs-toggle="modal"
+                                   data-bs-target="#content-edit-modal" id="${contentDetail.contentNum}"><i
+                                        class="bi bi-pencil"></i> 수정하기</a>
+                                <a class="btn btn-secondary mt-1 ms-1"
+                                   href="/front/delete/${contentDetail.contentNum}"><i class="bi bi-trash3"></i> 삭제</a>
                             </c:if>
                         </p>
                     </div>
@@ -376,18 +377,35 @@
                 </button>
                 <div class="collapse" id="dashboard-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="/back/java" class="link-dark d-inline-flex text-decoration-none rounded">Java</a></li>
-                        <li><a href="/back/python" class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
-                        <li><a href="/back/nodejs" class="link-dark d-inline-flex text-decoration-none rounded">Node.js</a></li>
-                        <li><a href="/back/ruby" class="link-dark d-inline-flex text-decoration-none rounded">Ruby</a></li>
-                        <li><a href="/back/ummlang" class="link-dark d-inline-flex text-decoration-none rounded">Umm Lang</a></li>
-                        <li><a href="/back/kotlin" class="link-dark d-inline-flex text-decoration-none rounded">Kotlin</a></li>
-                        <li><a href="/back/swift" class="link-dark d-inline-flex text-decoration-none rounded">Swift</a></li>
-                        <li><a href="/front/js" class="link-dark d-inline-flex text-decoration-none rounded">JavaScript</a></li>
-                        <li><a href="/front/ts" class="link-dark d-inline-flex text-decoration-none rounded">TypeScript</a></li>
-                        <li><a href="/front/react" class="link-dark d-inline-flex text-decoration-none rounded">React</a></li>
-                        <li><a href="/front/vuejs" class="link-dark d-inline-flex text-decoration-none rounded">Vue.js</a></li>
-                        <li><a href="/front/angular" class="link-dark d-inline-flex text-decoration-none rounded">Angular</a></li>
+                        <li><a href="/back/board?langname=java"
+                               class="link-dark d-inline-flex text-decoration-none rounded">Java</a>
+                        </li>
+                        <li><a href="/back/board?langname=python"
+                               class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
+                        <li><a href="/back/board?langname=nodejs"
+                               class="link-dark d-inline-flex text-decoration-none rounded">Node.js</a></li>
+                        <li><a href="/back/board?langname=nodejs"
+                               class="link-dark d-inline-flex text-decoration-none rounded">Ruby</a>
+                        </li>
+                        <li><a href="/back/board?langname=ummlang"
+                               class="link-dark d-inline-flex text-decoration-none rounded">Umm
+                            Lang</a></li>
+                        <li><a href="/back/board?langname=kotlin"
+                               class="link-dark d-inline-flex text-decoration-none rounded">Kotlin</a></li>
+                        <li><a href="/back/board?langname=swift"
+                               class="link-dark d-inline-flex text-decoration-none rounded">Swift</a>
+                        </li>
+                        <li><a href="/front/board?langname=js"
+                               class="link-dark d-inline-flex text-decoration-none rounded">JavaScript</a></li>
+                        <li><a href="/front/board?langname=ts"
+                               class="link-dark d-inline-flex text-decoration-none rounded">TypeScript</a></li>
+                        <li><a href="/front/board?langname=react"
+                               class="link-dark d-inline-flex text-decoration-none rounded">React</a></li>
+                        <li><a href="/front/board?langname=vuejs"
+                               class="link-dark d-inline-flex text-decoration-none rounded">Vue.js</a></li>
+                        <li><a href="/front/board?langname=angular"
+                               class="link-dark d-inline-flex text-decoration-none rounded">Angular</a>
+                        </li>
                     </ul>
                 </div>
             </li>
@@ -608,7 +626,8 @@
                     <input type="hidden" name="commentTargetContentNum" value="${contentDetail.contentNum}">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary comment-edit-close" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary comment-edit-close" data-bs-dismiss="modal">Close
+                    </button>
                     <button class="btn btn-secondary">Save changes</button>
                 </div>
             </form>

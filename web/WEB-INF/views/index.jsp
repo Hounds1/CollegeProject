@@ -86,22 +86,22 @@
                     <ul>
                         <li class="dropdown"><a href="#"><span>FrontEnd</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
-                                <li><a href="/front/js">JavaScript</a></li>
-                                <li><a href="/front/ts">TypeScript</a></li>
-                                <li><a href="/front/react">React</a></li>
-                                <li><a href="/front/vuejs">Vue.js</a></li>
-                                <li><a href="/front/angular">Angular</a></li>
+                                <li><a href="/front/board?langname=js">JavaScript</a></li>
+                                <li><a href="/front/board?langname=ts">TypeScript</a></li>
+                                <li><a href="/front/board?langname=react">React</a></li>
+                                <li><a href="/front/board?langname=vuejs">Vue.js</a></li>
+                                <li><a href="/front/board?langname=angular">Angular</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="#"><span>BackEnd</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
-                                <li><a href="/back/java">Java</a></li>
-                                <li><a href="/back/python">Python</a></li>
-                                <li><a href="/back/nodejs">Node.js</a></li>
-                                <li><a href="/back/ummlang">Umm Lang</a></li>
-                                <li><a href="/back/ruby">Ruby</a></li>
-                                <li><a href="/back/kotlin">Kotlin</a></li>
-                                <li><a href="/back/swift">Swift</a></li>
+                                <li><a href="/back/board?langname=java">Java</a></li>
+                                <li><a href="/back/board?langname=python">Python</a></li>
+                                <li><a href="/back/board?langname=nodejs">Node.js</a></li>
+                                <li><a href="/back/board?langname=ummlang">Umm Lang</a></li>
+                                <li><a href="/back/board?langname=ruby">Ruby</a></li>
+                                <li><a href="/back/board?langname=kotlin">Kotlin</a></li>
+                                <li><a href="/back/board?langname=swift">Swift</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -325,7 +325,7 @@
                         <div class="portfolio-links">
                             <a href="images/javawall.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
                                title="Java - James Arthur Gosling"><i class="bx bx-plus"></i></a>
-                            <a href="/back/java" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="/back/board?langname=java" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
                 </div>
@@ -336,7 +336,7 @@
                         <div class="portfolio-links">
                             <a href="images/python.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
                                title="Python - Guido van Rossum"><i class="bx bx-plus"></i></a>
-                            <a href="/back/python" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="/back/board?langname=python" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
                 </div>
@@ -348,7 +348,7 @@
                             <a href="images/javascriptwall.png" data-gallery="portfolioGallery"
                                class="portfolio-lightbox" title="JavaScript - Brendan Eich"><i
                                     class="bx bx-plus"></i></a>
-                            <a href="/front/js" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="/front/board?langname=js" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
                 </div>
@@ -359,7 +359,7 @@
                         <div class="portfolio-links">
                             <a href="images/vuejs.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
                                title="Vue.js - Evan You"><i class="bx bx-plus"></i></a>
-                            <a href="/front/vuejs" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="/front/board?langname=vuejs" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
                 </div>
@@ -370,7 +370,7 @@
                         <div class="portfolio-links">
                             <a href="/images/ruby.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
                                title="Ruby - Yukihiro Matsumoto"><i class="bx bx-plus"></i></a>
-                            <a href="/back/ruby" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="/back/board?langname=ruby" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
                 </div>
@@ -381,7 +381,7 @@
                         <div class="portfolio-links">
                             <a href="images/nodejswall.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
                                title="Node.js - Ryan Lienhart Dahl"><i class="bx bx-plus"></i></a>
-                            <a href="/back/nodejs" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="/back/board?langname=nodejs" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
                 </div>
@@ -392,7 +392,7 @@
                         <div class="portfolio-links">
                             <a href="images/react.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
                                title="React - Meta"><i class="bx bx-plus"></i></a>
-                            <a href="/front/react" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="/front/board?langname=react" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
                 </div>
@@ -403,7 +403,7 @@
                         <div class="portfolio-links">
                             <a href="images/ummlang.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
                                title="Umm Lang - Umm Jun Sik"><i class="bx bx-plus"></i></a>
-                            <a href="/back/ummlang" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="/back/board?langname=ummlang" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
                 </div>
@@ -414,7 +414,7 @@
                         <div class="portfolio-links">
                             <a href="images/typescriptwall.png" data-gallery="portfolioGallery"
                                class="portfolio-lightbox" title="TypeScript - Microsoft"><i class="bx bx-plus"></i></a>
-                            <a href="/front/ts" title="More Details"><i class="bx bx-link"></i></a>
+                            <a href="/front/board?langname=ts" title="More Details"><i class="bx bx-link"></i></a>
                         </div>
                     </div>
                 </div>
@@ -725,29 +725,29 @@
                 </button>
                 <div class="collapse" id="dashboard-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="/back/java" class="link-dark d-inline-flex text-decoration-none rounded">Java</a>
+                        <li><a href="/back/board?langname=java" class="link-dark d-inline-flex text-decoration-none rounded">Java</a>
                         </li>
-                        <li><a href="/back/python"
+                        <li><a href="/back/board?langname=python"
                                class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
-                        <li><a href="/back/nodejs"
+                        <li><a href="/back/board?langname=nodejs"
                                class="link-dark d-inline-flex text-decoration-none rounded">Node.js</a></li>
-                        <li><a href="/back/ruby" class="link-dark d-inline-flex text-decoration-none rounded">Ruby</a>
+                        <li><a href="/back/board?langname=nodejs" class="link-dark d-inline-flex text-decoration-none rounded">Ruby</a>
                         </li>
-                        <li><a href="/back/ummlang" class="link-dark d-inline-flex text-decoration-none rounded">Umm
+                        <li><a href="/back/board?langname=ummlang" class="link-dark d-inline-flex text-decoration-none rounded">Umm
                             Lang</a></li>
-                        <li><a href="/back/kotlin"
+                        <li><a href="/back/board?langname=kotlin"
                                class="link-dark d-inline-flex text-decoration-none rounded">Kotlin</a></li>
-                        <li><a href="/back/swift" class="link-dark d-inline-flex text-decoration-none rounded">Swift</a>
+                        <li><a href="/back/board?langname=swift" class="link-dark d-inline-flex text-decoration-none rounded">Swift</a>
                         </li>
-                        <li><a href="/front/js"
+                        <li><a href="/front/board?langname=js"
                                class="link-dark d-inline-flex text-decoration-none rounded">JavaScript</a></li>
-                        <li><a href="/front/ts"
+                        <li><a href="/front/board?langname=ts"
                                class="link-dark d-inline-flex text-decoration-none rounded">TypeScript</a></li>
-                        <li><a href="/front/react"
+                        <li><a href="/front/board?langname=react"
                                class="link-dark d-inline-flex text-decoration-none rounded">React</a></li>
-                        <li><a href="/front/vuejs"
+                        <li><a href="/front/board?langname=vuejs"
                                class="link-dark d-inline-flex text-decoration-none rounded">Vue.js</a></li>
-                        <li><a href="/front/angular" class="link-dark d-inline-flex text-decoration-none rounded">Angular</a>
+                        <li><a href="/front/board?langname=angular" class="link-dark d-inline-flex text-decoration-none rounded">Angular</a>
                         </li>
                     </ul>
                 </div>
@@ -950,11 +950,11 @@
                         <div id="flush-collapseOne" class="accordion-collapse collapse"
                              aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body text-center fs-3">
-                                <a href="/front/js">Java Script</a> <br>
-                                <a href="/front/ts">Type Script</a> <br>
-                                <a href="/front/vuejs">Vue.js</a> <br>
-                                <a href="/front/react">React</a> <br>
-                                <a href="/front/angular">Angular</a>
+                                <a href="/front/board?langname=js">Java Script</a> <br>
+                                <a href="/front/board?langname=ts">Type Script</a> <br>
+                                <a href="/front/board?langname=vuejs">Vue.js</a> <br>
+                                <a href="/front/board?langname=react">React</a> <br>
+                                <a href="/front/board?langname=angular">Angular</a>
                             </div>
                         </div>
                     </div>
@@ -969,13 +969,13 @@
                         <div id="flush-collapseTwo" class="accordion-collapse collapse"
                              aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body text-center fs-3">
-                                <a href="/back/java">Java</a> <br>
-                                <a href="/back/python">Python</a> <br>
-                                <a href="/back/nodejs">Node.js</a> <br>
-                                <a href="/back/ruby">Ruby</a> <br>
-                                <a href="/back/kotlin">Kotlin</a> <br>
-                                <a href="/back/ummlang">UmmLang</a> <br>
-                                <a href="/back/swift">Swift</a>
+                                <a href="/back/board?langname=java">Java</a> <br>
+                                <a href="/back/board?langname=python">Python</a> <br>
+                                <a href="/back/board?langname=nodejs">Node.js</a> <br>
+                                <a href="/back/board?langname=ruby">Ruby</a> <br>
+                                <a href="/back/board?langname=kotlin">Kotlin</a> <br>
+                                <a href="/back/board?langname=ummlang">UmmLang</a> <br>
+                                <a href="/back/board?langname=swift">Swift</a>
                             </div>
                         </div>
                     </div>

@@ -104,4 +104,14 @@ public class FrontendBoardDaoImpl implements FrontendBoardDao{
     public List<FrontendBoardVO> getAngularBoard(Pager pager) {
         return sqlSession.selectList("frontendBoard.getAngularBoard", pager);
     }
+
+    @Override
+    public int getTargetTotal(Pager pager) {
+        return sqlSession.selectOne("frontendBoard.getTargetTotal", pager);
+    }
+
+    @Override
+    public List<FrontendBoardVO> getTargetBoard(Pager pager) {
+        return sqlSession.selectList("frontendBoard.getTargetBoard", pager);
+    }
 }

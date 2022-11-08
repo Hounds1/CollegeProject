@@ -38,60 +38,15 @@ public class BackendBoardController {
      * @return target language board
      */
 
-    @GetMapping("/java")
-    public String getJavaBoard(Model model, Pager pager) {
-        List<BackendBoardVO> list = boardService.getJavaBoard(pager);
+
+    @GetMapping("/board")
+    public String getTargetBoard(@RequestParam(value = "langname")String target,Model model, Pager pager){
+        pager.setLangName(target);
+        List<BackendBoardVO> list = boardService.getTargetBoard(pager);
         model.addAttribute("list", list);
-        return "board/backend/java_board";
+        return "board/backend/"+target+"_board";
     }
 
-    @GetMapping("/python")
-    public String getPythonBoard(Model model, Pager pager) {
-        List<BackendBoardVO> list = boardService.getPythonBoard(pager);
-        model.addAttribute("list", list);
-
-        return "board/backend/python_board";
-    }
-
-    @GetMapping("/nodejs")
-    public String getNodeJsBoard(Model model, Pager pager){
-        List<BackendBoardVO> list = boardService.getNodeJsBoard(pager);
-        model.addAttribute("list", list);
-
-        return "board/backend/nodejs_board";
-    }
-
-    @GetMapping("/ummlang")
-    public String getUmmLangBoard(Model model, Pager pager) {
-        List<BackendBoardVO> list = boardService.getUmmLangBoard(pager);
-        model.addAttribute("list", list);
-
-        return "board/backend/ummlang_board";
-    }
-
-    @GetMapping("/ruby")
-    public String getRubyBoard(Model model, Pager pager) {
-        List<BackendBoardVO> list = boardService.getRubyBoard(pager);
-        model.addAttribute("list", list);
-
-        return "board/backend/ruby_board";
-    }
-
-    @GetMapping("/kotlin")
-    public String getKotlinBoard(Model model, Pager pager) {
-        List<BackendBoardVO> list = boardService.getKotlinBoard(pager);
-        model.addAttribute("list", list);
-
-        return "board/backend/kotlin_board";
-    }
-
-    @GetMapping("swift")
-    public String getSwiftBoard(Model model, Pager pager) {
-        List<BackendBoardVO> list = boardService.getSwiftBoard(pager);
-        model.addAttribute("list",list);
-
-        return "board/backend/swift_board";
-    }
 
 
     /**
