@@ -12,6 +12,7 @@ import kr.ac.kopo.vo.BackendBoardVO;
 import kr.ac.kopo.vo.MemberVO;
 import lombok.RequiredArgsConstructor;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +28,7 @@ import java.util.List;
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/back")
+@Slf4j
 public class BackendBoardController {
 
     private final BackendBoardService boardService;

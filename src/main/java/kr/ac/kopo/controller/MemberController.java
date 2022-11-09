@@ -6,6 +6,7 @@ import kr.ac.kopo.util.PassMaker;
 import kr.ac.kopo.util.StringToDateConverter;
 import kr.ac.kopo.vo.MemberVO;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.socket.WebSocketSession;
@@ -16,6 +17,7 @@ import java.util.Date;
 @Controller
 @RequestMapping("/member")
 @RequiredArgsConstructor
+@Slf4j
 public class MemberController {
 
     private final MemberService memberService;
@@ -57,7 +59,10 @@ public class MemberController {
                               @RequestParam(value = "memberPass", required = true) String memberPass) {
         memberVO.setMemberId(memberId);
         memberVO.setMemberPass(memberPass);
-
+        log.info("----------------------info-----------------------");
+        log.info(memberId);
+        log.info(memberPass);
+        log.info("----------------------info-----------------------");
         if(memberService.memberLogin(memberVO)) {
             httpSession.setAttribute("member", memberVO);
             return "OK";

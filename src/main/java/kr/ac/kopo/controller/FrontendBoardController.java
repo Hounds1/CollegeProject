@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
-import java.lang.reflect.Member;
-import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,7 +72,7 @@ public class FrontendBoardController {
         List<FrontendBoardVO> list = boardService.getVueBoard(pager);
         model.addAttribute("list", list);
 
-        return "/board/frontend/vue_board";
+        return "vuejs_board";
     }
 
     @GetMapping("/angular")

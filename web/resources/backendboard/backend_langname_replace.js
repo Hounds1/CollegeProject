@@ -6,10 +6,10 @@ $(document).ready(function () {
 
 
     if(text === "Node.js") {
-      const replace = "/back/" + text.replace("Node.js", "nodejs")
+      const replace = "/back/board?langname=" + text.replace("Node.js", "nodejs")
       $('.board-home-btn').attr("href", replace);
     } else {
-      const replace = "/back/" + text.replace("Java", "java")
+      const replace = "/back/board?langname=" + text.replace("Java", "java")
             .replace("Python", "python")
             .replace("Umm lang", "ummlang")
             .replace("Ruby", "buby")
