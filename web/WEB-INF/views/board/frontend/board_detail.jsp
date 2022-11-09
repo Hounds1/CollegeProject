@@ -79,7 +79,8 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto detail-home-btn" href="/front/${contentDetail.contentLangName}">Home</a>
+                <li><a class="nav-link scrollto" href="/">Home</a></li>
+                <li><a class="nav-link scrollto detail-home-btn" href="#">List</a>
                 </li>
                 <li><a class="nav-link scrollto" href="#content-header">Head Line</a></li>
                 <li><a class="nav-link scrollto" href="#content-detail">Details</a></li>

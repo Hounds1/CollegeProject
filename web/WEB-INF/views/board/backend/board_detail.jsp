@@ -79,7 +79,8 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto board-home-btn" href="#">Home</a></li>
+                <li><a class="nav-link scrollto" href="/">Home</a></li>
+                <li><a class="nav-link scrollto board-home-btn" href="#">List</a></li>
                 <li><a class="nav-link scrollto" href="#content-header">Head Line</a></li>
                 <li><a class="nav-link scrollto" href="#content-detail">Details</a></li>
                 <li class="dropdown"><a href="#"><span>Boards</span> <i class="bi bi-chevron-down"></i></a>

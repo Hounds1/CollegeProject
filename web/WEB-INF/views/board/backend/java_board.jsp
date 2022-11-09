@@ -198,6 +198,7 @@
                             <input type="text" class="form-control" placeholder="검색어를 입력해주세요." aria-label="검색어를 입력해주세요."
                                    aria-describedby="button-addon2" name="keyword"
                                    value="${pager.search == 0  ? "" : pager.keyword}">
+                            <input type="hidden" name="langname" value="java">
                             <button class="btn btn-outline-secondary" id="button-addon2">검색</button>
                         </div>
                     </div>
@@ -225,25 +226,25 @@
             <div class="pagination-wrap mt-5 d-flex justify-content-center" data-aos="fade-in" data-aos-delay="100">
                 <nav aria-label="Page navigation">
                     <ul class="pagination">
-                        <li class="page-item"><a class="page-link" href="?page=1">처음</a></li>
+                        <li class="page-item"><a class="page-link" href="?page=1&langname=java">처음</a></li>
                         <li class="page-item">
-                            <a class="page-link" href="?page=${pager.prev}" aria-label="Previous">
+                            <a class="page-link" href="?page=${pager.prev}&langname=java}" aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
                         <c:forEach var="page" items="${pager.list}">
                             <li class="page-item">
                                 <a class="page-link ${page eq pager.page ? 'active' : ''}"
-                                   href="?page=${page}">${page}</a>
+                                   href="?page=${page}&langname=java">${page}</a>
                             </li>
                         </c:forEach>
                         <li class="page-item">
-                            <a class="page-link" href="?page=${pager.next}" aria-label="Next">
+                            <a class="page-link" href="?page=${pager.next}&langname=java" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                             </a>
                         </li>
                         <li class="page-item">
-                            <a class="page-link" href="?page=${pager.last}">마지막</a>
+                            <a class="page-link" href="?page=${pager.last}&langname=java">마지막</a>
                         </li>
                     </ul>
                 </nav>
