@@ -108,6 +108,7 @@
                         </li>
                     </ul>
                 </li>
+                <li><a class="nav-link scrollto" href="/chat">Live Chat</a></li>
                 <c:choose>
                     <c:when test="${sessionScope.member eq null}">
                         <li><a class="nav-link" href="#" data-bs-toggle="modal"
@@ -134,7 +135,7 @@
         <div class="container">
 
             <div class="row no-gutters">
-                <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade">
                     <div class="content">
                         <h3><i class="bx bxl-javascript"></i> Java Script</h3>
                         <p>
@@ -152,22 +153,22 @@
                 <div class="col-xl-7 d-flex align-items-stretch">
                     <div class="icon-boxes d-flex flex-column justify-content-center">
                         <div class="row">
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="100">
                                 <i class="bx bx-select-multiple"></i>
                                 <h4>Multiple</h4>
                                 <p>여러가지 프로그래밍 기법을 적용 할 수 있습니다.</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="200">
                                 <i class="bi bi-window-sidebar"></i>
                                 <h4>No Editor</h4>
                                 <p>별도의 IDE 없이 브라우저에서 실행 할 수 있습니다.</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="300">
                                 <i class="bi bi-body-text"></i>
                                 <h4>Result</h4>
                                 <p>결과를 브라우저로 확인 할 수 있어 편합니다.</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="400">
                                 <i class="bi bi-file-earmark-text"></i>
                                 <h4>Information</h4>
                                 <p>웹 상 가장 많은 정보가 존재합니다.</p>
@@ -208,7 +209,7 @@
             <div class="row">
                 <c:forEach var="list" items="${list}">
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100"
+                        <div class="icon-box" data-aos="zoom-in-up" data-aos-delay="100"
                              style="width: 294.8px; height: 220.8px">
                             <div class="icon"><i class="bi bi-code-square"></i></div>
                             <h4 class="title"

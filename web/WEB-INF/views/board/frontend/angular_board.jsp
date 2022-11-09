@@ -108,6 +108,7 @@
                         </li>
                     </ul>
                 </li>
+                <li><a class="nav-link scrollto" href="/chat">Live Chat</a></li>
                 <c:choose>
                     <c:when test="${sessionScope.member eq null}">
                         <li><a class="nav-link" href="#" data-bs-toggle="modal"
@@ -134,7 +135,7 @@
         <div class="container">
 
             <div class="row no-gutters">
-                <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade">
                     <div class="content">
                         <h3><i class="bx bxl-angular"></i> Angular</h3>
                         <p>
@@ -152,22 +153,22 @@
                 <div class="col-xl-7 d-flex align-items-stretch">
                     <div class="icon-boxes d-flex flex-column justify-content-center">
                         <div class="row">
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="100">
                                 <i class="bi bi-check2-all"></i>
                                 <h4>Functions</h4>
                                 <p>완전한 프레임워크로 프로젝트의 생성, 빌드 등 모든 것이 가능합니다.</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="200">
                                 <i class="bi bi-window-stack"></i>
                                 <h4>Library</h4>
                                 <p>왠만한 라이브러리는 자체적으로 보유하고 제공합니다.</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="300">
                                 <i class="bi bi-google"></i>
                                 <h4>Google</h4>
                                 <p>구글이 개발에 참여 중으로 전망이 밝습니다.</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="400">
                                 <i class="bx bxl-typescript"></i>
                                 <h4>Type Script</h4>
                                 <p>공식적으로 TS를 사용해 유지/보수에 안정성이 높습니다.</p>
@@ -208,7 +209,7 @@
             <div class="row">
                 <c:forEach var="list" items="${list}">
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100"
+                        <div class="icon-box" data-aos="zoom-in-up" data-aos-delay="100"
                              style="width: 294.8px; height: 220.8px">
                             <div class="icon"><i class="bi bi-code-square"></i></div>
                             <h4 class="title"

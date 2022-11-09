@@ -107,6 +107,7 @@
                         </li>
                     </ul>
                 </li>
+                <li><a class="nav-link scrollto" href="/chat">Live Chat</a></li>
                 <c:choose>
                     <c:when test="${sessionScope.member eq null}">
                         <li><a class="nav-link" href="#" data-bs-toggle="modal"
@@ -133,7 +134,7 @@
         <div class="container">
 
             <div class="row no-gutters">
-                <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade">
                     <div class="content">
                         <h3>${contentDetail.contentTitle}</h3>
                         <p>
@@ -151,25 +152,25 @@
                 <div class="col-xl-7 d-flex align-items-stretch">
                     <div class="icon-boxes d-flex flex-column justify-content-center">
                         <div class="row">
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="100">
                                 <i class="bx bx-upload"></i>
                                 <h4>${contentDetail.contentUploader} <c:if
                                         test="${contentDetail.contentUploader eq sessionScope.member.memberNick}">(me)</c:if></h4>
                                 <p>by uploaded.</p>
                             </div>
-                            <div class="col-md-6 icon-box lang-name-space" data-aos="fade-up" data-aos-delay="200">
+                            <div class="col-md-6 icon-box lang-name-space" data-aos="fade" data-aos-delay="200">
                                 <i class="bx bx-network-chart"></i>
                                 <h4>${contentDetail.contentLangName}</h4>
                                 <p>contents language name.</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="300">
                                 <i class="bi bi-person"></i>
                                 <h4><span data-purecounter-start="0" data-purecounter-end="${contentDetail.contentHit}"
                                           data-purecounter-duration="1"
                                           class="purecounter"></span></h4>
                                 <p>contents hits</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="400">
                                 <i class="bi bi-pencil"></i>
                                 <h4><span data-purecounter-start="0"
                                           data-purecounter-end="${contentDetail.contentCommentHit}"

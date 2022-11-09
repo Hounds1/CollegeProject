@@ -36,7 +36,6 @@
     [ Nick Duplicate Check ]*/
     let nickDupChk = 0;
     $('.nick-dup-chk').on('click' , function () {
-        console.log("click");
         $.ajax({
             url : "/member/nickDupChk",
             method: "POST",
@@ -64,7 +63,6 @@
     /*==================================================================
     [login ajax]*/
     $('#login-submit-btn').on('click', function () {
-        console.log("click");
         $.ajax({
             url : "/member/login",
             method : "POST",

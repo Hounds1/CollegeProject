@@ -108,6 +108,7 @@
                         </li>
                     </ul>
                 </li>
+                <li><a class="nav-link scrollto" href="/chat">Live Chat</a></li>
                 <c:choose>
                     <c:when test="${sessionScope.member eq null}">
                         <li><a class="nav-link" href="#" data-bs-toggle="modal"
@@ -134,7 +135,7 @@
         <div class="container">
 
             <div class="row no-gutters">
-                <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade">
                     <div class="content">
                         <h3><i class="bx bxl-vuejs"></i> Vue.js</h3>
                         <p>
@@ -152,22 +153,22 @@
                 <div class="col-xl-7 d-flex align-items-stretch">
                     <div class="icon-boxes d-flex flex-column justify-content-center">
                         <div class="row">
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="100">
                                 <i class="bi bi-graph-up-arrow"></i>
                                 <h4>Easy to learn</h4>
                                 <p>다른 언어보다 진입장벽이 낮습니다.</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="200">
                                 <i class="bi bi-journal-code"></i>
                                 <h4>Library</h4>
                                 <p>공식 라이브러리의 성능이 좋습니다.</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="300">
                                 <i class="bi bi-fast-forward-btn"></i>
                                 <h4>Fast rendering</h4>
                                 <p>랜더링 속도가 빠릅니다.</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="400">
                                 <i class="bi bi-person"></i>
                                 <h4>Community</h4>
                                 <p>활발한 커뮤니티 활동으로 해답을 구하기 유리합니다.</p>
@@ -208,7 +209,7 @@
             <div class="row">
                 <c:forEach var="list" items="${list}">
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100"
+                        <div class="icon-box" data-aos="zoom-in-up" data-aos-delay="100"
                              style="width: 294.8px; height: 220.8px">
                             <div class="icon"><i class="bi bi-code-square"></i></div>
                             <h4 class="title"

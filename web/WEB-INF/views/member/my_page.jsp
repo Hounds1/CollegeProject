@@ -103,6 +103,7 @@
                         </li>
                     </ul>
                 </li>
+                <li><a class="nav-link scrollto" href="/chat">Live Chat</a></li>
                 <c:choose>
                     <c:when test="${sessionScope.member eq null}">
                         <li><a class="nav-link" href="#" data-bs-toggle="modal"

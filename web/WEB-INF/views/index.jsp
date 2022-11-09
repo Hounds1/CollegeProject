@@ -81,7 +81,7 @@
                 <li><a class="nav-link scrollto" href="#about">Forum</a></li>
                 <li><a class="nav-link scrollto" href="#services">Services</a></li>
                 <li><a class="nav-link scrollto" href="#portfolio">Languages</a></li>
-                <%--                <li><a class="nav-link scrollto" href="#team">Team</a></li>--%>
+                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
                 <li class="dropdown"><a href="#"><span>Boards</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li class="dropdown"><a href="#"><span>FrontEnd</span> <i class="bi bi-chevron-right"></i></a>
@@ -106,7 +106,7 @@
                         </li>
                     </ul>
                 </li>
-                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                <li><a class="nav-link scrollto" href="/chat">Live Chat</a></li>
                 <c:choose>
                     <c:when test="${sessionScope.member eq null}">
                         <li><a class="nav-link" href="#" data-bs-toggle="modal"
@@ -568,23 +568,23 @@
                 </div>
 
                 <div class="col-lg-6">
-                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                    <form role="form" class="php-email-form">
                         <div class="row">
                             <div class="col-md-6 form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                                <input type="text" name="qnaName" class="form-control" id="qnaName" placeholder="성명"
                                        required>
                             </div>
                             <div class="col-md-6 form-group mt-3 mt-md-0">
-                                <input type="email" class="form-control" name="email" id="email"
+                                <input type="email" class="form-control" name="qnaEmail" id="qnaEmail"
                                        placeholder="Your Email" required>
                             </div>
                         </div>
                         <div class="form-group mt-3">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                            <input type="text" class="form-control" name="qnaTitle" id="qnaTitle" placeholder="제목"
                                    required>
                         </div>
                         <div class="form-group mt-3">
-                            <textarea class="form-control" name="message" rows="5" placeholder="Message"
+                            <textarea class="form-control" id="qnaDetail" name="qnaDetail" rows="5" placeholder="내용"
                                       required></textarea>
                         </div>
                         <div class="my-3">
@@ -593,7 +593,7 @@
                             <div class="sent-message">Your message has been sent. Thank you!</div>
                         </div>
                         <div class="text-center">
-                            <button type="submit">Send Message</button>
+                            <button type="button" class="btn btn-secondary" id="qna_send_btn">Send Message</button>
                         </div>
                     </form>
                 </div>
@@ -1026,6 +1026,7 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/sidebars.js"></script>
 <script src="index/member_form_control.js"></script>
+<script src="index/qna_control.js"></script>
 
 </body>
 

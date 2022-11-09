@@ -16,6 +16,7 @@
         <typeAlias type="kr.ac.kopo.vo.FrontendBoardVO" alias="FrontendBoard"/>
         <typeAlias type="kr.ac.kopo.vo.FrontendBoardFileVO" alias="FrontendBoardFile"/>
         <typeAlias type="kr.ac.kopo.vo.FrontendBoardCommentVO" alias="FrontendBoardComment"/>
+        <typeAlias type="kr.ac.kopo.vo.QnaVO" alias="Qna"/>
 
 
     </typeAliases>
@@ -28,6 +29,7 @@
         <mapper resource="mappers/FrontendBoardMapper.xml"/>
         <mapper resource="mappers/FrontendFileMapper.xml"/>
         <mapper resource="mappers/FrontendCommentMapper.xml"/>
+        <mapper resource="mappers/QnaMapper.xml"/>
 
     </mappers>
 

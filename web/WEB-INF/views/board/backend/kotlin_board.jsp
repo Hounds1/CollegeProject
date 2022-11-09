@@ -108,6 +108,7 @@
                         </li>
                     </ul>
                 </li>
+                <li><a class="nav-link scrollto" href="/chat">Live Chat</a></li>
                 <c:choose>
                     <c:when test="${sessionScope.member eq null}">
                         <li><a class="nav-link" href="#" data-bs-toggle="modal"
@@ -134,7 +135,7 @@
         <div class="container">
 
             <div class="row no-gutters">
-                <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade">
                     <div class="content">
                         <h3><i class="bx bxl-android"></i> Kotlin</h3>
                         <p>
@@ -152,22 +153,22 @@
                 <div class="col-xl-7 d-flex align-items-stretch">
                     <div class="icon-boxes d-flex flex-column justify-content-center">
                         <div class="row">
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="100">
                                 <i class="bi bi-file-code"></i>
                                 <h4>Static Type Language</h4>
                                 <p>변수 타입을 유추함으로 컴파일러가 프로그램의 정확성을 검증합니다.</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="200">
                                 <i class="bi bi-body-text"></i>
                                 <h4>Nullable</h4>
                                 <p>Null이 될 수 있는 타입 또한 지원합니다. NPE로 부터 자유롭습니다.</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="300">
                                 <i class="bi bi-arrow-repeat"></i>
                                 <h4>Functional Programming</h4>
                                 <p>함수형 프로그래밍을 지원합니다. 가독성이 높으며 유지/보수에 유리합니다.</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="400">
                                 <i class="bx bxl-java"></i>
                                 <h4>Compatibility</h4>
                                 <p>자바와 높은 호환성을 가지고 있습니다. 자바 표준 라이브러리 클래스에 의존합니다.</p>
@@ -208,7 +209,7 @@
             <div class="row">
                 <c:forEach var="list" items="${list}">
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100"
+                        <div class="icon-box" data-aos="zoom-in-up" data-aos-delay="100"
                              style="width: 294.8px; height: 220.8px">
                             <div class="icon"><i class="bi bi-code-square"></i></div>
                             <h4 class="title"

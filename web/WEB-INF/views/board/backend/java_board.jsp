@@ -109,6 +109,7 @@
                         </li>
                     </ul>
                 </li>
+                <li><a class="nav-link scrollto" href="/chat">Live Chat</a></li>
                 <c:choose>
                     <c:when test="${sessionScope.member eq null}">
                         <li><a class="nav-link" href="#" data-bs-toggle="modal"
@@ -135,7 +136,7 @@
         <div class="container">
 
             <div class="row no-gutters">
-                <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade">
                     <div class="content">
                         <h3><i class="bx bxl-java"></i> Java</h3>
                         <p>
@@ -153,22 +154,22 @@
                 <div class="col-xl-7 d-flex align-items-stretch">
                     <div class="icon-boxes d-flex flex-column justify-content-center">
                         <div class="row">
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="100">
                                 <i class="bx bxl-java"></i>
                                 <h4>OOP</h4>
                                 <p>객체 지향 방법론을 사용합니다.</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="200">
                                 <i class="bx bx-windows"></i>
                                 <h4>Running</h4>
                                 <p>같은 프로그램(바이트코드)이 여러 운영 체제(마이크로프로세서)에서 실행될 수 있습니다.</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="300">
                                 <i class="bx bx-network-chart"></i>
                                 <h4>Network</h4>
                                 <p>컴퓨터 네트워크 접근 기능이 기본으로 탑재되어 있습니다.</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="400">
                                 <i class="bx bx-file"></i>
                                 <h4>Positive</h4>
                                 <p>다른 객체 지향 언어들의 좋은 부분만 가지고 와서 사용하기 편합니다.</p>
@@ -209,7 +210,7 @@
             <div class="row">
                 <c:forEach var="list" items="${list}">
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100"
+                        <div class="icon-box" data-aos="zoom-in-up" data-aos-delay="100"
                              style="width: 294.8px; height: 220.8px">
                             <div class="icon"><i class="bi bi-code-square"></i></div>
                             <h4 class="title"

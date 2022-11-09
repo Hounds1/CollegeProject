@@ -242,7 +242,7 @@
     <resources mapping="/front/memberAssets/vendor/select2/**" location="/resources/memberAssets/vendor/select2/"/>
     <resources mapping="/front/summernote/font/**" location="/resources/summernote/font/"/>
     <resources mapping="/front/summernote/**" location="/resources/summernote/"/>
-    <resources mapping="/front/backendboard/**" location="/resources/backendboard/"/>
+    <resources mapping="/front/frontendboard/**" location="/resources/frontendboard/"/>
     <!-- board page assets   -->
 
     <resources mapping="/back/detail/**" location="/resources/"/>

@@ -108,6 +108,7 @@
                         </li>
                     </ul>
                 </li>
+                <li><a class="nav-link scrollto" href="/chat">Live Chat</a></li>
                 <c:choose>
                     <c:when test="${sessionScope.member eq null}">
                         <li><a class="nav-link" href="#" data-bs-toggle="modal"
@@ -134,7 +135,7 @@
         <div class="container">
 
             <div class="row no-gutters">
-                <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade">
                     <div class="content">
                         <h3><i class="bi bi-apple"></i> Swift</h3>
                         <p>
@@ -152,22 +153,22 @@
                 <div class="col-xl-7 d-flex align-items-stretch">
                     <div class="icon-boxes d-flex flex-column justify-content-center">
                         <div class="row">
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="100">
                                 <i class="bi bi-safe"></i>
                                 <h4>Safety</h4>
                                 <p>강력한 타입 통제, 오류 처리 등으로 프로그래머의 오류를 잡아줍니다.</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="200">
                                 <i class="bi bi-clock"></i>
                                 <h4>Modern</h4>
                                 <p>간결하고 가독성이 좋습니다. 현대 프로그래밍 언어의 유용한 기능들이 들어있습니다.</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="300">
                                 <i class="bi bi-fast-forward-btn"></i>
                                 <h4>Fast</h4>
                                 <p>고성능 LLVM 컴파일러로 C언어와 비슷한 빠른 성능을 보이며, 컴파일러를 지속적으로 개량하여 실행 속도가 빠릅니다.</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="400">
                                 <i class="bi bi-cpu"></i>
                                 <h4>Protocol Orientation</h4>
                                 <p>참조 타입인 클래스의 인스턴스보다, 값 타입을 더 효율적으로 사용하며 오류 역시 줄일 수 있는 방법입니다.</p>
@@ -208,7 +209,7 @@
             <div class="row">
                 <c:forEach var="list" items="${list}">
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100"
+                        <div class="icon-box" data-aos="zoom-in-up" data-aos-delay="100"
                              style="width: 294.8px; height: 220.8px">
                             <div class="icon"><i class="bi bi-code-square"></i></div>
                             <h4 class="title"

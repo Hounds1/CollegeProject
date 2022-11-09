@@ -108,6 +108,7 @@
                         </li>
                     </ul>
                 </li>
+                <li><a class="nav-link scrollto" href="/chat">Live Chat</a></li>
                 <c:choose>
                     <c:when test="${sessionScope.member eq null}">
                         <li><a class="nav-link" href="#" data-bs-toggle="modal"
@@ -134,7 +135,7 @@
         <div class="container">
 
             <div class="row no-gutters">
-                <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade">
                     <div class="content">
                         <h3><i class="bi bi-bug"></i> UmmLang</h3>
                         <p>
@@ -152,22 +153,22 @@
                 <div class="col-xl-7 d-flex align-items-stretch">
                     <div class="icon-boxes d-flex flex-column justify-content-center">
                         <div class="row">
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="100">
                                 <i class="bi bi-bug-fill"></i>
                                 <h4>어떻겤ㅋㅋㅋㅋ</h4>
                                 <p>언어 이름잌ㅋㅋㅋㅋㅋ</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="200">
                                 <i class="bi bi-bug-fill"></i>
                                 <h4>엄ㅋㅋㅋㅋㅋ</h4>
                                 <p>준식이냨ㅋㅋㅋㅋㅋㅋㅋ</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="300">
                                 <i class="bi bi-bug-fill"></i>
                                 <h4>엄..어어어.어...엄</h4>
                                 <p>어엄어..엄...</p>
                             </div>
-                            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                            <div class="col-md-6 icon-box" data-aos="fade" data-aos-delay="400">
                                 <i class="bi bi-bug-fill"></i>
                                 <h4>어떻게 언어 이름이 엄준식이냐 ㅋㅋ</h4>
                                 <p>어떻게 언어 이름이 엄준식이냐 ㅋㅋ</p>
@@ -182,7 +183,7 @@
     <!-- ======= Contents Section ======= -->
     <section id="node-js-contents" class="services mb-5">
         <div class="container">
-            <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+            <div class="section-title" data-aos="fade" data-aos-delay="100">
                 <h2>Contents</h2>
                 <form>
                     <div class="d-flex justify-content-center">
@@ -208,7 +209,7 @@
             <div class="row">
                 <c:forEach var="list" items="${list}">
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100"
+                        <div class="icon-box" data-aos="zoom-in-up" data-aos-delay="100"
                              style="width: 294.8px; height: 220.8px">
                             <div class="icon"><i class="bi bi-code-square"></i></div>
                             <h4 class="title"
