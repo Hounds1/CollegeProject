@@ -8,13 +8,16 @@ import kr.ac.kopo.vo.FrontendBoardCommentVO;
 import kr.ac.kopo.vo.FrontendBoardFileVO;
 import kr.ac.kopo.vo.FrontendBoardVO;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.File;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class FrontendBoardServiceImpl implements FrontendBoardService{
 
     private final FrontendBoardDao frontendBoardDao;
@@ -22,13 +25,7 @@ public class FrontendBoardServiceImpl implements FrontendBoardService{
     private final FrontendBoardFileDao frontendFileDao;
 
     private final FrontendBoardCommentDao frontendCommentDao;
-    @Override
-    public List<FrontendBoardVO> getJSBoard(Pager pager) {
-        int total = frontendBoardDao.getJSTotal(pager);
-        pager.setTotal(total);
 
-        return frontendBoardDao.getJSBoard(pager);
-    }
 
     @Override
     @Transactional
@@ -86,41 +83,6 @@ public class FrontendBoardServiceImpl implements FrontendBoardService{
         frontendCommentDao.removeComment(commentNum);
     }
 
-    @Override
-    public List<FrontendBoardVO> getTSBoard(Pager pager) {
-        int total = frontendBoardDao.getTSTotal(pager);
-
-        pager.setTotal(total);
-
-        return frontendBoardDao.getTSBoard(pager);
-    }
-
-    @Override
-    public List<FrontendBoardVO> getReactBoard(Pager pager) {
-        int total = frontendBoardDao.getReactTotal(pager);
-
-        pager.setTotal(total);
-
-        return frontendBoardDao.getReactBoard(pager);
-    }
-
-    @Override
-    public List<FrontendBoardVO> getVueBoard(Pager pager) {
-        int total = frontendBoardDao.getVueTotal(pager);
-
-        pager.setTotal(total);
-
-        return frontendBoardDao.getVueBoard(pager);
-    }
-
-    @Override
-    public List<FrontendBoardVO> getAngularBoard(Pager pager) {
-        int total = frontendBoardDao.getAngularTotal(pager);
-
-        pager.setTotal(total);
-
-        return frontendBoardDao.getAngularBoard(pager);
-    }
 
     @Override
     public List<FrontendBoardVO> getTargetBoard(Pager pager) {
@@ -129,5 +91,32 @@ public class FrontendBoardServiceImpl implements FrontendBoardService{
         pager.setTotal(total);
 
         return frontendBoardDao.getTargetBoard(pager);
+    }
+
+    @Override
+    @Transactional
+    public void deleteContent(int contentNum) {
+
+        List<String> list = frontendFileDao.getTargetFileNames(contentNum);
+
+        for(String target : list){
+            String filePath = "D:\\test\\upload\\" + target;
+
+            File targetFile = new File(filePath);
+
+            if(targetFile.exists()){
+                try {
+                    targetFile.delete();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            } else {
+                log.info("target not found.");
+            }
+        }
+
+        frontendFileDao.clearFiles(contentNum);
+        frontendCommentDao.clearComments(contentNum);
+        frontendBoardDao.deleteContent(contentNum);
     }
 }

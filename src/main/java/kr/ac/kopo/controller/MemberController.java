@@ -24,11 +24,6 @@ public class MemberController {
 
     /**
      * member sign up Ajax
-     * @param memberId
-     * @param memberNick
-     * @param memberPass
-     * @param memberVO
-     * @return
      */
 
     @PostMapping("/new_account")
@@ -46,12 +41,7 @@ public class MemberController {
     }
 
     /**
-     *
      * Member login Ajax
-     * @param memberVO
-     * @param httpSession
-     * @param memberId
-     * @param memberPass
      * @return
      */
     @PostMapping("/login")
@@ -74,8 +64,6 @@ public class MemberController {
     /**
      * member logout
      * session close
-     * @param httpSession
-     * @return
      */
 
     @GetMapping("/escape")
@@ -118,9 +106,6 @@ public class MemberController {
 
     /**
      * member change new password before check old one.
-     * @param passChangeId
-     * @param passValChk
-     * @param memberVO
      * @return
      */
     @PostMapping("/changePassValChk")
@@ -137,10 +122,6 @@ public class MemberController {
 
     /**
      * member change new password duplicate check
-     * @param passChangeId
-     * @param newPassVal
-     * @param memberVO
-     * @param httpSession
      * @return
      */
 
@@ -158,9 +139,9 @@ public class MemberController {
     }
 
     /**
-     * doesn't need it more
+     * doesn't need it anymore
      * destroyed function
-     * but, recorded
+     * but, records
      * @param PIChangeId
      * @param memberName
      * @param memberBirth

@@ -66,7 +66,7 @@
     });
 
     /*==================================================================
-    [Member personal information change ajax]*/
+    [Member personal information change ajax] None use */
     $('.pi-changer-btn').on('click', function () {
        $.ajax({
            url : "/member/personalInfoChange",

@@ -27,11 +27,8 @@ public class FrontendBoardController {
     private final FrontendBoardService boardService;
 
     /**
-     * Bring each boards to split languages
-     *
-     * @param model
-     * @param pager
-     * @return each languages board
+     * get target board
+     * @return each language board
      */
 
     @GetMapping("/board")
@@ -41,46 +38,6 @@ public class FrontendBoardController {
         model.addAttribute("list", list);
 
         return "/board/frontend/"+target+"_board";
-    }
-
-    @GetMapping("/js")
-    public String getJSBoard(Model model, Pager pager) {
-        List<FrontendBoardVO> list = boardService.getJSBoard(pager);
-        model.addAttribute("list", list);
-
-        return "board/frontend/js_board";
-    }
-
-    @GetMapping("/ts")
-    public String getTSBoard(Model model, Pager pager) {
-        List<FrontendBoardVO> list = boardService.getTSBoard(pager);
-        model.addAttribute("list", list);
-
-        return "/board/frontend/ts_board";
-    }
-
-    @GetMapping("/react")
-    public String getReactBoard(Model model, Pager pager) {
-        List<FrontendBoardVO> list = boardService.getReactBoard(pager);
-        model.addAttribute("list", list);
-
-        return "/board/frontend/react_board";
-    }
-
-    @GetMapping("/vuejs")
-    public String getVueBoard(Model model, Pager pager) {
-        List<FrontendBoardVO> list = boardService.getVueBoard(pager);
-        model.addAttribute("list", list);
-
-        return "vuejs_board";
-    }
-
-    @GetMapping("/angular")
-    public String getAngularBoard(Model model, Pager pager) {
-        List<FrontendBoardVO> list = boardService.getAngularBoard(pager);
-        model.addAttribute("list", list);
-
-        return "/board/frontend/angular_board";
     }
 
     /**
@@ -222,5 +179,13 @@ public class FrontendBoardController {
 
 
         return "redirect:/front/detail/"+targetURL;
+    }
+
+    @RequestMapping("/delete")
+    public String deleteContent(@RequestParam(value = "langname") String returnName,
+                                @RequestParam(value = "contentnum") int contentNum){
+        boardService.deleteContent(contentNum);
+
+        return "redirect:/front/board?langname="+returnName;
     }
 }

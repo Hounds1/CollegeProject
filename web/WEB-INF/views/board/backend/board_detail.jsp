@@ -143,8 +143,8 @@
                                 <a class="btn btn-secondary mt-1 content-editor-call" href="#" data-bs-toggle="modal"
                                    data-bs-target="#content-edit-modal" id="${contentDetail.contentNum}"><i
                                         class="bi bi-pencil"></i> 수정하기</a>
-                                <a class="btn btn-secondary mt-1 ms-1"
-                                   href="/back/delete/${contentDetail.contentNum}"><i class="bi bi-trash3"></i> 삭제</a>
+                                <a class="btn btn-secondary mt-1 ms-1" id="board_delete_btn"
+                                   href="#" data-content = "${contentDetail.contentNum}"><i class="bi bi-trash3"></i> 삭제</a>
                             </c:if>
                         </p>
                     </div>

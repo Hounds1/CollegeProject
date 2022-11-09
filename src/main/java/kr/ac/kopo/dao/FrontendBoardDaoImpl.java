@@ -15,15 +15,6 @@ public class FrontendBoardDaoImpl implements FrontendBoardDao{
 
     private final SqlSession sqlSession;
 
-    @Override
-    public int getJSTotal(Pager pager) {
-        return sqlSession.selectOne("frontendBoard.getJSTotal", pager);
-    }
-
-    @Override
-    public List<FrontendBoardVO> getJSBoard(Pager pager) {
-        return sqlSession.selectList("frontendBoard.getJSBoard", pager);
-    }
 
     @Override
     public void contentUpload(FrontendBoardVO content) {
@@ -65,45 +56,7 @@ public class FrontendBoardDaoImpl implements FrontendBoardDao{
         sqlSession.update("frontendBoard.reverseCommentHit", targetNum);
     }
 
-    @Override
-    public List<FrontendBoardVO> getTSBoard(Pager pager) {
-        return sqlSession.selectList("frontendBoard.getTSBoard", pager);
-    }
 
-    @Override
-    public int getTSTotal(Pager pager) {
-        return sqlSession.selectOne("frontendBoard.getTSTotal", pager);
-    }
-
-    @Override
-    public int getReactTotal(Pager pager) {
-        return sqlSession.selectOne("frontendBoard.getReactTotal", pager);
-    }
-
-    @Override
-    public List<FrontendBoardVO> getReactBoard(Pager pager) {
-        return sqlSession.selectList("frontendBoard.getReactBoard", pager);
-    }
-
-    @Override
-    public int getVueTotal(Pager pager) {
-        return sqlSession.selectOne("frontendBoard.getVueTotal", pager);
-    }
-
-    @Override
-    public List<FrontendBoardVO> getVueBoard(Pager pager) {
-        return sqlSession.selectList("frontendBoard.getVueBoard", pager);
-    }
-
-    @Override
-    public int getAngularTotal(Pager pager) {
-        return sqlSession.selectOne("frontendBoard.getAngularTotal", pager);
-    }
-
-    @Override
-    public List<FrontendBoardVO> getAngularBoard(Pager pager) {
-        return sqlSession.selectList("frontendBoard.getAngularBoard", pager);
-    }
 
     @Override
     public int getTargetTotal(Pager pager) {
@@ -113,5 +66,10 @@ public class FrontendBoardDaoImpl implements FrontendBoardDao{
     @Override
     public List<FrontendBoardVO> getTargetBoard(Pager pager) {
         return sqlSession.selectList("frontendBoard.getTargetBoard", pager);
+    }
+
+    @Override
+    public void deleteContent(int contentNum) {
+        sqlSession.delete("frontendBoard.deleteContent", contentNum);
     }
 }

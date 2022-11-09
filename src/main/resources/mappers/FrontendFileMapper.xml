@@ -5,11 +5,18 @@
 <mapper namespace="frontendFile">
 
 
-    <insert id="filesUpload">
+    <insert id="fileUpload">
         insert into frontend_board_file
             (file_name, target_content_num)
         values (#{fileName}, #{targetContentNum})
     </insert>
+
+    <select id="getTargetFileNames" resultType="String">
+        select file_name
+        from frontend_board_file
+        where target_content_num = #{contentNum}
+    </select>
+
 
     <delete id="clearFiles">
         delete

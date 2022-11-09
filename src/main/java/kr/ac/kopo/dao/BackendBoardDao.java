@@ -32,4 +32,6 @@ public interface BackendBoardDao {
     int getTargetTotal(Pager pager);
 
     List<BackendBoardVO> getTargetBoard(Pager pager);
+
+
 }

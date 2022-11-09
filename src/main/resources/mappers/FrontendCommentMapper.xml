@@ -31,4 +31,10 @@
         select count(*)
         from frontend_board_comment
     </select>
+
+    <delete id="clearComments">
+        delete
+            from frontend_board_comment
+        where comment_target_content_num = #{contentNum}
+    </delete>
 </mapper>

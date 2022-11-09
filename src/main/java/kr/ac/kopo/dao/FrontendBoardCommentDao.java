@@ -12,4 +12,6 @@ public interface FrontendBoardCommentDao {
     int getCommentSize();
 
     void removeComment(int commentNum);
+
+    void clearComments(int contentNum);
 }

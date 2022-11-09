@@ -1,5 +1,6 @@
 package kr.ac.kopo.service;
 
+
 import kr.ac.kopo.dao.BackendBoardCommentDao;
 import kr.ac.kopo.dao.BackendBoardDao;
 import kr.ac.kopo.dao.BackendBoardFileDao;
@@ -9,13 +10,17 @@ import kr.ac.kopo.vo.BackendBoardFileVO;
 import kr.ac.kopo.vo.BackendBoardVO;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class BackendBoardServiceImpl implements BackendBoardService {
 
     private final BackendBoardDao backendBoardDao;
@@ -42,12 +47,44 @@ public class BackendBoardServiceImpl implements BackendBoardService {
         return targetUrl;
     }
 
-    @Transactional
+
     @Override
+    @Transactional
     public void contentDelete(int contentNum) {
+        List<String> list = backendBoardFileDao.getTargetFileNames(contentNum);
+
+        for(String target : list){
+            String filePath = "D:\\test\\upload\\" + target;
+
+            File targetFile = new File(filePath);
+
+            if(targetFile.exists()){
+                try {
+                    targetFile.delete();
+                    log.info("----------------file delete log-----------------");
+                    log.info(filePath);
+                    log.info("delete complete");
+                    log.info("----------------file delete log-----------------");
+                } catch (Exception e) {
+                    log.info("----------------file delete log-----------------");
+                    log.info("delete fail");
+                    log.info("----------------file delete log-----------------");
+                    throw new RuntimeException(e);
+                }
+            } else {
+                log.info("----------------file delete log-----------------");
+                log.info("No file in directory");
+                log.info("----------------file delete log-----------------");
+            }
+        }
+
         backendBoardFileDao.clearFiles(contentNum);
 
+        backendBoardCommentDao.clearComments(contentNum);
+
+
         backendBoardDao.contentDelete(contentNum);
+
     }
 
     @Override

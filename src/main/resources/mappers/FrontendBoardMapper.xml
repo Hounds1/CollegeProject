@@ -115,5 +115,9 @@
         where content_num = #{targetNum}
     </update>
 
-
+    <delete id="deleteContent">
+        delete
+            from frontend_board
+        where content_num = #{contentNum}
+    </delete>
 </mapper>

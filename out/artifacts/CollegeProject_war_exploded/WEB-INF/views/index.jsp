@@ -980,11 +980,6 @@
                         </div>
                     </div>
                     <!-- accordion in modal end -->
-                    <div class="modal-footer">
-                        <a type="button" class="btn btn-secondary text-center" href="/chat">
-                            If you wanna chat with others click here!
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>

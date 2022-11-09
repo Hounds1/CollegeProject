@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    "use strict";
+
     $('.edit-target').on('click', function (e) {
         $.ajax({
             url: "/front/commenteditor",

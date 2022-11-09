@@ -6,9 +6,6 @@ import kr.ac.kopo.vo.FrontendBoardVO;
 import java.util.List;
 
 public interface FrontendBoardDao {
-    int getJSTotal(Pager pager);
-
-    List<FrontendBoardVO> getJSBoard(Pager pager);
 
     void contentUpload(FrontendBoardVO content);
 
@@ -26,23 +23,9 @@ public interface FrontendBoardDao {
 
     void reverseCommentHit(int targetNum);
 
-    List<FrontendBoardVO> getTSBoard(Pager pager);
-
-    int getTSTotal(Pager pager);
-
-    int getReactTotal(Pager pager);
-
-    List<FrontendBoardVO> getReactBoard(Pager pager);
-
-    int getVueTotal(Pager pager);
-
-    List<FrontendBoardVO> getVueBoard(Pager pager);
-
-    int getAngularTotal(Pager pager);
-
-    List<FrontendBoardVO> getAngularBoard(Pager pager);
-
     int getTargetTotal(Pager pager);
 
     List<FrontendBoardVO> getTargetBoard(Pager pager);
+
+    void deleteContent(int contentNum);
 }

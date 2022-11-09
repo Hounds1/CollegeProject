@@ -32,4 +32,9 @@
         from backend_board_comment
     </select>
 
+    <delete id="clearComments">
+        delete
+            from backend_board_comment
+        where comment_target_content_num = #{contentNum}
+    </delete>
 </mapper>

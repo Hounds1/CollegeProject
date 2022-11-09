@@ -34,18 +34,15 @@ public class BackendBoardController {
     private final BackendBoardService boardService;
 
     /**
-     * all languages request to each languages
-     * @param model
-     * @param pager
+     * common method
      * @return target language board
      */
-
-
     @GetMapping("/board")
     public String getTargetBoard(@RequestParam(value = "langname")String target,Model model, Pager pager){
         pager.setLangName(target);
         List<BackendBoardVO> list = boardService.getTargetBoard(pager);
         model.addAttribute("list", list);
+
         return "board/backend/"+target+"_board";
     }
 
@@ -53,9 +50,7 @@ public class BackendBoardController {
 
     /**
      * common upload method
-     * no care about language name
-     * @param content
-     * @return
+     * @return target detail page
      */
     @PostMapping("/upload")
     public String contentUpload(BackendBoardVO content) {
@@ -84,14 +79,18 @@ public class BackendBoardController {
 
     /**
      * common delete method
-     * no care about language name
-     * @param contentNum
-     * @return
+     * @return target board page
      */
-    @RequestMapping("/delete/{contentNum}")
-    public String contentDelete(@PathVariable int contentNum) {
+    @RequestMapping("/delete")
+    public String contentDelete(@RequestParam(value = "contentnum") int contentNum,
+                                @RequestParam(value = "langname") String returnName) {
+        log.info("-----------------------val check-------------------");
+        log.info(String.valueOf(contentNum));
+        log.info(returnName);
+        log.info("-----------------------val check-------------------");
+
         boardService.contentDelete(contentNum);
-        return "redirect:/back/java";
+        return "redirect:/back/board?langname="+returnName;
     }
 
     /**
@@ -106,13 +105,7 @@ public class BackendBoardController {
 
     /**
      * common update method
-     * no care about language name
-     * @param targetNum
-     * @param contentTitle
-     * @param contentDetail
-     * @return
      */
-
     @PostMapping("/update")
     public @ResponseBody String contentUpdate(@RequestParam(value = "targetNum") int targetNum,
                                               @RequestParam(value = "contentTitle") String contentTitle,
@@ -130,10 +123,6 @@ public class BackendBoardController {
 
     /**
      * common details method
-     * need to patch for all languages.
-     * @param contentNum
-     * @param model
-     * @return
      */
     @GetMapping("/detail/{contentNum}")
     public String detailView(@PathVariable int contentNum, Model model) {
@@ -153,9 +142,6 @@ public class BackendBoardController {
 
     /**
      * common comment upload method
-     * @param commentVO
-     * @param MemberVO
-     * @param request
      * @return referer page
      */
     @PostMapping("/comment")
@@ -171,8 +157,6 @@ public class BackendBoardController {
 
     /**
      * remove comment from database
-     * @param commentNum
-     * @param request
      * @return referer page
      */
     @RequestMapping("/removecomment/{commentNum}")
@@ -189,7 +173,6 @@ public class BackendBoardController {
 
     /**
      * bring comment editor ajax
-     * @param targetId
      * @return ajax
      */
     @PostMapping("/commenteditor")
@@ -199,11 +182,8 @@ public class BackendBoardController {
 
     /**
      * comment update ajax
-     * @param commentVO
-     * @param request
      * @return referer page
      */
-
     @PostMapping("/commentUpdate")
     public String commentUpdate(BackendBoardCommentVO commentVO, HttpServletRequest request) {
         String referer = request.getHeader("referer");

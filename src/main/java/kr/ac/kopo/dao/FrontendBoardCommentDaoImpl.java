@@ -35,4 +35,9 @@ public class FrontendBoardCommentDaoImpl implements FrontendBoardCommentDao{
     public void removeComment(int commentNum) {
         sqlSession.delete("frontendComment.removeComment", commentNum);
     }
+
+    @Override
+    public void clearComments(int contentNum) {
+        sqlSession.delete("frontendComment.clearComments", contentNum);
+    }
 }

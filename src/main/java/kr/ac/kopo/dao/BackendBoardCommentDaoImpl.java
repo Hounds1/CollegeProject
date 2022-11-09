@@ -35,4 +35,9 @@ public class BackendBoardCommentDaoImpl implements BackendBoardCommentDao{
     public int getCommentSize() {
         return sqlSession.selectOne("backendComment.getCommentSize");
     }
+
+    @Override
+    public void clearComments(int contentNum) {
+        sqlSession.delete("backendComment.clearComments");
+    }
 }

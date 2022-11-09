@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class QnaVO {
+public class  QnaVO {
 
     private int qnaNum;
     private String qnaName;

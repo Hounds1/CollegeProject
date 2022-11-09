@@ -12,4 +12,6 @@ public interface BackendBoardCommentDao {
     void commentUpdate(BackendBoardCommentVO commentVO);
 
     int getCommentSize();
+
+    void clearComments(int contentNum);
 }

@@ -7,7 +7,6 @@ import kr.ac.kopo.vo.FrontendBoardVO;
 import java.util.List;
 
 public interface FrontendBoardService {
-    List<FrontendBoardVO> getJSBoard(Pager pager);
 
     String contentUpload(FrontendBoardVO content);
 
@@ -25,13 +24,7 @@ public interface FrontendBoardService {
 
     void removeComment(int commentNum, int targetNum);
 
-    List<FrontendBoardVO> getTSBoard(Pager pager);
-
-    List<FrontendBoardVO> getReactBoard(Pager pager);
-
-    List<FrontendBoardVO> getVueBoard(Pager pager);
-
-    List<FrontendBoardVO> getAngularBoard(Pager pager);
-
     List<FrontendBoardVO> getTargetBoard(Pager pager);
+
+    void deleteContent(int contentNum);
 }
