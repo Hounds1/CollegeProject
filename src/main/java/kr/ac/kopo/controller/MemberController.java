@@ -9,9 +9,14 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.socket.WebSocketSession;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.net.Inet4Address;
+import java.net.UnknownHostException;
 import java.util.Date;
 
 @Controller
@@ -49,10 +54,19 @@ public class MemberController {
                               @RequestParam(value = "memberPass", required = true) String memberPass) {
         memberVO.setMemberId(memberId);
         memberVO.setMemberPass(memberPass);
-        log.info("----------------------info-----------------------");
+
+        String ip = null;
+        try {
+            ip = String.valueOf(Inet4Address.getLocalHost());
+        } catch (UnknownHostException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        log.info("----------------------connect info-----------------------");
         log.info(memberId);
         log.info(memberPass);
-        log.info("----------------------info-----------------------");
+        log.info("----------------------connect info-----------------------");
         if(memberService.memberLogin(memberVO)) {
             httpSession.setAttribute("member", memberVO);
             return "OK";

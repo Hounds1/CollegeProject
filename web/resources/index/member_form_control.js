@@ -7,29 +7,32 @@
     let idDupChk = 0;
 
     $('.id-dup-chk').on('click', function () {
-        console.log("click");
-        $.ajax({
-            url:"/member/idDupChk",
-            method: "POST",
-            data: {
-                "targetId" : $('#memberId').val(),
-            },
-            cache : false,
-            success(result) {
-                if(result === "OK") {
-                    alert("사용 가능한 아이디입니다.");
-                    $('.id-dup-chk').find('i').removeClass('zmdi-check');
-                    $('.id-dup-chk').find('i').addClass('zmdi-check-circle');
-                    idDupChk = 1;
-                    if(idDupChk === 1 && nickDupChk === 1) {
-                        $('.btn-control').removeAttr('disabled');
+        if($('#memberId').val().indexOf("@") > -1) {
+            $.ajax({
+                url: "/member/idDupChk",
+                method: "POST",
+                data: {
+                    "targetId": $('#memberId').val(),
+                },
+                cache: false,
+                success(result) {
+                    if (result === "OK") {
+                        alert("사용 가능한 아이디입니다.");
+                        $('.id-dup-chk').find('i').removeClass('zmdi-check');
+                        $('.id-dup-chk').find('i').addClass('zmdi-check-circle');
+                        idDupChk = 1;
+                        if (idDupChk === 1 && nickDupChk === 1) {
+                            $('.btn-control').removeAttr('disabled');
+                        }
+                    } else {
+                        alert("이미 존재하는 아이디입니다.");
+                        idDupChk = 0;
                     }
-                } else {
-                    alert("이미 존재하는 아이디입니다.");
-                    idDupChk = 0;
                 }
-            }
-        })
+            })
+        } else {
+            alert("이메일 형식이 아닙니다.");
+        }
     });
 
     /*==================================================================

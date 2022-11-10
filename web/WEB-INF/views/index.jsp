@@ -64,9 +64,28 @@
 
 <body>
 
+
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top header-transparent">
     <div class="container d-flex align-items-center justify-content-between">
+        <div id="load_box">
+            <div id="load" style="width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    opacity: 0.8;
+    background: white;
+    z-index: 99;
+    text-align: center;">
+                <img src="images/loading.gif" alt="loading" style="position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 100;">
+            </div>
+        </div>
+
 
         <div class="logo">
             <h1 class="text-light"><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
@@ -576,7 +595,7 @@
                             </div>
                             <div class="col-md-6 form-group mt-3 mt-md-0">
                                 <input type="email" class="form-control" name="qnaEmail" id="qnaEmail"
-                                       placeholder="Your Email" required>
+                                       placeholder="이메일" required>
                             </div>
                         </div>
                         <div class="form-group mt-3">
@@ -725,19 +744,23 @@
                 </button>
                 <div class="collapse" id="dashboard-collapse">
                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><a href="/back/board?langname=java" class="link-dark d-inline-flex text-decoration-none rounded">Java</a>
+                        <li><a href="/back/board?langname=java"
+                               class="link-dark d-inline-flex text-decoration-none rounded">Java</a>
                         </li>
                         <li><a href="/back/board?langname=python"
                                class="link-dark d-inline-flex text-decoration-none rounded">Python</a></li>
                         <li><a href="/back/board?langname=nodejs"
                                class="link-dark d-inline-flex text-decoration-none rounded">Node.js</a></li>
-                        <li><a href="/back/board?langname=nodejs" class="link-dark d-inline-flex text-decoration-none rounded">Ruby</a>
+                        <li><a href="/back/board?langname=nodejs"
+                               class="link-dark d-inline-flex text-decoration-none rounded">Ruby</a>
                         </li>
-                        <li><a href="/back/board?langname=ummlang" class="link-dark d-inline-flex text-decoration-none rounded">Umm
+                        <li><a href="/back/board?langname=ummlang"
+                               class="link-dark d-inline-flex text-decoration-none rounded">Umm
                             Lang</a></li>
                         <li><a href="/back/board?langname=kotlin"
                                class="link-dark d-inline-flex text-decoration-none rounded">Kotlin</a></li>
-                        <li><a href="/back/board?langname=swift" class="link-dark d-inline-flex text-decoration-none rounded">Swift</a>
+                        <li><a href="/back/board?langname=swift"
+                               class="link-dark d-inline-flex text-decoration-none rounded">Swift</a>
                         </li>
                         <li><a href="/front/board?langname=js"
                                class="link-dark d-inline-flex text-decoration-none rounded">JavaScript</a></li>
@@ -747,7 +770,8 @@
                                class="link-dark d-inline-flex text-decoration-none rounded">React</a></li>
                         <li><a href="/front/board?langname=vuejs"
                                class="link-dark d-inline-flex text-decoration-none rounded">Vue.js</a></li>
-                        <li><a href="/front/board?langname=angular" class="link-dark d-inline-flex text-decoration-none rounded">Angular</a>
+                        <li><a href="/front/board?langname=angular"
+                               class="link-dark d-inline-flex text-decoration-none rounded">Angular</a>
                         </li>
                     </ul>
                 </div>
@@ -942,8 +966,8 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="flush-headingOne">
                             <a href="#" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                    aria-controls="flush-collapseOne">
+                               data-bs-target="#flush-collapseOne" aria-expanded="false"
+                               aria-controls="flush-collapseOne">
                                 Front-End
                             </a>
                         </h2>
@@ -961,8 +985,8 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="flush-headingTwo">
                             <a href="#" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseTwo" aria-expanded="false"
-                                    aria-controls="flush-collapseTwo">
+                               data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                               aria-controls="flush-collapseTwo">
                                 Back-End
                             </a>
                         </h2>
@@ -1022,6 +1046,7 @@
 <script src="assets/js/sidebars.js"></script>
 <script src="index/member_form_control.js"></script>
 <script src="index/qna_control.js"></script>
+<script src="index/page_loading.js"></script>
 
 </body>
 
