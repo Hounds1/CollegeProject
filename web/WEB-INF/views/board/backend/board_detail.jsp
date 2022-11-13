@@ -144,7 +144,8 @@
                                    data-bs-target="#content-edit-modal" id="${contentDetail.contentNum}"><i
                                         class="bi bi-pencil"></i> 수정하기</a>
                                 <a class="btn btn-secondary mt-1 ms-1" id="board_delete_btn"
-                                   href="#" data-content = "${contentDetail.contentNum}"><i class="bi bi-trash3"></i> 삭제</a>
+                                   href="#" data-content="${contentDetail.contentNum}"><i class="bi bi-trash3"></i>
+                                    삭제</a>
                             </c:if>
                         </p>
                     </div>
@@ -213,8 +214,17 @@
                 <div>
                     <div class="comment-form-box form-floating mb-4">
                         <form action="/back/comment" method="post">
-                            <textarea class="form-control text-black" style="resize: none;" name="commentDetail"
-                                      placeholder="댓글을 작성해주세요."></textarea>
+                            <c:choose>
+                                <c:when test="${not empty sessionScope.member.memberNick}">
+                                    <textarea class="form-control text-black" style="resize: none;" name="commentDetail"
+                                              placeholder="댓글을 작성해주세요."></textarea>
+                                </c:when>
+                                <c:otherwise>
+                                    <textarea class="form-control text-black" style="resize: none;" name="commentDetail"
+                                              placeholder="로그인 후 작성해주세요."></textarea>
+                                </c:otherwise>
+                            </c:choose>
+
                             <input type="hidden" name="commentTargetContentNum" value="${contentDetail.contentNum}">
                             <button class="btn btn-secondary border-secondary mt-2 text-white justify-content-end"
                                     style="margin-left: 1202px;">댓글 쓰기

@@ -56,5 +56,10 @@ public class MemberDaoImpl implements MemberDao{
         return sqlSession.selectOne("member.getAdminSize");
     }
 
+    @Override
+    public int deleteAccount(String targetId) {
+        return sqlSession.delete("member.deleteAccount", targetId);
+    }
+
 
 }

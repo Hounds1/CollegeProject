@@ -48,4 +48,10 @@
         from member
         where member_authority = 'Archivist'
     </select>
+
+    <delete id="deleteAccount">
+        delete
+        from member
+        where member_id = #{targetId}
+    </delete>
 </mapper>

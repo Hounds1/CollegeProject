@@ -204,9 +204,10 @@
 
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                        <div class="icon"><i class="bi bi-code-square"></i></div>
-                        <h4 class="title"><a href="">Update soon</a></h4>
-                        <p class="description">현재 개발 중인 기능입니다. 곧 출시 될 예정입니다.</p>
+                        <div class="icon"><i class="bi bi-escape"></i></div>
+                        <h4 class="title"><a href="#" data-bs-toggle="modal" data-bs-target="#member-drop-account">Withdraw</a>
+                        </h4>
+                        <p class="description">현재 접속 중인 계정을 삭제합니다.</p>
                     </div>
                 </div>
 
@@ -505,7 +506,29 @@
     </div>
 </div>
 <!-- member password change modal -->
-
+<!-- member drop account modal -->
+<div class="modal fade" id="member-drop-account" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Your Account</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>계정이 삭제 된 이후 남겨진 기록들은 <br> 어떠한 이유에서든 다시 사용되지 않습니다. <br>
+                정말 계정을 탈퇴하신다면 아래의 입력창에 '지금 탈퇴'를 입력해주십시오.</p>
+                <div class="drop-input-warp mt-5">
+                    <input class="form-control" id="agree-delete" type="text" placeholder="지금 탈퇴">
+                    <input type="hidden" id="delete-target-member" value="${sessionScope.member.memberId}">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" id="member-delete-btn">Delete Account</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="

@@ -28,7 +28,7 @@
             error() {
                 console.log("error")
             }
-        })
+        });
     });
 
     $('.btn-new-pass-val-chk').on('click', function () {
@@ -60,9 +60,37 @@
                     location.href = "/";
                 }
             }, error() {
-                console.log("error")
+                console.log("error");
             }
-        })
+        });
+    });
+
+
+    /*==================================================================
+    [Member drop account]*/
+
+    $('#member-delete-btn').on('click', function () {
+       if($('#agree-delete').val() === "지금 탈퇴"){
+           $.ajax({
+              url : "/member/delete_account",
+              type : "POST",
+              data : {
+                  "targetId" : $('#delete-target-member').val(),
+              },
+              success: result => {
+                  if(result === "OK"){
+                      alert("탈퇴가 완료되었습니다. 더 나은 개발자가 되시길 기원드립니다. 감사합니다.");
+                      location.href = "/member/escape";
+                  } else {
+                      alert("삭제에 실패했습니다. 다시 시도해 주십시오.");
+                  }
+              }, error: e => {
+                  alert("잠시 후 다시 시도해 주십시오.")
+               }
+           });
+       } else {
+           alert("'지금 탈퇴'를 입력해 주십시오.")
+       }
     });
 
     /*==================================================================
@@ -88,7 +116,7 @@
            error(e) {
                console.log(e);
            }
-       })
+       });
     });
 
 

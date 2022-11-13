@@ -21,4 +21,6 @@ public interface MemberDao {
     int getMemberSize();
 
     int getAdminSize();
+
+    int deleteAccount(String targetId);
 }

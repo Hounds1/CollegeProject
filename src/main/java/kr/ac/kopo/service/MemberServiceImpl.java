@@ -67,6 +67,11 @@ public class MemberServiceImpl implements MemberService{
         return memberDao.changeNewPassVal(memberVO);
     }
 
+    @Override
+    public int deleteAccount(String targetId) {
+        return memberDao.deleteAccount(targetId);
+    }
+
 //    @Override
 //    public int personalInfoChange(MemberVO memberVO) {
 //        return memberDao.personalInfoChange(memberVO);

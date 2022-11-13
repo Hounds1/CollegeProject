@@ -215,8 +215,16 @@
                 <div>
                     <div class="comment-form-box form-floating mb-4">
                         <form action="/front/comment" method="post">
-                            <textarea class="form-control text-black" style="resize: none;" name="commentDetail"
-                                      placeholder="댓글을 작성해주세요."></textarea>
+                            <c:choose>
+                                <c:when test="${not empty sessionScope.member.memberNick}">
+                                    <textarea class="form-control text-black" style="resize: none;" name="commentDetail"
+                                              placeholder="댓글을 작성해주세요."></textarea>
+                                </c:when>
+                                <c:otherwise>
+                                    <textarea class="form-control text-black" style="resize: none;" name="commentDetail"
+                                              placeholder="로그인 후 작성해주세요."></textarea>
+                                </c:otherwise>
+                            </c:choose>
                             <input type="hidden" name="commentTargetContentNum" value="${contentDetail.contentNum}">
                             <button class="btn btn-secondary border-secondary mt-2 text-white justify-content-end"
                                     style="margin-left: 1202px;">댓글 쓰기

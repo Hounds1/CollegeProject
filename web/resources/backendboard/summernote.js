@@ -12,7 +12,7 @@ $(document).ready(function() {
 
     var codeblocks = function (context) {
         var ui = $.summernote.ui;
-        var boxing = '<div class="border border-secondary rounded-3">IDE의 코드를 붙혀넣어주세요.</div><br><br><p>계속</p>'
+        var boxing = '<div class="border-bottom">IDE의 코드를 붙혀넣어주세요.</div><br><br><p>계속</p>'
 
         var button = ui.button({
             contents: '<i class="bi bi-code"> code',

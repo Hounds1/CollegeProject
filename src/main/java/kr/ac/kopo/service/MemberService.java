@@ -15,5 +15,7 @@ public interface MemberService {
 
     int changeNewPassVal(MemberVO memberVO);
 
+    int deleteAccount(String targetId);
+
 //    int personalInfoChange(MemberVO memberVO);
 }

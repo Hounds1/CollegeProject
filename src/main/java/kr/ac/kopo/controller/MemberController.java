@@ -152,6 +152,15 @@ public class MemberController {
             return "Fail";
     }
 
+    @PostMapping("/delete_account")
+    public @ResponseBody String deleteAccount(@RequestParam(value = "targetId") String targetId){
+        if(memberService.deleteAccount(targetId) != 0){
+            return "OK";
+        } else {
+            return "Fail";
+        }
+    }
+
     /**
      * doesn't need it anymore
      * destroyed function
