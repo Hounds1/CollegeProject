@@ -22,7 +22,7 @@
 <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header class="mb-auto justify-content-center">
         <div>
-            <h3 class="float-md-start mb-0">Archivist</h3>
+            <h3 class="float-md-start mb-0"><a href="/" class="text-decoration-none text-white">Archivist</a></h3>
         </div>
     </header>
 

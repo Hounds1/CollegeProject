@@ -24,7 +24,7 @@
 <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto justify-content-center">
     <div>
-      <h3 class="float-md-start mb-0">Archivist</h3>
+      <h3 class="float-md-start mb-0"><a href="/" class="text-decoration-none text-white">Archivist</a></h3>
     </div>
   </header>
 
@@ -55,6 +55,10 @@
       </c:forEach>
       </tbody>
     </table>
+
+    <p class="lead">
+      <a href="/admin/control" class="btn btn-lg btn-secondary fw-bold border-white bg-white text-black">Back to panel</a>
+    </p>
   </main>
 
   <footer class="mt-5 text-white-50">

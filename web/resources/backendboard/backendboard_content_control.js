@@ -32,25 +32,25 @@
     /*==================================================================
     [ Content update ajax]*/
 
-   $('#editor-submit-btn').on('click', function () {
-       $.ajax({
-           url: "/board/update",
-           method: "POST",
-           data: {
-               "targetNum" : $('#editor-targetNum').val(),
-               "contentTitle" : $('#editor-title').val(),
-               "contentDetail" : $('#editor-summernote').val()
-           },
-           success(result) {
-               if(result === "OK") {
-                   location.href = window.location.href;
-               }
-           },
-           error() {
-               alert("테스트 실패");
-           }
-       });
-   });
+   // $('#editor-submit-btn').on('click', function () {
+   //     $.ajax({
+   //         url: "/board/update",
+   //         method: "POST",
+   //         data: {
+   //             "targetNum" : $('#editor-targetNum').val(),
+   //             "contentTitle" : $('#editor-title').val(),
+   //             "contentDetail" : $('#editor-summernote').val()
+   //         },
+   //         success(result) {
+   //             if(result === "OK") {
+   //                 location.href = window.location.href;
+   //             }
+   //         },
+   //         error() {
+   //             alert("테스트 실패");
+   //         }
+   //     });
+   // });
 
 
 })(jQuery);

@@ -21,5 +21,6 @@
         select file_name
         from backend_board_file
         where target_content_num = #{contentNum}
-    </select>
+   </select>
+
 </mapper>

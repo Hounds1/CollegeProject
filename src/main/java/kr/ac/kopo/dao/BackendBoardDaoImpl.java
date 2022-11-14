@@ -34,8 +34,8 @@ public class BackendBoardDaoImpl implements BackendBoardDao {
     }
 
     @Override
-    public int contentUpdate(BackendBoardVO backendBoardVO) {
-        return sqlSession.update("backendBoard.contentUpdate", backendBoardVO);
+    public int contentUpdate(BackendBoardVO content) {
+        return sqlSession.update("backendBoard.contentUpdate", content);
     }
 
     @Override

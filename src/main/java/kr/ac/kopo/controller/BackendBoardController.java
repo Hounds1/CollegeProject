@@ -55,7 +55,7 @@ public class BackendBoardController {
     @PostMapping("/upload")
     public String contentUpload(BackendBoardVO content) {
 
-        List<BackendBoardFileVO> list = new ArrayList<BackendBoardFileVO>();
+        List<BackendBoardFileVO> list = new ArrayList<>();
         MultipartBinder binder = new MultipartBinder();
         for(MultipartFile paramFile : content.getParamFiles()) {
             if(paramFile != null && !paramFile.isEmpty()) {
@@ -69,6 +69,8 @@ public class BackendBoardController {
         }
 
         content.setParamFileList(list);
+
+        boardService.contentUpdate(content);
 
         String targetUrl = boardService.contentUpload(content);
 
@@ -107,18 +109,25 @@ public class BackendBoardController {
      * common update method
      */
     @PostMapping("/update")
-    public @ResponseBody String contentUpdate(@RequestParam(value = "targetNum") int targetNum,
-                                              @RequestParam(value = "contentTitle") String contentTitle,
-                                              @RequestParam(value = "contentDetail") String contentDetail) {
-        BackendBoardVO backendBoardVO = new BackendBoardVO();
-        backendBoardVO.setContentNum(targetNum);
-        backendBoardVO.setContentTitle(contentTitle);
-        backendBoardVO.setContentDetail(contentDetail);
+    public String contentUpdate(BackendBoardVO content, HttpServletRequest request){
+        List<BackendBoardFileVO> list = new ArrayList<>();
+        MultipartBinder binder = new MultipartBinder();
 
-        if (boardService.contentUpdate(backendBoardVO) == 1) {
-            return "OK";
-        } else
-            return "Fail";
+        for(MultipartFile paramFile : content.getParamFiles()){
+            if(paramFile != null && !paramFile.isEmpty()){
+                String fileName = binder.operate(paramFile);
+
+                BackendBoardFileVO fileVO = new BackendBoardFileVO();
+                fileVO.setFileName(fileName);
+
+                list.add(fileVO);
+            }
+        }
+
+        content.setParamFileList(list);
+
+        String targetUrl = request.getHeader("referer");
+        return "redirect:" + targetUrl;
     }
 
     /**

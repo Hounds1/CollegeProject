@@ -10,4 +10,5 @@ public interface BackendBoardFileDao {
     void clearFiles(int contentNum);
 
     List<String> getTargetFileNames(int contentNum);
+
 }

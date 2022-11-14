@@ -15,7 +15,7 @@ public interface BackendBoardService {
 
     BackendBoardVO contentEditor(int targetNum);
 
-    int contentUpdate(BackendBoardVO backendBoardVO);
+    void contentUpdate(BackendBoardVO content);
 
     BackendBoardVO detailView(int contentNum);
 

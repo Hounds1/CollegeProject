@@ -219,7 +219,7 @@
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up">
                         <div class="icon"><i class="bx bxl-discord"></i></div>
-                        <h4 class="title"><a href="https://discord.com/" target="_blank">Discord</a></h4>
+                        <h4 class="title"><a href="https://discord.com/" target="_blank" id="card-banner1">Discord</a></h4>
                         <p class="description">Archivist의 Discord 채널에서 음성으로 대화해보세요.</p>
                     </div>
                 </div>
@@ -227,7 +227,7 @@
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                         <div class="icon"><i class="bi bi-chat-square-text"></i></div>
-                        <h4 class="title"><a href="/chat">Live Chat</a></h4>
+                        <h4 class="title"><a href="/chat" id="card-banner2">Live Chat</a></h4>
                         <p class="description">라이브 채팅에서 다른 사람들에게 질문하십시오.</p>
                     </div>
                 </div>
@@ -235,7 +235,7 @@
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
                         <div class="icon"><i class="bx bx-camera"></i></div>
-                        <h4 class="title"><a href="">Save your codes</a></h4>
+                        <h4 class="title"><a href="#" id="card-banner3">Save your codes</a></h4>
                         <p class="description">현재의 코드를 저장하고 나중에 과거를 회상해 보세요.</p>
                     </div>
                 </div>
@@ -243,7 +243,7 @@
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
                         <div class="icon"><i class="bx bx-child"></i></div>
-                        <h4 class="title"><a href="">Raise a junior developer</a></h4>
+                        <h4 class="title"><a href="#" id="card-banner4">Raise a junior developer</a></h4>
                         <p class="description">많은 초보 개발자들이 도움을 요청합니다. 도와주시겠어요?</p>
                     </div>
                 </div>
@@ -1047,6 +1047,7 @@
 <script src="index/member_form_control.js"></script>
 <script src="index/qna_control.js"></script>
 <script src="index/page_loading.js"></script>
+<script src="index/index_main.js"></script>
 
 </body>
 

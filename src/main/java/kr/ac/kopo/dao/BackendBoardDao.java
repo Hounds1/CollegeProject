@@ -15,7 +15,7 @@ public interface BackendBoardDao {
 
     BackendBoardVO contentEditor(int targetNum);
 
-    int contentUpdate(BackendBoardVO backendBoardVO);
+    int contentUpdate(BackendBoardVO content);
 
     BackendBoardVO detailView(int contentNum);
 

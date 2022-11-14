@@ -30,7 +30,7 @@
         <mapper resource="mappers/FrontendFileMapper.xml"/>
         <mapper resource="mappers/FrontendCommentMapper.xml"/>
         <mapper resource="mappers/QnaMapper.xml"/>
-
+        <mapper resource="mappers/AdminMapper.xml"/>
     </mappers>
 
 

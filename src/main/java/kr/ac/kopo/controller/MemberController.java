@@ -92,7 +92,6 @@ public class MemberController {
             return "OK";
         } else
             return "Fail";
-
     }
 
     @PostMapping("/nickDupChk")
