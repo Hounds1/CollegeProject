@@ -96,42 +96,46 @@ public class BackendBoardServiceImpl implements BackendBoardService {
     @Transactional
     public void contentUpdate(BackendBoardVO content) {
 
-//            log.info(String.valueOf(content.getContentNum()));
+
             List<String> list = backendBoardFileDao.getTargetFileNames(content.getContentNum());
 
-            for(String target : list){
-                String filePath = "D:\\test\\upload\\" + target;
+            if(!content.getParamFileList().isEmpty()) {
+                for (String target : list) {
+                    String filePath = "D:\\test\\upload\\" + target;
 
-                File targetFile = new File(filePath);
+                    File targetFile = new File(filePath);
 
-                if(targetFile.exists()){
-                    try {
-                        targetFile.delete();
+                    if (targetFile.exists()) {
+                        try {
+                            targetFile.delete();
+                            log.info("----------------file delete log-----------------");
+                            log.info(filePath);
+                            log.info("delete complete");
+                            log.info("----------------file delete log-----------------");
+                        } catch (Exception e) {
+                            log.info("----------------file delete log-----------------");
+                            log.info("delete fail");
+                            log.info("----------------file delete log-----------------");
+                            throw new RuntimeException(e);
+                        }
+                    } else {
                         log.info("----------------file delete log-----------------");
-                        log.info(filePath);
-                        log.info("delete complete");
+                        log.info("No file in directory");
                         log.info("----------------file delete log-----------------");
-                    } catch (Exception e) {
-                        log.info("----------------file delete log-----------------");
-                        log.info("delete fail");
-                        log.info("----------------file delete log-----------------");
-                        throw new RuntimeException(e);
                     }
-                } else {
-                    log.info("----------------file delete log-----------------");
-                    log.info("No file in directory");
-                    log.info("----------------file delete log-----------------");
                 }
-            }
 
-            backendBoardFileDao.clearFiles(content.getContentNum());
+                backendBoardFileDao.clearFiles(content.getContentNum());
 
-            backendBoardDao.contentUpdate(content);
+                backendBoardDao.contentUpdate(content);
 
-            for(BackendBoardFileVO fileVO : content.getParamFileList()){
-                fileVO.setTargetContentNum(content.getContentNum());
+                for (BackendBoardFileVO fileVO : content.getParamFileList()) {
+                    fileVO.setTargetContentNum(content.getContentNum());
 
-                backendBoardFileDao.filesUpload(fileVO);
+                    backendBoardFileDao.filesUpload(fileVO);
+                }
+            } else {
+                backendBoardDao.contentUpdate(content);
             }
         }
 

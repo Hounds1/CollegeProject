@@ -70,7 +70,7 @@ public class BackendBoardController {
 
         content.setParamFileList(list);
 
-        boardService.contentUpdate(content);
+        boardService.contentUpload(content);
 
         String targetUrl = boardService.contentUpload(content);
 
@@ -110,6 +110,7 @@ public class BackendBoardController {
      */
     @PostMapping("/update")
     public String contentUpdate(BackendBoardVO content, HttpServletRequest request){
+
         List<BackendBoardFileVO> list = new ArrayList<>();
         MultipartBinder binder = new MultipartBinder();
 
@@ -125,6 +126,8 @@ public class BackendBoardController {
         }
 
         content.setParamFileList(list);
+
+        boardService.contentUpdate(content);
 
         String targetUrl = request.getHeader("referer");
         return "redirect:" + targetUrl;

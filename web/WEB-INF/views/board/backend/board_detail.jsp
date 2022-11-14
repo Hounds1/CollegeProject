@@ -619,7 +619,7 @@
                     <div class="input-group mt-3">
                         <input type="file" class="form-control" name="paramFiles">
                     </div>
-                    <input type="hidden" id="editor-targetNum" value="${contentDetail.contentNum}">
+                    <input type="hidden" name="contentNum" value="${contentDetail.contentNum}">
                 </form>
             </div>
             <div class="modal-footer">
