@@ -61,5 +61,10 @@ public class MemberDaoImpl implements MemberDao{
         return sqlSession.delete("member.deleteAccount", targetId);
     }
 
+    @Override
+    public void dropMember(String memberId) {
+        sqlSession.delete("member.dropMember", memberId);
+    }
+
 
 }

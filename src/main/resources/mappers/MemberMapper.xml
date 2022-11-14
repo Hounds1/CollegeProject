@@ -54,4 +54,10 @@
         from member
         where member_id = #{targetId}
     </delete>
+
+    <delete id="dropMember">
+        delete
+        from member
+        where member_id = #{memberId}
+    </delete>
 </mapper>
