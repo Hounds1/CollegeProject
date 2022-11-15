@@ -92,10 +92,10 @@
         where content_num = #{commentTargetContentNum}
     </update>
 
-    <select id="contentEditor">
+    <select id="contentEditor" resultType="FrontendBoard">
         select content_num ,content_title, content_detail
         from frontend_board
-        where content_num = #{targetId}
+        where content_num = #{targetNum}
     </select>
 
     <update id="contentUpdate">

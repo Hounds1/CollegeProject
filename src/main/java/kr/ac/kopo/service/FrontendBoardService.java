@@ -16,7 +16,7 @@ public interface FrontendBoardService {
 
     FrontendBoardVO contentEditor(int targetNum);
 
-    void contentUpdate(FrontendBoardVO boardVO);
+    void contentUpdate(FrontendBoardVO content);
 
     FrontendBoardCommentVO commentEditor(int targetId);
 

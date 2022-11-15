@@ -5,7 +5,10 @@
     [ Content Editor ajax]*/
 
     $('.content-editor-call').on('click', function (e) {
+        alert("새 이미지를 등록하면 기존 이미지는 삭제됩니다.");
+
         let targetNum = e.target.id;
+        console.log(targetNum);
         $.ajax({
             url: "/back/editor",
             method: "POST",

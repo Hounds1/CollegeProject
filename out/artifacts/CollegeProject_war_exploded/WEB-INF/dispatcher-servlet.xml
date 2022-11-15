@@ -30,9 +30,6 @@
     <resources mapping="/assets/css/**" location="/resources/assets/css/"/>
     <resources mapping="/images/**" location="/resources/images/"/>
     <resources mapping="/assets/img/**" location="/resources/assets/img/"/>
-    <resources mapping="/assets/img/portfolio/**" location="/resources/assets/img/portfolio/"/>
-    <resources mapping="/assets/img/team/**" location="/resources/assets/img/team/"/>
-    <resources mapping="/assets/img/testimonials/**" location="/resources/assets/img/testimonials/"/>
     <resources mapping="/assets/vendor/aos/**" location="/resources/assets/vendor/aos/"/>
     <resources mapping="/assets/vendor/bootstrap/css/**" location="/resources/assets/vendor/bootstrap/css/"/>
     <resources mapping="/assets/vendor/bootstrap/js/**" location="/resources/assets/vendor/bootstrap/js/"/>
@@ -85,9 +82,6 @@
     <resources mapping="/member/assets/css/**" location="/resources/assets/css/"/>
     <resources mapping="/member/images/**" location="/resources/images/"/>
     <resources mapping="/member/assets/img/**" location="/resources/assets/img/"/>
-    <resources mapping="/member/assets/img/portfolio/**" location="/resources/assets/img/portfolio/"/>
-    <resources mapping="/member/assets/img/team/**" location="/resources/assets/img/team/"/>
-    <resources mapping="/member/assets/img/testimonials/**" location="/resources/assets/img/testimonials/"/>
     <resources mapping="/member/assets/vendor/aos/**" location="/resources/assets/vendor/aos/"/>
     <resources mapping="/member/assets/vendor/bootstrap/css/**" location="/resources/assets/vendor/bootstrap/css/"/>
     <resources mapping="/member/assets/vendor/bootstrap/js/**" location="/resources/assets/vendor/bootstrap/js/"/>
@@ -140,9 +134,7 @@
     <resources mapping="/back/assets/css/**" location="/resources/assets/css/"/>
     <resources mapping="/back/images/**" location="/resources/images/"/>
     <resources mapping="/back/assets/img/**" location="/resources/assets/img/"/>
-    <resources mapping="/back/assets/img/portfolio/**" location="/resources/assets/img/portfolio/"/>
-    <resources mapping="/back/assets/img/team/**" location="/resources/assets/img/team/"/>
-    <resources mapping="/back/assets/img/testimonials/**" location="/resources/assets/img/testimonials/"/>
+
     <resources mapping="/back/assets/vendor/aos/**" location="/resources/assets/vendor/aos/"/>
     <resources mapping="/back/assets/vendor/bootstrap/css/**" location="/resources/assets/vendor/bootstrap/css/"/>
     <resources mapping="/back/assets/vendor/bootstrap/js/**" location="/resources/assets/vendor/bootstrap/js/"/>
@@ -194,9 +186,6 @@
     <resources mapping="/front/assets/css/**" location="/resources/assets/css/"/>
     <resources mapping="/front/images/**" location="/resources/images/"/>
     <resources mapping="/front/assets/img/**" location="/resources/assets/img/"/>
-    <resources mapping="/front/assets/img/portfolio/**" location="/resources/assets/img/portfolio/"/>
-    <resources mapping="/front/assets/img/team/**" location="/resources/assets/img/team/"/>
-    <resources mapping="/front/assets/img/testimonials/**" location="/resources/assets/img/testimonials/"/>
     <resources mapping="/front/assets/vendor/aos/**" location="/resources/assets/vendor/aos/"/>
     <resources mapping="/front/assets/vendor/bootstrap/css/**" location="/resources/assets/vendor/bootstrap/css/"/>
     <resources mapping="/front/assets/vendor/bootstrap/js/**" location="/resources/assets/vendor/bootstrap/js/"/>

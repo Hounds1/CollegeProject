@@ -601,22 +601,29 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="contentEditModalLabel">Upload Content</h1>
+                <h1 class="modal-title fs-5" id="contentEditModalLabel">Update Content</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="/front/update" method="post" id="content-update-form" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="editor-title" class="col-form-label">Title:</label>
                         <input type="text" class="form-control" id="editor-title" name="contentTitle">
                     </div>
                     <textarea class="summernote" id="editor-summernote" name="contentDetail"></textarea>
-                    <input type="hidden" id="editor-targetNum" value="${contentDetail.contentNum}">
+                    <div class="input-group mt-3">
+                        <input type="file" class="form-control" name="paramFiles">
+                    </div>
+
+                    <div class="input-group mt-3">
+                        <input type="file" class="form-control" name="paramFiles">
+                    </div>
+                    <input type="hidden" name="contentNum" value="${contentDetail.contentNum}">
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-secondary" id="editor-submit-btn">Edit Content</button>
+                <button type="button" class="btn btn-secondary" onclick="document.getElementById('content-update-form').submit();">Edit Content</button>
             </div>
         </div>
     </div>

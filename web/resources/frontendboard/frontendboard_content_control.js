@@ -6,7 +6,10 @@
     [ Content Editor ajax]*/
 
     $('.content-editor-call').on('click', function (e) {
+        alert("새 이미지를 등록하면 기존 이미지는 삭제됩니다.");
+
         let targetNum = e.target.id;
+        console.log(targetNum);
         $.ajax({
             url: "/front/editor",
             method: "POST",
@@ -30,28 +33,28 @@
         });
     });
 
-    /*==================================================================
-    [ Content update ajax]*/
-
-   $('#editor-submit-btn').on('click', function () {
-       $.ajax({
-           url: "/front/update",
-           method: "POST",
-           data: {
-               "targetNum" : $('#editor-targetNum').val(),
-               "contentTitle" : $('#editor-title').val(),
-               "contentDetail" : $('#editor-summernote').val()
-           },
-           success(result) {
-               if(result === "OK") {
-                   location.href = window.location.href;
-               }
-           },
-           error() {
-               alert("테스트 실패");
-           }
-       });
-   });
+   //  /*==================================================================
+   //  [ Content update ajax]*/
+   //
+   // $('#editor-submit-btn').on('click', function () {
+   //     $.ajax({
+   //         url: "/front/update",
+   //         method: "POST",
+   //         data: {
+   //             "targetNum" : $('#editor-targetNum').val(),
+   //             "contentTitle" : $('#editor-title').val(),
+   //             "contentDetail" : $('#editor-summernote').val()
+   //         },
+   //         success(result) {
+   //             if(result === "OK") {
+   //                 location.href = window.location.href;
+   //             }
+   //         },
+   //         error() {
+   //             alert("테스트 실패");
+   //         }
+   //     });
+   // });
 
 
 })(jQuery);

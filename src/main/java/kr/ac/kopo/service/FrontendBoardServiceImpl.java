@@ -18,7 +18,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class FrontendBoardServiceImpl implements FrontendBoardService{
+public class FrontendBoardServiceImpl implements FrontendBoardService {
 
     private final FrontendBoardDao frontendBoardDao;
 
@@ -32,7 +32,7 @@ public class FrontendBoardServiceImpl implements FrontendBoardService{
     public String contentUpload(FrontendBoardVO content) {
         frontendBoardDao.contentUpload(content);
 
-        for(FrontendBoardFileVO fileVO : content.getParamFileList()){
+        for (FrontendBoardFileVO fileVO : content.getParamFileList()) {
             fileVO.setTargetContentNum(content.getContentNum());
 
             frontendFileDao.fileUpload(fileVO);
@@ -62,8 +62,39 @@ public class FrontendBoardServiceImpl implements FrontendBoardService{
     }
 
     @Override
-    public void contentUpdate(FrontendBoardVO boardVO) {
-        frontendBoardDao.contentUpdate(boardVO);
+    @Transactional
+    public void contentUpdate(FrontendBoardVO content) {
+
+        List<String> deleteList = frontendFileDao.getTargetFileNames(content.getContentNum());
+
+        if (!content.getParamFileList().isEmpty()) {
+
+            for (String dt : deleteList) {
+                String filePath = "D:\\test\\upload\\" + dt;
+                File target = new File(filePath);
+
+                if (target.exists()) {
+                    try {
+                        target.delete();
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+
+            frontendFileDao.clearFiles(content.getContentNum());
+
+            for (FrontendBoardFileVO fileVO : content.getParamFileList()) {
+                fileVO.setTargetContentNum(content.getContentNum());
+
+                frontendFileDao.fileUpload(fileVO);
+            }
+
+            frontendBoardDao.contentUpdate(content);
+        } else {
+            frontendBoardDao.contentUpdate(content);
+        }
+
     }
 
     @Override
@@ -99,12 +130,12 @@ public class FrontendBoardServiceImpl implements FrontendBoardService{
 
         List<String> list = frontendFileDao.getTargetFileNames(contentNum);
 
-        for(String target : list){
+        for (String target : list) {
             String filePath = "D:\\test\\upload\\" + target;
 
             File targetFile = new File(filePath);
 
-            if(targetFile.exists()){
+            if (targetFile.exists()) {
                 try {
                     targetFile.delete();
                 } catch (Exception e) {

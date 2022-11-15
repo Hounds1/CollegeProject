@@ -115,32 +115,36 @@ public class FrontendBoardController {
 
     @PostMapping("/editor")
     public @ResponseBody FrontendBoardVO contentEditor(@RequestParam(value = "targetNum") int targetNum) {
-        FrontendBoardVO boardVO = boardService.contentEditor(targetNum);
-
-        return boardVO;
+        return boardService.contentEditor(targetNum);
     }
 
     /**
      * update param values in target content number
-     *
-     * @param targetNum
-     * @param contentTitle
-     * @param contentDetail
-     * @return
      */
 
     @PostMapping("/update")
-    public @ResponseBody String contentUpdate(@RequestParam(value = "targetNum") int targetNum,
-                                              @RequestParam(value = "contentTitle") String contentTitle,
-                                              @RequestParam(value = "contentDetail") String contentDetail) {
-        FrontendBoardVO boardVO = new FrontendBoardVO();
-        boardVO.setContentNum(targetNum);
-        boardVO.setContentTitle(contentTitle);
-        boardVO.setContentDetail(contentDetail);
+    public String contentUpdate(FrontendBoardVO content, HttpServletRequest request) {
 
-        boardService.contentUpdate(boardVO);
+        List<FrontendBoardFileVO> list = new ArrayList<>();
+        MultipartBinder binder = new MultipartBinder();
 
-        return "OK";
+        for(MultipartFile target : content.getParamFiles()){
+            if(target != null && !target.isEmpty()) {
+                String result = binder.operate(target);
+
+                FrontendBoardFileVO fileVO = new FrontendBoardFileVO();
+                fileVO.setFileName(result);
+
+                list.add(fileVO);
+            }
+        }
+
+        content.setParamFileList(list);
+
+        boardService.contentUpdate(content);
+
+        String targetUrl = request.getHeader("referer");
+        return "redirect:" + targetUrl;
     }
 
     /**
