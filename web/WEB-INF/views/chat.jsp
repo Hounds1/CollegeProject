@@ -134,26 +134,21 @@
             </div>
 
             <div class="row" data-aos="fade-up" data-aos-delay="200">
-                <div class="chat-board">
-                    <table class="table table-bordered">
-                        <tr>
-                            <td><input type="text" name="user" id="user" class="form-control"></td>
-                            <td>
-                                <button type="button" class="btn btn-default" id="btnConnect">연결</button>
-                                <button type="button" class="btn btn-default" id="btnDisconnect" disabled>종료</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <div id="list"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><input type="text" name="msg" id="msg" placeholder="대화 내용을 입력하세요."
-                                                   class="form-control"
-                                                   disabled></td>
-                        </tr>
-                    </table>
+                <!-- 로그인한 상태일 경우와 비로그인 상태일 경우의 chat_id설정 -->
+                <c:if test="${(sessionScope.member.memberId ne '') and !(empty sessionScope.member.memberId)}">
+                    <input type="hidden" value='${sessionScope.member.memberNick}' id='chat_id' />
+                </c:if>
+                <c:if test="${(sessionScope.member.memberId eq null) or (empty sessionScope.member.memberId)}">
+                    <input type="hidden" value='<%=session.getId().substring(0, 6)%>'
+                           id='chat_id' />
+                </c:if>
+                <!--     채팅창 -->
+                <div id="_chatbox">
+                    <fieldset>
+                        <div id="messageWindow"></div>
+                        <br /> <input id="inputMessage" type="text" onkeyup="enterkey()" />
+                        <input type="submit" value="send" onclick="send()" />
+                    </fieldset>
                 </div>
             </div>
         </div>

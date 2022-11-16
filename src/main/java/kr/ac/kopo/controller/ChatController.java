@@ -10,7 +10,12 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class ChatController {
     @RequestMapping("/chat")
-    public String chat (HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+    public String chat () {
         return "chat";
+    }
+
+    @RequestMapping("/chat_test")
+    public String chatTest(){
+        return "chat_test";
     }
 }
