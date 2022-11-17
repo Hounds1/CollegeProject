@@ -143,11 +143,11 @@
                            id='chat_id' />
                 </c:if>
                 <!--     채팅창 -->
-                <div id="_chatbox">
-                    <fieldset>
-                        <div id="messageWindow"></div>
-                        <br /> <input id="inputMessage" type="text" onkeyup="enterkey()" />
-                        <input type="submit" value="send" onclick="send()" />
+                <div id="_chatbox"  class="border border-secondary rounded-3" style="width: 820px; margin: auto;">
+                    <fieldset class="p-2">
+                        <div id="messageWindow" class="p-2"></div>
+                        <br /> <input class="form-control me-2" placeholder="메세지를 입력해주세요." id="inputMessage" type="text" onkeyup="enterkey()" style="width: 700px; float: left" />
+                        <input class="btn btn-secondary" style="float: left;" type="submit" value="send" onclick="send()" />
                     </fieldset>
                 </div>
             </div>

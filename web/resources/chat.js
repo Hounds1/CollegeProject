@@ -31,10 +31,10 @@ function onMessage(event) {
         } else {
             if (content.match("!")) {
                 $("#messageWindow").html($("#messageWindow").html()
-                    + "<p class='chat_content'><b class='impress'>" + sender + " : " + content + "</b></p>");
+                    + "<p class='chat_content fs-20'><b class='impress'>" + sender + " : " + content + "</b></p>");
             } else {
                 $("#messageWindow").html($("#messageWindow").html()
-                    + "<p class='chat_content'>" + sender + " : " + content + "</p>");
+                    + "<p class='chat_content fs-20'>" + sender + " : " + content + "</p>");
             }
         }
     }
@@ -42,8 +42,9 @@ function onMessage(event) {
 
 function onOpen(event) {
     $("#messageWindow").html("<p class='chat_content'>채팅에 참여하였습니다." +
-        "<br>* 입력되는 채팅은 일정기간 로그로 보관되며 법적 분쟁 시 사용 될 수 있습니다." +
-        "<br>* 올바른 채팅 문화가 정착 될 수 있도록 도와주세요.</p>");
+        "<br>* 입력되는 채팅은 일정기간 로그로 보관됩니다." +
+        "<br>* 올바른 채팅 문화가 정착 될 수 있도록 도와주세요." + "</p>");
+    webSocket.send("Bot" + "|" + $('#chat_id').val() + "님이 입장했습니다.");
 }
 
 function onError(event) {
@@ -54,7 +55,7 @@ function send() {
     if (inputMessage.value == "") {
     } else {
         $("#messageWindow").html($("#messageWindow").html()
-            + "<p class='chat_content'>"+ $('#chat_id').val()+ " : " + inputMessage.value + "</p>");
+            + "<p class='chat_content fs-20 text-end border-bottom'>"+ inputMessage.value + "</p>");
     }
     webSocket.send($("#chat_id").val() + "|" + inputMessage.value);
     inputMessage.value = "";
