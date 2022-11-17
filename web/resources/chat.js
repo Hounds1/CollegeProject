@@ -1,5 +1,6 @@
 var textarea = document.getElementById("messageWindow");
-var webSocket = new WebSocket('ws://172.16.143.33:9090/chat');
+// var webSocket = new WebSocket('ws://172.16.143.33:9090/chat');
+var webSocket = new WebSocket('ws://192.168.43.165:9090/chat');
 var inputMessage = document.getElementById('inputMessage');
 webSocket.onerror = function(event) {
     onError(event)
