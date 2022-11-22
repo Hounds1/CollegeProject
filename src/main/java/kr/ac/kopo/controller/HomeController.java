@@ -31,19 +31,25 @@ public class HomeController {
     public String index(Model model) {
         int memberSize = memberDao.getMemberSize();
         int adminSize = memberDao.getAdminSize();
+
         int bContentsSize = backendBoardDao.getContentsSize();
         int bCommentSize =  boardCommentDao.getCommentSize();
         int fContentsSize = frontendBoardDao.getContentSize();
         int fCommentSize = frontCommentDao.getCommentSize();
+
         int contentsSize = bContentsSize + fContentsSize;
+
         int commentSize = bCommentSize + fCommentSize;
+
         log.info("----------------connect info ------------------");
         log.info("Someone Connect Server");
         log.info("----------------connect info ------------------");
+
         model.addAttribute("memberSize", memberSize);
         model.addAttribute("adminSize", adminSize);
         model.addAttribute("contentsSize", contentsSize);
         model.addAttribute("commentSize", commentSize);
+
         return "index";
     }
 }

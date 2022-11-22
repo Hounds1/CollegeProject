@@ -125,7 +125,7 @@
                         </li>
                     </ul>
                 </li>
-                <li><a class="nav-link scrollto" href="/chat">Live Chat</a></li>
+                <li><a class="nav-link scrollto" id="chat_btn" href="#">Live Chat</a></li>
                 <c:choose>
                     <c:when test="${sessionScope.member eq null}">
                         <li><a class="nav-link" href="#" data-bs-toggle="modal"
@@ -227,7 +227,7 @@
                 <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                         <div class="icon"><i class="bi bi-chat-square-text"></i></div>
-                        <h4 class="title"><a href="/chat" id="card-banner2">Live Chat</a></h4>
+                        <h4 class="title"><a href="#" id="card-banner2">Live Chat</a></h4>
                         <p class="description">라이브 채팅에서 다른 사람들에게 질문하십시오.</p>
                     </div>
                 </div>
@@ -641,35 +641,18 @@
                             <strong>Email:</strong> soft@kr.ac.kopo<br>
                         </p>
                         <div class="social-links mt-3">
-                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                            <a href="#" class="github"><i class="bx bxl-github"></i></a>
+                            <a href="#" class="discord"><i class="bx bxl-discord"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-2 col-md-6 footer-links">
-                    <h4>Useful Links</h4>
-                    <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-                    </ul>
+                <div class="col-lg-2 col-md-6">
+
                 </div>
 
-                <div class="col-lg-2 col-md-6 footer-links">
-                    <h4>Our Services</h4>
-                    <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-                    </ul>
+                <div class="col-lg-2 col-md-6">
+
                 </div>
 
                 <div class="col-lg-4 col-md-6 footer-newsletter">

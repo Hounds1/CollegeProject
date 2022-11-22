@@ -29,18 +29,25 @@ public class AdminController {
     }
 
     @GetMapping("/member")
-    public String getMemberControl(Pager pager, Model model){
-        List<MemberVO> list = adminService.getMemberControl(pager);
+    public String getMemberControl(Pager pager, Model model, @SessionAttribute(value = "member") MemberVO memberVO){
+        if(!Objects.equals(memberVO.getMemberAuthority(), "Archivist")){
+            return "redirect:/member/login_not_found";
+        } else {
+            List<MemberVO> list = adminService.getMemberControl(pager);
 
-        model.addAttribute("list", list);
+            model.addAttribute("list", list);
 
-        return "admin/admin_member";
+            return "admin/admin_member";
+        }
     }
 
     @RequestMapping("/drop_member")
-    public String dropMember(@RequestParam(value = "memberId") String memberId){
-        adminService.dropMember(memberId);
-
-        return "redirect:/admin/member";
+    public String dropMember(@RequestParam(value = "memberId") String memberId, @SessionAttribute(value = "member") MemberVO memberVO){
+        if(!Objects.equals(memberVO.getMemberAuthority(), "Archivist")){
+            return "redirect:/member/login_not_found";
+        } else {
+            adminService.dropMember(memberId);
+            return "redirect:/admin/member";
+        }
     }
 }

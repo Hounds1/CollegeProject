@@ -146,7 +146,6 @@ public class BackendBoardController {
         backendBoardVO.setContentLangName(converter.convert(backendBoardVO.getContentLangName()));
 
 
-
         model.addAttribute("contentDetail",backendBoardVO);
 
         return "board/backend/board_detail";

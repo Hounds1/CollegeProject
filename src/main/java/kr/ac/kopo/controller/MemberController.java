@@ -28,7 +28,7 @@ public class MemberController {
     private final MemberService memberService;
 
     /**
-     * member sign up Ajax
+     * member new account Ajax
      */
 
     @PostMapping("/new_account")
@@ -159,38 +159,4 @@ public class MemberController {
             return "Fail";
         }
     }
-
-    /**
-     * doesn't need it anymore
-     * destroyed function
-     * but, records
-     * @param PIChangeId
-     * @param memberName
-     * @param memberBirth
-     * @param memberPhoneNumber
-     * @param memberAddress
-     * @return
-     */
-
-//    @PostMapping("/personalInfoChange")
-//    public @ResponseBody String personalInfoChange(@RequestParam(value = "PIChangeId") String PIChangeId,
-//                                                   @RequestParam(value = "memberName") String memberName,
-//                                                   @RequestParam(value = "memberBirth") String memberBirth,
-//                                                   @RequestParam(value = "memberPhoneNumber") String memberPhoneNumber,
-//                                                   @RequestParam(value = "memberAddress") String memberAddress) {
-//
-//        StringToDateConverter converter = new StringToDateConverter();
-//        MemberVO memberVO = new MemberVO();
-//        memberVO.setMemberId(PIChangeId);
-//        memberVO.setMemberName(memberName);
-//        memberVO.setMemberBirth(converter.convert(memberBirth));
-//        memberVO.setMemberPhoneNumber(memberPhoneNumber);
-//        memberVO.setMemberAddress(memberAddress);
-//
-//       if(memberService.personalInfoChange(memberVO) == 1) {
-//           return "OK";
-//       } else
-//           return "Fail";
-//    }
-
 }
