@@ -854,6 +854,12 @@
 
                     <div class="text-center p-t-115">
 						<span class="txt1">
+                            Forgot your password?
+                        </span>
+                        <a class="txt2" href="#" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal">
+                            click here <br>
+                        </a>
+                        <span class="txt1">
 							Don’t have an account?
 						</span>
                         <a class="txt2" href="#" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
@@ -932,6 +938,58 @@
     </div>
 </div>
 <!-- Account modal -->
+
+<!-- Account modal-->
+<div class="modal fade" id="forgotPasswordModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+     tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="!important; width:390px;">
+            <div class="wrap-login100">
+                <form class="login100-form validate-form" method="post" action="/member/forgot_password">
+					<span class="login100-form-title p-b-26">
+						Welcome
+					</span>
+                    <span class="login100-form-title p-b-48">
+						<i class="zmdi zmdi-font"></i>
+					</span>
+
+                    <div class="wrap-input100 validate-input " data-validate="Valid email is: a@b.c">
+                        <span class="btn-duplicate-check btn-send-email">
+                            <i class="zmdi zmdi-email"></i>
+                        </span>
+                        <input class="input100" type="text" name="memberId" id="targetId">
+                        <span class="focus-input100" data-placeholder="Email"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter memberNick">
+                        <input class="input100" type="text" name="serialNum" id="serial-number">
+                        <span class="focus-input100" data-placeholder="Serial Number"></span>
+                    </div>
+
+
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button type="button" class="login100-form-btn btn-send-serial">
+                                Change
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <div class="text-center p-t-115">
+						<span class="txt1">
+							If you already our member
+						</span>
+                    <a class="txt2" href="#" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+                        Sign In
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Account modal -->
+
 
 <!-- list test modal start -->
 <div class="modal fade" tabindex="-1" id="listModal">

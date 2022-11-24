@@ -15,4 +15,5 @@ public class MemberVO {
     private String memberSalt;
     private Date memberRegDate;
     private String memberAuthority;
+    private String memberAuthCheck;
 }

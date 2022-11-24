@@ -1,10 +1,13 @@
 package kr.ac.kopo.controller;
 
 
+import kr.ac.kopo.dao.TokenDao;
+import kr.ac.kopo.service.MailSenderService;
 import kr.ac.kopo.service.MemberService;
 import kr.ac.kopo.util.PassMaker;
 import kr.ac.kopo.util.StringToDateConverter;
 import kr.ac.kopo.vo.MemberVO;
+import kr.ac.kopo.vo.TokenVO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -26,6 +29,8 @@ import java.util.Date;
 public class MemberController {
 
     private final MemberService memberService;
+    private final MailSenderService mailSenderService;
+
 
     /**
      * member new account Ajax
@@ -39,7 +44,6 @@ public class MemberController {
         memberVO.setMemberId(memberId);
         memberVO.setMemberNick(memberNick);
         memberVO.setMemberPass(memberPass);
-
 
         memberService.memberNewAccount(memberVO);
         return "OK";
@@ -158,5 +162,42 @@ public class MemberController {
         } else {
             return "Fail";
         }
+    }
+
+    @PostMapping("/forgot_password")
+    public @ResponseBody String sendEmail(@RequestParam(value = "memberId") String memberId){
+        log.info("memberId = {}", memberId);
+        String token = mailSenderService.editEmail(memberId);
+        TokenVO tokenVO = new TokenVO();
+        tokenVO.setTargetId(memberId);
+        tokenVO.setPublicToken(token);
+
+        memberService.editToken(tokenVO);
+
+        return "이메일로 전송 된 토큰 번호를 입력해주십시오.";
+    }
+
+    @PostMapping("/token_check")
+    public @ResponseBody String serialCheck(@RequestParam(value = "memberId") String memberId,
+                                            @RequestParam(value = "token") String token){
+        TokenVO tokenVO = new TokenVO();
+        tokenVO.setTargetId(memberId);
+        tokenVO.setPublicToken(token);
+        if(memberService.checkToken(tokenVO)){
+            return "OK";
+        } else
+            return "Fail";
+    }
+
+    @GetMapping("/active_token")
+    public String activeToken(String email , String publictoken){
+        TokenVO tokenVO = new TokenVO();
+        tokenVO.setTargetId(email);
+        tokenVO.setPublicToken(publictoken);
+
+        if(memberService.activeToken(tokenVO)){
+            return "redirect:http://localhost:9090/";
+        } else
+            return "redirect:http://localhost:9090/member/login_not_found";
     }
 }

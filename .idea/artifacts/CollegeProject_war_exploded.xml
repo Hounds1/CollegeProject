@@ -37,6 +37,10 @@
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.4" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.4" />
           <element id="library" level="project" name="Maven: org.springframework:spring-websocket:4.3.18.RELEASE" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
+          <element id="library" level="project" name="Maven: javax.mail:mail:1.4.7" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:4.3.18.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-messaging:4.3.18.RELEASE" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="CollegeProject/web/Web" />

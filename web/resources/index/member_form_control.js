@@ -78,7 +78,7 @@
                 if(result === "OK") {
                     location.href = window.location.href;
                 } else {
-                    alert("유효하지 않은 ID 또는 Password 입니다. 다시 시도해주십시오.");
+                    alert("유효하지 않거나 인증되지 않은 아이디입니다.");
                 }
             }
         })
@@ -98,6 +98,7 @@
             },
             success(result) {
                 if(result === "OK") {
+                    alert("이메일 인증 후 로그인 해주십시오.");
                     location.href = window.location.href;
                 }
             },
@@ -107,5 +108,56 @@
         });
     });
 
+    /*==================================================================
+    [Send email ajax]*/
+
+    $('.btn-send-email').on('click', function () {
+        $.ajax({
+           url: "/member/forgot_password",
+           type: "POST",
+           cache: false,
+           data: {
+               "memberId" : $('#targetId').val()
+           },
+           success: result => {
+               console.log(result);
+               alert("인증번호가 전송되었습니다.");
+               $('.btn-send-email').find('i').removeClass('zmdi-email');
+               $('.btn-send-email').find('i').addClass('zmdi-email-open');
+           },
+            error: e => {
+               console.log(e);
+            }
+        });
+    });
+
+    /*==================================================================
+    [serialNum check ajax]*/
+    $('.btn-send-serial').on('click', function () {
+       if(!$('#targetId').val().isEmpty && !$('#serial-number').val().isEmpty) {
+           $.ajax({
+               url: "/member/token_check",
+               type: "POST",
+               cache: false,
+               data: {
+                   "memberId": $('#targetId').val(),
+                   "token": $('#serial-number').val()
+               },
+               success: result => {
+                   if (result === "OK") {
+                       alert("비밀번호가 초기화되었습니다.");
+                       location.href = "/";
+                   } else if(result === "Fail"){
+                       alert("잘못 된 시리얼 넘버입니다. 다시 입력해주십시오.")
+                   }
+               },
+               error: e => {
+                   console.log(e);
+               }
+           });
+       } else {
+           alert("입력 된 값이 없습니다.");
+       }
+    });
 
 })(jQuery);

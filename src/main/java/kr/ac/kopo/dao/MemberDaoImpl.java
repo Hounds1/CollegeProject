@@ -66,5 +66,15 @@ public class MemberDaoImpl implements MemberDao{
         sqlSession.delete("member.dropMember", memberId);
     }
 
+    @Override
+    public void resetMemberPass(MemberVO memberVO) {
+        sqlSession.update("member.resetMemberPass", memberVO);
+    }
+
+    @Override
+    public void authUpdate(String targetId) {
+        sqlSession.update("member.authUpdate", targetId);
+    }
+
 
 }

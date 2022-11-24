@@ -12,7 +12,7 @@
 
     <insert id="memberNewAccount">
         insert into member
-            values (NULL, #{memberId}, #{memberNick}, #{memberPass}, #{memberSalt}, now(), #{memberAuthority})
+            values (NULL, #{memberId}, #{memberNick}, #{memberPass}, #{memberSalt}, now(), "common", "N")
     </insert>
 
     <select id="memberLogin" resultType="Member">
@@ -60,4 +60,17 @@
         from member
         where member_id = #{memberId}
     </delete>
+
+
+    <select id="resetMemberPass">
+        update member
+            set member_pass = #{memberPass}
+        where member_id = #{memberId}
+    </select>
+
+    <update id="authUpdate">
+        update member
+            set member_auth_check = "Y"
+        where member_id = #{memberId}
+    </update>
 </mapper>

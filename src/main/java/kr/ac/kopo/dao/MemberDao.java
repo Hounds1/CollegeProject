@@ -25,4 +25,8 @@ public interface MemberDao {
     int deleteAccount(String targetId);
 
     void dropMember(String memberId);
+
+    void resetMemberPass(MemberVO memberVO);
+
+    void authUpdate(String targetId);
 }
