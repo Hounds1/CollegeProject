@@ -41,9 +41,6 @@ public class HomeController {
 
         int commentSize = bCommentSize + fCommentSize;
 
-        log.info("----------------connect info ------------------");
-        log.info("Someone Connect Server");
-        log.info("----------------connect info ------------------");
 
         model.addAttribute("memberSize", memberSize);
         model.addAttribute("adminSize", adminSize);

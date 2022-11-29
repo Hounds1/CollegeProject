@@ -63,7 +63,7 @@
                     <input type="hidden" value='<%=session.getId().substring(0, 6)%>'
                            id='chat_id' />
                 </c:if>
-                <!--     채팅창 -->
+                <!-- 채팅창 -->
                 <div id="chat-box"  class="border border-secondary rounded-3" style="width: 100%; margin: auto; overflow: scroll">
                     <fieldset class="p-2">
                         <div id="messageWindow" class="p-2"></div>

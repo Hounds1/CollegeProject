@@ -87,26 +87,30 @@
     /*==================================================================
     [Sign up ajax]*/
     $('.btn-control').on('click', function () {
-        $.ajax({
-            url : "/member/new_account",
-            method : "POST",
-            cache : false,
-            data : {
-                "memberId" : $('#memberId').val(),
-                "memberNick" : $('#memberNick').val(),
-                "memberPass" : $('#memberPass').val(),
-            },
-            success(result) {
-                if(result === "OK") {
-                    alert("이메일 인증 후 로그인 해주십시오.");
-                    location.href = window.location.href;
+        if($('#memberId').val() != "" && $('#memberNick').val() != "" && $('#memberPass').val() != "") {
+            $.ajax({
+                url: "/member/new_account",
+                method: "POST",
+                cache: false,
+                data: {
+                    "memberId": $('#memberId').val(),
+                    "memberNick": $('#memberNick').val(),
+                    "memberPass": $('#memberPass').val(),
+                },
+                success(result) {
+                    if (result === "OK") {
+                        alert("이메일 인증 후 로그인 해주십시오.");
+                        location.href = window.location.href;
+                    }
+                },
+                error() {
+                    alert("다시 시도해 주십시오.");
                 }
-            },
-            error() {
-                alert("다시 시도해 주십시오.");
-            }
-        });
+            });
+        } else
+            alert("공백은 허용되지 않습니다.")
     });
+
 
     /*==================================================================
     [Send email ajax]*/

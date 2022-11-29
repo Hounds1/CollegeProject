@@ -44,6 +44,9 @@ public class MemberController {
         memberVO.setMemberId(memberId);
         memberVO.setMemberNick(memberNick);
         memberVO.setMemberPass(memberPass);
+        log.info("----------------------Someone makes a new account-----------------------");
+        log.info("[{}][{}]", memberId, memberNick);
+        log.info("----------------------Someone makes a new account-----------------------");
 
         memberService.memberNewAccount(memberVO);
         return "OK";
@@ -62,20 +65,25 @@ public class MemberController {
         String ip = null;
         try {
             ip = String.valueOf(Inet4Address.getLocalHost());
+            log.info("Connect Ip = {}", ip);
         } catch (UnknownHostException e) {
             throw new RuntimeException(e);
         }
 
 
-        log.info("----------------------connect info-----------------------");
-        log.info(memberId);
-        log.info(memberPass);
-        log.info("----------------------connect info-----------------------");
+        log.info("----------------------Login Request-----------------------");
+
+
         if(memberService.memberLogin(memberVO)) {
             httpSession.setAttribute("member", memberVO);
+            log.info("member info = [{}][{}][{}]", memberVO.getMemberId(), memberVO.getMemberNick(), memberVO.getMemberAuthority());
+            log.info("----------------------Login Request complete-----------------------");
             return "OK";
-        } else
+        } else {
+            log.info("member info = [{}][{}][{}]", memberVO.getMemberId(), memberVO.getMemberNick(), memberVO.getMemberAuthority());
+            log.info("----------------------Login Request fail-----------------------");
             return "Fail";
+        }
     }
 
 
@@ -86,6 +94,13 @@ public class MemberController {
 
     @GetMapping("/escape")
     public String memberEscape(HttpSession httpSession) {
+        MemberVO member = (MemberVO) httpSession.getAttribute("member");
+        String escapeMemberId = member.getMemberId();
+
+        log.info("----------------------Someone logout from archivist-----------------------");
+        log.info("escapeMemberId = {}", escapeMemberId);
+        log.info("----------------------Someone logout from archivist-----------------------");
+
         httpSession.invalidate();
         return "redirect:/";
     }

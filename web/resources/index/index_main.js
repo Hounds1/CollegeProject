@@ -24,6 +24,6 @@
         // const url = "http:192.168.43.165:9090/chat"; // 기숙사
 
 
-        window.open(url, "hello popup", windowStatus);
+        window.open(url, "popup", windowStatus);
     });
 })(jQuery);
