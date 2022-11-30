@@ -139,7 +139,7 @@
                         <h3>${contentDetail.contentTitle}</h3>
                         <p>
                             게시일 : <fmt:formatDate value="${contentDetail.contentRegDate}" pattern="yyyy-MM-dd"/> <br>
-                            <c:if test="${contentDetail.contentUploader eq sessionScope.member.memberNick}">
+                            <c:if test="${contentDetail.contentUploader eq sessionScope.member.memberNick or sessionScope.member.memberAuthority eq 'Archivist'}">
                                 <a class="btn btn-secondary mt-1 content-editor-call" href="#" data-bs-toggle="modal"
                                    data-bs-target="#content-edit-modal" id="${contentDetail.contentNum}"><i
                                         class="bi bi-pencil"></i> 수정하기</a>

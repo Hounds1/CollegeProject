@@ -62,7 +62,7 @@ public class MailSenderService {
                         token;
         mailSend(setFrom, toMail, title, content);
         log.info("-----------------------emails away--------------------------");
-        log.info("[{}] -> [{}]", setFrom, toMail);
+        log.info("sending : [{}] -> [{}]", setFrom, toMail);
         log.info("[{}], [{}]", email, token);
         log.info("-----------------------emails away--------------------------");
         return token;
