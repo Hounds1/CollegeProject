@@ -57,7 +57,7 @@
             success(result) {
                 if(result === "OK") {
                     alert("새로운 비밀번호로 로그인 해주십시오.");
-                    location.href = "/";
+                    location.href = "http://localhost:9090/";
                 }
             }, error() {
                 console.log("error");

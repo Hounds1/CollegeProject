@@ -425,8 +425,7 @@
 
         <div class="modal-content" style="!important; width:390px;">
             <div class="wrap-login100">
-                <form class="login100-form validate-form" method="post" action="/member/login"
-                      id="pass-change-form">
+                <form class="login100-form validate-form" id="pass-change-form">
 					<span class="login100-form-title p-b-26">
 						Password Change
 					</span>
@@ -469,7 +468,7 @@
                     <div class="container-login100-form-btn" id="pass-change-btn">
                         <div class="wrap-login100-form-btn">
                             <div class="login100-form-bgbtn"></div>
-                            <button class="login100-form-btn change-btn-control" disabled>
+                            <button type="button" class="login100-form-btn change-btn-control" disabled>
                                 Change
                             </button>
                         </div>
