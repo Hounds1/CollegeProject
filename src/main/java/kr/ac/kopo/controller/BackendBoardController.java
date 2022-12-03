@@ -54,6 +54,7 @@ public class BackendBoardController {
      */
     @PostMapping("/upload")
     public String contentUpload(BackendBoardVO content) {
+        log.info("Upload Request");
 
         List<BackendBoardFileVO> list = new ArrayList<>();
         MultipartBinder binder = new MultipartBinder();
@@ -69,8 +70,6 @@ public class BackendBoardController {
         }
 
         content.setParamFileList(list);
-
-        boardService.contentUpload(content);
 
         String targetUrl = boardService.contentUpload(content);
 
@@ -138,8 +137,10 @@ public class BackendBoardController {
      */
     @GetMapping("/detail/{contentNum}")
     public String detailView(@PathVariable int contentNum, Model model) {
-        BackendBoardVO backendBoardVO = new BackendBoardVO();
-        backendBoardVO = boardService.detailView(contentNum);
+        BackendBoardVO backendBoardVO = boardService.detailView(contentNum);
+
+        log.info("detail values = [{}],[{}]",contentNum,backendBoardVO.getContentTitle());
+
 
         LangNameConverter converter = new LangNameConverter();
 

@@ -62,10 +62,10 @@ public class MemberController {
         memberVO.setMemberId(memberId);
         memberVO.setMemberPass(memberPass);
 
-        String ip = null;
+
         try {
-            ip = String.valueOf(Inet4Address.getLocalHost());
-            log.info("Connect Ip = {}", ip);
+            String ip = String.valueOf(Inet4Address.getLocalHost());
+            log.info("Connect IP = {}", ip);
         } catch (UnknownHostException e) {
             throw new RuntimeException(e);
         }
